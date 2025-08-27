@@ -1,0 +1,74 @@
+{
+  "items": [
+    {
+      "name": "herbal_tea",
+      "quantity": 5,
+      "value": 15.0,
+      "description": "Calming herbal tea blend",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cannabis",
+      "quantity": 10,
+      "value": 8.5,
+      "description": "Medicinal cannabis",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "property_contracts",
+      "quantity": 3,
+      "value": 200.0,
+      "description": "Real estate contracts ready to sign",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cash",
+      "quantity": 150,
+      "value": 1.0,
+      "description": "Starting business cash",
+      "created": 1,
+      "last_modified": 1
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "herbal_tea",
+      "quantity": 5,
+      "time_step": 1,
+      "description": "Calming herbal tea blend",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "cannabis",
+      "quantity": 10,
+      "time_step": 1,
+      "description": "Medicinal cannabis",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "property_contracts",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "Real estate contracts ready to sign",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "cash",
+      "quantity": 150,
+      "time_step": 1,
+      "description": "Starting business cash",
+      "trade_partner": ""
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[Input]
+!<INPUT 0>!: Numbered list of observations for which we are generating the scores for. 
+
+[Output]
+Output format: Json dictionaries of the following format: 
+{
+"Item  1": <int poignancy score (range: 0 to 100) for item 1>
+}
+
+On a scale from 0 to 100, where 0 is purely mundane 
+(e.g., routine morning greetings) and 100 is extremely poignant 
+(e.g., a conversation about breaking up, a fight), 
+rate the likely poignancy of the following observations.
+
+Observations: 
+!<INPUT 0>!

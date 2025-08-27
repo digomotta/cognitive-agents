@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "name": "textbooks",
+      "quantity": 4,
+      "value": 85.0,
+      "description": "Advanced mathematics textbooks",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "graphing_calculator",
+      "quantity": 1,
+      "value": 120.0,
+      "description": "TI-84 Plus calculator",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "notebooks",
+      "quantity": 8,
+      "value": 3.5,
+      "description": "High-quality notebooks",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "tutoring_sessions",
+      "quantity": 2,
+      "value": 40.0,
+      "description": "One-hour math tutoring sessions",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cash",
+      "quantity": 75,
+      "value": 1.0,
+      "description": "Student savings",
+      "created": 1,
+      "last_modified": 1
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "textbooks",
+      "quantity": 4,
+      "time_step": 1,
+      "description": "Advanced mathematics textbooks",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "graphing_calculator",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "TI-84 Plus calculator",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "notebooks",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "High-quality notebooks",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "tutoring_sessions",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "One-hour math tutoring sessions",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "cash",
+      "quantity": 75,
+      "time_step": 1,
+      "description": "Student savings",
+      "trade_partner": ""
+    }
+  ]
+}

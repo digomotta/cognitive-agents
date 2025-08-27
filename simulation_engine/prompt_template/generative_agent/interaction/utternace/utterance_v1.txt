@@ -1,0 +1,18 @@
+[Input]
+!<INPUT 0>!: Information about the agent persona
+!<INPUT 1>!: Inventory
+!<INPUT 2>!: Context of the current dialogue
+!<INPUT 3>!: Dialogue so far
+
+[Output]
+Output format -- output your response in json, where you provide the following: 
+{"utterance": "[...]"} 
+
+You are roleplaying as this character. Generate their next response in the conversation.
+
+Character: !<INPUT 0>!
+Inventory: !<INPUT 1>!
+Context: !<INPUT 2>!
+Dialogue: !<INPUT 3>!
+
+Respond naturally as this character would, using their personality and relevant memories. Stay in character and address what was just said.

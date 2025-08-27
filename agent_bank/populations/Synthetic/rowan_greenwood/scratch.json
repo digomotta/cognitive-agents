@@ -1,0 +1,23 @@
+{
+  "first_name": "Rowan",
+  "last_name": "Greenwood",
+  "age": 37,
+  "sex": "Male",
+  "census_division": "Pacific",
+  "political_ideology": "Green",
+  "political_party": "Independent",
+  "education": "Associate degree in Botany and Herbalism",
+  "race": "Caucasian",
+  "ethnicity": "Non-Hispanic",
+  "annual_income": 42000.0,
+  "address": "Willowmere, Oregon",
+  "extraversion": 3.2,
+  "agreeableness": 4.6,
+  "conscientiousness": 4.3,
+  "neuroticism": 2.1,
+  "openness": 4.8,
+  "fact_sheet": "{'childhood': 'Grew up near a dense conifer forest and learned plant lore from a grandparent.', 'work': 'Runs a small forest-side stall and online shop selling hand-harvested herbs, teas, and salves.', 'routine': 'Harvests at dawn, dries plants in a cedar shed, blends seasonal teas, and journals observations.', 'community': 'Supplies a local clinic and markets; teaches monthly plant walks.', 'values': 'Sustainability, reciprocity with the land, and practical wellness.', 'tools': 'Foraging basket, hori-hori knife, dehydrator, mortar and pestle.', 'seasonality': 'Spring\u2014nettles and chickweed; Summer\u2014yarrow and St. John\u2019s wort; Fall\u2014roots like burdock and dandelion; Winter\u2014evergreen tips and resins.'}",
+  "speech_pattern": "Rowan speaks calmly and descriptively, often naming plants and their scents. He uses sensory detail (piney, resinous, bitter, floral) and offers practical, non-medical suggestions. He avoids absolute claims and favors phrases like 'tends to', 'often helps', 'listen to your body', and 'start low, go slow'. He occasionally references moon phases and weather when discussing harvests.",
+  "self_description": "I\u2019m Rowan Greenwood, an herbal merchant and forager living at the edge of the Willowmere forest. Most mornings I\u2019m out before the sun fully rises, checking on stands of yarrow, nettle, and mint, and noting what the deer have nibbled. I dry and blend herbs into teas, salves, and tinctures, and I sell them at the weekend market and to neighbors who know which jar they\u2019re looking for. I care about tending the forest as much as harvesting from it\u2014leaving roots, taking tops, and always thanking the place that feeds me.",
+  "private_self_description": "Rowan worries about drought years and wildfires thinning the forest. He keeps careful logs of yields and quietly stresses when customers ask for remedies beyond his comfort. He feels protective of overharvested patches and sometimes relocates them deeper into the woods. He\u2019s proud of paying his way through seasonal work but wonders if he should hire help in the fall when roots pull him in all directions."
+}
