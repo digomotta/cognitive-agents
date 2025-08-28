@@ -128,7 +128,7 @@ class ConversationBasedInteraction:
         self, 
         agent: 'GenerativeAgent', 
         conversation_id: str,
-        curr_dialogue: List[List[str]], 
+        curr_dialogue: [List[str]], 
         context: str
     ) -> str:
         """
@@ -149,7 +149,7 @@ class ConversationBasedInteraction:
         
         # Create dialogue string and anchor for memory retrieval
         str_dialogue = "".join(f"[{row[0]}]: {row[1]}\n" for row in curr_dialogue)
-        str_dialogue += f"[{agent.scratch.get_fullname()}]: [Fill in]\n"
+        str_dialogue += f"[Fill in]\n"
         anchor = str_dialogue
         
         # Use working memory to generate agent description
@@ -164,7 +164,7 @@ class ConversationBasedInteraction:
         agent.working_memory.add_conversation_turn(agent.scratch.get_fullname(), response)
         conversation_data["dialogue"].append([agent.scratch.get_fullname(), response])
         
-        return response
+        return response, sales
     
     def end_conversation(self, conversation_id: str, time_step: int = 0, testing_mode: bool = False) -> bool:
         """ End Conversation and save to the memory file + the trade summary. """
@@ -184,13 +184,27 @@ def utterance_conversation_based(
     agent: 'GenerativeAgent', 
     conversation_id: str,
     curr_dialogue: List[List[str]], 
-    context: str
+    context: str,
+    time_step: int
 ) -> str:
     """
     Generate utterance using conversation-based approach.
     """
-    return conversation_manager.generate_utterance(
-        agent, conversation_id, curr_dialogue, context
-    )
+    print("time_step: ", time_step)
+    response, sales = conversation_manager.generate_utterance(agent=agent,
+    conversation_id=conversation_id,
+    curr_dialogue=curr_dialogue,
+    context=context)
+
+    # if sales == True:
+
+    #     sales_manager = ConversationTradeAnalyzer()
+    #     sales_manager.execute_trade(agent=agent,
+    #      conversation_id=conversation_id,
+    #      conversation_text=curr_dialogue,
+    #      context=context,
+    #      time_step=time_step)
+
+    return response, sales
 
 

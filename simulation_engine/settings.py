@@ -5,7 +5,7 @@ from pathlib import Path
 # Read API key from environment. Do not hardcode secrets in source control.
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 KEY_OWNER = "Rodrigo da Motta"
-DEBUG = True #False
+DEBUG = False #False
 MAX_CHUNK_SIZE = 4
 LLM_VERS = "gpt-5-mini"
 LLM_ANALYZE_VERS = "gpt-5"

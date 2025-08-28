@@ -68,7 +68,8 @@ def extract_text_from_pdf_file(file_path: str) -> str:
 
 def gpt_request(prompt: str, 
                 model: str = "gpt-5", 
-                max_tokens: int = MAX_TOKENS_CONV) -> str:
+                max_tokens: int = MAX_TOKENS_CONV,
+                temperature: float = 0.7) -> str:
   """Make a request to OpenAI's GPT model."""
   if model == "o1-preview": 
     try:
@@ -88,7 +89,7 @@ def gpt_request(prompt: str,
         model=model,
         messages=[{"role": "user", "content": prompt}],
         max_tokens=max_tokens,
-        temperature=0.7
+        temperature=temperature
       )
       return response.choices[0].message.content
 
@@ -98,7 +99,7 @@ def gpt_request(prompt: str,
           model=model,
           messages=[{"role": "user", "content": prompt}],
           reasoning_effort="minimal",
-          max_completion_tokens=max_tokens  # ✅ correct way
+          max_completion_tokens=max_tokens
       )
       return response.choices[0].message.content
 
@@ -115,8 +116,7 @@ def gpt4_vision(messages: List[dict], max_tokens: int = 1500) -> str:
     response = client.chat.completions.create(
       model="gpt-5",
       messages=messages,
-      max_tokens=max_tokens,
-      temperature=0.7
+      max_tokens=max_tokens
     )
     return response.choices[0].message.content
   except Exception as e:
@@ -132,7 +132,9 @@ def chat_safe_generate(prompt_input: Union[str, List[str]],
                        verbose: bool = DEBUG,
                        max_tokens: int = MAX_TOKENS_CONV,
                        file_attachment: str = None,
-                       file_type: str = None) -> tuple:
+                       file_type: str = None,
+                       temperature: float = 0.7
+                       ) -> tuple:
   """Generate a response using GPT models with error handling & retries."""
   if file_attachment and file_type:
     prompt = generate_prompt(prompt_input, prompt_lib_file)
@@ -157,12 +159,12 @@ def chat_safe_generate(prompt_input: Union[str, List[str]],
       instruction = generate_prompt(prompt_input, prompt_lib_file)
       prompt = f"{pdf}"
       prompt += f"<End of the PDF attachment>\n=\nTask description:\n{instruction}"
-      response = gpt_request(prompt, model, max_tokens)
+      response = gpt_request(prompt, model, max_tokens, temperature)
 
   else:
     prompt = generate_prompt(prompt_input, prompt_lib_file)
     for i in range(repeat):
-      response = gpt_request(prompt, model, max_tokens)
+      response = gpt_request(prompt, model, max_tokens, temperature)
       if response != "GENERATION ERROR":
         break
       time.sleep(2**i)

@@ -259,6 +259,10 @@ class GenerativeAgent:
     """Get the total value of the entire inventory."""
     return self.inventory.get_total_inventory_value()
 
+  def get_all_items_with_values(self) -> Dict[str, float]:
+    """Get the inventory items and their values."""
+    return self.inventory.get_all_items_with_values()
+
   def has_inventory_item(self, item_name: str, minimum_quantity: int = 1) -> bool:
     """Check if agent has a specific item in sufficient quantity."""
     return self.inventory.has_item(item_name, minimum_quantity)
@@ -267,7 +271,7 @@ class GenerativeAgent:
     """Get the agent's trading history, optionally filtered by item."""
     return self.inventory.get_trade_history(item_name) 
 
-  def Act(self, conversation_id: str, curr_dialogue: List[List[str]], context: str = "") -> str:
+  def Act(self, conversation_id: str, curr_dialogue: List[List[str]], context: str = "", time_step: int = 0) -> str:
     """
     Act in the conversation.
 
@@ -278,4 +282,4 @@ class GenerativeAgent:
     Returns: 
       Generated response string
     """
-    return utterance_conversation_based(self, conversation_id, curr_dialogue, context)
+    return utterance_conversation_based(self, conversation_id, curr_dialogue, context, time_step)

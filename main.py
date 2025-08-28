@@ -6,6 +6,7 @@ from generative_agent.generative_agent import *
 
 from testing.memories.rowan_greenwood_memories import *
 from testing.memories.jasmine_carter_memories import *
+from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 
 #from testing.questions.rowan_greenwood_questions import *
 
@@ -112,7 +113,7 @@ def test_inventory_in_conversation():
   print("=== Testing Inventory in Conversations ===")
   
   rowan = GenerativeAgent("Synthetic", "rowan_greenwood")
-  print(f"Rowan's current inventory:\n{rowan.get_total_inventory_value()}")
+  print(f"Rowan's current inventory:\n{rowan.get_all_items_with_values()}")
   
   print("\nNow let's chat with Rowan and ask about his inventory...")
   print("Try asking: 'What do you have with you?' or 'What items do you have?'")
@@ -139,12 +140,12 @@ def test_conversation(testing_mode=True):
   print()
   
   # Load existing agents
-  rowan = GenerativeAgent("Synthetic", "rowan_greenwood")
-  jasmine = GenerativeAgent("Synthetic", "jasmine_carter")
+  agent1 = GenerativeAgent("Synthetic", "rowan_greenwood")
+  agent2 = GenerativeAgent("Synthetic", "jasmine_carter")
   
   print("Initial inventories:")
-  print(f"Rowan ({rowan.scratch.get_fullname()}): {rowan.get_total_inventory_value()}")
-  print(f"Jasmine ({jasmine.scratch.get_fullname()}): {jasmine.get_total_inventory_value()}")
+  print(f"Rowan ({agent1.scratch.get_fullname()}): {agent1.get_all_items_with_values()}")
+  print(f"Jasmine ({agent2.scratch.get_fullname()}): {agent2.get_all_items_with_values()}")
   print()
   
   # Context for trading
@@ -159,30 +160,39 @@ def test_conversation(testing_mode=True):
   print("=== Starting Conversation (No Real-Time Trade Detection) ===")
   
   # Let them have several exchanges
-  for turn in range(6):
-    # Rowan's turn
-    if turn == 0:
-      curr_dialogue.append(["Rowan", "Hello! Welcome to my market stall. I have some excellent herbal teas and remedies for sale today."])
-    else:
-      rowan_response = rowan.Act(conversation_id, curr_dialogue, context)
-      curr_dialogue.append(["Rowan", rowan_response])
-      print(f"Rowan: {rowan_response}")
-    
-    # Jasmine's turn
-    jasmine_response = jasmine.Act(conversation_id, curr_dialogue, context)
-    curr_dialogue.append(["Jasmine", jasmine_response])
-    print(f"Jasmine: {jasmine_response}")
-    print()
+  for turn in range(4):
+    # if turn == 0:
+    #   curr_dialogue.append(["Rowan", "Hello! Welcome to my market stall. I have some excellent herbal teas and remedies for sale today."])
+    # else:
+
+    agent1_response, sales1 = agent1.Act(conversation_id, curr_dialogue, context, turn)
+    curr_dialogue.append([f"{agent1.scratch.get_fullname()}", agent1_response])
+    print(f"{agent1.scratch.get_fullname()}: {agent1_response}")
   
-  return rowan, jasmine
+    agent2_response, sales2 = agent2.Act(conversation_id, curr_dialogue, context, turn)
+    curr_dialogue.append([f"{agent2.scratch.get_fullname()}", agent2_response])
+    print(f"{agent2.scratch.get_fullname()}: {agent2_response}")
+    print()
+
+    if sales1 == True or sales2 == True:
+        sales_manager = ConversationTradeAnalyzer()
+        sales_manager.execute_trade(agents=[agent1, agent2],
+         conversation_id=conversation_id,
+         conversation_text=curr_dialogue,
+         context=context,
+         time_step=turn)
+
+
+  
+  return agent1, agent2
 
 
 def main(): 
   # build_agent()
   # interview_agent()
-  chat_with_agent()
+  # chat_with_agent()
   # ask_agent_to_reflect()
-  #test_conversation()
+  test_conversation()
 
 
 

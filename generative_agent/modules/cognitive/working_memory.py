@@ -98,7 +98,7 @@ class WorkingMemory:
             agent_desc += f"Memory: {memory}\n"
         
         # Add current inventory information
-        agent_desc += f"\nCurrent Inventory:\n{agent.get_total_inventory_value()}\n"
+        agent_desc += f"\nCurrent Inventory:\n{agent.get_all_items_with_values()}\n"
         
         # Add current conversation context if available
         if self.conversation_context:
