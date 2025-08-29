@@ -502,7 +502,7 @@ def run_gpt_generate_importance(
   prompt_input = create_prompt_input(records) 
   fail_safe = _get_fail_safe() 
 
-  output, sales, prompt, prompt_input, fail_safe = chat_safe_generate(
+  output, prompt, prompt_input, fail_safe = chat_safe_generate(
     prompt_input, prompt_lib_file, model, 1, fail_safe, 
     _func_clean_up_importance, verbose)
 

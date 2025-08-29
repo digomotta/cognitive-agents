@@ -135,7 +135,7 @@ def chat_safe_generate(prompt_input: Union[str, List[str]],
                        file_type: str = None,
                        temperature: float = 0.7
                        ) -> tuple:
-  """Generate a response using GPT models with error handling & retries."""
+  """Generate an output using GPT models with error handling & retries."""
   if file_attachment and file_type:
     prompt = generate_prompt(prompt_input, prompt_lib_file)
     messages = [{"role": "user", "content": prompt}]
@@ -151,7 +151,7 @@ def chat_safe_generate(prompt_input: Union[str, List[str]],
               {"url": f"data:image/jpeg;base64,{base64_image}"}}
         ]
       })
-      response = gpt4_vision(messages, max_tokens)
+      output = gpt4_vision(messages, max_tokens)
 
     elif file_type.lower() == 'pdf':
       pdf_text = extract_text_from_pdf_file(file_attachment)
@@ -159,33 +159,34 @@ def chat_safe_generate(prompt_input: Union[str, List[str]],
       instruction = generate_prompt(prompt_input, prompt_lib_file)
       prompt = f"{pdf}"
       prompt += f"<End of the PDF attachment>\n=\nTask description:\n{instruction}"
-      response = gpt_request(prompt, model, max_tokens, temperature)
+      output = gpt_request(prompt, model, max_tokens, temperature)
 
   else:
     prompt = generate_prompt(prompt_input, prompt_lib_file)
     for i in range(repeat):
-      response = gpt_request(prompt, model, max_tokens, temperature)
-      if response != "GENERATION ERROR":
+      output = gpt_request(prompt, model, max_tokens, temperature)
+      if output != "GENERATION ERROR":
         break
       time.sleep(2**i)
     else:
-      response = fail_safe
+      output = fail_safe
       sales = False
 
   # Clean LLM response for conversation-based interaction
   if func_clean_up:
-    response, sales = func_clean_up(response, prompt=prompt)
+    output = func_clean_up(output, prompt=prompt)
 
   # print('=========== RESPONSE DEBUG ===========')
   # print(response)
   # print('=========== SALES =================')
-  # print(sales)
+  # print(response.get("sales", False) if isinstance(response, dict) else False)
   # print('=======================================  ')
 
   if verbose:
-    print_run_prompts(prompt_input, prompt, response, sales)
+    sales = output.get("sales", False) if isinstance(output, dict) else False
+    print_run_prompts(prompt_input, prompt, output, sales)
 
-  return response, sales, prompt, prompt_input, fail_safe
+  return output, prompt, prompt_input, fail_safe
 
 
 # ============================================================================

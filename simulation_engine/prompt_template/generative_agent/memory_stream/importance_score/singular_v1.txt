@@ -11,6 +11,7 @@ On a scale from 0 to 100, where 0 is purely mundane
 (e.g., routine morning greetings) and 100 is extremely poignant 
 (e.g., a conversation about breaking up, a fight), 
 rate the likely poignancy of the following observations.
+Always use integers for the importance scores not strings.
 
 Observations: 
 !<INPUT 0>!

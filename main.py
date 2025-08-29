@@ -191,11 +191,11 @@ def test_conversation(testing_mode=True):
 
 
 def main(): 
-  # build_agent()
+  build_agent()
   # interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
-  test_conversation()
+  # test_conversation()
 
 
 
