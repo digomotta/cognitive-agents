@@ -201,6 +201,9 @@ class ConversationBasedInteraction:
             
             # Save agent with new memory (unless in testing mode)
             if not testing_mode:
+                ########
+                # Is it saving into long-term memory??
+                ########
                 agent.save()
                 print(f"✅ {agent.scratch.get_fullname()} saved with interaction summary")
             else:
