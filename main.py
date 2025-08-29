@@ -175,14 +175,17 @@ def test_conversation(testing_mode=True):
     print()
 
     if sales1 == True or sales2 == True:
-        sales_manager = ConversationTradeAnalyzer()
-        sales_manager.execute_trade(agents=[agent1, agent2],
-         conversation_id=conversation_id,
-         conversation_text=curr_dialogue,
-         context=context,
-         time_step=turn)
+      print(f"Sales detected at time step {turn}")
+      sales_manager = ConversationTradeAnalyzer()
+      sales_manager.execute_trade(agents=[agent1, agent2],
+      conversation_id=conversation_id,
+      conversation_text=curr_dialogue,
+      context=context,
+      time_step=turn)
 
-
+  print(f"Rowan's inventory: {agent1.get_all_items_with_values()}")
+  print(f"Jasmine's inventory: {agent2.get_all_items_with_values()}")
+  print()
   
   return agent1, agent2
 

@@ -23,9 +23,6 @@ class ConversationTradeAnalyzer:
         time_step: int,
     ) -> Dict[str, Any]:
 
-        print(f"Analyzing trade at time step {time_step}")
-        print(f"Conversation text: {conversation_text}")
-
         """
         Analyze conversation and return JSON with:
         {
@@ -69,6 +66,7 @@ class ConversationTradeAnalyzer:
             "You are also provided with the inventory of each participant, keyed by their name, as follows:\n"
             f"{json.dumps(inventories, indent=2)}\n"
             "Match or rename item names in your output as close as possible to the inventory item names."
+            "If the values was not provided, use the value from the inventory."
         )
 
         prompt = (
@@ -116,19 +114,179 @@ class ConversationTradeAnalyzer:
 
 
 
-    def execute_buyer_side(
-        buyer_name: str,
-        item_name: str,
-        quantity: int,
-        price: float,
-        seller_name: str,
-        time_step: int
-    ):
+    def execute_seller_trade(
+        self,
+        agents: List['GenerativeAgent'],
+        trade_data: Dict[str, Any]
+    ) -> bool:
         """
-        Execute the buyer's side of a transaction by finding the buyer agent and updating their inventory.
-        This should be called when a trade is detected from the seller's perspective.
+        Execute seller's side of trade using JSON data from analyze_trade.
+        Removes sold items and adds cash to seller's inventory.
+        
+        Args:
+            agents: List of agents involved in the conversation
+            trade_data: JSON output from analyze_trade containing participants and items
+        
+        Returns True if trade was successfully executed, False otherwise.
         """
-        return None
+        try:
+            # Extract trade information
+            participants = trade_data.get("participants", {})
+            seller_name = participants.get("seller", "")
+            buyer_name = participants.get("buyer", "")
+            items = trade_data.get("items", [])
+            time_step = trade_data.get("time_step", 0)
+            
+            if not seller_name or not buyer_name or not items:
+                return False
+            
+            # Find the seller agent
+            seller_agent = None
+            for agent in agents:
+                agent_name = agent.scratch.get_fullname() if hasattr(agent.scratch, "get_fullname") else getattr(agent, "name", agent.id)
+                if agent_name == seller_name:
+                    seller_agent = agent
+                    break
+            
+            if not seller_agent:
+                return False
+            
+            # Execute trade for each item
+            total_success = True
+            for item in items:
+                item_name = item.get("name", "")
+                quantity = item.get("quantity", 0)
+                price = item.get("value", 0.0)
+                
+                if not item_name or quantity <= 0:
+                    continue
+                
+                # Check if seller has the item in required quantity
+                if not seller_agent.inventory.has_item(item_name, quantity):
+                    total_success = False
+                    continue
+                
+                # Remove the sold item from seller's inventory
+                success = seller_agent.inventory.trade_item(
+                    item_name=item_name,
+                    quantity=quantity,
+                    is_giving=True,
+                    time_step=time_step,
+                    trade_partner=buyer_name,
+                    description=f"Sold {quantity} {item_name} to {buyer_name} for ${price}"
+                )
+                
+                if not success:
+                    total_success = False
+                    continue
+                
+                # Add cash to seller's inventory if price > 0
+                if price > 0:
+                    seller_agent.inventory.trade_item(
+                        item_name="cash",
+                        quantity=int(price),
+                        is_giving=False,
+                        time_step=time_step,
+                        trade_partner=buyer_name,
+                        value=1.0,
+                        description=f"Received ${price} from selling {quantity} {item_name} to {buyer_name}"
+                    )
+            
+            # Save the updated inventory
+            if total_success:
+                seller_agent.save()
+            
+            return total_success
+            
+        except Exception as e:
+            print(f"Error executing seller trade: {e}")
+            return False
+
+    def execute_buyer_trade(
+        self,
+        agents: List['GenerativeAgent'],
+        trade_data: Dict[str, Any]
+    ) -> bool:
+        """
+        Execute buyer's side of trade: remove cash and add purchased items to inventory.
+        
+        Args:
+            agents: List of agents involved in the conversation
+            trade_data: JSON output from analyze_trade containing participants and items
+        
+        Returns True if trade was successfully executed, False otherwise.
+        """
+        try:
+            # Extract trade information
+            participants = trade_data.get("participants", {})
+            seller_name = participants.get("seller", "")
+            buyer_name = participants.get("buyer", "")
+            items = trade_data.get("items", [])
+            time_step = trade_data.get("time_step", 0)
+            
+            if not seller_name or not buyer_name or not items:
+                return False
+            
+            # Find the buyer agent
+            buyer_agent = None
+            for agent in agents:
+                agent_name = agent.scratch.get_fullname() if hasattr(agent.scratch, "get_fullname") else getattr(agent, "name", agent.id)
+                if agent_name == buyer_name:
+                    buyer_agent = agent
+                    break
+            
+            if not buyer_agent:
+                return False
+            
+            # Calculate total cost and check if buyer has enough cash
+            total_cost = sum(item.get("value", 0.0) for item in items)
+            if total_cost > 0 and not buyer_agent.inventory.has_item("cash", int(total_cost)):
+                return False
+            
+            # Execute trade for each item
+            total_success = True
+            for item in items:
+                item_name = item.get("name", "")
+                quantity = item.get("quantity", 0)
+                price = item.get("value", 0.0)
+                
+                if not item_name or quantity <= 0:
+                    continue
+                
+                # Add the purchased item to buyer's inventory
+                buyer_agent.inventory.trade_item(
+                    item_name=item_name,
+                    quantity=quantity,
+                    is_giving=False,
+                    time_step=time_step,
+                    trade_partner=seller_name,
+                    value=price / quantity if quantity > 0 else 0.0,
+                    description=f"Purchased {quantity} {item_name} from {seller_name} for ${price}"
+                )
+                
+                # Remove cash from buyer's inventory if price > 0
+                if price > 0:
+                    success = buyer_agent.inventory.trade_item(
+                        item_name="cash",
+                        quantity=int(price),
+                        is_giving=True,
+                        time_step=time_step,
+                        trade_partner=seller_name,
+                        description=f"Paid ${price} for {quantity} {item_name} from {seller_name}"
+                    )
+                    
+                    if not success:
+                        total_success = False
+            
+            # Save the updated inventory
+            if total_success:
+                buyer_agent.save()
+            
+            return total_success
+            
+        except Exception as e:
+            print(f"Error executing buyer trade: {e}")
+            return False
 
     def execute_trade(
         self,
@@ -156,7 +314,6 @@ class ConversationTradeAnalyzer:
         else:
             normalized_text = str(conversation_text)
 
-        model_to_use = model or self.model
 
         json_response = self.analyze_trade(
             agents=agents,
@@ -166,8 +323,24 @@ class ConversationTradeAnalyzer:
 
         print(json_response)
 
-        # Return True if at least one item was parsed
+        # Execute the trade if analysis was successful
+        trade_executed = False
+        if json_response and isinstance(json_response, dict) and json_response.get("items"):
+            seller_success = self.execute_seller_trade(agents, json_response)
+            buyer_success = self.execute_buyer_trade(agents, json_response)
+            trade_executed = seller_success and buyer_success
+            
+            if trade_executed:
+                print(f"Trade executed successfully: {json_response.get('participants', {}).get('seller', '')} sold items to {json_response.get('participants', {}).get('buyer', '')}")
+            else:
+                print("Trade analysis detected but execution failed")
+                if not seller_success:
+                    print("- Seller side execution failed")
+                if not buyer_success:
+                    print("- Buyer side execution failed")
+
+        # Return True if trade was analyzed and executed successfully
         try:
-            return bool(json_response and isinstance(json_response, dict) and json_response.get("items"))
+            return trade_executed
         except Exception:
             return False
