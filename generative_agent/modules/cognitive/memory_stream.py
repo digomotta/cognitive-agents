@@ -488,7 +488,7 @@ def run_gpt_generate_importance(
     parsed_json = extract_first_json_dict(gpt_response)
     if parsed_json is None:
       print(f"ERROR: Failed to parse JSON for importance scores: {gpt_response[:200]}...")
-      return [5.0]  # Return default importance score
+      return [5.0], False  # Return default importance score as tuple
     return list(parsed_json.values()), False
 
   def _get_fail_safe():
