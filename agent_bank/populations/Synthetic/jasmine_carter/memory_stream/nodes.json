@@ -718,5 +718,14 @@
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
+  },
+  {
+    "node_id": 80,
+    "node_type": "observation",
+    "content": "I stopped by Rowan\u2019s stand this morning and picked up one herbal tea blend for $15, tapping my digital cash to pay. It felt like exactly what I needed\u2014something calming and focused\u2014right before my calculus exam. I appreciated the smooth, friendly exchange and the reminder that small self-care choices support the bigger work I\u2019m committed to.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
   }
 ]

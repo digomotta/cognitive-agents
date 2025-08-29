@@ -520,5 +520,14 @@
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
+  },
+  {
+    "node_id": 58,
+    "node_type": "observation",
+    "content": "A bright morning at the market: Jasmine Carter stopped by, drawn to the mint-and-chamomile blend\u2014sweet, floral, and a little green around the edges. She tapped her digital cash, and the sale went through smoothly for one herbal tea at $15. I wished her steady focus and a calm breath for her calculus exam, feeling that quiet pleasure that comes when a simple cup might ease someone\u2019s day. A small, tidy exchange\u2014like harvesting tops under a waning moon, leaving the roots to grow.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
   }
 ]

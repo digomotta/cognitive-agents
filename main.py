@@ -204,7 +204,7 @@ def test_conversation(testing_mode=True):
   return agent1, agent2
 
 
-def test_interaction_summary():
+def test_interaction_summary(testing_mode=True):
   """Test the interaction summarization feature with automatic end_conversation."""
   print("=== Testing Automatic Interaction Summary Feature ===")
   
@@ -260,7 +260,7 @@ def test_interaction_summary():
     agents=[rowan, jasmine], 
     conversation_id=conversation_id, 
     time_step=0, 
-    testing_mode=True
+    testing_mode=testing_mode
   )
   
   print()
@@ -278,7 +278,7 @@ def main():
   # interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
-  test_interaction_summary()
+  test_interaction_summary(testing_mode=False)
 
 
 
