@@ -214,22 +214,6 @@ class GenerativeAgent:
     """
     self.memory_stream.reflect(anchor, time_step)
 
-  # def utterance(self, curr_dialogue: List[List[str]], context: str = "", conversation_id: str = "") -> str:
-  #   """
-  #   Given a dialogue of the form, 
-  #     [["Agent 1": "Content..."],
-  #      ["Agent 2": "Content..."], ... ]
-  #   generate the next agent utterance. 
-
-  #   Parameters:
-  #     anchor: str reflection anchor
-  #     time_step: int entering timestep
-  #   Returns: 
-  #     None
-  #   """
-  #   ret = utterance_conversation_based(self, conversation_id, curr_dialogue, context)
-  #   return ret
-
   def add_to_inventory(self, item_name: str, quantity: int, time_step: int = 0, value: float = 0.0, description: str = "") -> None:
     """Add items to the agent's inventory."""
     self.inventory.add_item(item_name, quantity, time_step, value, description)

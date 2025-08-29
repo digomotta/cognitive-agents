@@ -20,7 +20,7 @@ def run_LLM_generate_utterance(
     context: str,
     prompt_version: str = "1",
     model: str = "gpt-5",  
-    verbose: bool = DEBUG) -> Tuple[str, bool, List[Any]]:
+    verbose: bool = DEBUG) -> Tuple[Dict[str, Any], List[Any]]:
   """
   Generate an utterance using GPT based on the agent description, dialogue, and context.
   (Copied from original interaction.py to maintain compatibility)
@@ -31,22 +31,21 @@ def run_LLM_generate_utterance(
     context: str) -> List[str]:
     return [agent_desc, context, str_dialogue]        
 
-  def _func_clean_up(gpt_response: str, prompt: str = "") -> tuple[str, bool]:
+  def _func_clean_up(gpt_response: str, prompt: str = "") -> Dict[str, Any]:
     """
-    Extract the utterance text and the 'Sales Done' flag from a JSON-like response.
-    Always returns (utterance, sales_done).
-    - utterance: str
-    - sales_done: bool (True if present and true in the response, otherwise False)
+    Extract response data as a dictionary from a JSON-like response.
+    Returns dict with "utterance" and "sales" keys.
     """
     s = (gpt_response or "").strip()
+    result = {"utterance": "", "sales": False}
 
     # Try full JSON parse first
     try:
         parsed = json.loads(s)
         if isinstance(parsed, dict) and "utterance" in parsed:
-            utterance = parsed["utterance"]
-            sales_done = bool(parsed.get("Sales Done") or parsed.get("sales_done"))
-            return utterance, sales_done
+            result["utterance"] = parsed["utterance"]
+            result["sales"] = bool(parsed.get("Sales Done") or parsed.get("sales_done") or parsed.get("sales"))
+            return result
     except Exception:
         pass  # fallback to regex
 
@@ -54,7 +53,8 @@ def run_LLM_generate_utterance(
     m = re.search(r'"utterance"\s*:\s*"(?P<val>.*?)"', s, re.DOTALL)
     if not m:
         print(f"ERROR: Failed to parse JSON from response: {gpt_response}...")
-        return s, False
+        result["utterance"] = s
+        return result
 
     val = m.group("val")
     try:
@@ -64,15 +64,15 @@ def run_LLM_generate_utterance(
                .replace("\r", "\\r")
                .replace("\n", "\\n")
         )
-        utterance = json.loads(f'"{safe}"')
+        result["utterance"] = json.loads(f'"{safe}"')
     except Exception:
-        utterance = val
+        result["utterance"] = val
 
     # Regex fallback for Sales Done
     m2 = re.search(r'"Sales Done"\s*:\s*(true|false)', s, re.IGNORECASE)
-    sales_done = bool(m2 and m2.group(1).lower() == "true")
+    result["sales"] = bool(m2 and m2.group(1).lower() == "true")
 
-    return utterance, sales_done
+    return result
 
 
   def _get_fail_safe() -> None:
@@ -88,12 +88,11 @@ def run_LLM_generate_utterance(
   fail_safe = _get_fail_safe() 
 
   # Generate the utterance using the chat_safe_generate function
-  output, sales, prompt, prompt_input, fail_safe = chat_safe_generate(
+  output, prompt, prompt_input, fail_safe = chat_safe_generate(
     prompt_input, prompt_lib_file, model, 1, fail_safe, 
     _func_clean_up, verbose)
 
-
-  return output, sales, [output, sales, prompt, prompt_input, fail_safe]
+  return output, [output, prompt, prompt_input, fail_safe]
 
 
 class ConversationBasedInteraction:
@@ -149,22 +148,22 @@ class ConversationBasedInteraction:
         
         # Create dialogue string and anchor for memory retrieval
         str_dialogue = "".join(f"[{row[0]}]: {row[1]}\n" for row in curr_dialogue)
-        str_dialogue += f"[Fill in]\n"
+        str_dialogue += f"[{agent.scratch.get_fullname()}]: "
         anchor = str_dialogue
         
         # Use working memory to generate agent description
         agent_desc = agent.working_memory.generate_agent_description(agent, anchor)
         
-        # Generate response using LLM (Trade dection)
-        response, sales, _ = run_LLM_generate_utterance(
+        # Generate response using LLM (Trade detection)
+        result_dict, _ = run_LLM_generate_utterance(
                  agent_desc, str_dialogue, context, "1", LLM_ANALYZE_VERS)
                 
         
         # Add agent's response to working memory and conversation
-        agent.working_memory.add_conversation_turn(agent.scratch.get_fullname(), response)
-        conversation_data["dialogue"].append([agent.scratch.get_fullname(), response])
+        agent.working_memory.add_conversation_turn(agent.scratch.get_fullname(), result_dict["utterance"])
+        conversation_data["dialogue"].append([agent.scratch.get_fullname(), result_dict["utterance"]])
         
-        return response, sales
+        return result_dict["utterance"], result_dict["sales"]
     
     def end_conversation(self, conversation_id: str, time_step: int = 0, testing_mode: bool = False) -> bool:
         """ End Conversation and save to the memory file + the trade summary. """
