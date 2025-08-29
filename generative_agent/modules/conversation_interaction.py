@@ -34,10 +34,10 @@ def run_LLM_generate_utterance(
   def _func_clean_up(gpt_response: str, prompt: str = "") -> Dict[str, Any]:
     """
     Extract response data as a dictionary from a JSON-like response.
-    Returns dict with "utterance" and "sales" keys.
+    Returns dict with "utterance", "sales", and "ended" keys.
     """
     s = (gpt_response or "").strip()
-    result = {"utterance": "", "sales": False}
+    result = {"utterance": "", "sales": False, "ended": False}
 
     # Try full JSON parse first
     try:
@@ -45,6 +45,21 @@ def run_LLM_generate_utterance(
         if isinstance(parsed, dict) and "utterance" in parsed:
             result["utterance"] = parsed["utterance"]
             result["sales"] = bool(parsed.get("Sales Done") or parsed.get("sales_done") or parsed.get("sales"))
+            # Support multiple possible keys for conversation end flag
+            keys = [
+                "ended",
+                "end",
+                "conversation_ended",
+                "conversationEnded",
+            ]
+            found_any = any(k in parsed for k in keys)
+            if found_any:
+                result["ended"] = bool(
+                    parsed.get("ended")
+                    or parsed.get("end")
+                    or parsed.get("conversation_ended")
+                    or parsed.get("conversationEnded")
+                )
             return result
     except Exception:
         pass  # fallback to regex
@@ -71,6 +86,11 @@ def run_LLM_generate_utterance(
     # Regex fallback for Sales Done
     m2 = re.search(r'"Sales Done"\s*:\s*(true|false)', s, re.IGNORECASE)
     result["sales"] = bool(m2 and m2.group(1).lower() == "true")
+
+    # Regex fallback for ended
+    m3 = re.search(r'"ended"\s*:\s*(true|false)', s, re.IGNORECASE)
+    if m3:
+        result["ended"] = m3.group(1).lower() == "true"
 
     return result
 
@@ -157,18 +177,40 @@ class ConversationBasedInteraction:
         # Generate response using LLM (Trade detection)
         result_dict, _ = run_LLM_generate_utterance(
                  agent_desc, str_dialogue, context, "1", LLM_ANALYZE_VERS)
-                
-        
+
+        print(f"result_dict: {result_dict}")
+
         # Add agent's response to working memory and conversation
         agent.working_memory.add_conversation_turn(agent.scratch.get_fullname(), result_dict["utterance"])
         conversation_data["dialogue"].append([agent.scratch.get_fullname(), result_dict["utterance"]])
         
-        return result_dict["utterance"], result_dict["sales"]
+        return result_dict["utterance"], result_dict["sales"], result_dict["ended"]
     
-    def end_conversation(self, conversation_id: str, time_step: int = 0, testing_mode: bool = False) -> bool:
-        """ End Conversation and save to the memory file + the trade summary. """
+    def end_conversation(self, agents: List['GenerativeAgent'], conversation_id: str, time_step: int = 0, testing_mode: bool = False) -> bool:
+        """ End Conversation and save to the memory file of each agent + the trade summary. """
 
-        return None
+        print("=== Ending Conversation ===")
+        
+        for agent in agents:
+            # Generate personalized summary from agent's perspective
+            interaction_summary = agent.working_memory.summarize_interaction(agent)
+            print(f"{agent.scratch.get_fullname()}'s summary: '{interaction_summary}'")
+            
+            # Add summary to long-term memory
+            agent.remember(interaction_summary, time_step)
+            
+            # Save agent with new memory (unless in testing mode)
+            if not testing_mode:
+                agent.save()
+                print(f"✅ {agent.scratch.get_fullname()} saved with interaction summary")
+            else:
+                print(f"🧪 {agent.scratch.get_fullname()} summary generated (not saved - testing mode)")
+            
+            # Clear working memory
+            agent.working_memory.clear()
+
+        print("=== Conversation Ended ===")
+        return True
     
     def get_conversation_summary(self, conversation_id: str) -> str:
         """Get a summary of trades in the conversation."""
@@ -190,7 +232,7 @@ def utterance_conversation_based(
     Generate utterance using conversation-based approach.
     """
     print("time_step: ", time_step)
-    response, sales = conversation_manager.generate_utterance(agent=agent,
+    response, sales, ended = conversation_manager.generate_utterance(agent=agent,
     conversation_id=conversation_id,
     curr_dialogue=curr_dialogue,
     context=context)
@@ -204,6 +246,6 @@ def utterance_conversation_based(
     #      context=context,
     #      time_step=time_step)
 
-    return response, sales
+    return response, sales, ended
 
 

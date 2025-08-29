@@ -48,25 +48,41 @@ class ConversationTradeAnalyzer:
                         qty = int(meta.get("quantity", 0)) if isinstance(meta, dict) else 0
                     except Exception:
                         qty = 0
-                    items_list.append({"name": str(item_name), "quantity": qty})
+                    # Include unit price so the model can compute totals via prompt
+                    try:
+                        unit_price = float(
+                            (meta.get("value_per_unit") if isinstance(meta, dict) else 0.0)
+                            or (meta.get("value") if isinstance(meta, dict) else 0.0)
+                            or 0.0
+                        )
+                    except Exception:
+                        unit_price = 0.0
+                    items_list.append({"name": str(item_name), "quantity": qty, "value": unit_price})
             elif isinstance(items_map, list):
                 # Fallback if a list is ever returned
                 for it in items_map:
                     if isinstance(it, dict):
+                        try:
+                            unit_price = float(it.get("value", 0.0) or 0.0)
+                        except Exception:
+                            unit_price = 0.0
                         items_list.append({
                             "name": str(it.get("name", "")),
-                            "quantity": int(it.get("quantity", 0) or 0)
+                            "quantity": int(it.get("quantity", 0) or 0),
+                            "value": unit_price
                         })
             inventories[agent_name] = items_list
 
         instruction = (
             "You extract a single commerce transaction from a conversation. "
             "Reply with JSON only. Schema: {\"participants\":{\"seller\":str,\"buyer\":str},\"items\":[{\"name\":str,\"quantity\":int,\"value\":float}]} . "
-            "If a numeric field is missing/ambiguous use 0. Do not add any extra keys or text. "
-            "You are also provided with the inventory of each participant, keyed by their name, as follows:\n"
+            "You are also provided with each participant's inventory (with item quantity and unit price) below. "
+            "If the conversation does not specify a price, compute each item's total value as quantity * unit price from the seller's inventory. "
+            "Only use 0 for value if the conversation explicitly indicates the item was free (e.g., a sample). "
+            "Do not add any extra keys or text. "
+            "Inventories:\n"
             f"{json.dumps(inventories, indent=2)}\n"
             "Match or rename item names in your output as close as possible to the inventory item names."
-            "If the values was not provided, use the value from the inventory."
         )
 
         prompt = (
@@ -332,6 +348,11 @@ class ConversationTradeAnalyzer:
             
             if trade_executed:
                 print(f"Trade executed successfully: {json_response.get('participants', {}).get('seller', '')} sold items to {json_response.get('participants', {}).get('buyer', '')}")
+                
+                # Record trade in working memory for each agent
+                for agent in agents:
+                    agent.working_memory.record_trade(json_response)
+                    
             else:
                 print("Trade analysis detected but execution failed")
                 if not seller_success:

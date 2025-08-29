@@ -7,6 +7,7 @@ from generative_agent.generative_agent import *
 from testing.memories.rowan_greenwood_memories import *
 from testing.memories.jasmine_carter_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
+from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
 
 #from testing.questions.rowan_greenwood_questions import *
 
@@ -56,6 +57,7 @@ def setup_agent_inventory(agent, agent_name):
   # Clear existing inventory and records
   agent.inventory.items.clear()
   agent.inventory.records.clear()
+  agent.save()  # Save the cleared inventory to JSON files
   
   if agent_name == "rowan_greenwood":
     # Rowan: Real estate agent with herbal products
@@ -71,6 +73,8 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("notebooks", 8, 1, 3.50, "High-quality notebooks")
     agent.add_to_inventory("tutoring_sessions", 2, 1, 40.00, "One-hour math tutoring sessions")
     agent.add_to_inventory("cash", 75, 1, 1.00, "Student savings")
+
+  agent.save()  # Save the cleared inventory to JSON files
 
 
 def build_agent(): 
@@ -139,9 +143,10 @@ def test_conversation(testing_mode=True):
     print("💾 LIVE MODE: Changes WILL be saved to agent files")
   print()
   
+  agents = ['rowan_greenwood', 'jasmine_carter']
   # Load existing agents
-  agent1 = GenerativeAgent("Synthetic", "rowan_greenwood")
-  agent2 = GenerativeAgent("Synthetic", "jasmine_carter")
+  agent1 = GenerativeAgent("Synthetic", agents[0])
+  agent2 = GenerativeAgent("Synthetic", agents[1])
   
   print("Initial inventories:")
   print(f"Rowan ({agent1.scratch.get_fullname()}): {agent1.get_all_items_with_values()}")
@@ -160,19 +165,28 @@ def test_conversation(testing_mode=True):
   print("=== Starting Conversation (No Real-Time Trade Detection) ===")
   
   # Let them have several exchanges
-  for turn in range(4):
+  for turn in range(12):
     # if turn == 0:
     #   curr_dialogue.append(["Rowan", "Hello! Welcome to my market stall. I have some excellent herbal teas and remedies for sale today."])
     # else:
 
-    agent1_response, sales1 = agent1.Act(conversation_id, curr_dialogue, context, turn)
+    agent1_response, sales1, ended = agent1.Act(conversation_id, curr_dialogue, context, turn)
     curr_dialogue.append([f"{agent1.scratch.get_fullname()}", agent1_response])
-    print(f"{agent1.scratch.get_fullname()}: {agent1_response}")
-  
-    agent2_response, sales2 = agent2.Act(conversation_id, curr_dialogue, context, turn)
+    #print(f"{agent1.scratch.get_fullname()}: {agent1_response}")
+    if ended == True:
+      print(f"Conversation ended at time step {turn}")
+      ConversationBasedInteraction().end_conversation(agents=[agent1, agent2], conversation_id=conversation_id, time_step=turn)
+      break
+
+    agent2_response, sales2, ended = agent2.Act(conversation_id, curr_dialogue, context, turn)
     curr_dialogue.append([f"{agent2.scratch.get_fullname()}", agent2_response])
-    print(f"{agent2.scratch.get_fullname()}: {agent2_response}")
+    #print(f"{agent2.scratch.get_fullname()}: {agent2_response}")
     print()
+
+    if ended == True:
+      print(f"Conversation ended at time step {turn}")
+      ConversationBasedInteraction().end_conversation(agents=[agent1, agent2], conversation_id=conversation_id, time_step=turn)
+      break
 
     if sales1 == True or sales2 == True:
       print(f"Sales detected at time step {turn}")
@@ -190,48 +204,84 @@ def test_conversation(testing_mode=True):
   return agent1, agent2
 
 
+def test_interaction_summary():
+  """Test the interaction summarization feature with automatic end_conversation."""
+  print("=== Testing Automatic Interaction Summary Feature ===")
+  
+  # Load existing agents
+  rowan = GenerativeAgent("Synthetic", "rowan_greenwood")
+  jasmine = GenerativeAgent("Synthetic", "jasmine_carter")
+  
+  print(f"Testing with {rowan.scratch.get_fullname()} and {jasmine.scratch.get_fullname()}")
+  print()
+  
+  # Create a sample conversation for testing
+  conversation_id = "test_summary_001"
+  context = "Meeting at the local farmers market"
+  
+  # Start interaction in working memory
+  rowan.working_memory.start_new_interaction(context, conversation_id)
+  jasmine.working_memory.start_new_interaction(context, conversation_id)
+  
+  # Simulate a conversation with some trades
+  sample_dialogue = [
+    ["Rowan Greenwood", "Good morning! I've got some lovely herbal tea blends today. Fresh mint and chamomile, $15 each."],
+    ["Jasmine Carter", "That sounds perfect for studying. I'll take one herbal tea please."],
+    ["Rowan Greenwood", "Excellent choice! Just tap your digital cash on my machine."],
+    ["Jasmine Carter", "Tapping my cash now. Thank you!"],
+    ["Rowan Greenwood", "Transaction complete. That blend should help with focus and relaxation. Enjoy!"],
+    ["Jasmine Carter", "Perfect timing before my calculus exam. Take care!"]
+  ]
+  
+  # Add conversation turns to working memory
+  for speaker, message in sample_dialogue:
+    rowan.working_memory.add_conversation_turn(speaker, message)
+    jasmine.working_memory.add_conversation_turn(speaker, message)
+  
+  # Simulate a trade record
+  sample_trade = {
+    "participants": {"seller": "Rowan Greenwood", "buyer": "Jasmine Carter"},
+    "items": [{"name": "herbal_tea", "quantity": 1, "value": 15.0}],
+    "time_step": 0
+  }
+  rowan.working_memory.record_trade(sample_trade)
+  jasmine.working_memory.record_trade(sample_trade)
+  
+  print("Sample conversation:")
+  print(rowan.working_memory.get_conversation_text())
+  print()
+  
+  # Test the automatic summarization in end_conversation
+  print("=== Testing Automatic Summarization ===")
+  conversation_manager = ConversationBasedInteraction()
+  
+  # End conversation with testing mode (so agents aren't permanently saved)
+  conversation_manager.end_conversation(
+    agents=[rowan, jasmine], 
+    conversation_id=conversation_id, 
+    time_step=0, 
+    testing_mode=True
+  )
+  
+  print()
+  print("✅ Test completed! The end_conversation method automatically:")
+  print("   - Generated personalized summaries for each agent")
+  print("   - Added summaries to their long-term memory") 
+  print("   - Would save agents (skipped in testing mode)")
+  print("   - Cleaned up working memory")
+
+
 def main(): 
   # build_agent()
+  # setup_agent_inventory(GenerativeAgent("Synthetic", "rowan_greenwood"), "rowan_greenwood")
+  # setup_agent_inventory(GenerativeAgent("Synthetic", "jasmine_carter"), "jasmine_carter")
   # interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
-  test_conversation()
+  test_interaction_summary()
 
 
 
 if __name__ == '__main__':
   main()
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

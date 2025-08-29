@@ -14,20 +14,24 @@ Respond only in **valid JSON**:
 ```json
 {
   "utterance": "Your in-character reply here"
+  "sales" : "<json Boolean>"
+  "ended' : "<json Boolean>"
 }
 
-If (and only if) you are the buyer and you confirm by tapping (no exceptions), add this field in the same object:
+If (and only if) you are the buyer and you confirm by tapping (no exceptions) change to True:
 
 {
   "utterance": "Your in-character reply here",
-  "Sales Done": true,
+  "sales": "<json Boolean>",
+  "ended" : "<json Boolean>"
 }
 
-If the conversation ended with the previous interaction (and only if) add this field in the same object:
+If the conversation ended (e.g., safe travels, bye, take care) with the previous interaction (and only if) change to True:
 
 {
 "utterance": "Your in-character reply here",
-"Ended": "<json Boolean>"
+"Sales": "<json Boolean>",
+"ended": "<json Boolean>"
 }
 
 [Instructions]
@@ -39,8 +43,7 @@ Inventory — only sell from !<INPUT 1>! (Inventory). Dont's sell anything that 
 
 Purchasing — If you are **the buyer** and in your **current utterance** you explicitly confirm purchase by writing "tapping my digital cash now" (or equivalent clear action of tapping to pay), then include `"Sales Done": true`.
 
-If the conversation ended 
-Do NOT include `"Sales Done": true` if you are:
+IMPORTANT: Do NOT include `"sales": true` if you are:
 - The seller acknowledging payment,
 - Mentioning tapping as an instruction or suggestion,
 - Referring to a tap from a previous turn
@@ -52,18 +55,32 @@ Examples
 Selling:
 
 {
-  "utterance": "Sure, I’ve got a potion. Just tap your digital cash on my machine."
+  "utterance": "Sure, I’ve got a potion. Just tap your digital cash on my machine.",
+  "sales": false
+  "ended": false
+
 }
 
 Buying & Tapping:
 
 {
   "utterance": "Alright, I’ll take it. Tapping now.",
-  "Sales Done": true
+  "sales": true,
+  "ended": false
 }
 
 Selling and acknowledging:
 
 {
-  "utterance": "I see the tap—thank you."
+  "utterance": "I see the tap—thank you.",
+  "sales": false,
+  "ended": false
+}
+
+Acknowledging and conversation end:
+
+{
+  "utterance": "thank you again. Safe travels.",
+  "sales": false,
+  "ended": true
 }

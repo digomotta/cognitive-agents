@@ -1,6 +1,11 @@
-from typing import Dict, List, Any, Set
+from typing import Dict, List, Any, Set, TYPE_CHECKING
 import json
 from datetime import datetime
+from simulation_engine.gpt_structure import gpt_request
+from simulation_engine.settings import LLM_ANALYZE_VERS
+
+if TYPE_CHECKING:
+    from generative_agent.generative_agent import GenerativeAgent
 
 class WorkingMemory:
     """
@@ -131,20 +136,55 @@ class WorkingMemory:
         """Get the current conversation as formatted text."""
         return "\n".join([f"[{row[0]}]: {row[1]}" for row in self.current_conversation])
     
-    def get_state_summary(self) -> str:
-        """Get a summary of current working memory state."""
-        return f"""Working Memory State:
-- Conversation turns: {self.turn_count}
-- Recalled memories: {len(self.recalled_memories)}
-- Inventory items: {len(self.inventory_snapshot)}
-- Processed trade segments: {len(self.processed_trades)}
-- Recent trades: {len(self.recent_trades)}
-- Last update: {datetime.fromtimestamp(self.last_update_time).strftime('%H:%M:%S')}"""
-    
-    def end_interaction(self):
-        """End the current interaction and clear working memory."""
-        print(f"Ending interaction {self.interaction_id} with {self.turn_count} turns")
-        self.clear()
+    def summarize_interaction(self, agent: 'GenerativeAgent') -> str:
+        """
+        Generate a personalized summary of the entire interaction using the agent's personality.
+        This creates a memory-worthy summary from the agent's perspective.
+        """
+        if not self.current_conversation:
+            return "No interaction occurred."
+        
+        # Get agent's personality information
+        agent_name = agent.scratch.get_fullname()
+        personality = agent.scratch.self_description
+        speech_pattern = agent.scratch.speech_pattern
+        
+        # Format the conversation
+        conversation_text = self.get_conversation_text()
+        
+        # Create context for trades if any occurred
+        trades_context = ""
+        if self.recent_trades:
+            trades_context = f"\nTrades that occurred: {len(self.recent_trades)} transactions\n"
+            for trade in self.recent_trades:
+                trades_context += f"- {trade.get('participants', {}).get('seller', 'Unknown')} sold to {trade.get('participants', {}).get('buyer', 'Unknown')}: {trade.get('items', [])}\n"
+        
+        # Create the prompt for LLM to generate personalized summary
+        prompt = f"""You are {agent_name}, with the following personality:
+Personality: {personality}
+Speech pattern: {speech_pattern}
+
+Please write a first-person summary of this interaction from your perspective. The summary should:
+1. Reflect your personality and speaking style
+2. Capture the key events and outcomes
+3. Include your thoughts/feelings about what happened
+4. Be suitable for long-term memory storage
+
+Conversation that occurred:
+{conversation_text}
+{trades_context}
+
+Write a concise first-person summary (2-4 sentences) of this interaction from {agent_name}'s perspective:"""
+
+        try:
+            # Generate the summary using LLM
+            summary = gpt_request(prompt, model=LLM_ANALYZE_VERS, max_tokens=200)
+            #self.summary = summary.strip()
+            return summary.strip() if summary else f"I had a conversation at {datetime.fromtimestamp(self.last_update_time).strftime('%H:%M on %B %d')}."
+        except Exception as e:
+            print(f"Error generating interaction summary: {e}")
+            # Fallback to basic summary
+            return f"I had a {self.turn_count}-turn conversation. {trades_context.strip() if trades_context else 'No trades occurred.'}"
     
     def clear(self):
         """Clear all working memory."""
