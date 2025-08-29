@@ -306,7 +306,7 @@ class MemoryStream:
 
 
   def remember(self, content: str, time_step: int = 0):
-    score = generate_importance_score([content])[0]
+    score = generate_importance_score([content])[0][0]
     self._add_node(time_step, "observation", content, score, None)
 
 

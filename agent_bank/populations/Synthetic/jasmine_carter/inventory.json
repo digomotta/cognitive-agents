@@ -34,11 +34,27 @@
     },
     {
       "name": "cash",
-      "quantity": 75,
+      "quantity": 52,
       "value": 1.0,
       "description": "Student savings",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 2
+    },
+    {
+      "name": "herbal_tea",
+      "quantity": 1,
+      "value": 15.0,
+      "description": "Purchased 1 herbal_tea from Rowan Greenwood for $15.0",
+      "created": 2,
+      "last_modified": 2
+    },
+    {
+      "name": "cannabis",
+      "quantity": 1,
+      "value": 8.5,
+      "description": "Purchased 1 cannabis from Rowan Greenwood for $8.5",
+      "created": 2,
+      "last_modified": 2
     }
   ],
   "records": [
@@ -86,6 +102,42 @@
       "time_step": 1,
       "description": "Student savings",
       "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "trade_receive",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 2,
+      "description": "Purchased 1 herbal_tea from Rowan Greenwood for $15.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 6,
+      "action": "trade_give",
+      "item_name": "cash",
+      "quantity": 15,
+      "time_step": 2,
+      "description": "Paid $15.0 for 1 herbal_tea from Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 7,
+      "action": "trade_receive",
+      "item_name": "cannabis",
+      "quantity": 1,
+      "time_step": 2,
+      "description": "Purchased 1 cannabis from Rowan Greenwood for $8.5",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 8,
+      "action": "trade_give",
+      "item_name": "cash",
+      "quantity": 8,
+      "time_step": 2,
+      "description": "Paid $8.5 for 1 cannabis from Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
     }
   ]
 }

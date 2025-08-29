@@ -2,19 +2,19 @@
   "items": [
     {
       "name": "herbal_tea",
-      "quantity": 5,
+      "quantity": 4,
       "value": 15.0,
       "description": "Calming herbal tea blend",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 2
     },
     {
       "name": "cannabis",
-      "quantity": 10,
+      "quantity": 9,
       "value": 8.5,
       "description": "Medicinal cannabis",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 2
     },
     {
       "name": "property_contracts",
@@ -26,11 +26,11 @@
     },
     {
       "name": "cash",
-      "quantity": 150,
+      "quantity": 173,
       "value": 1.0,
       "description": "Starting business cash",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 2
     }
   ],
   "records": [
@@ -69,6 +69,42 @@
       "time_step": 1,
       "description": "Starting business cash",
       "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "trade_give",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 2,
+      "description": "Sold 1 herbal_tea to Jasmine Carter for $15.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 5,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 15,
+      "time_step": 2,
+      "description": "Received $15.0 from selling 1 herbal_tea to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 6,
+      "action": "trade_give",
+      "item_name": "cannabis",
+      "quantity": 1,
+      "time_step": 2,
+      "description": "Sold 1 cannabis to Jasmine Carter for $8.5",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 7,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 8,
+      "time_step": 2,
+      "description": "Received $8.5 from selling 1 cannabis to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
     }
   ]
 }

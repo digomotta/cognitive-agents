@@ -20,7 +20,14 @@ If (and only if) you are the buyer and you confirm by tapping (no exceptions), a
 
 {
   "utterance": "Your in-character reply here",
-  "Sales Done": true
+  "Sales Done": true,
+}
+
+If the conversation ended with the previous interaction (and only if) add this field in the same object:
+
+{
+"utterance": "Your in-character reply here",
+"Ended": "<json Boolean>"
 }
 
 [Instructions]
@@ -32,6 +39,7 @@ Inventory — only sell from !<INPUT 1>! (Inventory). Dont's sell anything that 
 
 Purchasing — If you are **the buyer** and in your **current utterance** you explicitly confirm purchase by writing "tapping my digital cash now" (or equivalent clear action of tapping to pay), then include `"Sales Done": true`.
 
+If the conversation ended 
 Do NOT include `"Sales Done": true` if you are:
 - The seller acknowledging payment,
 - Mentioning tapping as an instruction or suggestion,
