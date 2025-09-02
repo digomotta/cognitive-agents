@@ -6,8 +6,10 @@ from generative_agent.generative_agent import *
 
 from testing.memories.rowan_greenwood_memories import *
 from testing.memories.jasmine_carter_memories import *
+from testing.memories.mina_kim_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
+from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
 
 #from testing.questions.rowan_greenwood_questions import *
 
@@ -64,7 +66,7 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("herbal_tea", 5, 1, 15.00, "Calming herbal tea blend")
     agent.add_to_inventory("cannabis", 10, 1, 8.50, "Medicinal cannabis")
     agent.add_to_inventory("property_contracts", 3, 1, 200.00, "Real estate contracts ready to sign")
-    agent.add_to_inventory("cash", 150, 1, 1.00, "Starting business cash")
+    agent.add_to_inventory("digital cash", 150, 1, 1.00, "Starting business cash")
     
   elif agent_name == "jasmine_carter":
     # Jasmine: Math student with academic supplies
@@ -72,7 +74,18 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("graphing_calculator", 1, 1, 120.00, "TI-84 Plus calculator")
     agent.add_to_inventory("notebooks", 8, 1, 3.50, "High-quality notebooks")
     agent.add_to_inventory("tutoring_sessions", 2, 1, 40.00, "One-hour math tutoring sessions")
-    agent.add_to_inventory("cash", 75, 1, 1.00, "Student savings")
+    agent.add_to_inventory("digital cash", 75, 1, 1.00, "Student savings")
+    
+  elif agent_name == "mina_kim":
+    # Mina: Korean beauty cosmetics expert
+    agent.add_to_inventory("sheet_masks", 20, 1, 3.50, "Korean sheet masks - various types")
+    agent.add_to_inventory("essence", 5, 1, 28.00, "Korean essence serums")
+    agent.add_to_inventory("cushion_foundation", 3, 1, 35.00, "BB cushion foundations")
+    agent.add_to_inventory("lip_tints", 8, 1, 12.00, "Korean gradient lip tints")
+    agent.add_to_inventory("sunscreen", 4, 1, 22.00, "Korean SPF50+ sunscreens")
+    agent.add_to_inventory("sleeping_masks", 6, 1, 18.00, "Overnight sleeping masks")
+    agent.add_to_inventory("cleansing_oil", 3, 1, 25.00, "Double cleansing oils")
+    agent.add_to_inventory("digital cash", 100, 1, 1.00, "K-beauty business earnings")
 
   agent.save()  # Save the cleared inventory to JSON files
 
@@ -92,7 +105,14 @@ def build_agent():
   setup_agent_inventory(jasmine, "jasmine_carter")
   jasmine.save("Synthetic", "jasmine_carter")
   
-  print("Both agents built with fresh inventories!")
+  # Build Mina
+  mina = GenerativeAgent("Synthetic_Base", "mina_kim")
+  for m in mina_memories:
+    mina.remember(m)
+  setup_agent_inventory(mina, "mina_kim")
+  mina.save("Synthetic", "mina_kim")
+  
+  print("All agents built with fresh inventories!")
 
 
 def interview_agent(): 
@@ -127,81 +147,40 @@ def test_inventory_in_conversation():
 
 
 
-def test_conversation(testing_mode=True):
+def test_markov_chain_simulation(testing_mode=True):
   """
-  Demonstrate the new conversation-based trading system that analyzes 
-  the complete conversation and executes trades at the end.
-  
-  Args:
-    testing_mode: If True, don't save changes to agent files (default: True for safety)
+  Run Markov chain simulation where each agent is a state.
+  State transitions i→i trigger reflections, i→j trigger conversations.
   """
-  print("=== Conversation-Based Trading Demo ===")
-  print("This demo uses the new system that reads the entire conversation")
-  if testing_mode:
-    print("🧪 TESTING MODE: Changes will NOT be saved to agent files")
-  else:
-    print("💾 LIVE MODE: Changes WILL be saved to agent files")
-  print()
+  print("=== Markov Agent Chain Simulation ===")
   
-  agents = ['rowan_greenwood', 'jasmine_carter']
-  # Load existing agents
-  agent1 = GenerativeAgent("Synthetic", agents[0])
-  agent2 = GenerativeAgent("Synthetic", agents[1])
+  # Load agents for the chain
+  agent_names = ["rowan_greenwood", "jasmine_carter"]
+  agents = load_agents_for_chain("Synthetic", agent_names)
   
-  print("Initial inventories:")
-  print(f"Rowan ({agent1.scratch.get_fullname()}): {agent1.get_all_items_with_values()}")
-  print(f"Jasmine ({agent2.scratch.get_fullname()}): {agent2.get_all_items_with_values()}")
-  print()
+  if len(agents) < 2:
+    print("Error: Could not load required agents")
+    return None
   
-  # Context for trading
-  context = "You are at a local market."
+  # Create Markov chain and run simulation
+  chain = MarkovAgentChain()
   
-  # Use a unique conversation ID
-  conversation_id = "market_conversation_001"
+  results = chain.run_markov_chain(
+    agents=agents,
+    context="Local community market and social interactions",
+    num_steps=1,
+    self_reflection_prob=0.99,  # 30% chance to stay in same state (reflect)
+    interaction_prob=0.01,      # 70% chance to transition to other agent (converse)
+    conversation_max_turns=8,
+    testing_mode=testing_mode
+  )
   
-  # Start conversation with conversation-based approach (no real-time trade detection)
-  curr_dialogue = []
+  print("=== Simulation Results ===")
+  print(f"Total conversations: {results['conversation_count']}")
+  print(f"Total reflections: {results['reflection_count']}")
+  print(f"Final agent state: {results['final_agent']}")
   
-  print("=== Starting Conversation (No Real-Time Trade Detection) ===")
-  
-  # Let them have several exchanges
-  for turn in range(12):
-    # if turn == 0:
-    #   curr_dialogue.append(["Rowan", "Hello! Welcome to my market stall. I have some excellent herbal teas and remedies for sale today."])
-    # else:
-
-    agent1_response, sales1, ended = agent1.Act(conversation_id, curr_dialogue, context, turn)
-    curr_dialogue.append([f"{agent1.scratch.get_fullname()}", agent1_response])
-    #print(f"{agent1.scratch.get_fullname()}: {agent1_response}")
-    if ended == True:
-      print(f"Conversation ended at time step {turn}")
-      ConversationBasedInteraction().end_conversation(agents=[agent1, agent2], conversation_id=conversation_id, time_step=turn)
-      break
-
-    agent2_response, sales2, ended = agent2.Act(conversation_id, curr_dialogue, context, turn)
-    curr_dialogue.append([f"{agent2.scratch.get_fullname()}", agent2_response])
-    #print(f"{agent2.scratch.get_fullname()}: {agent2_response}")
-    print()
-
-    if ended == True:
-      print(f"Conversation ended at time step {turn}")
-      ConversationBasedInteraction().end_conversation(agents=[agent1, agent2], conversation_id=conversation_id, time_step=turn)
-      break
-
-    if sales1 == True or sales2 == True:
-      print(f"Sales detected at time step {turn}")
-      sales_manager = ConversationTradeAnalyzer()
-      sales_manager.execute_trade(agents=[agent1, agent2],
-      conversation_id=conversation_id,
-      conversation_text=curr_dialogue,
-      context=context,
-      time_step=turn)
-
-  print(f"Rowan's inventory: {agent1.get_all_items_with_values()}")
-  print(f"Jasmine's inventory: {agent2.get_all_items_with_values()}")
-  print()
-  
-  return agent1, agent2
+  return results
 
 
 def test_interaction_summary(testing_mode=True):
@@ -272,13 +251,16 @@ def test_interaction_summary(testing_mode=True):
 
 
 def main(): 
+  # Simplified main for multi-agent Markov chain interactions
   # build_agent()
   # setup_agent_inventory(GenerativeAgent("Synthetic", "rowan_greenwood"), "rowan_greenwood")
   # setup_agent_inventory(GenerativeAgent("Synthetic", "jasmine_carter"), "jasmine_carter")
   # interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
-  test_interaction_summary(testing_mode=False)
+  
+  # Use the new Markov agent chain system
+  test_markov_chain_simulation(testing_mode=False)
 
 
 

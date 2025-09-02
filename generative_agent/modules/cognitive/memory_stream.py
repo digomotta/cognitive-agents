@@ -319,9 +319,11 @@ class MemoryStream:
                             time_step, 
                             retrieval_count, 
                             verbose=False)[anchor]
+    print(f"   → Retrieved {len(records)} records for reflection: {anchor}")
     record_ids = [i.node_id for i in records]
     reflections = generate_reflection(records, anchor, reflection_count)
-    scores = generate_importance_score(reflections)
+    scores = generate_importance_score(reflections)[0]
+
 
     for count, reflection in enumerate(reflections): 
       self._add_node(time_step, "reflection", reflections[count], 

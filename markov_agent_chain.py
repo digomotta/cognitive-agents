@@ -1,0 +1,365 @@
+"""
+Markov Chain Agent Interaction System
+
+In this system:
+- Each agent is a state in the Markov chain
+- State transition i→i: Agent i reflects on memories
+- State transition i→j: Agents i and j have a 2-agent conversation
+- Chain continues: i→j (conversation), j→k (conversation), etc.
+
+This creates a dynamic system where agents interact pairwise based on 
+Markov chain probabilities, with reflection when staying in same state.
+"""
+
+import numpy as np
+import random
+import time
+from typing import List, Dict, Optional
+
+from simulation_engine.settings import *
+from simulation_engine.global_methods import *
+from generative_agent.generative_agent import *
+from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
+from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
+
+
+class MarkovAgentChain:
+    """Markov chain where each state is an agent, transitions trigger interactions."""
+    
+    def __init__(self):
+        self.trade_analyzer = ConversationTradeAnalyzer()
+        self.conversation_manager = ConversationBasedInteraction()
+        self.interaction_history = []
+    
+    def create_agent_transition_matrix(self, num_agents: int, 
+                                     self_reflection_probability: float = 0.3,
+                                     interaction_probability: float = 0.7) -> np.ndarray:
+        """
+        Create transition matrix where each state represents an agent.
+        
+        Args:
+            num_agents: Number of agents (states) in the chain
+            self_reflection_probability: Probability of staying in same state (reflection)
+            interaction_probability: Probability of transitioning to other agents
+            
+        Returns:
+            np.ndarray: Transition matrix where matrix[i][j] = P(agent_i → agent_j)
+        """
+        matrix = np.zeros((num_agents, num_agents))
+        
+        for i in range(num_agents):
+            # Probability of staying in same state (self-reflection)
+            matrix[i][i] = self_reflection_probability
+            
+            # Distribute interaction probability among other agents
+            if num_agents > 1:
+                other_prob = interaction_probability / (num_agents - 1)
+                for j in range(num_agents):
+                    if i != j:
+                        matrix[i][j] = other_prob
+        
+        # Normalize rows to ensure probabilities sum to 1
+        for i in range(num_agents):
+            row_sum = np.sum(matrix[i])
+            if row_sum > 0:
+                matrix[i] = matrix[i] / row_sum
+        
+        return matrix
+    
+    def select_next_agent_state(self, current_state: int, transition_matrix: np.ndarray) -> int:
+        """
+        Select next agent state based on Markov transition probabilities.
+        
+        Args:
+            current_state: Current agent index (state)
+            transition_matrix: Transition probability matrix
+            
+        Returns:
+            int: Next agent index (state)
+        """
+        probabilities = transition_matrix[current_state]
+        return np.random.choice(len(probabilities), p=probabilities)
+    
+    def agent_self_reflection(self, agent: GenerativeAgent, context: str, step: int, testing_mode: bool = True):
+        """
+        Handle agent self-reflection when staying in same state.
+        
+        Args:
+            agent: Agent to reflect
+            context: Overall simulation context
+            step: Current step in the chain
+        """
+        print(f"Step {step}: {agent.scratch.get_fullname()} stays in current state → REFLECTS")
+        
+        # Create reflection anchor based on recent interactions
+        reflection_anchor = f"recent interactions and experiences in {context}"
+        if self.interaction_history:
+            last_interaction = self.interaction_history[-1]
+            if last_interaction['type'] == 'conversation' and agent.scratch.get_fullname() in last_interaction['participants']:
+                reflection_anchor = f"recent conversation about {last_interaction['context']}"
+        
+        # Trigger reflection
+        try:
+            agent.memory_stream.reflect(reflection_anchor, reflection_count=3, retrieval_count=5, time_step=step)
+            if not testing_mode:
+                agent.save()  # Only save to persist reflections if not in testing mode
+                print(f"   → Reflected on: {reflection_anchor} (saved to JSON)")
+            else:
+                print(f"   → Reflected on: {reflection_anchor} (testing mode - not saved)")
+        except Exception as e:
+            print(f"   → Reflection failed: {e}")
+            # Try simpler reflection
+            try:
+                agent.remember(f"I reflected on {reflection_anchor} at step {step}")
+                if not testing_mode:
+                    agent.save()  # Only save the simple memory if not in testing mode
+                    print(f"   → Added simple reflection memory instead (saved to JSON)")
+                else:
+                    print(f"   → Added simple reflection memory instead (testing mode - not saved)")
+            except Exception as e2:
+                print(f"   → Both reflection methods failed: {e2}")
+        
+        # Record reflection in history
+        self.interaction_history.append({
+            'type': 'reflection',
+            'step': step,
+            'agent': agent.scratch.get_fullname(),
+            'anchor': reflection_anchor
+        })
+    
+    def two_agent_conversation(self, agent1: GenerativeAgent, agent2: GenerativeAgent, 
+                             context: str, step: int, max_turns: int = 8, 
+                             testing_mode: bool = True) -> Dict:
+        """
+        Conduct conversation between two agents.
+        
+        Args:
+            agent1: First agent
+            agent2: Second agent  
+            context: Conversation context
+            step: Current step in Markov chain
+            max_turns: Maximum conversation turns
+            testing_mode: Whether to save changes
+            
+        Returns:
+            Dict: Conversation results
+        """
+        conversation_id = f"markov_step_{step}_{agent1.scratch.get_fullname()}_{agent2.scratch.get_fullname()}_{int(time.time())}"
+        
+        print(f"Step {step}: {agent1.scratch.get_fullname()} → {agent2.scratch.get_fullname()} → CONVERSATION")
+        print(f"   Context: {context}")
+        
+        # Show initial inventories
+        print(f"   {agent1.scratch.get_fullname()}: {agent1.get_all_items_with_values()}")
+        print(f"   {agent2.scratch.get_fullname()}: {agent2.get_all_items_with_values()}")
+        
+        # Initialize conversation
+        curr_dialogue = []
+        trades_executed = []
+        conversation_ended = False
+        current_speaker = agent1  # Start with first agent
+        other_agent = agent2
+        
+        # Conversation loop
+        for turn in range(max_turns):
+            try:
+                # Current agent speaks
+                response, sales_detected, ended = current_speaker.Act(
+                    conversation_id, curr_dialogue, context, turn
+                )
+                curr_dialogue.append([current_speaker.scratch.get_fullname(), response])
+                print(f"   {current_speaker.scratch.get_fullname()}: {response}")
+                
+                # Check for conversation end
+                if ended:
+                    print(f"   → Conversation ended by {current_speaker.scratch.get_fullname()}")
+                    conversation_ended = True
+                    break
+                
+                # Handle trade detection
+                if sales_detected:
+                    print(f"   → Sales detected at turn {turn}")
+                    trade_result = self.trade_analyzer.execute_trade(
+                        agents=[agent1, agent2],
+                        conversation_id=conversation_id,
+                        conversation_text=curr_dialogue,
+                        context=context,
+                        time_step=turn
+                    )
+                    if trade_result:
+                        trades_executed.append(trade_result)
+                
+                # Switch speakers
+                current_speaker, other_agent = other_agent, current_speaker
+                
+            except Exception as e:
+                print(f"   → Error in conversation: {e}")
+                break
+        
+        # End conversation handling
+        self.conversation_manager.end_conversation(
+            agents=[agent1, agent2],
+            conversation_id=conversation_id,
+            time_step=turn if 'turn' in locals() else max_turns - 1,
+            testing_mode=testing_mode
+        )
+        
+        # Show final inventories
+        print(f"   Final {agent1.scratch.get_fullname()}: {agent1.get_all_items_with_values()}")
+        print(f"   Final {agent2.scratch.get_fullname()}: {agent2.get_all_items_with_values()}")
+        
+        # Record interaction in history
+        interaction_result = {
+            'type': 'conversation',
+            'step': step,
+            'participants': [agent1.scratch.get_fullname(), agent2.scratch.get_fullname()],
+            'context': context,
+            'dialogue': curr_dialogue,
+            'trades': trades_executed,
+            'turns': len(curr_dialogue),
+            'ended_naturally': conversation_ended
+        }
+        self.interaction_history.append(interaction_result)
+        
+        return interaction_result
+    
+    def run_markov_chain(self, agents: List[GenerativeAgent], 
+                        context: str = "Multi-agent simulation",
+                        num_steps: int = 20,
+                        self_reflection_prob: float = 0.3,
+                        interaction_prob: float = 0.7,
+                        transition_matrix: Optional[np.ndarray] = None,
+                        conversation_max_turns: int = 8,
+                        testing_mode: bool = True) -> Dict:
+        """
+        Run the Markov chain simulation with agents as states.
+        
+        Args:
+            agents: List of GenerativeAgent objects
+            context: Overall simulation context
+            num_steps: Number of Markov chain steps
+            self_reflection_prob: Probability of staying in same state (reflection)
+            interaction_prob: Probability of transitioning to other states
+            transition_matrix: Custom transition matrix (optional)
+            conversation_max_turns: Max turns per 2-agent conversation
+            testing_mode: Whether to save agent changes
+            
+        Returns:
+            Dict: Complete simulation results
+        """
+        if len(agents) < 2:
+            raise ValueError("Need at least 2 agents for Markov chain")
+        
+        print(f"=== Markov Agent Chain Simulation ===")
+        print(f"Agents (States): {[agent.scratch.get_fullname() for agent in agents]}")
+        print(f"Steps: {num_steps}")
+        print(f"Self-reflection probability: {self_reflection_prob}")
+        print(f"Interaction probability: {interaction_prob}")
+        print(f"Context: {context}")
+        print()
+        
+        # Create or use transition matrix
+        if transition_matrix is None:
+            transition_matrix = self.create_agent_transition_matrix(
+                len(agents), self_reflection_prob, interaction_prob
+            )
+        
+        print("Transition Matrix (Agent States):")
+        agent_names = [agent.scratch.get_fullname() for agent in agents]
+        print("     ", "  ".join([f"{name[:8]:<8}" for name in agent_names]))
+        for i, row in enumerate(transition_matrix):
+            print(f"{agent_names[i][:8]:<8}", "  ".join([f"{prob:.3f}" for prob in row]))
+        print()
+        
+        # Initialize chain state
+        current_state = 0  # Start with first agent
+        self.interaction_history = []
+        
+        # Run Markov chain steps
+        for step in range(num_steps):
+            current_agent = agents[current_state]
+            
+            # Select next state
+            next_state = self.select_next_agent_state(current_state, transition_matrix)
+            
+            if next_state == current_state:
+                # Stay in same state → Reflection
+                self.agent_self_reflection(current_agent, context, step + 1, testing_mode)
+            else:
+                # Transition to different state → Conversation
+                next_agent = agents[next_state]
+                self.two_agent_conversation(
+                    current_agent, next_agent, context, step + 1, 
+                    conversation_max_turns, testing_mode
+                )
+            
+            # Move to next state
+            current_state = next_state
+            print()  # Add spacing between steps
+        
+        # Generate summary
+        conversation_count = len([h for h in self.interaction_history if h['type'] == 'conversation'])
+        reflection_count = len([h for h in self.interaction_history if h['type'] == 'reflection'])
+        
+        print("=== Simulation Summary ===")
+        print(f"Total conversations: {conversation_count}")
+        print(f"Total reflections: {reflection_count}")
+        print(f"Final state: {agents[current_state].scratch.get_fullname()}")
+        
+        return {
+            'agents': [agent.scratch.get_fullname() for agent in agents],
+            'transition_matrix': transition_matrix.tolist(),
+            'interaction_history': self.interaction_history,
+            'conversation_count': conversation_count,
+            'reflection_count': reflection_count,
+            'final_state': current_state,
+            'final_agent': agents[current_state].scratch.get_fullname()
+        }
+
+
+def load_agents_for_chain(population: str, agent_names: List[str]) -> List[GenerativeAgent]:
+    """Load agents for Markov chain simulation."""
+    agents = []
+    for name in agent_names:
+        try:
+            agent = GenerativeAgent(population, name)
+            agents.append(agent)
+            print(f"Loaded: {agent.scratch.get_fullname()}")
+        except Exception as e:
+            print(f"Failed to load {name}: {e}")
+    return agents
+
+
+def test_markov_agent_chain():
+    """Test the Markov agent chain system."""
+    print("=== Testing Markov Agent Chain ===")
+    
+    # Load agents
+    agent_names = ["rowan_greenwood", "jasmine_carter"]
+    agents = load_agents_for_chain("Synthetic", agent_names)
+    
+    if len(agents) < 2:
+        print("Need at least 2 agents to test")
+        return
+    
+    # Create and run chain
+    chain = MarkovAgentChain()
+    
+    results = chain.run_markov_chain(
+        agents=agents,
+        context="Local community market interactions",
+        num_steps=15,
+        self_reflection_prob=0.4,
+        interaction_prob=0.6,
+        conversation_max_turns=6,
+        testing_mode=True
+    )
+    
+    print("\n=== Results Analysis ===")
+    print(f"Conversation-to-reflection ratio: {results['conversation_count']}:{results['reflection_count']}")
+    
+    return results
+
+
+if __name__ == '__main__':
+    test_markov_agent_chain()
