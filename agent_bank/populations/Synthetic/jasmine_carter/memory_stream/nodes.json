@@ -3,7 +3,7 @@
     "node_id": 0,
     "node_type": "observation",
     "content": "As a child, Jasmine spent countless weekends with her grandmother, exploring the forests and learning about local plant species, sparking her lifelong passion for nature.",
-    "importance": 72,
+    "importance": 68,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -12,7 +12,7 @@
     "node_id": 1,
     "node_type": "observation",
     "content": "In high school, Jasmine joined the Environmental Club and organized a school-wide recycling initiative, marking her first experience in environmental activism.",
-    "importance": 35,
+    "importance": 28,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -21,7 +21,7 @@
     "node_id": 2,
     "node_type": "observation",
     "content": "During her sophomore year of college, Jasmine interned with an urban planning nonprofit, where she saw firsthand the impact of green infrastructure on marginalized communities.",
-    "importance": 62,
+    "importance": 42,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -30,7 +30,7 @@
     "node_id": 3,
     "node_type": "observation",
     "content": "The sudden passing of her grandmother during her junior year deeply affected Jasmine, leaving her with an unspoken grief that she channeled into her environmental studies.",
-    "importance": 82,
+    "importance": 88,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -39,7 +39,7 @@
     "node_id": 4,
     "node_type": "observation",
     "content": "Graduating with honors from the University of Alabama, Jasmine delivered a commencement speech about the importance of sustainability and social justice.",
-    "importance": 35,
+    "importance": 52,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -48,7 +48,7 @@
     "node_id": 5,
     "node_type": "observation",
     "content": "After college, Jasmine took a position with an environmental consulting firm, where she spearheaded a project to introduce green roofs in urban communities.",
-    "importance": 18,
+    "importance": 25,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -57,7 +57,7 @@
     "node_id": 6,
     "node_type": "observation",
     "content": "A pivotal moment came when Jasmine led a protest against a major corporation\u2019s pollution in her city, which garnered media attention and increased her local visibility as an activist.",
-    "importance": 68,
+    "importance": 72,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -75,7 +75,7 @@
     "node_id": 8,
     "node_type": "observation",
     "content": "During a conservation project, Jasmine developed a close friendship with a fellow activist, who became her mentor in balancing activism with self-care.",
-    "importance": 42,
+    "importance": 45,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -84,7 +84,7 @@
     "node_id": 9,
     "node_type": "observation",
     "content": "Jasmine's experience with burnout led her to take a brief sabbatical, where she traveled to national parks across the U.S., reconnecting with nature.",
-    "importance": 68,
+    "importance": 72,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -93,7 +93,7 @@
     "node_id": 10,
     "node_type": "observation",
     "content": "Inspired by her work, Jasmine decided to run for city council, believing that political office would give her the leverage needed to implement broader environmental policies.",
-    "importance": 42,
+    "importance": 35,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -102,7 +102,7 @@
     "node_id": 11,
     "node_type": "observation",
     "content": "After losing her first bid for office, Jasmine used the defeat as a learning experience and doubled down on her activism, working closely with local government on affordable housing projects.",
-    "importance": 35,
+    "importance": 45,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -111,7 +111,7 @@
     "node_id": 12,
     "node_type": "observation",
     "content": "A breakthrough came when Jasmine helped pass a local policy to increase funding for public transportation, an initiative she had long advocated for as a means to reduce urban pollution.",
-    "importance": 40,
+    "importance": 35,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -138,7 +138,7 @@
     "node_id": 15,
     "node_type": "observation",
     "content": "Jasmine led a citywide voter registration drive, ensuring marginalized communities were represented in local elections\u2014a project that solidified her standing as a community leader.",
-    "importance": 42,
+    "importance": 72,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -147,7 +147,7 @@
     "node_id": 16,
     "node_type": "observation",
     "content": "A key moment in Jasmine\u2019s life was when her neighborhood started gentrifying, leading her to become a vocal advocate for affordable housing to protect longtime residents.",
-    "importance": 72,
+    "importance": 78,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -156,7 +156,7 @@
     "node_id": 17,
     "node_type": "observation",
     "content": "A major public speaking engagement on environmental justice brought Jasmine to national attention, where she emphasized the need for equity in climate solutions.",
-    "importance": 62,
+    "importance": 45,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -174,7 +174,7 @@
     "node_id": 19,
     "node_type": "observation",
     "content": "Reflecting on her career and personal growth, Jasmine decided to write a book about the intersections of environmental justice and social activism, blending her public persona with her private struggles.",
-    "importance": 72,
+    "importance": 68,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -183,7 +183,7 @@
     "node_id": 20,
     "node_type": "observation",
     "content": "Jasmine spent her Saturday morning tidying up her apartment and organizing her bookshelf, realizing she hadn\u2019t dusted it in weeks.",
-    "importance": 5,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -192,7 +192,7 @@
     "node_id": 21,
     "node_type": "observation",
     "content": "She stopped by her favorite local caf\u00e9 to pick up a cappuccino before heading into work, as she does most weekday mornings.",
-    "importance": 5,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -210,7 +210,7 @@
     "node_id": 23,
     "node_type": "observation",
     "content": "She ran into an old college friend at the grocery store and they briefly caught up while waiting in line at the checkout.",
-    "importance": 15,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -219,7 +219,7 @@
     "node_id": 24,
     "node_type": "observation",
     "content": "Jasmine forgot her reusable bag at home and had to use a plastic bag, which mildly annoyed her, given her commitment to reducing waste.",
-    "importance": 15,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -246,7 +246,7 @@
     "node_id": 27,
     "node_type": "observation",
     "content": "Jasmine missed a yoga class because she got caught up in a last-minute work call, but she promised herself she would go the next day.",
-    "importance": 10,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -255,7 +255,7 @@
     "node_id": 28,
     "node_type": "observation",
     "content": "She spent a quiet evening at home reading a book on sustainable urban planning, enjoying the calm after a hectic week.",
-    "importance": 22,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -264,7 +264,7 @@
     "node_id": 29,
     "node_type": "observation",
     "content": "After dinner, Jasmine spent some time tending to her indoor plants, which she tries to water on a regular schedule but often forgets.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -273,7 +273,7 @@
     "node_id": 30,
     "node_type": "observation",
     "content": "One evening, Jasmine took a long walk through her neighborhood, observing the changes brought on by gentrification and thinking about her activism.",
-    "importance": 62,
+    "importance": 42,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -282,7 +282,7 @@
     "node_id": 31,
     "node_type": "observation",
     "content": "She woke up late on a Saturday and decided to treat herself to brunch at a nearby restaurant with outdoor seating.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -300,7 +300,7 @@
     "node_id": 33,
     "node_type": "observation",
     "content": "She spent an afternoon meal prepping for the week, chopping vegetables and making a few healthy meals to store in the fridge.",
-    "importance": 5,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -309,7 +309,7 @@
     "node_id": 34,
     "node_type": "observation",
     "content": "One night, she stayed up late watching random YouTube videos, starting with environmental documentaries and somehow ending with cooking tutorials.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -327,7 +327,7 @@
     "node_id": 36,
     "node_type": "observation",
     "content": "While waiting for a bus, Jasmine people-watched and listened to a podcast on climate change policies in urban areas.",
-    "importance": 20,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -336,7 +336,7 @@
     "node_id": 37,
     "node_type": "observation",
     "content": "She took a quick nap during a lazy Sunday afternoon after feeling particularly tired from a busy week of work and activism.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -345,7 +345,7 @@
     "node_id": 38,
     "node_type": "observation",
     "content": "Jasmine found herself standing in a long line at the post office, where she mailed a package of campaign materials for a local initiative.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -363,7 +363,7 @@
     "node_id": 40,
     "node_type": "observation",
     "content": "On her way home from work, she stopped at the local farmer's market to pick up some fresh vegetables for her weekly meals.",
-    "importance": 10,
+    "importance": 5,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -372,7 +372,7 @@
     "node_id": 41,
     "node_type": "observation",
     "content": "She spent a few hours one evening creating an Instagram post to raise awareness about an upcoming local environmental event.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -390,7 +390,7 @@
     "node_id": 43,
     "node_type": "observation",
     "content": "One rainy day, she watched the raindrops fall on her window as she made herself a cup of hot tea and reflected on her week.",
-    "importance": 35,
+    "importance": 30,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -426,7 +426,7 @@
     "node_id": 47,
     "node_type": "observation",
     "content": "On a random weekday evening, she found herself endlessly scrolling through Twitter, reading discussions on environmental policies.",
-    "importance": 28,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -444,7 +444,7 @@
     "node_id": 49,
     "node_type": "observation",
     "content": "One morning, she had to rush out the door after accidentally snoozing her alarm three times, something that doesn\u2019t happen often.",
-    "importance": 12,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -453,7 +453,7 @@
     "node_id": 50,
     "node_type": "observation",
     "content": "Jasmine had a quiet dinner at home, eating leftovers from the night before while catching up on a few emails.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -507,7 +507,7 @@
     "node_id": 56,
     "node_type": "observation",
     "content": "Jasmine dropped by a local bookstore after work and spent some time browsing through new releases in the environmental section.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -516,7 +516,7 @@
     "node_id": 57,
     "node_type": "observation",
     "content": "She spent the better part of her Saturday catching up on laundry, folding clothes while listening to her favorite podcast.",
-    "importance": 10,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -525,7 +525,7 @@
     "node_id": 58,
     "node_type": "observation",
     "content": "Jasmine made a quick stop at her local hardware store to buy some supplies for a small DIY project she was working on at home.",
-    "importance": 8,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -534,7 +534,7 @@
     "node_id": 59,
     "node_type": "observation",
     "content": "While cleaning out her closet, Jasmine found an old sweatshirt from college that brought back memories of her time at the University of Alabama.",
-    "importance": 30,
+    "importance": 45,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -552,7 +552,7 @@
     "node_id": 61,
     "node_type": "observation",
     "content": "She organized a community workshop to educate residents on sustainable living practices, focusing on recycling, composting, and reducing single-use plastics.",
-    "importance": 20,
+    "importance": 22,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -561,7 +561,7 @@
     "node_id": 62,
     "node_type": "observation",
     "content": "Jasmine spent weeks preparing a detailed environmental impact report for a local government initiative aimed at expanding green spaces in urban neighborhoods.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -570,7 +570,7 @@
     "node_id": 63,
     "node_type": "observation",
     "content": "She attended a conference on climate policy where she networked with other environmental consultants and exchanged ideas on improving sustainability in cities.",
-    "importance": 12,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -579,7 +579,7 @@
     "node_id": 64,
     "node_type": "observation",
     "content": "Jasmine had to mediate a tense meeting between city officials and local activists, ensuring both sides understood the importance of balancing development with environmental responsibility.",
-    "importance": 55,
+    "importance": 60,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -588,7 +588,7 @@
     "node_id": 65,
     "node_type": "observation",
     "content": "During a particularly busy week, Jasmine worked overtime to meet the deadline for a grant proposal that would fund urban conservation efforts.",
-    "importance": 32,
+    "importance": 25,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -597,7 +597,7 @@
     "node_id": 66,
     "node_type": "observation",
     "content": "She led a team of volunteers in organizing a neighborhood tree-planting event, which resulted in the planting of over 100 new trees.",
-    "importance": 28,
+    "importance": 25,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -606,7 +606,7 @@
     "node_id": 67,
     "node_type": "observation",
     "content": "Jasmine conducted a site inspection for a potential urban garden project, carefully assessing the soil quality and available sunlight before drafting her recommendations.",
-    "importance": 10,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -615,7 +615,7 @@
     "node_id": 68,
     "node_type": "observation",
     "content": "She delivered a presentation to the city council about the benefits of sustainable public transportation, advocating for an expanded bus and bike lane network.",
-    "importance": 25,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -624,7 +624,7 @@
     "node_id": 69,
     "node_type": "observation",
     "content": "Jasmine collaborated with a local architect to design eco-friendly office spaces for a new nonprofit headquarters, focusing on energy efficiency and water conservation.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -633,7 +633,7 @@
     "node_id": 70,
     "node_type": "observation",
     "content": "She hosted a webinar on climate change resilience strategies for urban planners, helping participants understand how to integrate environmental justice into their work.",
-    "importance": 15,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -651,7 +651,7 @@
     "node_id": 72,
     "node_type": "observation",
     "content": "She spent a day in the field collecting data on air and water quality for an urban environmental study, compiling the results into a report for public use.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -660,7 +660,7 @@
     "node_id": 73,
     "node_type": "observation",
     "content": "Jasmine met with a donor to discuss potential funding for a new conservation initiative, successfully securing the financial backing needed to move forward with the project.",
-    "importance": 20,
+    "importance": 35,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -669,7 +669,7 @@
     "node_id": 74,
     "node_type": "observation",
     "content": "She mentored a new intern, guiding them through the process of drafting environmental assessments and teaching them about local conservation policies.",
-    "importance": 25,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -678,7 +678,7 @@
     "node_id": 75,
     "node_type": "observation",
     "content": "Jasmine was invited to speak on a panel about environmental equity, where she discussed the disproportionate impact of climate change on marginalized communities.",
-    "importance": 62,
+    "importance": 32,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -687,7 +687,7 @@
     "node_id": 76,
     "node_type": "observation",
     "content": "She attended a town hall meeting where local residents voiced concerns about pollution from nearby factories, leading her to start an advocacy campaign to address the issue.",
-    "importance": 60,
+    "importance": 65,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -696,7 +696,7 @@
     "node_id": 77,
     "node_type": "observation",
     "content": "Jasmine reviewed proposals from various contractors for a green infrastructure project, making recommendations based on environmental sustainability and cost efficiency.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -705,7 +705,7 @@
     "node_id": 78,
     "node_type": "observation",
     "content": "She collaborated with local universities to study the long-term effects of urban greening projects on biodiversity and community well-being.",
-    "importance": 15,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -714,7 +714,7 @@
     "node_id": 79,
     "node_type": "observation",
     "content": "After months of planning, Jasmine launched a citywide initiative to reduce plastic waste, partnering with businesses and schools to eliminate single-use plastics.",
-    "importance": 22,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -722,10 +722,10 @@
   {
     "node_id": 80,
     "node_type": "observation",
-    "content": "I stopped by Rowan\u2019s stand this morning and picked up one herbal tea blend for $15, tapping my digital cash to pay. It felt like exactly what I needed\u2014something calming and focused\u2014right before my calculus exam. I appreciated the smooth, friendly exchange and the reminder that small self-care choices support the bigger work I\u2019m committed to.",
-    "importance": 30,
-    "created": 0,
-    "last_retrieved": 0,
+    "content": "I stopped by Rowan\u2019s stand on a cool morning and bought a jar of their Forest Evening tea\u2014pine tips, peppermint, and a hint of chamomile\u2014to support a steadier evening routine. Rowan shared clear, thoughtful brewing guidance (teaspoon per cup, just-off-boil, covered 5\u20137 minutes), plus tips to adjust mint brightness and add calendula if I want a little lift. I felt grounded and cared for by the ritual and the details, and I\u2019m planning to test a five-minute steep this week and report back on how it supports my wind-down.",
+    "importance": 25,
+    "created": 3,
+    "last_retrieved": 3,
     "pointer_id": null
   }
 ]

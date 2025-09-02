@@ -1,0 +1,203 @@
+{
+  "items": [
+    {
+      "name": "moringa_powder",
+      "quantity": 15,
+      "value": 45.0,
+      "description": "High-protein moringa superfood powder",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "baobab_fruit_powder",
+      "quantity": 9,
+      "value": 55.0,
+      "description": "Vitamin C rich baobab powder",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "hibiscus_extract",
+      "quantity": 7,
+      "value": 35.0,
+      "description": "Antioxidant hibiscus extract capsules",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "tiger_nut_flour",
+      "quantity": 12,
+      "value": 25.0,
+      "description": "Gluten-free tiger nut flour",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "african_yam_chips",
+      "quantity": 20,
+      "value": 18.0,
+      "description": "Dehydrated nutrient-dense yam chips",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "palm_fruit_oil",
+      "quantity": 6,
+      "value": 40.0,
+      "description": "Unprocessed red palm oil",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "research_reports",
+      "quantity": 3,
+      "value": 200.0,
+      "description": "Proprietary food tech research and patents",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "mobile_app_licenses",
+      "quantity": 2,
+      "value": 500.0,
+      "description": "Nutrition education app licenses",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "digital cash",
+      "quantity": 300,
+      "value": 1.0,
+      "description": "Startup revenue and investment funds",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cash",
+      "quantity": 90,
+      "value": 1.0,
+      "description": "Received $35.0 from selling 1 hibiscus_extract to Mina Kim",
+      "created": 3,
+      "last_modified": 3
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "moringa_powder",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "High-protein moringa superfood powder",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "baobab_fruit_powder",
+      "quantity": 10,
+      "time_step": 1,
+      "description": "Vitamin C rich baobab powder",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "hibiscus_extract",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Antioxidant hibiscus extract capsules",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "tiger_nut_flour",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Gluten-free tiger nut flour",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "african_yam_chips",
+      "quantity": 20,
+      "time_step": 1,
+      "description": "Dehydrated nutrient-dense yam chips",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "palm_fruit_oil",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Unprocessed red palm oil",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "research_reports",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "Proprietary food tech research and patents",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "mobile_app_licenses",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "Nutrition education app licenses",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 300,
+      "time_step": 1,
+      "description": "Startup revenue and investment funds",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "trade_give",
+      "item_name": "hibiscus_extract",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 hibiscus_extract to Mina Kim for $35.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 10,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 35,
+      "time_step": 3,
+      "description": "Received $35.0 from selling 1 hibiscus_extract to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 11,
+      "action": "trade_give",
+      "item_name": "baobab_fruit_powder",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 baobab_fruit_powder to Mina Kim for $55.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 12,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 55,
+      "time_step": 3,
+      "description": "Received $55.0 from selling 1 baobab_fruit_powder to Mina Kim",
+      "trade_partner": "Mina Kim"
+    }
+  ]
+}

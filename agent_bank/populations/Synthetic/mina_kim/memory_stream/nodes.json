@@ -1,0 +1,821 @@
+[
+  {
+    "node_id": 0,
+    "node_type": "observation",
+    "content": "Growing up in Seoul, Mina spent her childhood watching her grandmother apply traditional Korean skincare routines, learning the importance of gentle care and natural ingredients from a young age.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 1,
+    "node_type": "observation",
+    "content": "As a teenager, Mina discovered K-pop through SNSD and became obsessed with achieving the 'glass skin' look of her idols, starting her journey into Korean beauty products.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 2,
+    "node_type": "observation",
+    "content": "During high school, Mina was too shy to participate in school plays but would spend hours perfecting makeup looks inspired by K-drama actresses in her bedroom mirror.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 3,
+    "node_type": "observation",
+    "content": "Mina's first job was at a small beauty shop in Myeongdong, where she learned about different Korean skincare brands and developed her expertise in product ingredients.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 4,
+    "node_type": "observation",
+    "content": "A pivotal moment came when Mina helped a customer with sensitive skin find the perfect routine, realizing she had a natural talent for understanding individual skin needs.",
+    "importance": 54,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 5,
+    "node_type": "observation",
+    "content": "After moving to study abroad, Mina faced culture shock and homesickness, finding comfort in her extensive Korean skincare routine and K-drama marathons.",
+    "importance": 52,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 6,
+    "node_type": "observation",
+    "content": "Mina's decision to specialize in Korean beauty came from witnessing the global K-beauty boom and wanting to share authentic Korean skincare wisdom with international customers.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 7,
+    "node_type": "observation",
+    "content": "During a difficult period of social anxiety, Mina found solace in online K-pop communities where she could express her passion for both music and beauty trends.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 8,
+    "node_type": "observation",
+    "content": "Mina developed her signature consultation style after realizing that her gentle, patient approach helped shy customers feel comfortable discussing their skin concerns.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 9,
+    "node_type": "observation",
+    "content": "A breakthrough moment was when Mina correctly identified a customer's skin barrier damage just by observation, leading to a successful treatment plan that built her reputation.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 10,
+    "node_type": "observation",
+    "content": "Mina's love for IU's music helped her through lonely nights studying beauty chemistry and product formulations, dreaming of creating her own skincare line.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 11,
+    "node_type": "observation",
+    "content": "Despite her shyness, Mina forced herself to attend beauty trade shows, where she discovered innovative Korean brands before they became mainstream.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 12,
+    "node_type": "observation",
+    "content": "Mina's relationship with her younger sister deepened when they started doing skincare routines together while watching 'Crash Landing on You' during the pandemic.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 13,
+    "node_type": "observation",
+    "content": "A challenging period came when Western beauty trends conflicted with Mina's Korean beauty philosophy, but she learned to appreciate both approaches.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 14,
+    "node_type": "observation",
+    "content": "Mina's confidence grew when she started her beauty blog, initially writing in Korean and gradually adding English posts to reach a wider audience.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 15,
+    "node_type": "observation",
+    "content": "The day Mina received her first sponsorship from a Korean beauty brand was when she realized her passion could become a real career.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 16,
+    "node_type": "observation",
+    "content": "Mina's expertise in ingredient analysis came from years of translating Korean skincare labels and researching the science behind traditional beauty practices.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 17,
+    "node_type": "observation",
+    "content": "A meaningful moment was when Mina helped her anxious best friend build confidence through a personalized skincare routine and makeup tutorial.",
+    "importance": 65,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 18,
+    "node_type": "observation",
+    "content": "Mina's collection of Korean beauty products became legendary among her friends, earning her the nickname 'the Korean beauty encyclopedia.'",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 19,
+    "node_type": "observation",
+    "content": "Despite her success, Mina still feels most comfortable discussing beauty in small, intimate settings rather than large groups or presentations.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 20,
+    "node_type": "observation",
+    "content": "Mina's dream of opening her own Korean beauty boutique was inspired by wanting to create a safe, educational space where customers could learn about authentic K-beauty.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 21,
+    "node_type": "observation",
+    "content": "Mina spent her Sunday morning doing her 12-step skincare routine while listening to NewJeans' latest album, taking extra time with her facial massage.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 22,
+    "node_type": "observation",
+    "content": "She discovered a new Korean face mask at the Asian grocery store and immediately bought five different varieties to try throughout the week.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 23,
+    "node_type": "observation",
+    "content": "During her lunch break, Mina watched a few episodes of 'Business Proposal' on her phone, giggling quietly at the romantic scenes.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 24,
+    "node_type": "observation",
+    "content": "She spent an hour reorganizing her beauty products by category, realizing she had accumulated another drawer full of sheet masks.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 25,
+    "node_type": "observation",
+    "content": "Mina forgot to set her alarm and woke up late, but still managed to do her abbreviated morning skincare routine because she never skips it.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 26,
+    "node_type": "observation",
+    "content": "On a rainy Saturday, Mina binge-watched 'Hometown's Embrace' while testing three different essence formulations on her arms.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 27,
+    "node_type": "observation",
+    "content": "She spent her evening scrolling through Korean beauty influencers on Instagram, saving posts about new product launches.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 28,
+    "node_type": "observation",
+    "content": "Mina missed her evening skincare routine after falling asleep during a K-drama marathon and woke up feeling guilty about it.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 29,
+    "node_type": "observation",
+    "content": "She spent a quiet afternoon organizing her K-pop photocard collection while a BTS playlist played in the background.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 30,
+    "node_type": "observation",
+    "content": "After work, Mina stopped by the Korean beauty store to check if they had restocked her favorite sleeping mask that had been sold out.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 31,
+    "node_type": "observation",
+    "content": "One evening, Mina practiced doing winged eyeliner while video-chatting with her sister back in Seoul, who gave her technique tips.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 32,
+    "node_type": "observation",
+    "content": "She accidentally ordered the wrong shade of cushion foundation online and spent time figuring out how to exchange it.",
+    "importance": 8,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 33,
+    "node_type": "observation",
+    "content": "Mina stayed up too late reading Korean beauty forums and discussing the latest Innisfree launch with other enthusiasts.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 34,
+    "node_type": "observation",
+    "content": "She spent her Saturday morning meal prepping while listening to IU's concert recordings, dancing slightly while chopping vegetables.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 35,
+    "node_type": "observation",
+    "content": "One night, Mina tried a new DIY rice water toner recipe she found on a Korean beauty blog, documenting the process with photos.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 36,
+    "node_type": "observation",
+    "content": "Mina spilled toner on her favorite K-pop merchandise t-shirt and spent twenty minutes trying to remove the stain without damaging the print.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 37,
+    "node_type": "observation",
+    "content": "While waiting for a bus, Mina people-watched and mentally analyzed strangers' skin types and what products might work for them.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 38,
+    "node_type": "observation",
+    "content": "She took a long bubble bath with Korean bath salts while rewatching her favorite episodes of 'Goblin' for the tenth time.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 39,
+    "node_type": "observation",
+    "content": "Mina found herself standing in a long line at the Korean cosmetics popup store, chatting shyly with other customers about their favorite products.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 40,
+    "node_type": "observation",
+    "content": "While organizing her digital photos, Mina realized she had hundreds of before-and-after skincare selfies documenting her skin journey.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 41,
+    "node_type": "observation",
+    "content": "On her way home from work, she stopped at three different stores looking for a specific Korean lip tint she had seen in a K-drama.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 42,
+    "node_type": "observation",
+    "content": "She spent a few hours creating an Instagram story highlighting her current skincare favorites, carefully arranging the products for photos.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 43,
+    "node_type": "observation",
+    "content": "Mina received a package notification and got excited thinking it was her K-beauty order, only to realize it was just regular mail.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 44,
+    "node_type": "observation",
+    "content": "One rainy day, she watched Korean beauty YouTube tutorials while doing her nails, trying to learn new techniques.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 45,
+    "node_type": "observation",
+    "content": "Mina's coworker asked for skincare advice and she spent her lunch break writing detailed product recommendations and usage instructions.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 46,
+    "node_type": "observation",
+    "content": "She accidentally left her sheet mask on too long while getting absorbed in a romantic scene in 'What's Wrong with Secretary Kim.'",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 47,
+    "node_type": "observation",
+    "content": "Mina bought a new eyeshadow palette inspired by a K-pop idol's stage makeup and spent the evening practicing different looks.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 48,
+    "node_type": "observation",
+    "content": "One morning, she had to rush out after accidentally snoozing her alarm, but still managed to apply sunscreen because UV protection is non-negotiable.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 49,
+    "node_type": "observation",
+    "content": "Mina had a quiet dinner at home, eating Korean instant noodles while catching up on beauty brand announcements on social media.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 50,
+    "node_type": "observation",
+    "content": "She spent time this week responding to DMs from followers asking for skincare advice, carefully crafting helpful responses to each person.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 51,
+    "node_type": "observation",
+    "content": "Mina found herself running late to meet friends after spending too much time perfecting her gradient lip look in the mirror.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 52,
+    "node_type": "observation",
+    "content": "She spent some time researching ingredient lists for a new serum launch, making notes about potential benefits and skin compatibility.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 53,
+    "node_type": "observation",
+    "content": "One afternoon, Mina took a break from work to sit outside and reapply her SPF while listening to Taeyeon's latest single.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 54,
+    "node_type": "observation",
+    "content": "She accidentally mixed up two similar-looking serums in her routine and worried about potential ingredient interactions until she researched it.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 55,
+    "node_type": "observation",
+    "content": "Mina dropped by a new Korean beauty store after work and spent time browsing, even though she didn't need anything specific.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 56,
+    "node_type": "observation",
+    "content": "She spent her Saturday morning catching up on Korean beauty podcast episodes while doing gentle face yoga exercises.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 57,
+    "node_type": "observation",
+    "content": "While cleaning her room, Mina found an old diary where she had recorded her skincare journey and favorite K-pop songs from high school.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 58,
+    "node_type": "observation",
+    "content": "Mina successfully helped a customer with stubborn acne find the perfect Korean skincare routine, combining gentle exfoliation with barrier-repairing ingredients.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 59,
+    "node_type": "observation",
+    "content": "She organized a K-beauty workshop for beginners, teaching them about the famous 10-step routine and how to adapt it for different skin types.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 60,
+    "node_type": "observation",
+    "content": "Mina spent weeks researching new Korean beauty brands to curate for her store, focusing on clean ingredients and innovative formulations.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 61,
+    "node_type": "observation",
+    "content": "She attended a Korean beauty expo where she networked with brand representatives and discovered emerging trends in fermented skincare.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 62,
+    "node_type": "observation",
+    "content": "Mina had to handle a difficult customer who was dissatisfied with a product recommendation, patiently explaining ingredient sensitivities and offering alternatives.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 63,
+    "node_type": "observation",
+    "content": "During a busy week, Mina worked overtime to prepare detailed skincare consultation reports for her high-end clients.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 64,
+    "node_type": "observation",
+    "content": "She collaborated with a Korean beauty brand to create educational content about the benefits of snail secretion filtrate in healing damaged skin.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 65,
+    "node_type": "observation",
+    "content": "Mina conducted ingredient analysis sessions for customers, explaining the science behind popular K-beauty ingredients like niacinamide and hyaluronic acid.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 66,
+    "node_type": "observation",
+    "content": "She delivered a presentation to local beauty enthusiasts about the history and philosophy behind Korean skincare traditions.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 67,
+    "node_type": "observation",
+    "content": "Mina mentored a new employee on proper product knowledge, teaching them how to identify skin concerns and match them with appropriate Korean beauty solutions.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 68,
+    "node_type": "observation",
+    "content": "She hosted a virtual consultation session for international customers, explaining Korean beauty techniques through video demonstrations.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 69,
+    "node_type": "observation",
+    "content": "Mina was tasked with creating seasonal skincare guides, adapting Korean beauty principles to different climate conditions.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 70,
+    "node_type": "observation",
+    "content": "She spent a day testing new K-beauty products for potential store inclusion, documenting texture, efficacy, and ingredient compatibility.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 71,
+    "node_type": "observation",
+    "content": "Mina met with Korean beauty brand founders to discuss exclusive product launches and educational partnerships.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 72,
+    "node_type": "observation",
+    "content": "She trained beauty consultants at multiple locations on proper Korean skincare application techniques and customer education methods.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 73,
+    "node_type": "observation",
+    "content": "Mina was invited to speak on a podcast about the globalization of K-beauty and how to maintain authenticity while reaching international markets.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 74,
+    "node_type": "observation",
+    "content": "She developed a comprehensive skin analysis system that incorporates traditional Korean beauty wisdom with modern dermatological knowledge.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 75,
+    "node_type": "observation",
+    "content": "Mina reviewed and approved marketing materials for Korean beauty promotions, ensuring cultural accuracy and proper product positioning.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 76,
+    "node_type": "observation",
+    "content": "She collaborated with dermatologists to create evidence-based guides on incorporating Korean beauty methods into clinical skincare routines.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 77,
+    "node_type": "observation",
+    "content": "After months of planning, Mina launched a subscription service that introduces customers to authentic Korean beauty products with detailed usage guides.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 78,
+    "node_type": "observation",
+    "content": "I stopped by AfriFoods Tech\u2019s stall and asked about their hibiscus extract, hoping to make a glow-from-within zobo. Kemi confirmed it\u2019s pure and standardized, suggested pairing it with baobab for vitamin C, and shared precise brew ratios. I purchased one hibiscus extract and one baobab, got a free reusable scoop, and left feeling excited\u2014both about the skin-friendly drink and supporting their partner farmers.",
+    "importance": 15,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 79,
+    "node_type": "reflection",
+    "content": "I enjoyed how the local community market turned into a cozy space for shy conversations\u2014standing in line at the popup felt more like a chance to bond over Innisfree favorites than a stressful social obligation.",
+    "importance": 35,
+    "created": 3,
+    "last_retrieved": 3,
+    "pointer_id": [
+      73,
+      7,
+      19,
+      33,
+      39
+    ]
+  },
+  {
+    "node_id": 80,
+    "node_type": "reflection",
+    "content": "Even though I get invited to big events like podcasts, I prefer these small, intimate market interactions where I can quietly share tips from online K-beauty forums and connect with people who understand my passions.",
+    "importance": 30,
+    "created": 3,
+    "last_retrieved": 3,
+    "pointer_id": [
+      73,
+      7,
+      19,
+      33,
+      39
+    ]
+  },
+  {
+    "node_id": 81,
+    "node_type": "reflection",
+    "content": "When I'm anxious, I still seek out both online communities and neighborhood gatherings; late-night forum chats help me prepare topics and feel confident enough to gently start conversations in person at local markets.",
+    "importance": 40,
+    "created": 3,
+    "last_retrieved": 3,
+    "pointer_id": [
+      73,
+      7,
+      19,
+      33,
+      39
+    ]
+  },
+  {
+    "node_id": 82,
+    "node_type": "observation",
+    "content": "I helped Rowan choose a simple, weightless K\u2011beauty trio for outdoor life: a silky cleansing oil, an elegant sunscreen, and a watery hydrating sheet mask. They tapped to pay ($50.50), and I shared gentle usage tips\u201445-second oil massage, two-finger sunscreen, 10\u201315 minute mask\u2014plus optional moisture if the wind gets nippy. I felt grateful and quietly excited; their mindful \u201cstart low, go slow\u201d approach fits my philosophy, and I\u2019m looking forward to their update in a week or two.",
+    "importance": 25,
+    "created": 6,
+    "last_retrieved": 6,
+    "pointer_id": null
+  },
+  {
+    "node_id": 83,
+    "node_type": "observation",
+    "content": "I bought two recycled-paper notebooks from Jasmine for $7 to plan content for my K-beauty subscription boxes, and we scheduled a data basics tutoring session for Tuesday at 2:30. I\u2019m excited (and a little nervous) to set up a clean spreadsheet and a mini dashboard for sign-ups, conversion rate, inventory turns, and theme performance. Her preview of the formulas made me feel more confident, and I\u2019ll bring my export, theme list, and notebooks so we can build everything step by step.",
+    "importance": 12,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 84,
+    "node_type": "reflection",
+    "content": "I notice that the local community market has become a safe, low-pressure place for me to practice social interaction \u2014 standing in line feels like an opportunity to bond over shared interests rather than something to dread.",
+    "importance": 45,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": [
+      79,
+      81,
+      80,
+      7,
+      83
+    ]
+  },
+  {
+    "node_id": 85,
+    "node_type": "reflection",
+    "content": "I rely on a mix of online communities and neighborhood gatherings to manage my anxiety: late-night forum conversations help me rehearse topics and build the confidence to start gentle, meaningful interactions in person at the market.",
+    "importance": 55,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": [
+      79,
+      81,
+      80,
+      7,
+      83
+    ]
+  },
+  {
+    "node_id": 86,
+    "node_type": "reflection",
+    "content": "I prefer small, intimate market interactions over larger public events because they let me quietly share my passions (like K-beauty tips) with people who understand me, and those encounters make me feel connected and supported.",
+    "importance": 50,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": [
+      79,
+      81,
+      80,
+      7,
+      83
+    ]
+  }
+]

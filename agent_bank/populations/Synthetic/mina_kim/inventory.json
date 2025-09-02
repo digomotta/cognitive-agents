@@ -1,0 +1,284 @@
+{
+  "items": [
+    {
+      "name": "sheet_masks",
+      "quantity": 18,
+      "value": 3.5,
+      "description": "Korean sheet masks - various types",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "essence",
+      "quantity": 5,
+      "value": 28.0,
+      "description": "Korean essence serums",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cushion_foundation",
+      "quantity": 3,
+      "value": 35.0,
+      "description": "BB cushion foundations",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "lip_tints",
+      "quantity": 8,
+      "value": 12.0,
+      "description": "Korean gradient lip tints",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "sunscreen",
+      "quantity": 2,
+      "value": 22.0,
+      "description": "Korean SPF50+ sunscreens",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "sleeping_masks",
+      "quantity": 6,
+      "value": 18.0,
+      "description": "Overnight sleeping masks",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cleansing_oil",
+      "quantity": 1,
+      "value": 25.0,
+      "description": "Double cleansing oils",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "digital cash",
+      "quantity": 100,
+      "value": 1.0,
+      "description": "K-beauty business earnings",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cash",
+      "quantity": 93,
+      "value": 1.0,
+      "description": "Received $25.0 from selling 1 cleansing_oil to Rowan Greenwood",
+      "created": 3,
+      "last_modified": 3
+    },
+    {
+      "name": "notebooks",
+      "quantity": 2,
+      "value": 3.5,
+      "description": "Purchased 2 notebooks from Jasmine Carter for $7.0",
+      "created": 3,
+      "last_modified": 3
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "sheet_masks",
+      "quantity": 20,
+      "time_step": 1,
+      "description": "Korean sheet masks - various types",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "essence",
+      "quantity": 5,
+      "time_step": 1,
+      "description": "Korean essence serums",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "cushion_foundation",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "BB cushion foundations",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "lip_tints",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Korean gradient lip tints",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "sunscreen",
+      "quantity": 4,
+      "time_step": 1,
+      "description": "Korean SPF50+ sunscreens",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "sleeping_masks",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Overnight sleeping masks",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "cleansing_oil",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "Double cleansing oils",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 100,
+      "time_step": 1,
+      "description": "K-beauty business earnings",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "trade_give",
+      "item_name": "cleansing_oil",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 cleansing_oil to Rowan Greenwood for $25.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 9,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 25,
+      "time_step": 3,
+      "description": "Received $25.0 from selling 1 cleansing_oil to Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 10,
+      "action": "trade_give",
+      "item_name": "sunscreen",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 sunscreen to Rowan Greenwood for $22.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 11,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 22,
+      "time_step": 3,
+      "description": "Received $22.0 from selling 1 sunscreen to Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 12,
+      "action": "trade_give",
+      "item_name": "sheet_masks",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 sheet_masks to Rowan Greenwood for $3.5",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 13,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 3,
+      "time_step": 3,
+      "description": "Received $3.5 from selling 1 sheet_masks to Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 14,
+      "action": "trade_receive",
+      "item_name": "notebooks",
+      "quantity": 2,
+      "time_step": 3,
+      "description": "Purchased 2 notebooks from Jasmine Carter for $7.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 15,
+      "action": "trade_give",
+      "item_name": "cash",
+      "quantity": 7,
+      "time_step": 3,
+      "description": "Paid $7.0 for 2 notebooks from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 16,
+      "action": "trade_give",
+      "item_name": "cleansing_oil",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 cleansing_oil to Rowan Greenwood for $25.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 17,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 25,
+      "time_step": 3,
+      "description": "Received $25.0 from selling 1 cleansing_oil to Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 18,
+      "action": "trade_give",
+      "item_name": "sunscreen",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 sunscreen to Rowan Greenwood for $22.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 19,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 22,
+      "time_step": 3,
+      "description": "Received $22.0 from selling 1 sunscreen to Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 20,
+      "action": "trade_give",
+      "item_name": "sheet_masks",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 sheet_masks to Rowan Greenwood for $3.5",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 21,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 3,
+      "time_step": 3,
+      "description": "Received $3.5 from selling 1 sheet_masks to Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    }
+  ]
+}

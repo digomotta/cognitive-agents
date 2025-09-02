@@ -2,7 +2,7 @@
   "items": [
     {
       "name": "herbal_tea",
-      "quantity": 4,
+      "quantity": 2,
       "value": 15.0,
       "description": "Calming herbal tea blend",
       "created": 1,
@@ -25,10 +25,18 @@
       "last_modified": 1
     },
     {
-      "name": "cash",
-      "quantity": 165,
+      "name": "digital cash",
+      "quantity": 135,
       "value": 1.0,
       "description": "Starting business cash",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cash",
+      "quantity": 46,
+      "value": 1.0,
+      "description": "Received $15.0 from selling 1 herbal_tea to Kemi Adebayo",
       "created": 1,
       "last_modified": 1
     }
@@ -64,7 +72,7 @@
     {
       "record_id": 3,
       "action": "add",
-      "item_name": "cash",
+      "item_name": "digital cash",
       "quantity": 150,
       "time_step": 1,
       "description": "Starting business cash",
@@ -76,8 +84,8 @@
       "item_name": "herbal_tea",
       "quantity": 1,
       "time_step": 1,
-      "description": "Sold 1 herbal_tea to Jasmine Carter for $15.0",
-      "trade_partner": "Jasmine Carter"
+      "description": "Sold 1 herbal_tea to Kemi Adebayo for $15.0",
+      "trade_partner": "Kemi Adebayo"
     },
     {
       "record_id": 5,
@@ -85,7 +93,61 @@
       "item_name": "cash",
       "quantity": 15,
       "time_step": 1,
+      "description": "Received $15.0 from selling 1 herbal_tea to Kemi Adebayo",
+      "trade_partner": "Kemi Adebayo"
+    },
+    {
+      "record_id": 6,
+      "action": "trade_give",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 7,
+      "description": "Sold 1 herbal_tea to Kemi Adebayo for $15.0",
+      "trade_partner": "Kemi Adebayo"
+    },
+    {
+      "record_id": 7,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 15,
+      "time_step": 7,
+      "description": "Received $15.0 from selling 1 herbal_tea to Kemi Adebayo",
+      "trade_partner": "Kemi Adebayo"
+    },
+    {
+      "record_id": 8,
+      "action": "trade_give",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Sold 1 herbal_tea to Jasmine Carter for $15.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 9,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 15,
+      "time_step": 1,
       "description": "Received $15.0 from selling 1 herbal_tea to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 10,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "Sold 15 digital cash to Jasmine Carter for $1.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 11,
+      "action": "trade_receive",
+      "item_name": "cash",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Received $1.0 from selling 15 digital cash to Jasmine Carter",
       "trade_partner": "Jasmine Carter"
     }
   ]

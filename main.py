@@ -7,6 +7,7 @@ from generative_agent.generative_agent import *
 from testing.memories.rowan_greenwood_memories import *
 from testing.memories.jasmine_carter_memories import *
 from testing.memories.mina_kim_memories import *
+from testing.memories.kemi_adebayo_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
 from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
@@ -86,6 +87,18 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("sleeping_masks", 6, 1, 18.00, "Overnight sleeping masks")
     agent.add_to_inventory("cleansing_oil", 3, 1, 25.00, "Double cleansing oils")
     agent.add_to_inventory("digital cash", 100, 1, 1.00, "K-beauty business earnings")
+    
+  elif agent_name == "kemi_adebayo":
+    # Kemi: Nigerian tech entrepreneur with African superfood products
+    agent.add_to_inventory("moringa_powder", 15, 1, 45.00, "High-protein moringa superfood powder")
+    agent.add_to_inventory("baobab_fruit_powder", 10, 1, 55.00, "Vitamin C rich baobab powder")
+    agent.add_to_inventory("hibiscus_extract", 8, 1, 35.00, "Antioxidant hibiscus extract capsules")
+    agent.add_to_inventory("tiger_nut_flour", 12, 1, 25.00, "Gluten-free tiger nut flour")
+    agent.add_to_inventory("african_yam_chips", 20, 1, 18.00, "Dehydrated nutrient-dense yam chips")
+    agent.add_to_inventory("palm_fruit_oil", 6, 1, 40.00, "Unprocessed red palm oil")
+    agent.add_to_inventory("research_reports", 3, 1, 200.00, "Proprietary food tech research and patents")
+    agent.add_to_inventory("mobile_app_licenses", 2, 1, 500.00, "Nutrition education app licenses")
+    agent.add_to_inventory("digital cash", 300, 1, 1.00, "Startup revenue and investment funds")
 
   agent.save()  # Save the cleared inventory to JSON files
 
@@ -112,6 +125,13 @@ def build_agent():
   setup_agent_inventory(mina, "mina_kim")
   mina.save("Synthetic", "mina_kim")
   
+  # Build Kemi
+  kemi = GenerativeAgent("Synthetic_Base", "kemi_adebayo")
+  for m in kemi_memories:
+    kemi.remember(m)
+  setup_agent_inventory(kemi, "kemi_adebayo")
+  kemi.save("Synthetic", "kemi_adebayo")
+  
   print("All agents built with fresh inventories!")
 
 
@@ -121,7 +141,6 @@ def interview_agent():
 
 
 def chat_with_agent(): 
-  #curr_agent = GenerativeAgent("SyntheticCS222", "rowan_greenwood")
   curr_agent = GenerativeAgent("Synthetic", "jasmine_carter")
   chat_session(curr_agent, False)
 
@@ -146,7 +165,6 @@ def test_inventory_in_conversation():
   chat_session(rowan, False)
 
 
-
 def test_markov_chain_simulation(testing_mode=True):
   """
   Run Markov chain simulation where each agent is a state.
@@ -155,7 +173,7 @@ def test_markov_chain_simulation(testing_mode=True):
   print("=== Markov Agent Chain Simulation ===")
   
   # Load agents for the chain
-  agent_names = ["rowan_greenwood", "jasmine_carter"]
+  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo"]
   agents = load_agents_for_chain("Synthetic", agent_names)
   
   if len(agents) < 2:
@@ -168,9 +186,9 @@ def test_markov_chain_simulation(testing_mode=True):
   results = chain.run_markov_chain(
     agents=agents,
     context="Local community market and social interactions",
-    num_steps=1,
-    self_reflection_prob=0.99,  # 30% chance to stay in same state (reflect)
-    interaction_prob=0.01,      # 70% chance to transition to other agent (converse)
+    num_steps=10,
+    self_reflection_prob=0.3,  # 30% chance to stay in same state (reflect)
+    interaction_prob=0.7,      # 70% chance to transition to other agent (converse)
     conversation_max_turns=8,
     testing_mode=testing_mode
   )
@@ -253,14 +271,12 @@ def test_interaction_summary(testing_mode=True):
 def main(): 
   # Simplified main for multi-agent Markov chain interactions
   # build_agent()
-  # setup_agent_inventory(GenerativeAgent("Synthetic", "rowan_greenwood"), "rowan_greenwood")
-  # setup_agent_inventory(GenerativeAgent("Synthetic", "jasmine_carter"), "jasmine_carter")
   # interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
   
   # Use the new Markov agent chain system
-  test_markov_chain_simulation(testing_mode=False)
+  test_markov_chain_simulation(testing_mode=True)
 
 
 

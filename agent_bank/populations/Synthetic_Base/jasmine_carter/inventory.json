@@ -18,11 +18,11 @@
     },
     {
       "name": "notebooks",
-      "quantity": 6,
+      "quantity": 8,
       "value": 3.5,
       "description": "High-quality notebooks",
       "created": 1,
-      "last_modified": 3
+      "last_modified": 1
     },
     {
       "name": "tutoring_sessions",
@@ -39,14 +39,6 @@
       "description": "Student savings",
       "created": 1,
       "last_modified": 1
-    },
-    {
-      "name": "cash",
-      "quantity": 7,
-      "value": 1.0,
-      "description": "Received $7.0 from selling 2 notebooks to Mina Kim",
-      "created": 3,
-      "last_modified": 3
     }
   ],
   "records": [
@@ -94,24 +86,6 @@
       "time_step": 1,
       "description": "Student savings",
       "trade_partner": ""
-    },
-    {
-      "record_id": 5,
-      "action": "trade_give",
-      "item_name": "notebooks",
-      "quantity": 2,
-      "time_step": 3,
-      "description": "Sold 2 notebooks to Mina Kim for $7.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 6,
-      "action": "trade_receive",
-      "item_name": "cash",
-      "quantity": 7,
-      "time_step": 3,
-      "description": "Received $7.0 from selling 2 notebooks to Mina Kim",
-      "trade_partner": "Mina Kim"
     }
   ]
 }

@@ -1,0 +1,713 @@
+[
+  {
+    "node_id": 0,
+    "node_type": "observation",
+    "content": "Growing up in Lagos, Kemi was fascinated by his grandmother's traditional medicine garden, where she grew indigenous plants that could heal various ailments.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 1,
+    "node_type": "observation",
+    "content": "As a teenager, Kemi excelled in computer programming and won a national coding competition, but never forgot his roots in traditional African knowledge systems.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 2,
+    "node_type": "observation",
+    "content": "During university at the University of Lagos studying Computer Science, Kemi witnessed classmates struggling with malnutrition while processed foods dominated the market.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 3,
+    "node_type": "observation",
+    "content": "A pivotal moment came when Kemi's younger sister fell ill from contaminated imported food supplements, inspiring him to create safer, locally-sourced alternatives.",
+    "importance": 82,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 4,
+    "node_type": "observation",
+    "content": "After graduation, Kemi worked for a tech giant in Lagos but felt disconnected from his community and the problems that mattered most to him.",
+    "importance": 65,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 5,
+    "node_type": "observation",
+    "content": "The decision to leave his corporate job came after attending a village festival where elders shared knowledge about nutrient-dense native plants being forgotten by younger generations.",
+    "importance": 58,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 6,
+    "node_type": "observation",
+    "content": "Kemi founded AfriFoods Tech with the vision of preserving traditional African nutritional wisdom while using modern food science and technology.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 7,
+    "node_type": "observation",
+    "content": "During the early startup days, Kemi lived in a small apartment, spending 18-hour days researching the nutritional profiles of indigenous African fruits and vegetables.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 8,
+    "node_type": "observation",
+    "content": "A breakthrough moment was when Kemi developed his first product - a high-protein powder from baobab and moringa that rivaled expensive imported supplements.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 9,
+    "node_type": "observation",
+    "content": "Kemi's passion for social justice intensified when he realized how colonial history had disrupted traditional food systems and created dependency on foreign products.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 10,
+    "node_type": "observation",
+    "content": "The first major investment in AfriFoods Tech came from a pan-African development fund that believed in Kemi's mission to strengthen food sovereignty.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 11,
+    "node_type": "observation",
+    "content": "A challenging period occurred when multinational food companies tried to copy Kemi's formulations, forcing him to navigate complex intellectual property battles.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 12,
+    "node_type": "observation",
+    "content": "Kemi's leadership philosophy evolved from experiencing how traditional African consensus-building could be applied to modern startup management.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 13,
+    "node_type": "observation",
+    "content": "A significant milestone was when AfriFoods Tech products began reversing malnutrition rates in rural communities where they were distributed.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 14,
+    "node_type": "observation",
+    "content": "Kemi faced criticism from some tech peers who didn't understand why he focused on traditional ingredients instead of synthetic innovations.",
+    "importance": 38,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 15,
+    "node_type": "observation",
+    "content": "The expansion into food technology patents happened when Kemi realized he needed to protect traditional knowledge from biopiracy by large corporations.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 16,
+    "node_type": "observation",
+    "content": "A transformative experience was speaking at the African Union summit about food security and technological sovereignty on the continent.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 17,
+    "node_type": "observation",
+    "content": "Kemi's relationship with his parents deepened when they saw how his work honored their traditional values while embracing modern innovation.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 18,
+    "node_type": "observation",
+    "content": "The company's mission expanded to include training rural farmers on sustainable cultivation techniques for indigenous plants with high market value.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 19,
+    "node_type": "observation",
+    "content": "A defining moment was when Kemi testified before Parliament about the importance of protecting indigenous food knowledge and supporting local innovation.",
+    "importance": 64,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 20,
+    "node_type": "observation",
+    "content": "Despite his success, Kemi remains committed to ensuring his products are affordable and accessible to the communities that inspired his work.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 21,
+    "node_type": "observation",
+    "content": "Kemi spent his Sunday morning reviewing nutritional analysis reports while listening to Afrobeats, comparing different batches of hibiscus extract.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 22,
+    "node_type": "observation",
+    "content": "He stopped by the local market to source fresh African yams and plantains for his weekly meal prep, chatting with vendors about seasonal availability.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 23,
+    "node_type": "observation",
+    "content": "During his lunch break, Kemi called his grandmother to ask about traditional preparation methods for bitter leaf, taking detailed notes.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 24,
+    "node_type": "observation",
+    "content": "He spent an hour organizing his lab samples, realizing he had accumulated dozens of different plant extracts from across West Africa.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 25,
+    "node_type": "observation",
+    "content": "Kemi forgot to charge his phone overnight and had to use a backup device, mildly annoyed that he missed his morning meditation app reminder.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 26,
+    "node_type": "observation",
+    "content": "On a rainy Lagos evening, Kemi tested a new moringa smoothie recipe while catching up on tech news and startup blogs.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 27,
+    "node_type": "observation",
+    "content": "He spent time scrolling through LinkedIn, engaging with posts about African innovation and food security initiatives.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 28,
+    "node_type": "observation",
+    "content": "Kemi missed his evening gym session after getting caught up in a video call with potential investors, but did pushups at home instead.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 29,
+    "node_type": "observation",
+    "content": "He spent a quiet afternoon reading research papers on phytonutrients while listening to traditional Yoruba music.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 30,
+    "node_type": "observation",
+    "content": "After work, Kemi stopped by three different health stores to study the ingredient labels and pricing of imported supplements.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 31,
+    "node_type": "observation",
+    "content": "One evening, Kemi video-called his sister studying abroad, showing her his latest product prototypes and asking for feedback.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 32,
+    "node_type": "observation",
+    "content": "He accidentally ordered too much tiger nut flour for a product test and spent time figuring out creative ways to use the excess.",
+    "importance": 8,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 33,
+    "node_type": "observation",
+    "content": "Kemi stayed up late reading about blockchain applications in supply chain management, wondering how it could benefit local farmers.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 34,
+    "node_type": "observation",
+    "content": "He spent his Saturday morning at the farmers market, taking photos of indigenous vegetables for his company's social media.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 35,
+    "node_type": "observation",
+    "content": "One night, Kemi tried a new palm wine from a local producer while working on quarterly business projections on his laptop.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 36,
+    "node_type": "observation",
+    "content": "Kemi spilled beetroot extract on his favorite Ankara shirt and spent twenty minutes trying to remove the stain without damaging the fabric.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 37,
+    "node_type": "observation",
+    "content": "While waiting for a delayed flight, Kemi people-watched and mentally calculated the potential market for healthy snacks in the airport.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 38,
+    "node_type": "observation",
+    "content": "He took a long walk along Lagos lagoon, listening to a podcast about renewable energy solutions in African countries.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 39,
+    "node_type": "observation",
+    "content": "Kemi found himself standing in a long line at the patent office, reviewing his application documents for a new food processing method.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 40,
+    "node_type": "observation",
+    "content": "While organizing his digital files, Kemi realized he had hundreds of photos documenting traditional food preparation methods from different Nigerian communities.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 41,
+    "node_type": "observation",
+    "content": "On his way to a meeting, he stopped at a roadside vendor selling roasted plantains and engaged in a conversation about sourcing and pricing.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 42,
+    "node_type": "observation",
+    "content": "He spent a few hours creating a presentation about food security for an upcoming conference, carefully selecting images that honored traditional knowledge.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 43,
+    "node_type": "observation",
+    "content": "Kemi received a package of rare seeds from a contact in Ghana and got excited about the potential for a new product line.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 44,
+    "node_type": "observation",
+    "content": "One rainy day, he watched documentaries about indigenous farming practices while testing different flavor combinations for energy bars.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 45,
+    "node_type": "observation",
+    "content": "Kemi's nephew asked for help with a school science project, and they spent the afternoon extracting natural dyes from hibiscus flowers.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 46,
+    "node_type": "observation",
+    "content": "He accidentally left his laptop charger at the office and had to work on his phone, which made reviewing spreadsheets challenging.",
+    "importance": 8,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 47,
+    "node_type": "observation",
+    "content": "Kemi bought new books about food technology and nutritional biochemistry, adding them to his already overflowing bookshelf.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 48,
+    "node_type": "observation",
+    "content": "One morning, he had to rush to catch a bus after losing track of time while perfecting a new baobab processing technique.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 49,
+    "node_type": "observation",
+    "content": "Kemi had a quiet dinner at home, eating traditional Nigerian soup while responding to emails from international distributors.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 50,
+    "node_type": "observation",
+    "content": "He spent time this week responding to messages from young entrepreneurs seeking mentorship, carefully crafting encouraging responses.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 51,
+    "node_type": "observation",
+    "content": "Kemi found himself running late to a team meeting after getting absorbed in a conversation with a traditional healer about medicinal plants.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 52,
+    "node_type": "observation",
+    "content": "He spent some time updating his company's website with new research findings, ensuring the information was accessible to non-technical readers.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 53,
+    "node_type": "observation",
+    "content": "One afternoon, Kemi took a break from work to sit in his small rooftop garden, tending to the moringa and bitter leaf plants he grows.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 54,
+    "node_type": "observation",
+    "content": "He accidentally mixed up two similar-looking plant samples and spent an hour re-labeling everything to avoid future confusion.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 55,
+    "node_type": "observation",
+    "content": "Kemi dropped by a new African restaurant to research how traditional ingredients were being used in modern culinary applications.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 56,
+    "node_type": "observation",
+    "content": "He spent his Saturday morning catching up on calls with farmers in rural communities, discussing crop yields and market demands.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 57,
+    "node_type": "observation",
+    "content": "While cleaning his apartment, Kemi found old coding notebooks from university that reminded him of his journey from pure tech to food innovation.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 58,
+    "node_type": "observation",
+    "content": "Kemi successfully launched a line of high-protein snacks made from indigenous African grains, securing distribution in five West African countries.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 59,
+    "node_type": "observation",
+    "content": "He organized a workshop for local farmers on sustainable cultivation techniques for high-value indigenous plants like moringa and baobab.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 60,
+    "node_type": "observation",
+    "content": "Kemi spent weeks developing a proprietary extraction process that preserves maximum nutrients while extending shelf life for traditional African superfoods.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 61,
+    "node_type": "observation",
+    "content": "He attended an agri-tech conference in Nairobi where he networked with other African food entrepreneurs and secured three new partnership deals.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 62,
+    "node_type": "observation",
+    "content": "Kemi had to navigate a complex negotiation with government regulators to get approval for his innovative food processing methods.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 63,
+    "node_type": "observation",
+    "content": "During a busy quarter, Kemi worked overtime to complete clinical trials demonstrating the health benefits of his flagship moringa-based supplement.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 64,
+    "node_type": "observation",
+    "content": "He collaborated with nutritionists at Lagos University to publish research papers validating the nutritional superiority of indigenous African plants.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 65,
+    "node_type": "observation",
+    "content": "Kemi conducted a market analysis of the global superfood industry, identifying opportunities for African ingredients in international markets.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 66,
+    "node_type": "observation",
+    "content": "He delivered a keynote presentation at a food security summit, advocating for investment in indigenous African food systems and local innovation.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 67,
+    "node_type": "observation",
+    "content": "Kemi mentored a cohort of young African entrepreneurs through a startup accelerator focused on agriculture technology.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 68,
+    "node_type": "observation",
+    "content": "He hosted a webinar for international investors about the untapped potential of African food technology and traditional nutritional knowledge.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 69,
+    "node_type": "observation",
+    "content": "Kemi was tasked with developing a supply chain management system that ensures fair compensation for rural farmers growing indigenous crops.",
+    "importance": 40,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 70,
+    "node_type": "observation",
+    "content": "He spent days in the field working with agricultural scientists to optimize growing conditions for nutrient-dense African vegetables.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 71,
+    "node_type": "observation",
+    "content": "Kemi met with the Minister of Agriculture to discuss policy changes that would support local food innovation and reduce import dependency.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 72,
+    "node_type": "observation",
+    "content": "He trained his production team on new quality control protocols to ensure AfriFoods Tech products meet international safety standards.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 73,
+    "node_type": "observation",
+    "content": "Kemi was invited to speak at a United Nations panel about leveraging traditional knowledge for modern nutrition solutions in developing countries.",
+    "importance": 38,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 74,
+    "node_type": "observation",
+    "content": "He reviewed and approved expansion plans for manufacturing facilities in three additional African countries, focusing on local job creation.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 75,
+    "node_type": "observation",
+    "content": "Kemi collaborated with anthropologists and ethnobotanists to document and preserve traditional food preparation methods before they're lost.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 76,
+    "node_type": "observation",
+    "content": "He developed a blockchain-based certification system that allows consumers to trace ingredients back to specific farming communities.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 77,
+    "node_type": "observation",
+    "content": "After months of research and development, Kemi launched a mobile app that educates users about the nutritional benefits of indigenous African foods.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 78,
+    "node_type": "observation",
+    "content": "I stopped by Rowan\u2019s stand and picked up a jar of Forest Evening, appreciating his \u201cstart low, go slow\u201d brewing guidance and the forest-friendly ethos\u2014take only tops, leave the roots. We agreed I\u2019d run a light, plain-language GC-MS volatile snapshot on the pine tips to compare brightness across harvest windows. I also bought his Focus & Flora daytime blend (nettle, yarrow, pine tip, chamomile, calendula) for steady lab focus without jitters. Felt grounded\u2014technology serving tradition, Ubuntu in a cup.",
+    "importance": 22,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  }
+]
