@@ -199,7 +199,7 @@ class ConversationTradeAnalyzer:
                 # Add cash to seller's inventory if price > 0
                 if price > 0:
                     seller_agent.inventory.trade_item(
-                        item_name="cash",
+                        item_name="digital cash",
                         quantity=int(price),
                         is_giving=False,
                         time_step=time_step,
@@ -256,7 +256,7 @@ class ConversationTradeAnalyzer:
             
             # Calculate total cost and check if buyer has enough cash
             total_cost = sum(item.get("value", 0.0) for item in items)
-            if total_cost > 0 and not buyer_agent.inventory.has_item("cash", int(total_cost)):
+            if total_cost > 0 and not buyer_agent.inventory.has_item("digital cash", int(total_cost)):
                 return False
             
             # Execute trade for each item
@@ -283,7 +283,7 @@ class ConversationTradeAnalyzer:
                 # Remove cash from buyer's inventory if price > 0
                 if price > 0:
                     success = buyer_agent.inventory.trade_item(
-                        item_name="cash",
+                        item_name="digital cash",
                         quantity=int(price),
                         is_giving=True,
                         time_step=time_step,
