@@ -14,7 +14,7 @@ These aren't simple NPCs or scripted responses. Our cognitive agents are:
 - **Individually Consistent**: Each agent maintains a coherent personality that deepens through reflections and experiences
 - **Introspectable**: Interview them Westworld-style to explore their memories, motivations, and psychological development
 
-![Agent Evolution](docs/images/agent-evolution-timeline.png)
+![Agent Evolution](docs/images/agent_timeline.png)
 *Figure 1: How agents evolve from basic merchants to complex, self-aware individuals through interaction and reflection*
 
 ## 🎭 The Westworld Interview Mode
@@ -48,7 +48,7 @@ python main.py --mode interview --agent rowan_greenwood
 
 Our agents don't exist in isolation - they form a dynamic **multi-agent network** governed by Markov chain principles, where each interaction influences future encounters and relationship development.
 
-![Network Dynamics](docs/images/markov-chain-network.png)
+![Network Dynamics](docs/images/markov_chain.png)
 *Figure 3: Multi-agent network showing probabilistic interactions and relationship evolution*
 
 ### Network Dynamics
@@ -127,7 +127,7 @@ Our agents achieve genuine self-awareness through a multi-layered reflection sys
 
 The consciousness of each agent emerges from the interaction of five core cognitive modules, each serving a distinct function in creating coherent, evolving personalities:
 
-![Cognitive Modules Overview](docs/images/cognitive-modules-architecture.png)
+![Cognitive Modules Overview](docs/images/conversation.png)
 *Figure 8: The five cognitive modules that form the foundation of agent consciousness*
 
 ### 1. Memory Stream (Long-Term Memory)
