@@ -27,7 +27,7 @@ class InventoryItem:
 class InventoryRecord:
     def __init__(self, record_dict: Dict[str, Any]):
         self.record_id = record_dict["record_id"]
-        self.action = record_dict["action"]  # "add", "remove", "trade_give", "trade_receive"
+        self.action = record_dict["action"]  # "add", "remove", "trade_give", "trade_receive", "trade_failed"
         self.item_name = record_dict["item_name"]
         self.quantity = record_dict["quantity"]
         self.time_step = record_dict["time_step"]
@@ -127,6 +127,11 @@ class Inventory:
             self.records[-1].action = "trade_receive"
             self.records[-1].trade_partner = trade_partner
             return True
+    
+    def record_trade_failure(self, item_name: str, quantity: int, time_step: int, trade_partner: str = "", reason: str = ""):
+        """Record a failed trade attempt."""
+        description = f"Failed to trade {quantity} {item_name}" + (f" with {trade_partner}" if trade_partner else "") + (f": {reason}" if reason else "")
+        self._add_record("trade_failed", item_name, quantity, time_step, description, trade_partner)
 
     def get_item_quantity(self, name: str) -> int:
         return self.items[name].quantity if name in self.items else 0
@@ -170,6 +175,15 @@ class Inventory:
                 if item_name is None or record.item_name == item_name:
                     trades.append(record.package())
         return trades
+    
+    def get_failed_trade_history(self, item_name: str = None) -> List[Dict[str, Any]]:
+        """Get history of failed trade attempts."""
+        failed_trades = []
+        for record in self.records:
+            if record.action == "trade_failed":
+                if item_name is None or record.item_name == item_name:
+                    failed_trades.append(record.package())
+        return failed_trades
     
     def package(self) -> Dict[str, Any]:
         return {

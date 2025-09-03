@@ -24,6 +24,10 @@ class Scratch:
     self.speech_pattern = ""
     self.self_description = ""
     self.private_self_description = ""
+    
+    # Sales failure tracking
+    self.total_sales_failures = 0
+    self.last_sales_failure_time = 0
 
     if scratch: 
       self.first_name = scratch["first_name"]
@@ -50,6 +54,10 @@ class Scratch:
       self.speech_pattern = scratch["speech_pattern"]
       self.self_description = scratch["self_description"]
       self.private_self_description = scratch["private_self_description"]
+      
+      # Sales failure tracking (with defaults for backwards compatibility)
+      self.total_sales_failures = int(scratch.get("total_sales_failures", 0))
+      self.last_sales_failure_time = int(scratch.get("last_sales_failure_time", 0))
 
 
   def package(self): 
@@ -86,6 +94,10 @@ class Scratch:
     curr_package["speech_pattern"] = self.speech_pattern
     curr_package["self_description"] = self.self_description
     curr_package["private_self_description"] = self.private_self_description
+    
+    # Sales failure tracking
+    curr_package["total_sales_failures"] = self.total_sales_failures
+    curr_package["last_sales_failure_time"] = self.last_sales_failure_time
 
     return curr_package
 

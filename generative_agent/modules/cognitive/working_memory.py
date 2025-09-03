@@ -35,6 +35,10 @@ class WorkingMemory:
         
         # Cross-agent transaction tracking
         self.pending_purchase: Dict[str, Any] = {}  # For handling buyer side of transactions
+        
+        # Sales failure tracking
+        self.recent_sales_failures: List[Dict[str, Any]] = []
+        self.has_recent_sales_failure: bool = False
     
     def start_new_interaction(self, context: str = "", interaction_id: str = ""):
         """Start a new interaction, clearing conversation-specific state."""
@@ -43,6 +47,8 @@ class WorkingMemory:
         self.recalled_memories.clear()
         self.processed_trades.clear()
         self.recent_trades.clear()
+        self.recent_sales_failures.clear()
+        self.has_recent_sales_failure = False
         self.interaction_id = interaction_id or str(datetime.now().timestamp())
         self.turn_count = 0
         self.last_update_time = datetime.now().timestamp()
@@ -105,6 +111,10 @@ class WorkingMemory:
         # Add current inventory information
         agent_desc += f"\nCurrent Inventory:\n{agent.get_all_items_with_values()}\n"
         
+        # Add sales failure flag if there was a recent failure in this conversation
+        if self.has_recent_sales_failure:
+            agent_desc += f"Note: Recent sales attempt failed in this conversation.\n"
+        
         # Add current conversation context if available
         if self.conversation_context:
             agent_desc += f"\nConversation Context: {self.conversation_context}\n"
@@ -131,6 +141,17 @@ class WorkingMemory:
             "turn_count": self.turn_count
         }
         self.recent_trades.append(trade_record)
+    
+    def record_sales_failure(self, failure_data: Dict[str, Any]):
+        """Record a sales/trade failure that occurred."""
+        failure_record = {
+            **failure_data,
+            "timestamp": datetime.now().timestamp(),
+            "interaction_id": self.interaction_id,
+            "turn_count": self.turn_count
+        }
+        self.recent_sales_failures.append(failure_record)
+        self.has_recent_sales_failure = True
     
     def get_conversation_text(self) -> str:
         """Get the current conversation as formatted text."""
@@ -159,6 +180,15 @@ class WorkingMemory:
             for trade in self.recent_trades:
                 trades_context += f"- {trade.get('participants', {}).get('seller', 'Unknown')} sold to {trade.get('participants', {}).get('buyer', 'Unknown')}: {trade.get('items', [])}\n"
         
+        # Create context for sales failures if any occurred
+        failures_context = ""
+        if self.recent_sales_failures:
+            failures_context = f"\nSales failures that occurred: {len(self.recent_sales_failures)} failed attempts\n"
+            for failure in self.recent_sales_failures:
+                reason = failure.get('reason', 'Unknown reason')
+                item_attempted = failure.get('item_attempted', 'Unknown item')
+                failures_context += f"- Failed to sell {item_attempted}: {reason}\n"
+        
         # Create the prompt for LLM to generate personalized summary
         prompt = f"""You are {agent_name}, with the following personality:
 Personality: {personality}
@@ -173,6 +203,7 @@ Please write a first-person summary of this interaction from your perspective. T
 Conversation that occurred:
 {conversation_text}
 {trades_context}
+{failures_context}
 
 Write a concise first-person summary (2-4 sentences) of this interaction from {agent_name}'s perspective:"""
 
@@ -184,7 +215,8 @@ Write a concise first-person summary (2-4 sentences) of this interaction from {a
         except Exception as e:
             print(f"Error generating interaction summary: {e}")
             # Fallback to basic summary
-            return f"I had a {self.turn_count}-turn conversation. {trades_context.strip() if trades_context else 'No trades occurred.'}"
+            failure_text = f" {len(self.recent_sales_failures)} sales failed." if self.recent_sales_failures else ""
+            return f"I had a {self.turn_count}-turn conversation. {trades_context.strip() if trades_context else 'No trades occurred.'}{failure_text}"
     
     def clear(self):
         """Clear all working memory."""
@@ -194,6 +226,8 @@ Write a concise first-person summary (2-4 sentences) of this interaction from {a
         self.inventory_snapshot.clear()
         self.processed_trades.clear()
         self.recent_trades.clear()
+        self.recent_sales_failures.clear()
+        self.has_recent_sales_failure = False
         self.interaction_id = ""
         self.turn_count = 0
         self.last_update_time = 0
@@ -207,6 +241,8 @@ Write a concise first-person summary (2-4 sentences) of this interaction from {a
             "inventory_snapshot": self.inventory_snapshot,
             "processed_trades": list(self.processed_trades),
             "recent_trades": self.recent_trades,
+            "recent_sales_failures": self.recent_sales_failures,
+            "has_recent_sales_failure": self.has_recent_sales_failure,
             "interaction_id": self.interaction_id,
             "last_update_time": self.last_update_time,
             "turn_count": self.turn_count
@@ -220,6 +256,8 @@ Write a concise first-person summary (2-4 sentences) of this interaction from {a
         self.inventory_snapshot = data.get("inventory_snapshot", {})
         self.processed_trades = set(data.get("processed_trades", []))
         self.recent_trades = data.get("recent_trades", [])
+        self.recent_sales_failures = data.get("recent_sales_failures", [])
+        self.has_recent_sales_failure = data.get("has_recent_sales_failure", False)
         self.interaction_id = data.get("interaction_id", "")
         self.last_update_time = data.get("last_update_time", 0)
         self.turn_count = data.get("turn_count", 0)

@@ -181,6 +181,17 @@ class ConversationTradeAnalyzer:
                 
                 # Check if seller has the item in required quantity
                 if not seller_agent.inventory.has_item(item_name, quantity):
+                    # Record the failed trade attempt
+                    reason = f"Insufficient inventory: needed {quantity}, have {seller_agent.inventory.get_item_quantity(item_name)}"
+                    seller_agent.inventory.record_trade_failure(item_name, quantity, time_step, buyer_name, reason)
+                    seller_agent.working_memory.record_sales_failure({
+                        'item_attempted': item_name,
+                        'quantity_attempted': quantity,
+                        'reason': reason,
+                        'trade_partner': buyer_name
+                    })
+                    seller_agent.scratch.total_sales_failures += 1
+                    seller_agent.scratch.last_sales_failure_time = time_step
                     total_success = False
                     continue
                 
@@ -195,6 +206,17 @@ class ConversationTradeAnalyzer:
                 )
                 
                 if not success:
+                    # Record the failed trade attempt
+                    reason = "Failed to remove item from inventory"
+                    seller_agent.inventory.record_trade_failure(item_name, quantity, time_step, buyer_name, reason)
+                    seller_agent.working_memory.record_sales_failure({
+                        'item_attempted': item_name,
+                        'quantity_attempted': quantity,
+                        'reason': reason,
+                        'trade_partner': buyer_name
+                    })
+                    seller_agent.scratch.total_sales_failures += 1
+                    seller_agent.scratch.last_sales_failure_time = time_step
                     total_success = False
                     continue
                 
@@ -261,6 +283,16 @@ class ConversationTradeAnalyzer:
             # Calculate total cost and check if buyer has enough cash
             total_cost = sum(item.get("value", 0.0) for item in items)
             if total_cost > 0 and not buyer_agent.inventory.has_item("digital cash", int(total_cost)):
+                # Record the failed purchase attempt due to insufficient funds
+                reason = f"Insufficient funds: needed ${total_cost}, have ${buyer_agent.inventory.get_item_quantity('digital cash')}"
+                buyer_agent.working_memory.record_sales_failure({
+                    'item_attempted': f"{len(items)} items",
+                    'cost_attempted': total_cost,
+                    'reason': reason,
+                    'trade_partner': seller_name
+                })
+                buyer_agent.scratch.total_sales_failures += 1
+                buyer_agent.scratch.last_sales_failure_time = time_step
                 return False
             
             # Execute trade for each item
@@ -296,6 +328,16 @@ class ConversationTradeAnalyzer:
                     )
                     
                     if not success:
+                        # Record the failed payment
+                        reason = "Failed to remove cash from inventory for payment"
+                        buyer_agent.working_memory.record_sales_failure({
+                            'item_attempted': item_name,
+                            'cost_attempted': price,
+                            'reason': reason,
+                            'trade_partner': seller_name
+                        })
+                        buyer_agent.scratch.total_sales_failures += 1
+                        buyer_agent.scratch.last_sales_failure_time = time_step
                         total_success = False
             
             # Save the updated inventory (unless in testing mode)
