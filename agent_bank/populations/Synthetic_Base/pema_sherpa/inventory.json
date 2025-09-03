@@ -1,0 +1,142 @@
+{
+  "items": [
+    {
+      "name": "mad_honey",
+      "quantity": 3,
+      "value": 150.0,
+      "description": "Sacred psychoactive honey from high-altitude rhododendron nectar",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "wild_cliff_honey",
+      "quantity": 8,
+      "value": 80.0,
+      "description": "Raw honey harvested from giant bee colonies on cliff faces",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "mountain_flower_honey",
+      "quantity": 12,
+      "value": 45.0,
+      "description": "Wildflower honey from high Himalayan meadows",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "pine_honey",
+      "quantity": 6,
+      "value": 55.0,
+      "description": "Dark honey with medicinal properties from pine tree secretions",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "prayer_blessed_honey",
+      "quantity": 4,
+      "value": 120.0,
+      "description": "Ceremonially blessed honey for spiritual and healing purposes",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "traditional_climbing_gear",
+      "quantity": 2,
+      "value": 300.0,
+      "description": "Handmade rope ladders and collection tools",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "honey_medicinal_guide",
+      "quantity": 1,
+      "value": 200.0,
+      "description": "Ancient family knowledge of honey's healing properties",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "digital cash",
+      "quantity": 180,
+      "value": 1.0,
+      "description": "Earnings from honey trading and guiding",
+      "created": 1,
+      "last_modified": 1
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "mad_honey",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "Sacred psychoactive honey from high-altitude rhododendron nectar",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "wild_cliff_honey",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Raw honey harvested from giant bee colonies on cliff faces",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "mountain_flower_honey",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Wildflower honey from high Himalayan meadows",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "pine_honey",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Dark honey with medicinal properties from pine tree secretions",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "prayer_blessed_honey",
+      "quantity": 4,
+      "time_step": 1,
+      "description": "Ceremonially blessed honey for spiritual and healing purposes",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "traditional_climbing_gear",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "Handmade rope ladders and collection tools",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "honey_medicinal_guide",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Ancient family knowledge of honey's healing properties",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 180,
+      "time_step": 1,
+      "description": "Earnings from honey trading and guiding",
+      "trade_partner": ""
+    }
+  ]
+}

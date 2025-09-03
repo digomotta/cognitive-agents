@@ -1,0 +1,471 @@
+{
+  "items": [
+    {
+      "name": "mad_honey",
+      "quantity": 3,
+      "value": 150.0,
+      "description": "Sacred psychoactive honey from high-altitude rhododendron nectar",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "wild_cliff_honey",
+      "quantity": 7,
+      "value": 80.0,
+      "description": "Raw honey harvested from giant bee colonies on cliff faces",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "mountain_flower_honey",
+      "quantity": 9,
+      "value": 45.0,
+      "description": "Wildflower honey from high Himalayan meadows",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "pine_honey",
+      "quantity": 4,
+      "value": 55.0,
+      "description": "Dark honey with medicinal properties from pine tree secretions",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "prayer_blessed_honey",
+      "quantity": 3,
+      "value": 120.0,
+      "description": "Ceremonially blessed honey for spiritual and healing purposes",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "traditional_climbing_gear",
+      "quantity": 2,
+      "value": 300.0,
+      "description": "Handmade rope ladders and collection tools",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "digital cash",
+      "quantity": 444,
+      "value": 0.9685598642120381,
+      "description": "Earnings from honey trading and guiding",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "aged_cigars",
+      "quantity": 1,
+      "value": 150.0,
+      "description": "Purchased 1 aged_cigars from Carlos Mendez for $150.0",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "sunscreen",
+      "quantity": 2,
+      "value": 22.0,
+      "description": "Purchased 1 sunscreen from Jasmine Carter for $22.0",
+      "created": 3,
+      "last_modified": 1
+    },
+    {
+      "name": "cleansing_oil",
+      "quantity": 2,
+      "value": 25.0,
+      "description": "Purchased 1 cleansing_oil from Jasmine Carter for $25.0",
+      "created": 3,
+      "last_modified": 1
+    },
+    {
+      "name": "essence",
+      "quantity": 2,
+      "value": 28.0,
+      "description": "Purchased 1 essence from Jasmine Carter for $28.0",
+      "created": 3,
+      "last_modified": 1
+    },
+    {
+      "name": "herbal_tea",
+      "quantity": 1,
+      "value": 15.0,
+      "description": "Purchased 1 herbal_tea from Rowan Greenwood for $15.0",
+      "created": 1,
+      "last_modified": 1
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "mad_honey",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "Sacred psychoactive honey from high-altitude rhododendron nectar",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "wild_cliff_honey",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Raw honey harvested from giant bee colonies on cliff faces",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "mountain_flower_honey",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Wildflower honey from high Himalayan meadows",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "pine_honey",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Dark honey with medicinal properties from pine tree secretions",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "prayer_blessed_honey",
+      "quantity": 4,
+      "time_step": 1,
+      "description": "Ceremonially blessed honey for spiritual and healing purposes",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "traditional_climbing_gear",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "Handmade rope ladders and collection tools",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "honey_medicinal_guide",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Ancient family knowledge of honey's healing properties",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 180,
+      "time_step": 1,
+      "description": "Earnings from honey trading and guiding",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "trade_receive",
+      "item_name": "aged_cigars",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Purchased 1 aged_cigars from Carlos Mendez for $150.0",
+      "trade_partner": "Carlos Mendez"
+    },
+    {
+      "record_id": 9,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 150,
+      "time_step": 1,
+      "description": "Paid $150.0 for 1 aged_cigars from Carlos Mendez",
+      "trade_partner": "Carlos Mendez"
+    },
+    {
+      "record_id": 10,
+      "action": "trade_give",
+      "item_name": "prayer_blessed_honey",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 prayer_blessed_honey to Mina Kim for $120.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 11,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 120,
+      "time_step": 3,
+      "description": "Received $120.0 from selling 1 prayer_blessed_honey to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 12,
+      "action": "trade_receive",
+      "item_name": "sunscreen",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 sunscreen from Jasmine Carter for $22.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 13,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 22,
+      "time_step": 3,
+      "description": "Paid $22.0 for 1 sunscreen from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 14,
+      "action": "trade_receive",
+      "item_name": "cleansing_oil",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 cleansing_oil from Jasmine Carter for $25.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 15,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 25,
+      "time_step": 3,
+      "description": "Paid $25.0 for 1 cleansing_oil from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 16,
+      "action": "trade_receive",
+      "item_name": "essence",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 essence from Jasmine Carter for $28.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 17,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 28,
+      "time_step": 3,
+      "description": "Paid $28.0 for 1 essence from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 18,
+      "action": "trade_give",
+      "item_name": "mountain_flower_honey",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 mountain_flower_honey to Mina Kim for $45.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 19,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Received $45.0 from selling 1 mountain_flower_honey to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 20,
+      "action": "trade_give",
+      "item_name": "pine_honey",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 pine_honey to Mina Kim for $55.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 21,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 55,
+      "time_step": 3,
+      "description": "Received $55.0 from selling 1 pine_honey to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 22,
+      "action": "trade_give",
+      "item_name": "honey_medicinal_guide",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 honey_medicinal_guide to Mina Kim for $200.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 23,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 200,
+      "time_step": 3,
+      "description": "Received $200.0 from selling 1 honey_medicinal_guide to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 24,
+      "action": "trade_receive",
+      "item_name": "sunscreen",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Purchased 1 sunscreen from Jasmine Carter for $22.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 25,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 22,
+      "time_step": 1,
+      "description": "Paid $22.0 for 1 sunscreen from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 26,
+      "action": "trade_receive",
+      "item_name": "cleansing_oil",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Purchased 1 cleansing_oil from Jasmine Carter for $25.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 27,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 25,
+      "time_step": 1,
+      "description": "Paid $25.0 for 1 cleansing_oil from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 28,
+      "action": "trade_receive",
+      "item_name": "essence",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Purchased 1 essence from Jasmine Carter for $28.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 29,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 28,
+      "time_step": 1,
+      "description": "Paid $28.0 for 1 essence from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 30,
+      "action": "trade_give",
+      "item_name": "mountain_flower_honey",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Sold 1 mountain_flower_honey to Carlos Mendez for $45.0",
+      "trade_partner": "Carlos Mendez"
+    },
+    {
+      "record_id": 31,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 1,
+      "description": "Received $45.0 from selling 1 mountain_flower_honey to Carlos Mendez",
+      "trade_partner": "Carlos Mendez"
+    },
+    {
+      "record_id": 32,
+      "action": "trade_give",
+      "item_name": "wild_cliff_honey",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Sold 1 wild_cliff_honey to Carlos Mendez for $0.0",
+      "trade_partner": "Carlos Mendez"
+    },
+    {
+      "record_id": 33,
+      "action": "trade_receive",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Purchased 1 herbal_tea from Rowan Greenwood for $15.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 34,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "Paid $15.0 for 1 herbal_tea from Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 35,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "Purchased 15 digital cash from Rowan Greenwood for $1.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 36,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Paid $1.0 for 15 digital cash from Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 37,
+      "action": "trade_give",
+      "item_name": "pine_honey",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 pine_honey to Jasmine Carter for $55.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 38,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 55,
+      "time_step": 3,
+      "description": "Received $55.0 from selling 1 pine_honey to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 39,
+      "action": "trade_give",
+      "item_name": "mountain_flower_honey",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 mountain_flower_honey to Jasmine Carter for $45.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 40,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Received $45.0 from selling 1 mountain_flower_honey to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    }
+  ]
+}

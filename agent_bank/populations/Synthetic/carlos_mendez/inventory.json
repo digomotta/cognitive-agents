@@ -1,0 +1,438 @@
+{
+  "items": [
+    {
+      "name": "premium_cigars",
+      "quantity": 15,
+      "value": 85.0,
+      "description": "Hand-rolled premium cigars from Vuelta Abajo tobacco",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "wrapper_tobacco_leaves",
+      "quantity": 25,
+      "value": 35.0,
+      "description": "Premium wrapper tobacco leaves for cigar making",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "aged_cigars",
+      "quantity": 7,
+      "value": 150.0,
+      "description": "Aged cigars with 5+ years of careful humidor storage",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cuban_rum",
+      "quantity": 6,
+      "value": 75.0,
+      "description": "Authentic Cuban rum for cigar pairing",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "aged_whisky",
+      "quantity": 4,
+      "value": 120.0,
+      "description": "Premium aged whisky for sophisticated cigar sessions",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cigar_humidor",
+      "quantity": 1,
+      "value": 300.0,
+      "description": "Traditional cedar humidors for proper cigar storage",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "tobacco_seeds",
+      "quantity": 12,
+      "value": 25.0,
+      "description": "Heritage Cuban tobacco seeds from family farm",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "rolling_tools",
+      "quantity": 1,
+      "value": 200.0,
+      "description": "Traditional cigar rolling tools and molds",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "digital cash",
+      "quantity": 342,
+      "value": 1.0,
+      "description": "Farm earnings and cigar sales",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "notebooks",
+      "quantity": 8,
+      "value": 3.5,
+      "description": "Purchased 4 notebooks from Jasmine Carter for $14.0",
+      "created": 3,
+      "last_modified": 3
+    },
+    {
+      "name": "herbal_tea",
+      "quantity": 1,
+      "value": 15.0,
+      "description": "Purchased 1 herbal_tea from Jasmine Carter for $15.0",
+      "created": 3,
+      "last_modified": 3
+    },
+    {
+      "name": "graphing_calculator",
+      "quantity": 1,
+      "value": 120.0,
+      "description": "Purchased 1 graphing_calculator from Jasmine Carter for $120.0",
+      "created": 3,
+      "last_modified": 3
+    },
+    {
+      "name": "mountain_flower_honey",
+      "quantity": 1,
+      "value": 45.0,
+      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "wild_cliff_honey",
+      "quantity": 1,
+      "value": 0.0,
+      "description": "Purchased 1 wild_cliff_honey from Pema Sherpa for $0.0",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "sunscreen",
+      "quantity": 1,
+      "value": 22.0,
+      "description": "Purchased 1 sunscreen from Jasmine Carter for $22.0",
+      "created": 3,
+      "last_modified": 3
+    },
+    {
+      "name": "cleansing_oil",
+      "quantity": 1,
+      "value": 25.0,
+      "description": "Purchased 1 cleansing_oil from Jasmine Carter for $25.0",
+      "created": 3,
+      "last_modified": 3
+    },
+    {
+      "name": "essence",
+      "quantity": 1,
+      "value": 28.0,
+      "description": "Purchased 1 essence from Jasmine Carter for $28.0",
+      "created": 3,
+      "last_modified": 3
+    },
+    {
+      "name": "moringa_powder",
+      "quantity": 1,
+      "value": 45.0,
+      "description": "Purchased 1 moringa_powder from Jasmine Carter for $45.0",
+      "created": 3,
+      "last_modified": 3
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "premium_cigars",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "Hand-rolled premium cigars from Vuelta Abajo tobacco",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "wrapper_tobacco_leaves",
+      "quantity": 25,
+      "time_step": 1,
+      "description": "Premium wrapper tobacco leaves for cigar making",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "aged_cigars",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Aged cigars with 5+ years of careful humidor storage",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "cuban_rum",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Authentic Cuban rum for cigar pairing",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "aged_whisky",
+      "quantity": 4,
+      "time_step": 1,
+      "description": "Premium aged whisky for sophisticated cigar sessions",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "cigar_humidor",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "Traditional cedar humidors for proper cigar storage",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "tobacco_seeds",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Heritage Cuban tobacco seeds from family farm",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "rolling_tools",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Traditional cigar rolling tools and molds",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 220,
+      "time_step": 1,
+      "description": "Farm earnings and cigar sales",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "trade_receive",
+      "item_name": "notebooks",
+      "quantity": 4,
+      "time_step": 3,
+      "description": "Purchased 4 notebooks from Jasmine Carter for $14.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 10,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 14,
+      "time_step": 3,
+      "description": "Paid $14.0 for 4 notebooks from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 11,
+      "action": "trade_receive",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 herbal_tea from Jasmine Carter for $15.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 12,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 15,
+      "time_step": 3,
+      "description": "Paid $15.0 for 1 herbal_tea from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 13,
+      "action": "trade_give",
+      "item_name": "aged_cigars",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Sold 1 aged_cigars to Pema Sherpa for $150.0",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 14,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 150,
+      "time_step": 1,
+      "description": "Received $150.0 from selling 1 aged_cigars to Pema Sherpa",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 15,
+      "action": "trade_receive",
+      "item_name": "notebooks",
+      "quantity": 4,
+      "time_step": 3,
+      "description": "Purchased 4 notebooks from Jasmine Carter for $14.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 16,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 14,
+      "time_step": 3,
+      "description": "Paid $14.0 for 4 notebooks from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 17,
+      "action": "trade_receive",
+      "item_name": "graphing_calculator",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 graphing_calculator from Jasmine Carter for $120.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 18,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 120,
+      "time_step": 3,
+      "description": "Paid $120.0 for 1 graphing_calculator from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 19,
+      "action": "trade_give",
+      "item_name": "cigar_humidor",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 cigar_humidor to Jasmine Carter for $300.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 20,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 300,
+      "time_step": 3,
+      "description": "Received $300.0 from selling 1 cigar_humidor to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 21,
+      "action": "trade_receive",
+      "item_name": "mountain_flower_honey",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 22,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 1,
+      "description": "Paid $45.0 for 1 mountain_flower_honey from Pema Sherpa",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 23,
+      "action": "trade_receive",
+      "item_name": "wild_cliff_honey",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Purchased 1 wild_cliff_honey from Pema Sherpa for $0.0",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 24,
+      "action": "trade_receive",
+      "item_name": "sunscreen",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 sunscreen from Jasmine Carter for $22.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 25,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 22,
+      "time_step": 3,
+      "description": "Paid $22.0 for 1 sunscreen from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 26,
+      "action": "trade_receive",
+      "item_name": "cleansing_oil",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 cleansing_oil from Jasmine Carter for $25.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 27,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 25,
+      "time_step": 3,
+      "description": "Paid $25.0 for 1 cleansing_oil from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 28,
+      "action": "trade_receive",
+      "item_name": "essence",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 essence from Jasmine Carter for $28.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 29,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 28,
+      "time_step": 3,
+      "description": "Paid $28.0 for 1 essence from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 30,
+      "action": "trade_receive",
+      "item_name": "moringa_powder",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 moringa_powder from Jasmine Carter for $45.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 31,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Paid $45.0 for 1 moringa_powder from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    }
+  ]
+}

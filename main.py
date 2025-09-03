@@ -8,6 +8,8 @@ from testing.memories.rowan_greenwood_memories import *
 from testing.memories.jasmine_carter_memories import *
 from testing.memories.mina_kim_memories import *
 from testing.memories.kemi_adebayo_memories import *
+from testing.memories.pema_sherpa_memories import *
+from testing.memories.carlos_mendez_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
 from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
@@ -99,6 +101,29 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("research_reports", 3, 1, 200.00, "Proprietary food tech research and patents")
     agent.add_to_inventory("mobile_app_licenses", 2, 1, 500.00, "Nutrition education app licenses")
     agent.add_to_inventory("digital cash", 300, 1, 1.00, "Startup revenue and investment funds")
+    
+  elif agent_name == "pema_sherpa":
+    # Pema: Nepalese honey hunter with wild and mad honey
+    agent.add_to_inventory("mad_honey", 3, 1, 150.00, "Sacred psychoactive honey from high-altitude rhododendron nectar")
+    agent.add_to_inventory("wild_cliff_honey", 8, 1, 80.00, "Raw honey harvested from giant bee colonies on cliff faces")
+    agent.add_to_inventory("mountain_flower_honey", 12, 1, 45.00, "Wildflower honey from high Himalayan meadows")
+    agent.add_to_inventory("pine_honey", 6, 1, 55.00, "Dark honey with medicinal properties from pine tree secretions")
+    agent.add_to_inventory("prayer_blessed_honey", 4, 1, 120.00, "Ceremonially blessed honey for spiritual and healing purposes")
+    agent.add_to_inventory("traditional_climbing_gear", 2, 1, 300.00, "Handmade rope ladders and collection tools")
+    agent.add_to_inventory("honey_medicinal_guide", 1, 1, 200.00, "Ancient family knowledge of honey's healing properties")
+    agent.add_to_inventory("digital cash", 180, 1, 1.00, "Earnings from honey trading and guiding")
+    
+  elif agent_name == "carlos_mendez":
+    # Carlos: Cuban tobacco farmer and cigar maker
+    agent.add_to_inventory("premium_cigars", 15, 1, 85.00, "Hand-rolled premium cigars from Vuelta Abajo tobacco")
+    agent.add_to_inventory("wrapper_tobacco_leaves", 25, 1, 35.00, "Premium wrapper tobacco leaves for cigar making")
+    agent.add_to_inventory("aged_cigars", 8, 1, 150.00, "Aged cigars with 5+ years of careful humidor storage")
+    agent.add_to_inventory("cuban_rum", 6, 1, 75.00, "Authentic Cuban rum for cigar pairing")
+    agent.add_to_inventory("aged_whisky", 4, 1, 120.00, "Premium aged whisky for sophisticated cigar sessions")
+    agent.add_to_inventory("cigar_humidor", 2, 1, 300.00, "Traditional cedar humidors for proper cigar storage")
+    agent.add_to_inventory("tobacco_seeds", 12, 1, 25.00, "Heritage Cuban tobacco seeds from family farm")
+    agent.add_to_inventory("rolling_tools", 1, 1, 200.00, "Traditional cigar rolling tools and molds")
+    agent.add_to_inventory("digital cash", 220, 1, 1.00, "Farm earnings and cigar sales")
 
   agent.save()  # Save the cleared inventory to JSON files
 
@@ -131,6 +156,20 @@ def build_agent():
     kemi.remember(m)
   setup_agent_inventory(kemi, "kemi_adebayo")
   kemi.save("Synthetic", "kemi_adebayo")
+  
+  # Build Pema
+  pema = GenerativeAgent("Synthetic_Base", "pema_sherpa")
+  for m in pema_memories:
+    pema.remember(m)
+  setup_agent_inventory(pema, "pema_sherpa")
+  pema.save("Synthetic", "pema_sherpa")
+  
+  # Build Carlos
+  carlos = GenerativeAgent("Synthetic_Base", "carlos_mendez")
+  for m in carlos_memories:
+    carlos.remember(m)
+  setup_agent_inventory(carlos, "carlos_mendez")
+  carlos.save("Synthetic", "carlos_mendez")
   
   print("All agents built with fresh inventories!")
 

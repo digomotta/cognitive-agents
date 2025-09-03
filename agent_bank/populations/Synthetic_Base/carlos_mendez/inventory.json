@@ -1,0 +1,159 @@
+{
+  "items": [
+    {
+      "name": "premium_cigars",
+      "quantity": 15,
+      "value": 85.0,
+      "description": "Hand-rolled premium cigars from Vuelta Abajo tobacco",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "wrapper_tobacco_leaves",
+      "quantity": 25,
+      "value": 35.0,
+      "description": "Premium wrapper tobacco leaves for cigar making",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "aged_cigars",
+      "quantity": 8,
+      "value": 150.0,
+      "description": "Aged cigars with 5+ years of careful humidor storage",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cuban_rum",
+      "quantity": 6,
+      "value": 75.0,
+      "description": "Authentic Cuban rum for cigar pairing",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "aged_whisky",
+      "quantity": 4,
+      "value": 120.0,
+      "description": "Premium aged whisky for sophisticated cigar sessions",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "cigar_humidor",
+      "quantity": 2,
+      "value": 300.0,
+      "description": "Traditional cedar humidors for proper cigar storage",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "tobacco_seeds",
+      "quantity": 12,
+      "value": 25.0,
+      "description": "Heritage Cuban tobacco seeds from family farm",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "rolling_tools",
+      "quantity": 1,
+      "value": 200.0,
+      "description": "Traditional cigar rolling tools and molds",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "digital cash",
+      "quantity": 220,
+      "value": 1.0,
+      "description": "Farm earnings and cigar sales",
+      "created": 1,
+      "last_modified": 1
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "premium_cigars",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "Hand-rolled premium cigars from Vuelta Abajo tobacco",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "wrapper_tobacco_leaves",
+      "quantity": 25,
+      "time_step": 1,
+      "description": "Premium wrapper tobacco leaves for cigar making",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "aged_cigars",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Aged cigars with 5+ years of careful humidor storage",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "cuban_rum",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Authentic Cuban rum for cigar pairing",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "aged_whisky",
+      "quantity": 4,
+      "time_step": 1,
+      "description": "Premium aged whisky for sophisticated cigar sessions",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "cigar_humidor",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "Traditional cedar humidors for proper cigar storage",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "tobacco_seeds",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Heritage Cuban tobacco seeds from family farm",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "rolling_tools",
+      "quantity": 1,
+      "time_step": 1,
+      "description": "Traditional cigar rolling tools and molds",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 220,
+      "time_step": 1,
+      "description": "Farm earnings and cigar sales",
+      "trade_partner": ""
+    }
+  ]
+}

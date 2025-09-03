@@ -2,27 +2,27 @@
   "items": [
     {
       "name": "moringa_powder",
-      "quantity": 15,
+      "quantity": 13,
       "value": 45.0,
       "description": "High-protein moringa superfood powder",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 3
     },
     {
       "name": "baobab_fruit_powder",
-      "quantity": 10,
+      "quantity": 8,
       "value": 55.0,
       "description": "Vitamin C rich baobab powder",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 3
     },
     {
       "name": "hibiscus_extract",
-      "quantity": 8,
+      "quantity": 7,
       "value": 35.0,
       "description": "Antioxidant hibiscus extract capsules",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 3
     },
     {
       "name": "tiger_nut_flour",
@@ -66,11 +66,11 @@
     },
     {
       "name": "digital cash",
-      "quantity": 300,
+      "quantity": 535,
       "value": 1.0,
       "description": "Startup revenue and investment funds",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 3
     }
   ],
   "records": [
@@ -154,6 +154,96 @@
       "time_step": 1,
       "description": "Startup revenue and investment funds",
       "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "trade_give",
+      "item_name": "moringa_powder",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 moringa_powder to Mina Kim for $45.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 10,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Received $45.0 from selling 1 moringa_powder to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 11,
+      "action": "trade_give",
+      "item_name": "baobab_fruit_powder",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 baobab_fruit_powder to Mina Kim for $55.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 12,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 55,
+      "time_step": 3,
+      "description": "Received $55.0 from selling 1 baobab_fruit_powder to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 13,
+      "action": "trade_give",
+      "item_name": "hibiscus_extract",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 hibiscus_extract to Mina Kim for $35.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 14,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 35,
+      "time_step": 3,
+      "description": "Received $35.0 from selling 1 hibiscus_extract to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 15,
+      "action": "trade_give",
+      "item_name": "moringa_powder",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 moringa_powder to Jasmine Carter for $45.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 16,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Received $45.0 from selling 1 moringa_powder to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 17,
+      "action": "trade_give",
+      "item_name": "baobab_fruit_powder",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 baobab_fruit_powder to Jasmine Carter for $55.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 18,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 55,
+      "time_step": 3,
+      "description": "Received $55.0 from selling 1 baobab_fruit_powder to Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
     }
   ]
 }
