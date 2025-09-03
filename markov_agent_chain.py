@@ -189,6 +189,10 @@ class MarkovAgentChain:
                     )
                     if trade_result:
                         trades_executed.append(trade_result)
+                        if trade_result.get('executed'):
+                            print(f"   → Trade executed: {trade_result['trade_details']}")
+                        else:
+                            print(f"   → Trade detected but not executed")
                 
                 # Switch speakers
                 current_speaker, other_agent = other_agent, current_speaker
@@ -302,9 +306,30 @@ class MarkovAgentChain:
         conversation_count = len([h for h in self.interaction_history if h['type'] == 'conversation'])
         reflection_count = len([h for h in self.interaction_history if h['type'] == 'reflection'])
         
+        # Collect all trades from conversations
+        all_trades = []
+        executed_trades = []
+        for interaction in self.interaction_history:
+            if interaction['type'] == 'conversation' and 'trades' in interaction:
+                all_trades.extend(interaction['trades'])
+                executed_trades.extend([t for t in interaction['trades'] if t.get('executed')])
+        
         print("=== Simulation Summary ===")
         print(f"Total conversations: {conversation_count}")
         print(f"Total reflections: {reflection_count}")
+        print(f"Total trades attempted: {len(all_trades)}")
+        print(f"Total trades executed: {len(executed_trades)}")
+        if executed_trades:
+            print("Executed trades:")
+            for i, trade in enumerate(executed_trades, 1):
+                details = trade.get('trade_details', {})
+                participants = details.get('participants', {})
+                items = details.get('items', [])
+                if participants and items:
+                    seller = participants.get('seller', 'Unknown')
+                    buyer = participants.get('buyer', 'Unknown')
+                    item_summary = ', '.join([f"{item['quantity']} {item['name']} (${item['value']})" for item in items])
+                    print(f"  {i}. {seller} → {buyer}: {item_summary}")
         print(f"Final state: {agents[current_state].scratch.get_fullname()}")
         
         return {
@@ -313,6 +338,10 @@ class MarkovAgentChain:
             'interaction_history': self.interaction_history,
             'conversation_count': conversation_count,
             'reflection_count': reflection_count,
+            'total_trades_attempted': len(all_trades),
+            'total_trades_executed': len(executed_trades),
+            'all_trades': all_trades,
+            'executed_trades': executed_trades,
             'final_state': current_state,
             'final_agent': agents[current_state].scratch.get_fullname()
         }

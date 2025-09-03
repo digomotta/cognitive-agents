@@ -368,8 +368,26 @@ class ConversationTradeAnalyzer:
                 if not buyer_success:
                     print("- Buyer side execution failed")
 
-        # Return True if trade was analyzed and executed successfully
+        # Return trade details if executed successfully, None otherwise
         try:
-            return trade_executed
+            if trade_executed and json_response:
+                return {
+                    'executed': True,
+                    'trade_details': json_response,
+                    'conversation_id': conversation_id,
+                    'time_step': time_step
+                }
+            else:
+                return {
+                    'executed': False,
+                    'trade_details': None,
+                    'conversation_id': conversation_id,
+                    'time_step': time_step
+                }
         except Exception:
-            return False
+            return {
+                'executed': False, 
+                'trade_details': None,
+                'conversation_id': conversation_id,
+                'time_step': time_step
+            }
