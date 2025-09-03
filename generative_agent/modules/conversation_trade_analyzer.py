@@ -133,7 +133,8 @@ class ConversationTradeAnalyzer:
     def execute_seller_trade(
         self,
         agents: List['GenerativeAgent'],
-        trade_data: Dict[str, Any]
+        trade_data: Dict[str, Any],
+        testing_mode: bool = False
     ) -> bool:
         """
         Execute seller's side of trade using JSON data from analyze_trade.
@@ -142,6 +143,7 @@ class ConversationTradeAnalyzer:
         Args:
             agents: List of agents involved in the conversation
             trade_data: JSON output from analyze_trade containing participants and items
+            testing_mode: If True, don't save changes to JSON files
         
         Returns True if trade was successfully executed, False otherwise.
         """
@@ -208,8 +210,8 @@ class ConversationTradeAnalyzer:
                         description=f"Received ${price} from selling {quantity} {item_name} to {buyer_name}"
                     )
             
-            # Save the updated inventory
-            if total_success:
+            # Save the updated inventory (unless in testing mode)
+            if total_success and not testing_mode:
                 seller_agent.save()
             
             return total_success
@@ -221,7 +223,8 @@ class ConversationTradeAnalyzer:
     def execute_buyer_trade(
         self,
         agents: List['GenerativeAgent'],
-        trade_data: Dict[str, Any]
+        trade_data: Dict[str, Any],
+        testing_mode: bool = False
     ) -> bool:
         """
         Execute buyer's side of trade: remove cash and add purchased items to inventory.
@@ -229,6 +232,7 @@ class ConversationTradeAnalyzer:
         Args:
             agents: List of agents involved in the conversation
             trade_data: JSON output from analyze_trade containing participants and items
+            testing_mode: If True, don't save changes to JSON files
         
         Returns True if trade was successfully executed, False otherwise.
         """
@@ -294,8 +298,8 @@ class ConversationTradeAnalyzer:
                     if not success:
                         total_success = False
             
-            # Save the updated inventory
-            if total_success:
+            # Save the updated inventory (unless in testing mode)
+            if total_success and not testing_mode:
                 buyer_agent.save()
             
             return total_success
@@ -311,12 +315,16 @@ class ConversationTradeAnalyzer:
         conversation_text: Any,
         context: str,
         time_step: int = 0,
-        model: Optional[str] = None
+        model: Optional[str] = None,
+        testing_mode: bool = False
     ) -> bool:
         """
         If called, it means that the agent has detected a trade in the conversation.
         It will analyze the trade and execute it.
         It will return True if the trade was executed, False otherwise.
+        
+        Args:
+            testing_mode: If True, don't save inventory changes to JSON files
         """
         # Normalize conversation text to string if a dialogue list is provided
         normalized_text: str
@@ -342,8 +350,8 @@ class ConversationTradeAnalyzer:
         # Execute the trade if analysis was successful
         trade_executed = False
         if json_response and isinstance(json_response, dict) and json_response.get("items"):
-            seller_success = self.execute_seller_trade(agents, json_response)
-            buyer_success = self.execute_buyer_trade(agents, json_response)
+            seller_success = self.execute_seller_trade(agents, json_response, testing_mode)
+            buyer_success = self.execute_buyer_trade(agents, json_response, testing_mode)
             trade_executed = seller_success and buyer_success
             
             if trade_executed:

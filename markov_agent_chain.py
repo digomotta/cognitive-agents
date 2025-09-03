@@ -184,7 +184,8 @@ class MarkovAgentChain:
                         conversation_id=conversation_id,
                         conversation_text=curr_dialogue,
                         context=context,
-                        time_step=turn
+                        time_step=turn,
+                        testing_mode=testing_mode
                     )
                     if trade_result:
                         trades_executed.append(trade_result)

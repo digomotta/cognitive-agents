@@ -270,13 +270,13 @@ def test_interaction_summary(testing_mode=True):
 
 def main(): 
   # Simplified main for multi-agent Markov chain interactions
-  build_agent()
+  # build_agent()
   # interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
   
   # Use the new Markov agent chain system
-  # test_markov_chain_simulation(testing_mode=True)
+  test_markov_chain_simulation(testing_mode=True)
 
 
 
