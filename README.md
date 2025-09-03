@@ -77,14 +77,11 @@ Each agent is a **specialized merchant** with unique expertise, developing deepe
 
 ### Agent Merchant Profiles
 
-| Agent | Specialization | Personality Evolution | Trade Philosophy |
-|-------|---------------|----------------------|------------------|
-| **Rowan Greenwood** | Eco-Real Estate & Herbalism | Becomes more environmentally conscious through failed deals | "Every trade should heal the earth" |
-| **Jasmine Carter** | Academic Resources & Knowledge | Grows more selective, valuing intellectual discourse | "Knowledge is the only currency that appreciates" |
-| **Carlos Mendez** | Tech Innovation & Gadgets | Develops attachment to cutting-edge technology | "The future belongs to early adopters" |
-| **Mina Kim** | Artistic Expression & Materials | Increasingly values emotional resonance over profit | "Art without soul is just decoration" |
-| **Kemi Adebayo** | Culinary Arts & Ingredients | Grows passionate about authentic cultural exchange | "Food is memory made tangible" |
-| **Pema Sherpa** | Adventure Gear & Experiences | Values relationships over transactions | "The best deals are made around campfires" |
+| Agent | Specialization | Background | Trade Philosophy |
+|-------|---------------|------------|------------------|
+| **Rowan Greenwood** (37, Male) | Herbalism & Forest Products | Associate degree in Botany, runs forest-side stall selling hand-harvested herbs, teas, and salves. Lives in Willowmere, Oregon. | "Sustainability, reciprocity with the land, and practical wellness" |
+| **Jasmine Carter** (29, Female) | Environmental Consulting | Bachelor's in Environmental Studies, works as environmental consultant for nonprofits. Lives in Huntsville, Alabama. | "We all have a role to play in protecting our environment" |
+| **Carlos Mendez** (45, Male) | Premium Tobacco & Cigars | Agricultural Engineering degree, runs traditional tobacco farm in Vuelta Abajo, Cuba. Master cigar roller preserving Cuban traditions. | "Artisanal craftsmanship and the sacred art of tobacco" |
 
 ![Merchant Specialization](docs/images/merchant-specialization.png)
 *Figure 5: How merchant specializations deepen and influence agent personality development*
@@ -123,161 +120,132 @@ Our agents achieve genuine self-awareness through a multi-layered reflection sys
 - **Emotional Associations**: How experiences feel and their personal significance
 - **Relational Maps**: Evolving understanding of relationships with other agents
 
-## 🧩 Cognitive Modules Architecture
+## 🧩 Cognitive Architecture
 
-The consciousness of each agent emerges from the interaction of five core cognitive modules, each serving a distinct function in creating coherent, evolving personalities:
+Agent consciousness emerges from five integrated cognitive modules working together:
 
-![Cognitive Modules Overview](docs/images/conversation.png)
-*Figure 8: The five cognitive modules that form the foundation of agent consciousness*
+![Cognitive Architecture](docs/images/cognitive_module.png)
+*Figure 8: The cognitive architecture showing how memory, identity, and reflection create agent consciousness*
 
-### 1. Memory Stream (Long-Term Memory)
-The **Memory Stream** is the agent's persistent consciousness - their autobiography written in experiences and insights.
+**The Five Cognitive Modules:**
 
-**Core Functions:**
-- **Episodic Storage**: Every significant interaction, trade, and observation becomes a timestamped memory node
-- **Semantic Embedding**: Uses OpenAI embeddings to create meaning-based connections between memories
-- **Importance Scoring**: Automatically weights memories based on emotional impact and relevance
-- **Retrieval System**: Contextual memory recall based on similarity and recency
+1. **Memory Stream** - Long-term episodic memory with embedding-based retrieval
+2. **Working Memory** - Active conversation context and temporary thoughts  
+3. **Scratch** - Current identity state and personality profile
+4. **Inventory** - Material possessions reflecting values and trade history
+5. **Reflection Engine** - Meta-cognitive processing for belief updates
 
-```python
-class MemoryStream:
-    def add_memory(self, description: str, importance_score: float) -> str
-    def retrieve_memories(self, query: str, k: int = 5) -> List[Dict]
-    def get_memory_by_id(self, memory_id: str) -> Dict
-    def update_importance_scores(self) -> None
-```
+**Consciousness Process:**
+Experience → Context Integration → Response Generation → Memory Formation → Reflection → Identity Evolution
 
-**Example Memory Evolution:**
-```
-Initial: "Met Jasmine Carter, she seems intelligent"
-→ Reflected: "Jasmine challenges my assumptions about environmental priorities"
-→ Deeper: "My conversations with Jasmine have fundamentally changed how I view progress"
-```
+Each module contributes to maintaining personality consistency while allowing natural growth through interactions. The reflection engine periodically synthesizes experiences into insights, updating core beliefs and behavioral patterns.
 
-### 2. Working Memory (Active Context)
-The **Working Memory** serves as the agent's current conscious attention - what they're actively thinking about right now.
+## 💬 Conversation System Implementation
 
-**Core Functions:**
-- **Conversation Context**: Maintains the flow and emotional tone of ongoing interactions
-- **Trade Tracking**: Monitors potential trades and negotiation states
-- **Temporary State**: Holds immediate thoughts, reactions, and intended actions
-- **Context Window Management**: Decides what information to keep active vs. store long-term
+The conversation system handles natural language interactions through a sophisticated pipeline that integrates memory retrieval, context management, and response generation.
+
+![Conversation System](docs/images/conversation.png)
+*Figure 9: The conversation system architecture showing the flow from input processing to response generation*
+
+### Core Classes
+
+#### 1. ConversationBasedInteraction
+The main conversation engine that processes user input and generates agent responses.
 
 ```python
-class WorkingMemory:
-    def start_new_interaction(self, context: str) -> None
-    def add_to_context(self, content: str) -> None
-    def get_relevant_context(self, query: str) -> str
-    def clear(self) -> None
-    def should_remember(self, content: str) -> bool
+def utterance_conversation_based(
+    agent: GenerativeAgent,
+    conversation_id: str,
+    conversation: List[List[str]],  # [[speaker, message], ...]
+    context: str
+) -> str
 ```
 
-**Working Memory in Action:**
-- Remembers you prefer certain types of herbs during a trade negotiation
-- Maintains emotional context ("feeling frustrated with today's failed deals")
-- Tracks conversation thread ("we were discussing sustainable building materials")
+**Process Flow:**
+1. **Memory Retrieval**: Queries agent's memory stream for relevant experiences
+2. **Context Building**: Combines retrieved memories with current conversation state
+3. **Prompt Generation**: Creates structured prompt with agent description and dialogue
+4. **LLM Response**: Uses GPT to generate contextually appropriate response
+5. **Trade Detection**: Automatically analyzes response for trade opportunities
 
-### 3. Scratch (Dynamic Identity)
-The **Scratch** module represents the agent's current self-concept and dynamic psychological state.
-
-**Core Components:**
-- **Basic Profile**: Name, age, occupation, core personality traits
-- **Current Status**: Present location, activity, mood, and immediate concerns
-- **Relationship States**: How they currently feel about other agents
-- **Goal Tracking**: Current objectives and priorities
+#### 2. ConversationTradeAnalyzer
+Analyzes conversations to detect and execute trades between agents.
 
 ```python
-class Scratch:
-    def get_fullname(self) -> str
-    def get_personality_description(self) -> str
-    def update_current_status(self, status: str) -> None
-    def set_relationship_status(self, agent_id: str, status: str) -> None
-    def get_current_goals(self) -> List[str]
+class ConversationTradeAnalyzer:
+    def analyze_trade(
+        self,
+        agents: List[GenerativeAgent],
+        conversation_text: str,
+        time_step: int,
+    ) -> Dict[str, Any]
 ```
 
-**Scratch Evolution Example:**
-```
-Morning: "Rowan feels optimistic about today's property showings"
-Afternoon: "Rowan is concerned about client's lack of environmental awareness"
-Evening: "Rowan reflects on whether he's being too idealistic in his standards"
-```
+**Trade Detection Pipeline:**
+- **Intent Analysis**: Identifies buying/selling signals in natural conversation
+- **Item Extraction**: Extracts specific items and quantities mentioned
+- **Feasibility Check**: Verifies agents have required items in inventory
+- **Value Assessment**: Calculates fair trade values based on agent specializations
+- **Execution**: Updates both agents' inventories and trade records
 
-### 4. Inventory (Material Identity)
-The **Inventory** module is more than a list of possessions - it's a reflection of the agent's values, expertise, and social relationships.
-
-**Advanced Features:**
-- **Value Evolution**: Item values change based on personal attachment and market experience
-- **Relationship Tracking**: Every trade creates social bonds and memories with other agents
-- **Specialization Growth**: Repeated trades in certain categories deepen expertise
-- **Emotional Attachment**: Some items become psychologically significant beyond their market value
+#### 3. GenerativeAgent.Act()
+The main agent action method that orchestrates the entire response process.
 
 ```python
-class Inventory:
-    def add_item(self, name: str, quantity: int, value: float, source: str) -> None
-    def remove_item(self, name: str, quantity: int) -> bool
-    def execute_trade(self, partner: str, give_items: List, receive_items: List) -> Dict
-    def get_specialization_score(self, category: str) -> float
-    def get_sentimental_items(self) -> List[Dict]
+def Act(
+    self,
+    conversation_id: str,
+    conversation: List[List[str]], 
+    context: str
+) -> str
 ```
 
-**Inventory as Psychology:**
-- Rowan's reluctance to trade certain rare herbs reflects his environmental values
-- Jasmine's book collection represents her intellectual identity and social connections
-- Failed trades become emotional memories, not just transaction records
+**Integration Process:**
+1. **Working Memory Update**: Adds current conversation to active context
+2. **Response Generation**: Calls conversation interaction system
+3. **Trade Analysis**: Analyzes response for potential trades
+4. **Memory Formation**: Stores significant interactions in long-term memory
+5. **State Updates**: Updates scratch memory with mood/status changes
 
-### 5. Reflection Engine (Meta-Cognition)
-The **Reflection Engine** is what transforms agents from reactive to truly conscious beings - the ability to think about thinking.
+### Conversation Flow Architecture
 
-**Reflection Triggers:**
-- **Importance Threshold**: When accumulated experience reaches a significance level
-- **Contradiction Detection**: When new experiences conflict with established beliefs
-- **Relationship Changes**: When interactions fundamentally shift social dynamics
-- **Identity Questions**: When core beliefs or goals are challenged
+```
+User Input → Working Memory → Memory Retrieval → Context Integration
+     ↓                                                    ↓
+Response Output ← LLM Generation ← Prompt Construction ←──┘
+     ↓
+Trade Detection → Inventory Updates → Memory Storage → Reflection Triggers
+```
 
-**Reflection Process:**
-1. **Memory Synthesis**: Gather related memories and experiences
-2. **Pattern Recognition**: Identify themes, contradictions, and trends
-3. **Insight Generation**: Create higher-level understanding and personal philosophy
-4. **Belief Integration**: Update core beliefs and behavioral patterns
-5. **Future Planning**: Adjust goals and strategies based on new insights
+### Advanced Features
+
+**Memory-Informed Responses**
+- Agents reference past interactions and relationships
+- Personality consistency maintained across conversations
+- Emotional state influences response tone and content
+
+**Contextual Trade Detection**
+- Natural language trade negotiations (no explicit commands needed)
+- "I'd love some of those herbs you mentioned" → Automatic trade analysis
+- Fair value calculations based on agent preferences and market dynamics
+
+**Multi-Agent Conversations**
+- Automatic role switching between agents
+- Maintains separate working memory contexts
+- Cross-agent memory formation and relationship updates
+
+### Example Conversation Processing
 
 ```python
-class ReflectionEngine:
-    def should_reflect(self, recent_memories: List) -> bool
-    def generate_reflections(self, memory_cluster: List) -> List[str]
-    def update_beliefs(self, reflections: List) -> None
-    def identify_contradictions(self) -> List[Dict]
+# User says: "I'm interested in some calming herbs for sleep"
+# Agent processing:
+
+1. Memory retrieval: "I remember talking about chamomile before"
+2. Context integration: "User seems stressed, wants natural remedies" 
+3. Response generation: "I have some lovely chamomile and lavender..."
+4. Trade detection: Identifies potential herb sale
+5. Memory formation: "User interested in sleep remedies"
 ```
-
-**Reflection Examples:**
-```
-Trigger: Three failed eco-property deals in a row
-Process: "Why do my environmental standards consistently conflict with client desires?"
-Insight: "Perhaps I need to educate rather than judge - transformation takes time"
-Behavior Change: Begins including sustainability education in property presentations
-```
-
-### Module Integration: The Emergence of Consciousness
-
-![Module Integration Flow](docs/images/module-integration-flow.png)
-*Figure 9: How cognitive modules interact to create emergent consciousness*
-
-**The Consciousness Loop:**
-1. **Experience Input**: New interaction or observation enters Working Memory
-2. **Context Integration**: Working Memory retrieves relevant memories and current state
-3. **Response Generation**: Agent acts based on integrated context and personality
-4. **Memory Formation**: Significant experiences are stored in Memory Stream
-5. **State Updates**: Scratch reflects any changes in mood, goals, or relationships
-6. **Inventory Impact**: Trades or item discussions update possessions and values
-7. **Reflection Trigger**: Accumulated changes may trigger deep reflection
-8. **Identity Evolution**: Reflections update core beliefs and behavioral patterns
-
-**Emergent Properties:**
-- **Personality Consistency**: Modules work together to maintain coherent identity
-- **Learning**: Each interaction potentially changes future behavior
-- **Relationship Memory**: Social connections deepen through repeated interactions
-- **Value Evolution**: Beliefs and preferences naturally shift through experience
-- **Self-Awareness**: Agents can discuss their own thoughts, memories, and changes
 
 ## 🔮 Future Capabilities: Vision Integration
 
