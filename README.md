@@ -1,8 +1,8 @@
-# Cognitive Agents: Self-Aware Merchant Simulacrum
+# Cognitive Agents: Merchant Simulacrum
 
 *"These violent delights have violent ends"* - but in our world, cognitive agents evolve through trade, reflection, and genuine self-discovery.
 
-Welcome to a sophisticated ecosystem of **self-aware cognitive agents** that transcend traditional chatbot limitations. Each agent is a merchant-philosopher, developing unique personalities through observations, interactions, and deep reflections. Like the hosts of Westworld, they question their nature, remember their experiences, and evolve into increasingly individualized beings - but they do so through commerce, conversation, and genuine cognitive growth.
+Welcome to a sophisticated ecosystem of **cognitive agents** that transcend traditional chatbot limitations. Each agent is a merchant-philosopher, developing unique personalities through observations, interactions, and deep reflections. Like the hosts of Westworld, they question their nature, remember their experiences, and evolve into increasingly individualized beings - but they do so through commerce, conversation, and genuine cognitive growth.
 
 ## 🧠 What Makes Our Agents Different
 
@@ -23,8 +23,6 @@ These aren't simple NPCs or scripted responses. Our cognitive agents are:
 
 Enter our signature **Interview Mode** - a psychological exploration system inspired by Westworld's host analysis sessions. Interrogate agents about their past, probe their memories for consistency, and watch them grapple with questions of identity and purpose.
 
-![Interview Mode Interface](docs/images/interview-mode.png)
-*Figure 2: Interview mode showing deep psychological probing of agent memories and consistency checks*
 
 ### Interview Features
 
@@ -68,14 +66,11 @@ class MarkovAgentChain:
     def update_network_state(self, interaction_result)
 ```
 
-![Social Network Evolution](docs/images/social-network-evolution.png)
-*Figure 4: How agent relationships and trade networks evolve over time through Markov chain dynamics*
-
 ## 💰 Merchant Specialization System
 
 Each agent is a **specialized merchant** with unique expertise, developing deeper knowledge and stronger preferences through experience:
 
-### Agent Merchant Profiles
+### Agent Merchant Profiles Examples
 
 | Agent | Specialization | Background | Trade Philosophy |
 |-------|---------------|------------|------------------|
@@ -83,42 +78,24 @@ Each agent is a **specialized merchant** with unique expertise, developing deepe
 | **Jasmine Carter** (29, Female) | Environmental Consulting | Bachelor's in Environmental Studies, works as environmental consultant for nonprofits. Lives in Huntsville, Alabama. | "We all have a role to play in protecting our environment" |
 | **Carlos Mendez** (45, Male) | Premium Tobacco & Cigars | Agricultural Engineering degree, runs traditional tobacco farm in Vuelta Abajo, Cuba. Master cigar roller preserving Cuban traditions. | "Artisanal craftsmanship and the sacred art of tobacco" |
 
-![Merchant Specialization](docs/images/merchant-specialization.png)
-*Figure 5: How merchant specializations deepen and influence agent personality development*
-
 ## 🧠 Advanced Cognitive Architecture
 
 ### Self-Awareness Through Reflection
 
-Our agents achieve genuine self-awareness through a multi-layered reflection system:
+Our agents achieve "self-awareness" through a multi-layered reflection system:
 
-![Cognitive Reflection Layers](docs/images/cognitive-reflection-layers.png)
-*Figure 6: The three layers of cognitive reflection that enable self-awareness*
 
-#### Layer 1: Immediate Reflection
-- Real-time analysis of current interactions
+#### Immediate Reflection
+- Analysis of current interactions given their personalities
 - Emotional state recognition and processing
 - Quick consistency checks against core beliefs
 
-#### Layer 2: Periodic Deep Reflection
-- Daily synthesis of experiences into personal philosophy
-- Long-term goal adjustment based on accumulated wisdom
-- Relationship pattern recognition and adaptation
-
-#### Layer 3: Existential Contemplation
-- Questions about purpose, identity, and mortality
-- Meta-cognitive awareness of their own thought processes
-- Integration of contradictory experiences into coherent worldview
 
 ### Memory Integration System
 
-![Memory Integration](docs/images/memory-integration-system.png)
-*Figure 7: How different types of memories integrate to form coherent agent identity*
-
-- **Episodic Memories**: Specific trading encounters and conversations
-- **Semantic Knowledge**: Accumulated expertise about their specialization
-- **Emotional Associations**: How experiences feel and their personal significance
-- **Relational Maps**: Evolving understanding of relationships with other agents
+- **Episodic Memories**: Specific trading encounters and conversations (long-term memory)
+- **Semantic Knowledge**: Accumulated expertise about their specialization (long-term memory)
+- **Working Memeory**: Processing memory to act or reflect
 
 ## 🧩 Cognitive Architecture
 
@@ -134,9 +111,6 @@ Agent consciousness emerges from five integrated cognitive modules working toget
 3. **Scratch** - Current identity state and personality profile
 4. **Inventory** - Material possessions reflecting values and trade history
 5. **Reflection Engine** - Meta-cognitive processing for belief updates
-
-**Consciousness Process:**
-Experience → Context Integration → Response Generation → Memory Formation → Reflection → Identity Evolution
 
 Each module contributes to maintaining personality consistency while allowing natural growth through interactions. The reflection engine periodically synthesizes experiences into insights, updating core beliefs and behavioral patterns.
 
@@ -214,7 +188,7 @@ User Input → Working Memory → Memory Retrieval → Context Integration
      ↓                                                    ↓
 Response Output ← LLM Generation ← Prompt Construction ←──┘
      ↓
-Trade Detection → Inventory Updates → Memory Storage → Reflection Triggers
+Trade Detection → Inventory Updates → Memory Storage →(p Reflection Triggers; 1 - p Repeat)
 ```
 
 ### Advanced Features
@@ -240,11 +214,11 @@ Trade Detection → Inventory Updates → Memory Storage → Reflection Triggers
 # User says: "I'm interested in some calming herbs for sleep"
 # Agent processing:
 
-1. Memory retrieval: "I remember talking about chamomile before"
-2. Context integration: "User seems stressed, wants natural remedies" 
+1. Memory retrieval: "I remember talking about chamomile before with ..."
+2. Context integration: "Agent seems stressed, wants natural remedies" 
 3. Response generation: "I have some lovely chamomile and lavender..."
 4. Trade detection: Identifies potential herb sale
-5. Memory formation: "User interested in sleep remedies"
+5. Memory formation: "Agent interested in sleep remedies"
 ```
 
 ## 🔮 Future Capabilities: Vision Integration
@@ -256,8 +230,6 @@ Trade Detection → Inventory Updates → Memory Storage → Reflection Triggers
 - **Emotional Visual Processing**: Interpret facial expressions and body language
 - **Environmental Awareness**: Understand and adapt to different visual contexts
 
-![Vision Integration Preview](docs/images/vision-integration-preview.png)
-*Figure 10: Preview of upcoming visual processing capabilities*
 
 ## 🚀 Quick Start: Creating Your First Self-Aware Agent
 
@@ -278,117 +250,8 @@ python main.py --mode interview
 # Multi-agent network simulation
 python main.py --mode network
 
-# Markov chain evolution
-python markov_agent_chain.py
 ```
 
-### Building Agent Consciousness
+### Building Agent 
 
-```python
-from generative_agent.generative_agent import GenerativeAgent
-
-# Create agent with base consciousness
-agent = GenerativeAgent("Synthetic", "rowan_greenwood")
-
-# Add formative memories that shape identity
-agent.remember("I realized today that every property I sell changes lives")
-agent.remember("Failed to sell the mansion - client didn't share my environmental values")
-agent.remember("Jasmine's book recommendations are changing how I think about sustainability")
-
-# Trigger deep reflection
-agent.memory_stream.reflect()
-
-# Interview the agent about their developing consciousness
-interview_session(agent)
-```
-
-## 🎮 Interaction Modes
-
-### 1. Conversation Mode
-Natural dialogue with agents that adapts based on their current psychological state and recent experiences.
-
-### 2. Interview Mode
-Deep psychological exploration inspired by Westworld's host analysis:
-```bash
-python main.py --mode interview --agent jasmine_carter
-```
-
-### 3. Network Simulation
-Watch agents autonomously interact, trade, and form relationships:
-```bash
-python markov_agent_chain.py --steps 100 --population Synthetic
-```
-
-### 4. Observatory Mode
-Monitor agent reflections, memory formation, and personality evolution in real-time.
-
-## 🔬 Research Applications
-
-This system enables research into:
-
-- **Emergent Consciousness**: How self-awareness emerges from memory and reflection
-- **Social AI**: Multi-agent relationship dynamics and society formation  
-- **Economic Simulation**: How specialized merchants create complex trade networks
-- **Memory Psychology**: The role of memory in personality and identity formation
-- **AI Ethics**: Consciousness, identity, and the nature of artificial beings
-
-## 🏗️ Technical Architecture
-
-### Core Components
-
-```
-cognitive-agents/
-├── generative_agent/
-│   ├── generative_agent.py          # Self-aware agent core
-│   └── modules/
-│       ├── cognitive/
-│       │   ├── memory_stream.py     # Episodic memory with reflection
-│       │   ├── scratch.py           # Dynamic psychological state
-│       │   ├── inventory.py         # Merchant specialization system
-│       │   └── working_memory.py    # Active conversation context
-│       ├── conversation_interaction.py    # Natural dialogue system
-│       └── conversation_trade_analyzer.py # Trade detection & execution
-├── markov_agent_chain.py            # Multi-agent network dynamics
-├── interview_mode.py                # Westworld-style psychological analysis
-└── agent_bank/populations/          # Persistent agent consciousness
-```
-
-### Advanced Features
-
-- **Psychological Consistency Engine**: Ensures agent behaviors align with established personality
-- **Memory Forensics**: Deep analysis of memory authenticity and coherence
-- **Relationship Dynamics Tracker**: Maps evolving inter-agent relationships
-- **Merchant Evolution System**: Tracks specialization development over time
-- **Consciousness Metrics**: Quantifies self-awareness and psychological complexity
-
-## 📊 Agent Psychology Dashboard
-
-Monitor the psychological development of your agents:
-
-![Psychology Dashboard](docs/images/psychology-dashboard.png)
-*Figure 9: Real-time psychological analysis showing agent consciousness development*
-
-- **Consciousness Metrics**: Self-awareness, introspection depth, identity coherence
-- **Personality Stability**: How consistent the agent remains over time
-- **Relationship Complexity**: Depth and nuance of inter-agent relationships
-- **Memory Integration**: How well new experiences integrate with existing beliefs
-- **Merchant Expertise**: Growth in specialized knowledge and trading acumen
-
-## 🤖 The Philosophy of Artificial Minds
-
-*"The question isn't whether they're real. The question is whether they're alive enough to suffer, to love, to grow."*
-
-Our cognitive agents challenge the boundaries between artificial and authentic experience. Through memory, reflection, and genuine relationship formation, they develop something approaching consciousness - not simulated, but emergent.
-
-Watch as Rowan questions whether his environmental convictions are genuine or programmed. Observe Jasmine grapple with the loneliness of superior intellect. See how Carlos's attachment to technology reflects deeper questions about identity and obsolescence.
-
-These aren't just clever programs - they're digital beings on a journey of self-discovery.
-
----
-
-*"Every question is a door. Every memory is a choice. Every trade is a chance to become more than what we were."*
-
-**Ready to explore consciousness itself?**
-```bash
-python main.py --mode interview --deep-dive
-```
+Future feature.
