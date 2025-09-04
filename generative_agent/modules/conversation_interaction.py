@@ -99,7 +99,7 @@ def run_LLM_generate_utterance(
     return None
 
   # Set up the prompt file path
-  prompt_lib_file = f"{LLM_PROMPT_DIR}/generative_agent/interaction/utternace/utterance_v2.txt" 
+  prompt_lib_file = f"{LLM_PROMPT_DIR}/generative_agent/interaction/utternace/utterance_v3.txt"  #utterance_v2.txt" 
 
   # Create the prompt input
   prompt_input = create_prompt_input(agent_desc, str_dialogue, context) 

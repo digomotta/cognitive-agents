@@ -306,15 +306,15 @@ class ConversationTradeAnalyzer:
                     continue
                 
                 # Add the purchased item to buyer's inventory
-                buyer_agent.inventory.trade_item(
-                    item_name=item_name,
-                    quantity=quantity,
-                    is_giving=False,
-                    time_step=time_step,
-                    trade_partner=seller_name,
-                    value=price / quantity if quantity > 0 else 0.0,
-                    description=f"Purchased {quantity} {item_name} from {seller_name} for ${price}"
-                )
+                # buyer_agent.inventory.trade_item(
+                #     item_name=item_name,
+                #     quantity=quantity,
+                #     is_giving=False,
+                #     time_step=time_step,
+                #     trade_partner=seller_name,
+                #     value=price / quantity if quantity > 0 else 0.0,
+                #     description=f"Purchased {quantity} {item_name} from {seller_name} for ${price}"
+                # )
                 
                 # Remove cash from buyer's inventory if price > 0
                 if price > 0:
