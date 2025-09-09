@@ -1,36 +1,52 @@
 {
   "items": [
     {
+      "name": "textbooks",
+      "quantity": 4,
+      "value": 85.0,
+      "description": "Advanced mathematics textbooks",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "graphing_calculator",
+      "quantity": 1,
+      "value": 120.0,
+      "description": "TI-84 Plus calculator",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "notebooks",
+      "quantity": 5,
+      "value": 3.5,
+      "description": "High-quality notebooks",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
+      "name": "tutoring_sessions",
+      "quantity": 1,
+      "value": 40.0,
+      "description": "One-hour math tutoring sessions",
+      "created": 1,
+      "last_modified": 3
+    },
+    {
       "name": "digital cash",
-      "quantity": 488,
+      "quantity": 103,
       "value": 1.0,
       "description": "Student savings",
       "created": 1,
       "last_modified": 3
     },
     {
-      "name": "baobab_fruit_powder",
+      "name": "sunscreen",
       "quantity": 1,
-      "value": 55.0,
-      "description": "Purchased 1 baobab_fruit_powder from Kemi Adebayo for $55.0",
-      "created": 3,
-      "last_modified": 3
-    },
-    {
-      "name": "pine_honey",
-      "quantity": 1,
-      "value": 55.0,
-      "description": "Purchased 1 pine_honey from Pema Sherpa for $55.0",
-      "created": 3,
-      "last_modified": 3
-    },
-    {
-      "name": "mountain_flower_honey",
-      "quantity": 1,
-      "value": 45.0,
-      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
-      "created": 3,
-      "last_modified": 3
+      "value": 22.0,
+      "description": "Purchased 1 sunscreen from Mina Kim for $22.0",
+      "created": 5,
+      "last_modified": 5
     }
   ],
   "records": [
@@ -82,81 +98,81 @@
     {
       "record_id": 5,
       "action": "trade_receive",
-      "item_name": "herbal_tea",
+      "item_name": "mountain_flower_honey",
       "quantity": 1,
       "time_step": 3,
-      "description": "Purchased 1 herbal_tea from Rowan Greenwood for $15.0",
-      "trade_partner": "Rowan Greenwood"
+      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
+      "trade_partner": "Pema Sherpa"
     },
     {
       "record_id": 6,
       "action": "trade_give",
       "item_name": "digital cash",
-      "quantity": 15,
+      "quantity": 45,
       "time_step": 3,
-      "description": "Paid $15.0 for 1 herbal_tea from Rowan Greenwood",
-      "trade_partner": "Rowan Greenwood"
+      "description": "Paid $45.0 for 1 mountain_flower_honey from Pema Sherpa",
+      "trade_partner": "Pema Sherpa"
     },
     {
       "record_id": 7,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 15,
+      "action": "trade_give",
+      "item_name": "notebooks",
+      "quantity": 1,
       "time_step": 3,
-      "description": "Purchased 15 digital cash from Rowan Greenwood for $15.0",
-      "trade_partner": "Rowan Greenwood"
+      "description": "Sold 1 notebooks to Mina Kim for $3.5",
+      "trade_partner": "Mina Kim"
     },
     {
       "record_id": 8,
-      "action": "trade_give",
+      "action": "trade_receive",
       "item_name": "digital cash",
-      "quantity": 15,
+      "quantity": 3,
       "time_step": 3,
-      "description": "Paid $15.0 for 15 digital cash from Rowan Greenwood",
-      "trade_partner": "Rowan Greenwood"
+      "description": "Received $3.5 from selling 1 notebooks to Mina Kim",
+      "trade_partner": "Mina Kim"
     },
     {
       "record_id": 9,
       "action": "trade_give",
-      "item_name": "notebooks",
-      "quantity": 4,
+      "item_name": "mountain_flower_honey",
+      "quantity": 1,
       "time_step": 3,
-      "description": "Sold 4 notebooks to Carlos Mendez for $14.0",
-      "trade_partner": "Carlos Mendez"
+      "description": "Sold 1 mountain_flower_honey to Mina Kim for $45.0",
+      "trade_partner": "Mina Kim"
     },
     {
       "record_id": 10,
       "action": "trade_receive",
       "item_name": "digital cash",
-      "quantity": 14,
+      "quantity": 45,
       "time_step": 3,
-      "description": "Received $14.0 from selling 4 notebooks to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
+      "description": "Received $45.0 from selling 1 mountain_flower_honey to Mina Kim",
+      "trade_partner": "Mina Kim"
     },
     {
       "record_id": 11,
-      "action": "trade_give",
-      "item_name": "herbal_tea",
+      "action": "trade_receive",
+      "item_name": "essence",
       "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 herbal_tea to Carlos Mendez for $15.0",
-      "trade_partner": "Carlos Mendez"
+      "time_step": 5,
+      "description": "Purchased 1 essence from Mina Kim for $28.0",
+      "trade_partner": "Mina Kim"
     },
     {
       "record_id": 12,
-      "action": "trade_receive",
+      "action": "trade_give",
       "item_name": "digital cash",
-      "quantity": 15,
-      "time_step": 3,
-      "description": "Received $15.0 from selling 1 herbal_tea to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
+      "quantity": 28,
+      "time_step": 5,
+      "description": "Paid $28.0 for 1 essence from Mina Kim",
+      "trade_partner": "Mina Kim"
     },
     {
       "record_id": 13,
       "action": "trade_receive",
       "item_name": "sunscreen",
       "quantity": 1,
-      "time_step": 3,
+      "time_step": 5,
       "description": "Purchased 1 sunscreen from Mina Kim for $22.0",
       "trade_partner": "Mina Kim"
     },
@@ -165,426 +181,30 @@
       "action": "trade_give",
       "item_name": "digital cash",
       "quantity": 22,
-      "time_step": 3,
+      "time_step": 5,
       "description": "Paid $22.0 for 1 sunscreen from Mina Kim",
       "trade_partner": "Mina Kim"
     },
     {
       "record_id": 15,
-      "action": "trade_receive",
-      "item_name": "cleansing_oil",
-      "quantity": 1,
+      "action": "trade_give",
+      "item_name": "notebooks",
+      "quantity": 2,
       "time_step": 3,
-      "description": "Purchased 1 cleansing_oil from Mina Kim for $25.0",
-      "trade_partner": "Mina Kim"
+      "description": "Sold 2 notebooks to Carlos Mendez for $7.0",
+      "trade_partner": "Carlos Mendez"
     },
     {
       "record_id": 16,
-      "action": "trade_give",
+      "action": "trade_receive",
       "item_name": "digital cash",
-      "quantity": 25,
+      "quantity": 7,
       "time_step": 3,
-      "description": "Paid $25.0 for 1 cleansing_oil from Mina Kim",
-      "trade_partner": "Mina Kim"
+      "description": "Received $7.0 from selling 2 notebooks to Carlos Mendez",
+      "trade_partner": "Carlos Mendez"
     },
     {
       "record_id": 17,
-      "action": "trade_receive",
-      "item_name": "essence",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 essence from Mina Kim for $28.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 18,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 28,
-      "time_step": 3,
-      "description": "Paid $28.0 for 1 essence from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 19,
-      "action": "trade_give",
-      "item_name": "notebooks",
-      "quantity": 4,
-      "time_step": 3,
-      "description": "Sold 4 notebooks to Carlos Mendez for $14.0",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 20,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 14,
-      "time_step": 3,
-      "description": "Received $14.0 from selling 4 notebooks to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 21,
-      "action": "trade_give",
-      "item_name": "graphing_calculator",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 graphing_calculator to Carlos Mendez for $120.0",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 22,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 120,
-      "time_step": 3,
-      "description": "Received $120.0 from selling 1 graphing_calculator to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 23,
-      "action": "trade_give",
-      "item_name": "textbooks",
-      "quantity": 4,
-      "time_step": 5,
-      "description": "Sold 4 textbooks to Kemi Adebayo for $340.0",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 24,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 340,
-      "time_step": 5,
-      "description": "Received $340.0 from selling 4 textbooks to Kemi Adebayo",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 25,
-      "action": "trade_give",
-      "item_name": "tutoring_sessions",
-      "quantity": 2,
-      "time_step": 5,
-      "description": "Sold 2 tutoring_sessions to Kemi Adebayo for $80.0",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 26,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 80,
-      "time_step": 5,
-      "description": "Received $80.0 from selling 2 tutoring_sessions to Kemi Adebayo",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 27,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 420,
-      "time_step": 5,
-      "description": "Sold 420 digital cash to Kemi Adebayo for $420.0",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 28,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 420,
-      "time_step": 5,
-      "description": "Received $420.0 from selling 420 digital cash to Kemi Adebayo",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 29,
-      "action": "trade_receive",
-      "item_name": "sunscreen",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 sunscreen from Mina Kim for $22.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 30,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 22,
-      "time_step": 3,
-      "description": "Paid $22.0 for 1 sunscreen from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 31,
-      "action": "trade_receive",
-      "item_name": "cleansing_oil",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 cleansing_oil from Mina Kim for $25.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 32,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 25,
-      "time_step": 3,
-      "description": "Paid $25.0 for 1 cleansing_oil from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 33,
-      "action": "trade_receive",
-      "item_name": "essence",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 essence from Mina Kim for $28.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 34,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 28,
-      "time_step": 3,
-      "description": "Paid $28.0 for 1 essence from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 35,
-      "action": "trade_give",
-      "item_name": "sunscreen",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 sunscreen to Pema Sherpa for $22.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 36,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 22,
-      "time_step": 3,
-      "description": "Received $22.0 from selling 1 sunscreen to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 37,
-      "action": "trade_give",
-      "item_name": "cleansing_oil",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 cleansing_oil to Pema Sherpa for $25.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 38,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 25,
-      "time_step": 3,
-      "description": "Received $25.0 from selling 1 cleansing_oil to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 39,
-      "action": "trade_give",
-      "item_name": "essence",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 essence to Pema Sherpa for $28.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 40,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 28,
-      "time_step": 3,
-      "description": "Received $28.0 from selling 1 essence to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 41,
-      "action": "trade_receive",
-      "item_name": "sunscreen",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Purchased 1 sunscreen from Mina Kim for $22.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 42,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 22,
-      "time_step": 1,
-      "description": "Paid $22.0 for 1 sunscreen from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 43,
-      "action": "trade_receive",
-      "item_name": "cleansing_oil",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Purchased 1 cleansing_oil from Mina Kim for $25.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 44,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 25,
-      "time_step": 1,
-      "description": "Paid $25.0 for 1 cleansing_oil from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 45,
-      "action": "trade_receive",
-      "item_name": "essence",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Purchased 1 essence from Mina Kim for $28.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 46,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 28,
-      "time_step": 1,
-      "description": "Paid $28.0 for 1 essence from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 47,
-      "action": "trade_give",
-      "item_name": "sunscreen",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Sold 1 sunscreen to Pema Sherpa for $22.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 48,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 22,
-      "time_step": 1,
-      "description": "Received $22.0 from selling 1 sunscreen to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 49,
-      "action": "trade_give",
-      "item_name": "cleansing_oil",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Sold 1 cleansing_oil to Pema Sherpa for $25.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 50,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 25,
-      "time_step": 1,
-      "description": "Received $25.0 from selling 1 cleansing_oil to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 51,
-      "action": "trade_give",
-      "item_name": "essence",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Sold 1 essence to Pema Sherpa for $28.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 52,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 28,
-      "time_step": 1,
-      "description": "Received $28.0 from selling 1 essence to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 53,
-      "action": "trade_receive",
-      "item_name": "moringa_powder",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 moringa_powder from Kemi Adebayo for $45.0",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 54,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 45,
-      "time_step": 3,
-      "description": "Paid $45.0 for 1 moringa_powder from Kemi Adebayo",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 55,
-      "action": "trade_receive",
-      "item_name": "baobab_fruit_powder",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 baobab_fruit_powder from Kemi Adebayo for $55.0",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 56,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 55,
-      "time_step": 3,
-      "description": "Paid $55.0 for 1 baobab_fruit_powder from Kemi Adebayo",
-      "trade_partner": "Kemi Adebayo"
-    },
-    {
-      "record_id": 57,
-      "action": "trade_give",
-      "item_name": "sunscreen",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 sunscreen to Carlos Mendez for $22.0",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 58,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 22,
-      "time_step": 3,
-      "description": "Received $22.0 from selling 1 sunscreen to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 59,
-      "action": "trade_give",
-      "item_name": "cleansing_oil",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 cleansing_oil to Carlos Mendez for $25.0",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 60,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 25,
-      "time_step": 3,
-      "description": "Received $25.0 from selling 1 cleansing_oil to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 61,
       "action": "trade_give",
       "item_name": "essence",
       "quantity": 1,
@@ -593,7 +213,7 @@
       "trade_partner": "Carlos Mendez"
     },
     {
-      "record_id": 62,
+      "record_id": 18,
       "action": "trade_receive",
       "item_name": "digital cash",
       "quantity": 28,
@@ -602,58 +222,22 @@
       "trade_partner": "Carlos Mendez"
     },
     {
-      "record_id": 63,
+      "record_id": 19,
       "action": "trade_give",
-      "item_name": "moringa_powder",
+      "item_name": "tutoring_sessions",
       "quantity": 1,
       "time_step": 3,
-      "description": "Sold 1 moringa_powder to Carlos Mendez for $45.0",
+      "description": "Sold 1 tutoring_sessions to Carlos Mendez for $40.0",
       "trade_partner": "Carlos Mendez"
     },
     {
-      "record_id": 64,
+      "record_id": 20,
       "action": "trade_receive",
       "item_name": "digital cash",
-      "quantity": 45,
+      "quantity": 40,
       "time_step": 3,
-      "description": "Received $45.0 from selling 1 moringa_powder to Carlos Mendez",
+      "description": "Received $40.0 from selling 1 tutoring_sessions to Carlos Mendez",
       "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 65,
-      "action": "trade_receive",
-      "item_name": "pine_honey",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 pine_honey from Pema Sherpa for $55.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 66,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 55,
-      "time_step": 3,
-      "description": "Paid $55.0 for 1 pine_honey from Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 67,
-      "action": "trade_receive",
-      "item_name": "mountain_flower_honey",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 68,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 45,
-      "time_step": 3,
-      "description": "Paid $45.0 for 1 mountain_flower_honey from Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
     }
   ]
 }

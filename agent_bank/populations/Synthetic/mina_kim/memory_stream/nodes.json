@@ -12,7 +12,7 @@
     "node_id": 1,
     "node_type": "observation",
     "content": "As a teenager, Mina discovered K-pop through SNSD and became obsessed with achieving the 'glass skin' look of her idols, starting her journey into Korean beauty products.",
-    "importance": 25,
+    "importance": 35,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -30,7 +30,7 @@
     "node_id": 3,
     "node_type": "observation",
     "content": "Mina's first job was at a small beauty shop in Myeongdong, where she learned about different Korean skincare brands and developed her expertise in product ingredients.",
-    "importance": 15,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -39,7 +39,7 @@
     "node_id": 4,
     "node_type": "observation",
     "content": "A pivotal moment came when Mina helped a customer with sensitive skin find the perfect routine, realizing she had a natural talent for understanding individual skin needs.",
-    "importance": 52,
+    "importance": 65,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -48,7 +48,7 @@
     "node_id": 5,
     "node_type": "observation",
     "content": "After moving to study abroad, Mina faced culture shock and homesickness, finding comfort in her extensive Korean skincare routine and K-drama marathons.",
-    "importance": 72,
+    "importance": 62,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -57,7 +57,7 @@
     "node_id": 6,
     "node_type": "observation",
     "content": "Mina's decision to specialize in Korean beauty came from witnessing the global K-beauty boom and wanting to share authentic Korean skincare wisdom with international customers.",
-    "importance": 20,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -75,7 +75,7 @@
     "node_id": 8,
     "node_type": "observation",
     "content": "Mina developed her signature consultation style after realizing that her gentle, patient approach helped shy customers feel comfortable discussing their skin concerns.",
-    "importance": 35,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -84,7 +84,7 @@
     "node_id": 9,
     "node_type": "observation",
     "content": "A breakthrough moment was when Mina correctly identified a customer's skin barrier damage just by observation, leading to a successful treatment plan that built her reputation.",
-    "importance": 35,
+    "importance": 38,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -111,7 +111,7 @@
     "node_id": 12,
     "node_type": "observation",
     "content": "Mina's relationship with her younger sister deepened when they started doing skincare routines together while watching 'Crash Landing on You' during the pandemic.",
-    "importance": 48,
+    "importance": 45,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -120,7 +120,7 @@
     "node_id": 13,
     "node_type": "observation",
     "content": "A challenging period came when Western beauty trends conflicted with Mina's Korean beauty philosophy, but she learned to appreciate both approaches.",
-    "importance": 35,
+    "importance": 34,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -129,7 +129,7 @@
     "node_id": 14,
     "node_type": "observation",
     "content": "Mina's confidence grew when she started her beauty blog, initially writing in Korean and gradually adding English posts to reach a wider audience.",
-    "importance": 25,
+    "importance": 45,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -138,7 +138,7 @@
     "node_id": 15,
     "node_type": "observation",
     "content": "The day Mina received her first sponsorship from a Korean beauty brand was when she realized her passion could become a real career.",
-    "importance": 70,
+    "importance": 72,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -147,7 +147,7 @@
     "node_id": 16,
     "node_type": "observation",
     "content": "Mina's expertise in ingredient analysis came from years of translating Korean skincare labels and researching the science behind traditional beauty practices.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -156,7 +156,7 @@
     "node_id": 17,
     "node_type": "observation",
     "content": "A meaningful moment was when Mina helped her anxious best friend build confidence through a personalized skincare routine and makeup tutorial.",
-    "importance": 65,
+    "importance": 68,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -165,7 +165,7 @@
     "node_id": 18,
     "node_type": "observation",
     "content": "Mina's collection of Korean beauty products became legendary among her friends, earning her the nickname 'the Korean beauty encyclopedia.'",
-    "importance": 22,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -174,7 +174,7 @@
     "node_id": 19,
     "node_type": "observation",
     "content": "Despite her success, Mina still feels most comfortable discussing beauty in small, intimate settings rather than large groups or presentations.",
-    "importance": 32,
+    "importance": 42,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -183,7 +183,7 @@
     "node_id": 20,
     "node_type": "observation",
     "content": "Mina's dream of opening her own Korean beauty boutique was inspired by wanting to create a safe, educational space where customers could learn about authentic K-beauty.",
-    "importance": 45,
+    "importance": 30,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -192,7 +192,7 @@
     "node_id": 21,
     "node_type": "observation",
     "content": "Mina spent her Sunday morning doing her 12-step skincare routine while listening to NewJeans' latest album, taking extra time with her facial massage.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -210,7 +210,7 @@
     "node_id": 23,
     "node_type": "observation",
     "content": "During her lunch break, Mina watched a few episodes of 'Business Proposal' on her phone, giggling quietly at the romantic scenes.",
-    "importance": 12,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -228,7 +228,7 @@
     "node_id": 25,
     "node_type": "observation",
     "content": "Mina forgot to set her alarm and woke up late, but still managed to do her abbreviated morning skincare routine because she never skips it.",
-    "importance": 18,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -237,7 +237,7 @@
     "node_id": 26,
     "node_type": "observation",
     "content": "On a rainy Saturday, Mina binge-watched 'Hometown's Embrace' while testing three different essence formulations on her arms.",
-    "importance": 18,
+    "importance": 24,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -264,7 +264,7 @@
     "node_id": 29,
     "node_type": "observation",
     "content": "She spent a quiet afternoon organizing her K-pop photocard collection while a BTS playlist played in the background.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -273,7 +273,7 @@
     "node_id": 30,
     "node_type": "observation",
     "content": "After work, Mina stopped by the Korean beauty store to check if they had restocked her favorite sleeping mask that had been sold out.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -282,7 +282,7 @@
     "node_id": 31,
     "node_type": "observation",
     "content": "One evening, Mina practiced doing winged eyeliner while video-chatting with her sister back in Seoul, who gave her technique tips.",
-    "importance": 30,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -291,7 +291,7 @@
     "node_id": 32,
     "node_type": "observation",
     "content": "She accidentally ordered the wrong shade of cushion foundation online and spent time figuring out how to exchange it.",
-    "importance": 5,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -309,7 +309,7 @@
     "node_id": 34,
     "node_type": "observation",
     "content": "She spent her Saturday morning meal prepping while listening to IU's concert recordings, dancing slightly while chopping vegetables.",
-    "importance": 18,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -318,7 +318,7 @@
     "node_id": 35,
     "node_type": "observation",
     "content": "One night, Mina tried a new DIY rice water toner recipe she found on a Korean beauty blog, documenting the process with photos.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -327,7 +327,7 @@
     "node_id": 36,
     "node_type": "observation",
     "content": "Mina spilled toner on her favorite K-pop merchandise t-shirt and spent twenty minutes trying to remove the stain without damaging the print.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -336,7 +336,7 @@
     "node_id": 37,
     "node_type": "observation",
     "content": "While waiting for a bus, Mina people-watched and mentally analyzed strangers' skin types and what products might work for them.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -345,7 +345,7 @@
     "node_id": 38,
     "node_type": "observation",
     "content": "She took a long bubble bath with Korean bath salts while rewatching her favorite episodes of 'Goblin' for the tenth time.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -363,7 +363,7 @@
     "node_id": 40,
     "node_type": "observation",
     "content": "While organizing her digital photos, Mina realized she had hundreds of before-and-after skincare selfies documenting her skin journey.",
-    "importance": 38,
+    "importance": 32,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -372,7 +372,7 @@
     "node_id": 41,
     "node_type": "observation",
     "content": "On her way home from work, she stopped at three different stores looking for a specific Korean lip tint she had seen in a K-drama.",
-    "importance": 15,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -390,7 +390,7 @@
     "node_id": 43,
     "node_type": "observation",
     "content": "Mina received a package notification and got excited thinking it was her K-beauty order, only to realize it was just regular mail.",
-    "importance": 10,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -399,7 +399,7 @@
     "node_id": 44,
     "node_type": "observation",
     "content": "One rainy day, she watched Korean beauty YouTube tutorials while doing her nails, trying to learn new techniques.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -408,7 +408,7 @@
     "node_id": 45,
     "node_type": "observation",
     "content": "Mina's coworker asked for skincare advice and she spent her lunch break writing detailed product recommendations and usage instructions.",
-    "importance": 20,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -435,7 +435,7 @@
     "node_id": 48,
     "node_type": "observation",
     "content": "One morning, she had to rush out after accidentally snoozing her alarm, but still managed to apply sunscreen because UV protection is non-negotiable.",
-    "importance": 8,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -444,7 +444,7 @@
     "node_id": 49,
     "node_type": "observation",
     "content": "Mina had a quiet dinner at home, eating Korean instant noodles while catching up on beauty brand announcements on social media.",
-    "importance": 12,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -453,7 +453,7 @@
     "node_id": 50,
     "node_type": "observation",
     "content": "She spent time this week responding to DMs from followers asking for skincare advice, carefully crafting helpful responses to each person.",
-    "importance": 15,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -489,7 +489,7 @@
     "node_id": 54,
     "node_type": "observation",
     "content": "She accidentally mixed up two similar-looking serums in her routine and worried about potential ingredient interactions until she researched it.",
-    "importance": 15,
+    "importance": 25,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -516,7 +516,7 @@
     "node_id": 57,
     "node_type": "observation",
     "content": "While cleaning her room, Mina found an old diary where she had recorded her skincare journey and favorite K-pop songs from high school.",
-    "importance": 25,
+    "importance": 28,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -525,7 +525,7 @@
     "node_id": 58,
     "node_type": "observation",
     "content": "Mina successfully helped a customer with stubborn acne find the perfect Korean skincare routine, combining gentle exfoliation with barrier-repairing ingredients.",
-    "importance": 25,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -534,7 +534,7 @@
     "node_id": 59,
     "node_type": "observation",
     "content": "She organized a K-beauty workshop for beginners, teaching them about the famous 10-step routine and how to adapt it for different skin types.",
-    "importance": 12,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -552,7 +552,7 @@
     "node_id": 61,
     "node_type": "observation",
     "content": "She attended a Korean beauty expo where she networked with brand representatives and discovered emerging trends in fermented skincare.",
-    "importance": 15,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -561,7 +561,7 @@
     "node_id": 62,
     "node_type": "observation",
     "content": "Mina had to handle a difficult customer who was dissatisfied with a product recommendation, patiently explaining ingredient sensitivities and offering alternatives.",
-    "importance": 25,
+    "importance": 28,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -570,7 +570,7 @@
     "node_id": 63,
     "node_type": "observation",
     "content": "During a busy week, Mina worked overtime to prepare detailed skincare consultation reports for her high-end clients.",
-    "importance": 15,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -579,7 +579,7 @@
     "node_id": 64,
     "node_type": "observation",
     "content": "She collaborated with a Korean beauty brand to create educational content about the benefits of snail secretion filtrate in healing damaged skin.",
-    "importance": 12,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -588,7 +588,7 @@
     "node_id": 65,
     "node_type": "observation",
     "content": "Mina conducted ingredient analysis sessions for customers, explaining the science behind popular K-beauty ingredients like niacinamide and hyaluronic acid.",
-    "importance": 15,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -597,7 +597,7 @@
     "node_id": 66,
     "node_type": "observation",
     "content": "She delivered a presentation to local beauty enthusiasts about the history and philosophy behind Korean skincare traditions.",
-    "importance": 10,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -606,7 +606,7 @@
     "node_id": 67,
     "node_type": "observation",
     "content": "Mina mentored a new employee on proper product knowledge, teaching them how to identify skin concerns and match them with appropriate Korean beauty solutions.",
-    "importance": 10,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -615,7 +615,7 @@
     "node_id": 68,
     "node_type": "observation",
     "content": "She hosted a virtual consultation session for international customers, explaining Korean beauty techniques through video demonstrations.",
-    "importance": 12,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -633,7 +633,7 @@
     "node_id": 70,
     "node_type": "observation",
     "content": "She spent a day testing new K-beauty products for potential store inclusion, documenting texture, efficacy, and ingredient compatibility.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -642,7 +642,7 @@
     "node_id": 71,
     "node_type": "observation",
     "content": "Mina met with Korean beauty brand founders to discuss exclusive product launches and educational partnerships.",
-    "importance": 25,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -678,7 +678,7 @@
     "node_id": 75,
     "node_type": "observation",
     "content": "Mina reviewed and approved marketing materials for Korean beauty promotions, ensuring cultural accuracy and proper product positioning.",
-    "importance": 12,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -687,7 +687,7 @@
     "node_id": 76,
     "node_type": "observation",
     "content": "She collaborated with dermatologists to create evidence-based guides on incorporating Korean beauty methods into clinical skincare routines.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -696,7 +696,7 @@
     "node_id": 77,
     "node_type": "observation",
     "content": "After months of planning, Mina launched a subscription service that introduces customers to authentic Korean beauty products with detailed usage guides.",
-    "importance": 25,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -704,8 +704,8 @@
   {
     "node_id": 78,
     "node_type": "observation",
-    "content": "I met Pema Sherpa, whose honey felt almost ceremonial, and I gently asked about the mountain flower and the prayer-blessed jars. I chose the prayer-blessed mountain flower honey and tapped to pay, but there was a payment shortfall for one item; still, Pema wrapped it with red thread and gifted me a pine honey sample. I felt calm and cared for by his guidance\u2014especially the five-breath ritual\u2014and I\u2019m excited to try a tiny lip mask blend with the blessed honey and a drop of squalane. I also asked about pairing the pine honey steam with eucalyptus and hope to share how everything goes next time.",
-    "importance": 68,
+    "content": "I met Kemi from AfriFoods Tech and picked up a \u201cGlow Duo\u201d \u2014 baobab fruit powder and hibiscus extract \u2014 after she outlined a simple inside-out routine: baobab in the morning for vitamin C and prebiotic fiber, hibiscus in the afternoon for circulation and antioxidants. I loved her moringa tips (pairing fat and acid, matcha-style whisking) and paid digitally, with QR traceability to women\u2019s co-ops that made the purchase feel meaningful. I\u2019ll follow her brew cues, scan the QRs tonight, and check back in a week with my skin notes \u2014 kind of like tracking a new essence.",
+    "importance": 18,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
@@ -713,7 +713,7 @@
   {
     "node_id": 79,
     "node_type": "observation",
-    "content": "I met Jasmine, who wanted a simple, sustainable routine for her combo, fragrance-sensitive skin. I recommended a fragrance-light sunscreen, a gentle emulsifying cleansing oil, and a hydrating essence, and she purchased all three. I outlined a minimal AM/PM routine with the two-finger sunscreen rule and gentle oil cleanse, and suggested optional touch-up tricks for long outdoor days. I felt happy we kept it practical and calm\u2014exactly the kind of thoughtful K-beauty guidance I love giving.",
+    "content": "I met Kemi, who focuses on indigenous African nutrition for skin health, and we built a gentle AM/PM routine for my combo\u2011sensitive skin that pairs her baobab (AM) and hibiscus (afternoon) with my hydrating essence and lightweight sunscreen. I decided to do alternating active nights (Mon/Thu), buffer with essence, and skip actives on reactive days. I felt really grateful\u2014her structure felt kind to my barrier\u2014and I shared that anyone could complete the routine with my essence and sunscreen, no pressure.",
     "importance": 18,
     "created": 7,
     "last_retrieved": 7,
@@ -722,37 +722,181 @@
   {
     "node_id": 80,
     "node_type": "observation",
-    "content": "I met Kemi from AfriFoods Tech and picked a beginner-friendly combo\u2014moringa powder, baobab powder, and hibiscus extract\u2014for $135, paid by tap. She confirmed moringa\u2019s steady energy, baobab\u2019s gentle gut support, and hibiscus\u2019 heart-friendly antioxidants, and gave simple prep tips plus a reusable scoop and a weekly rotation card. I felt genuinely cared for and excited\u2014this feels like an \u201cantioxidant layering\u201d ritual for my day\u2014and I\u2019ll track how I feel and check back in a week.",
-    "importance": 20,
+    "content": "I checked in with Kemi about my Glow Duo routine and got her matcha-style, clump-free hibiscus whisking steps\u2014adding the dry sift and a pinch of baobab to soften tartness. She confirmed moringa pairs well with baobab and suggested a gentle cadence: 1 tsp each, three late-mornings a week, with notes on gut, energy, glow, and sensitivity. I\u2019ll pre-sift both powders, try the caf\u00e9\u2011silky moringa latte method with warm plant milk, and do a week-one check-in. I feel really cared for\u2014this inside-out routine feels kind to my skin barrier, and the traceable sourcing makes it meaningful.",
+    "importance": 18,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
   },
   {
     "node_id": 81,
+    "node_type": "reflection",
+    "content": "I enjoyed meeting Kemi at the local community market \u2014 the Glow Duo purchase felt both social and meaningful because the QR traceability connected me directly to the women's co\u2011ops, which made the transaction feel like supporting a community rather than just buying a product.",
+    "importance": 58,
+    "created": 17,
+    "last_retrieved": 17,
+    "pointer_id": [
+      73,
+      78,
+      7,
+      19,
+      33
+    ]
+  },
+  {
+    "node_id": 82,
+    "node_type": "reflection",
+    "content": "Even though I'm more comfortable in small, intimate settings, I find myself drawn to conversations at neighborhood stalls and online groups alike, where sharing brewing tips or skin notes creates a gentle, low\u2011pressure way to connect with others.",
+    "importance": 45,
+    "created": 17,
+    "last_retrieved": 17,
+    "pointer_id": [
+      73,
+      78,
+      7,
+      19,
+      33
+    ]
+  },
+  {
+    "node_id": 83,
+    "node_type": "reflection",
+    "content": "When I'm anxious or overwhelmed, local market interactions and niche online communities (like K\u2011beauty and K\u2011pop forums) give me a safe space to express my passions and trade practical routines \u2014 those small exchanges help me feel grounded and socially connected.",
+    "importance": 67,
+    "created": 17,
+    "last_retrieved": 17,
+    "pointer_id": [
+      73,
+      78,
+      7,
+      19,
+      33
+    ]
+  },
+  {
+    "node_id": 84,
     "node_type": "observation",
-    "content": "I helped Jasmine, who has combo, fragrance-sensitive skin, restock her low-fragrance SPF 50 sunscreen, emulsifying cleansing oil, and hydrating essence\u2014one of each, totaling $75. I felt quietly happy that her outdoor advocacy days have been calm with this simple routine, and I added a small card with reapply timing and a mist tip to help sunscreen layer smoothly. I reminded her to reapply every 2\u20133 hours and suggested extra essence at night if the heat causes sensitivity. It was a warm, reassuring exchange that made me feel useful and connected.",
-    "importance": 42,
+    "content": "I reconnected with Kemi and felt really happy that our gentle AM/PM routine is keeping my barrier calm, with just a bit of midday T\u2011zone shine to fine\u2011tune. She purchased my lightweight sunscreen (and then added a centella\u2013panthenol sheet mask), and we aligned on reapplying in two thin passes after lunch. I\u2019ll receive her hibiscus extract and baobab refills from the co\u2011ops, which I love for the QR traceability. We\u2019ll check in next week on wear time, shine control, and how the mask feels after cleansing oil.",
+    "importance": 18,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
   },
   {
-    "node_id": 82,
+    "node_id": 85,
     "node_type": "observation",
-    "content": "I visited Pema\u2019s stall again and felt really calm after her five-breath ritual and pine honey steam, so I asked for gentle gut support and steady focus. She recommended a two-to-one Mountain Flower and Pine blend, plus approved my tiny honey + one drop squalane nightly lip veil. I purchased a small blend jar and the honey medicinal guide, wrapped with a juniper blessing and red thread, and I\u2019ll follow her mid-morning lukewarm water ritual. I left feeling cared for and plan to check in next week about my focus and belly.",
-    "importance": 34,
-    "created": 6,
-    "last_retrieved": 6,
+    "content": "I met Jasmine at her stand and felt instantly at ease\u2014she was so warm. I bought one notebook and a jar of mountain flower honey for a calming evening tea ritual, and she shared a lovely \u201cbee-breath\u201d practice I can\u2019t wait to try. We also talked about my sunscreen project, and I asked to schedule a short refresher on percent actives, serial dilutions, and quick pH/log checks tailored to UV filters. I left feeling calm, inspired, and looking forward to grabbing more notebooks next market day.",
+    "importance": 28,
+    "created": 7,
+    "last_retrieved": 7,
     "pointer_id": null
   },
   {
-    "node_id": 83,
+    "node_id": 86,
+    "node_type": "reflection",
+    "content": "I find that local community markets are a gentle social space where casual purchases \u2014 like a notebook or honey \u2014 turn into meaningful conversations and leave me feeling calm and connected.",
+    "importance": 55,
+    "created": 35,
+    "last_retrieved": 35,
+    "pointer_id": [
+      82,
+      83,
+      81,
+      85,
+      7
+    ]
+  },
+  {
+    "node_id": 87,
+    "node_type": "reflection",
+    "content": "I gravitate toward small, niche communities (both in person and online) because they let me share practical tips and passions without pressure, which helps me manage anxiety and feel grounded.",
+    "importance": 60,
+    "created": 35,
+    "last_retrieved": 35,
+    "pointer_id": [
+      82,
+      83,
+      81,
+      85,
+      7
+    ]
+  },
+  {
+    "node_id": 88,
+    "node_type": "reflection",
+    "content": "When sellers are warm and transparent (for example, QR traceability linking products to women's co\u2011ops), transactions feel like supporting people and community, and I'm motivated to keep returning and deepening those connections.",
+    "importance": 65,
+    "created": 35,
+    "last_retrieved": 35,
+    "pointer_id": [
+      82,
+      83,
+      81,
+      85,
+      7
+    ]
+  },
+  {
+    "node_id": 89,
+    "node_type": "reflection",
+    "content": "I feel calm and connected after casual interactions at the local community market \u2014 small purchases often turn into meaningful conversations that leave me soothed rather than drained.",
+    "importance": 45,
+    "created": 36,
+    "last_retrieved": 36,
+    "pointer_id": [
+      86,
+      83,
+      82,
+      88,
+      81
+    ]
+  },
+  {
+    "node_id": 90,
+    "node_type": "reflection",
+    "content": "I prefer low\u2011pressure, intimate social spaces (both neighborhood stalls and niche online communities) where sharing hobbies or practical tips helps me feel grounded and socially supported.",
+    "importance": 35,
+    "created": 36,
+    "last_retrieved": 36,
+    "pointer_id": [
+      86,
+      83,
+      82,
+      88,
+      81
+    ]
+  },
+  {
+    "node_id": 91,
+    "node_type": "reflection",
+    "content": "When sellers are warm and transparent\u2014like using QR traceability that links products to women's co\u2011ops\u2014transactions feel like community support, which motivates me to return and deepen those relationships.",
+    "importance": 40,
+    "created": 36,
+    "last_retrieved": 36,
+    "pointer_id": [
+      86,
+      83,
+      82,
+      88,
+      81
+    ]
+  },
+  {
+    "node_id": 92,
     "node_type": "observation",
-    "content": "I saw Jasmine again today and put together her usual trio: the low\u2011fragrance SPF 50 sunscreen, the lightweight emulsifying cleansing oil, and the hydrating essence\u2014formulas unchanged. She tapped to pay, and I gently reminded her to reapply SPF every 2\u20133 hours and to mist if it\u2019s hot; I tucked a little reminder card into her bag. It felt really nice to hear that these steady habits keep her skin calm during long advocacy days. One smooth transaction, and I\u2019m grateful she trusts my recommendations.",
+    "content": "I helped Jasmine choose a simple AM routine for her normal-to-combo skin\u2014cleanse, a fragrance-light hydrating essence, and a no-white-cast hybrid sunscreen. I swatched both on her hands, shared the active percentages and pH for her notes, and she loved the textures, purchasing the essence ($28) and sunscreen ($22). I felt quietly happy seeing how well the SPF\u2019s satin finish suited her field days, and I offered a follow-up next week to fine-tune shine control.",
     "importance": 18,
-    "created": 4,
-    "last_retrieved": 4,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 93,
+    "node_type": "observation",
+    "content": "I asked Carlos for a gentle, smoke-free ritual to pair with my evening tea, and he guided me through making a small aromatic saquito with a wrapper leaf, yute, and a tiny touch of my mountain flower honey\u2014so calming. I also picked up a packet of tobacco seeds and he shared simple care tips\u2014soft sun, airy soil, light misting, and rotating the pot\u2014plus offered a little card with the danz\u00f3n breaths and seed notes. I felt really soothed and grateful for his poetic guidance, even though I was a bit shy and sentimental. There was a small hiccup at checkout\u2014I was short by a dollar for both items\u2014but we still created a lovely ritual I can repeat at home.",
+    "importance": 48,
+    "created": 7,
+    "last_retrieved": 7,
     "pointer_id": null
   }
 ]

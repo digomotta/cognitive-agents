@@ -6,7 +6,7 @@
       "value": 15.0,
       "description": "Calming herbal tea blend",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 5
     },
     {
       "name": "cannabis",
@@ -26,11 +26,19 @@
     },
     {
       "name": "digital cash",
-      "quantity": 166,
+      "quantity": 135,
       "value": 1.0,
       "description": "Starting business cash",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 7
+    },
+    {
+      "name": "mountain_flower_honey",
+      "quantity": 1,
+      "value": 45.0,
+      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
+      "created": 3,
+      "last_modified": 3
     }
   ],
   "records": [
@@ -72,74 +80,146 @@
     },
     {
       "record_id": 4,
-      "action": "trade_give",
-      "item_name": "herbal_tea",
+      "action": "trade_receive",
+      "item_name": "hibiscus_extract",
       "quantity": 1,
       "time_step": 3,
-      "description": "Sold 1 herbal_tea to Jasmine Carter for $15.0",
-      "trade_partner": "Jasmine Carter"
+      "description": "Purchased 1 hibiscus_extract from Kemi Adebayo for $35.0",
+      "trade_partner": "Kemi Adebayo"
     },
     {
       "record_id": 5,
-      "action": "trade_receive",
+      "action": "trade_give",
       "item_name": "digital cash",
-      "quantity": 15,
+      "quantity": 35,
       "time_step": 3,
-      "description": "Received $15.0 from selling 1 herbal_tea to Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
+      "description": "Paid $35.0 for 1 hibiscus_extract from Kemi Adebayo",
+      "trade_partner": "Kemi Adebayo"
     },
     {
       "record_id": 6,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 15,
+      "action": "trade_receive",
+      "item_name": "baobab_fruit_powder",
+      "quantity": 1,
       "time_step": 3,
-      "description": "Sold 15 digital cash to Jasmine Carter for $15.0",
-      "trade_partner": "Jasmine Carter"
+      "description": "Purchased 1 baobab_fruit_powder from Kemi Adebayo for $55.0",
+      "trade_partner": "Kemi Adebayo"
     },
     {
       "record_id": 7,
-      "action": "trade_receive",
+      "action": "trade_give",
       "item_name": "digital cash",
-      "quantity": 15,
+      "quantity": 55,
       "time_step": 3,
-      "description": "Received $15.0 from selling 15 digital cash to Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
+      "description": "Paid $55.0 for 1 baobab_fruit_powder from Kemi Adebayo",
+      "trade_partner": "Kemi Adebayo"
     },
     {
       "record_id": 8,
       "action": "trade_give",
-      "item_name": "herbal_tea",
+      "item_name": "hibiscus_extract",
       "quantity": 1,
-      "time_step": 1,
-      "description": "Sold 1 herbal_tea to Pema Sherpa for $15.0",
-      "trade_partner": "Pema Sherpa"
+      "time_step": 3,
+      "description": "Sold 1 hibiscus_extract to Carlos Mendez for $35.0",
+      "trade_partner": "Carlos Mendez"
     },
     {
       "record_id": 9,
       "action": "trade_receive",
       "item_name": "digital cash",
-      "quantity": 15,
-      "time_step": 1,
-      "description": "Received $15.0 from selling 1 herbal_tea to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
+      "quantity": 35,
+      "time_step": 3,
+      "description": "Received $35.0 from selling 1 hibiscus_extract to Carlos Mendez",
+      "trade_partner": "Carlos Mendez"
     },
     {
       "record_id": 10,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 15,
-      "time_step": 1,
-      "description": "Sold 15 digital cash to Pema Sherpa for $1.0",
+      "action": "trade_receive",
+      "item_name": "mountain_flower_honey",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
       "trade_partner": "Pema Sherpa"
     },
     {
       "record_id": 11,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Paid $45.0 for 1 mountain_flower_honey from Pema Sherpa",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 12,
       "action": "trade_receive",
       "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Purchased 45 digital cash from Pema Sherpa for $45.0",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 13,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 45,
+      "time_step": 3,
+      "description": "Paid $45.0 for 45 digital cash from Pema Sherpa",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 14,
+      "action": "trade_give",
+      "item_name": "herbal_tea",
       "quantity": 1,
-      "time_step": 1,
-      "description": "Received $1.0 from selling 15 digital cash to Pema Sherpa",
+      "time_step": 7,
+      "description": "Sold 1 herbal_tea to Pema Sherpa for $15.0",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 15,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 15,
+      "time_step": 7,
+      "description": "Received $15.0 from selling 1 herbal_tea to Pema Sherpa",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 16,
+      "action": "trade_give",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 5,
+      "description": "Sold 1 herbal_tea to Carlos Mendez for $15.0",
+      "trade_partner": "Carlos Mendez"
+    },
+    {
+      "record_id": 17,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 15,
+      "time_step": 5,
+      "description": "Received $15.0 from selling 1 herbal_tea to Carlos Mendez",
+      "trade_partner": "Carlos Mendez"
+    },
+    {
+      "record_id": 18,
+      "action": "trade_give",
+      "item_name": "baobab_fruit_powder",
+      "quantity": 1,
+      "time_step": 7,
+      "description": "Sold 1 baobab_fruit_powder to Pema Sherpa for $55.0",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 19,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 55,
+      "time_step": 7,
+      "description": "Received $55.0 from selling 1 baobab_fruit_powder to Pema Sherpa",
       "trade_partner": "Pema Sherpa"
     }
   ]

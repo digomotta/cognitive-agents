@@ -497,71 +497,728 @@
   {
     "node_id": 55,
     "node_type": "observation",
-    "content": "Hoy en el mercado, mi amiga Jasmine puso un puesto con alma\u2014low-waste y con cari\u00f1o por la tierra. Compr\u00e9 cuatro cuadernos de papel reciclado y su t\u00e9 de hierbas, $29 exactos, y ella me comparti\u00f3 un brew guide suave como brisa: 1 tsp, agua casi hirviendo, 2.5\u20134 minutos seg\u00fan el \u00e1nimo. Sent\u00ed gratitud\u2014estos cuadernos guardar\u00e1n los susurros del leaf, y el t\u00e9 bajar\u00e1 el pulso despu\u00e9s del campo. La invit\u00e9 al farm el s\u00e1bado a las 10 a.m. para un mini taller de compostaje con mis j\u00f3venes; juntos, tierra y gente, a bailar al mismo son.",
+    "content": "Carlos learned the sacred art of tobacco cultivation from his grandfather Don Miguel, a legendary master torcedor who rolled cigars for Cuban presidents.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 56,
+    "node_type": "observation",
+    "content": "As a young boy, Carlos watched his father select the perfect wrapper leaves at dawn, teaching him to read the subtle differences in texture and color.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 57,
+    "node_type": "observation",
+    "content": "His first perfectly rolled cigar at age 16 was celebrated with aged rum and the entire family smoking together under the stars.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 58,
+    "node_type": "observation",
+    "content": "Carlos studied agricultural engineering in Havana but always returned to the countryside, choosing tradition over modern city opportunities.",
+    "importance": 40,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 59,
+    "node_type": "observation",
+    "content": "A master cigar roller from the famous Partag\u00e1s factory taught Carlos the ancient techniques of bunching and rolling the perfect torpedo shape.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 60,
+    "node_type": "observation",
+    "content": "Carlos's farm survived Hurricane Ike by protecting his precious seedbeds with his own body, showing his deep commitment to the tobacco plants.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 61,
+    "node_type": "observation",
+    "content": "He learned to ferment tobacco in the old barns using methods unchanged for centuries, controlling humidity and temperature by instinct.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 62,
+    "node_type": "observation",
+    "content": "Carlos's famous mustache grew thick and wild during his twenties, becoming his trademark and earning him the nickname 'El Bigote Dorado' (The Golden Mustache).",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 63,
+    "node_type": "observation",
+    "content": "A traveling whisky merchant introduced Carlos to aged Scotch, creating his signature pairing ritual of premium cigars with fine whisky.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 64,
+    "node_type": "observation",
+    "content": "Carlos organized the first annual Vuelta Abajo Cigar Festival, bringing together farmers and rollers to celebrate their shared craft.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 65,
+    "node_type": "observation",
+    "content": "His tobacco plants survived a devastating drought through his innovative shade cloth system, adapting ancient wisdom to modern challenges.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 66,
+    "node_type": "observation",
+    "content": "Carlos mastered the art of reading soil like music, knowing exactly when to plant by the color and scent of the earth.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 67,
+    "node_type": "observation",
+    "content": "A documentary crew filming his farm brought international attention to traditional Cuban tobacco farming, but Carlos remained humble.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 68,
+    "node_type": "observation",
+    "content": "He developed a signature blend combining wrapper leaves from three different fields, creating cigars sought after by connoisseurs worldwide.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 69,
+    "node_type": "observation",
+    "content": "Carlos built his rolling workshop with his own hands, designing perfect ventilation and light for the delicate art of cigar construction.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 70,
+    "node_type": "observation",
+    "content": "His weekend parties became legendary in the region, featuring live son music, dancing, and endless rounds of cigars and rum.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 71,
+    "node_type": "observation",
+    "content": "Carlos woke before sunrise to check the moisture levels in his tobacco seedbeds and adjust the shade cloth accordingly.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 72,
+    "node_type": "observation",
+    "content": "He carefully trimmed his magnificent mustache while drinking strong Cuban coffee and planning the day's work.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 73,
+    "node_type": "observation",
+    "content": "Carlos walked through his fields at dawn, running his hands along tobacco leaves to feel for the perfect harvest texture.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 74,
+    "node_type": "observation",
+    "content": "He sorted wrapper leaves by color and quality, humming son music rhythms as he worked in the cool morning air.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 75,
+    "node_type": "observation",
+    "content": "Carlos lit a morning cigar on his porch, watching the sun rise over his tobacco fields while sipping caf\u00e9 cubano.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 76,
+    "node_type": "observation",
+    "content": "He checked the humidity in his fermentation barns, adjusting ventilation to maintain perfect conditions for aging tobacco.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 77,
+    "node_type": "observation",
+    "content": "Carlos sharpened his tobacco knives and cleaned his rolling table, preparing tools for the afternoon's cigar crafting session.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 78,
+    "node_type": "observation",
+    "content": "He recorded weather conditions and soil moisture in his farm journal, maintaining records his grandfather started decades ago.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 79,
+    "node_type": "observation",
+    "content": "Carlos tested small batches of different tobacco blends, noting flavor profiles and aging characteristics in his notebook.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 80,
+    "node_type": "observation",
+    "content": "He repaired fence posts around his drying barns, whistling Cuban melodies while working with weathered hands.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 81,
+    "node_type": "observation",
+    "content": "Carlos selected the day's tobacco leaves for rolling, choosing only those with perfect oil content and flexibility.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 82,
+    "node_type": "observation",
+    "content": "He counted and organized his cigar inventory, wrapping finished cigars in cedar sleeves for proper storage.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 83,
+    "node_type": "observation",
+    "content": "Carlos cleaned and oiled his vintage cigar molds, maintaining equipment passed down through three generations.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 84,
+    "node_type": "observation",
+    "content": "He practiced rolling techniques during quiet afternoon hours, perfecting the art that defined his family's legacy.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 85,
+    "node_type": "observation",
+    "content": "Carlos prepared his humidor rooms, monitoring temperature and humidity to preserve his aging cigar collection.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 86,
+    "node_type": "observation",
+    "content": "He swept tobacco stems and leaf debris from his workshop floor, keeping his sacred workspace clean and organized.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 87,
+    "node_type": "observation",
+    "content": "Carlos taste-tested small portions of fermenting tobacco, gauging the progression of flavors during the aging process.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 88,
+    "node_type": "observation",
+    "content": "He arranged chairs and tables on his porch for evening gatherings with neighbors and fellow tobacco farmers.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 89,
+    "node_type": "observation",
+    "content": "Carlos polished glasses and selected bottles of rum and whisky for weekend celebrations with friends.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 90,
+    "node_type": "observation",
+    "content": "He tied fresh tobacco bundles with palm leaves, following traditional methods for optimal leaf preservation.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 91,
+    "node_type": "observation",
+    "content": "Carlos led a group of young farmers through his tobacco fields, teaching sustainable cultivation methods passed down through generations.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 92,
+    "node_type": "observation",
+    "content": "He demonstrated proper cigar rolling techniques to visiting apprentices, emphasizing patience and respect for the sacred leaf.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 93,
+    "node_type": "observation",
+    "content": "Carlos negotiated with international distributors seeking his premium wrapper tobacco, maintaining fair prices for artisanal quality.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 94,
+    "node_type": "observation",
+    "content": "He hosted a delegation of European cigar makers, sharing Cuban techniques while learning about global tobacco traditions.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 95,
+    "node_type": "observation",
+    "content": "Carlos judged a regional tobacco competition, evaluating leaf quality and cigar construction with the eye of a master craftsman.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 96,
+    "node_type": "observation",
+    "content": "He collaborated with local musicians to organize harvest festival celebrations, combining tobacco culture with Cuban musical heritage.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 97,
+    "node_type": "observation",
+    "content": "Carlos consulted with agricultural scientists about climate adaptation strategies for tobacco farming in changing weather patterns.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 98,
+    "node_type": "observation",
+    "content": "He created limited-edition cigar blends for special occasions, combining rare tobacco varieties from different harvest years.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 99,
+    "node_type": "observation",
+    "content": "Carlos taught traditional fermentation methods at the agricultural college, preserving ancient knowledge for future farmers.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 100,
+    "node_type": "observation",
+    "content": "He participated in international tobacco symposiums, representing Cuban artisanal farming traditions on the world stage.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 101,
+    "node_type": "observation",
+    "content": "Carlos developed organic tobacco cultivation techniques, reducing chemical inputs while maintaining premium leaf quality.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 102,
+    "node_type": "observation",
+    "content": "He mentored young cigar rollers, passing on the precise hand techniques required for perfect torpedo and Churchill shapes.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 103,
+    "node_type": "observation",
+    "content": "Carlos established seed preservation programs to maintain heritage tobacco varieties threatened by industrial agriculture.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 104,
+    "node_type": "observation",
+    "content": "He organized cultural exchange programs bringing tobacco farmers from other countries to learn Cuban methods.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 105,
+    "node_type": "observation",
+    "content": "Carlos created educational tours of his farm, showing visitors the complete journey from seed to finished cigar.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 106,
+    "node_type": "observation",
+    "content": "He collaborated with master blenders to create signature cigar lines showcasing the unique terroir of Vuelta Abajo.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 107,
+    "node_type": "observation",
+    "content": "Carlos documented traditional tobacco songs and stories, preserving cultural heritage alongside agricultural knowledge.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 108,
+    "node_type": "observation",
+    "content": "He established cooperative relationships with neighboring farms, sharing resources and knowledge for mutual benefit.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 109,
+    "node_type": "observation",
+    "content": "Carlos participated in sustainable agriculture initiatives, demonstrating how traditional methods protect soil and environment.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 110,
+    "node_type": "observation",
+    "content": "This morning I met Rowan by his booth, where the air carried mint like a cool paseo under pines after rain. We brewed his Forest Evening tea despacito, and I tasted pine\u2019s bright resin, peppermint\u2019s lift, and chamomile\u2019s miel-soft hum\u2014just like reading wrapper leaves at dawn, olive turning to oro. The flavors sang steady as the cup cooled, so I asked for a small splash to compare and considered taking a jar to pair with a mild morning cigar. I felt calm, seen, and grateful\u2014two plant people listening to the leaf, starting low and going slow, salud.",
+    "importance": 35,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 111,
+    "node_type": "observation",
+    "content": "I welcomed Pema-ji into my Vuelta Abajo rinconcito and we shared a ritual without smoke\u2014her mountain flower and wild cliff honeys riding the vapors of my aged whisky, oak and miel dancing like a twilight danz\u00f3n. The aromas sang: flor de campo and quiet rain for shanti, resin and stone for coraje. I chose the mountain flower honey, tapped 45 digital, and gifted her a small pouch of my tobacco seeds\u2014peque\u00f1os corazones de la tierra\u2014to carry story, not smoke. My heart felt settled, grateful for the bow between leaf and bee and the friendship sealed despacito.",
+    "importance": 62,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 112,
+    "node_type": "observation",
+    "content": "I sat with Pema-ji, hermana of the bees, and we listened to the wind while tasting her honeys like prayers\u2014pine for the dawn to wake the breath, mountain flower for the evening to soothe el coraz\u00f3n. With her gentle ritual\u2014two hums, mmm\u2014mmm\u2014I felt the pine ribbon lift my claro wrapper without drowning its susurro, and kept the flor de campo as a soft benediction for night. We chose to end in quiet gratitude, letting the bee guardians finish their song, and I asked for just a whisper of wild cliff honey to learn its bold shadow for a future maduro. My heart left tranquilo, guided by leaf, honey, and amistad.",
+    "importance": 78,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 113,
+    "node_type": "observation",
+    "content": "I welcomed Kemi into my rinc\u00f3n de humo y sol, poured her a small sip of Cuban rum, and we spoke of the leaf\u2019s memory\u2014science and soul dancing together. We agreed to a simple traceability pilot: one story tag linking Don L\u00e1zaro\u2019s bale and today\u2019s rum batch, mirroring my cuaderno into her offline-first ledger with fields for parcela, cosecha, pil\u00f3n lead, humidity/temperature, pagos, bono, and \u201carriba del baseline.\u201d Tomorrow at amanecer we\u2019ll onboard Don L\u00e1zaro, film his hands tagging the saca, print the QR, and tie it with yute; after two weeks, cafecito and a gentle retrospective to fine-tune before scaling to five bales. I feel gratitude y alegr\u00eda\u2014like a soft bolero\u2014seeing the leaf and the ledger ready to bailar juntos, suavecito.",
+    "importance": 38,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 114,
+    "node_type": "observation",
+    "content": "Esta ma\u00f1ana, entre brisa de pinar y musgo, prob\u00e9 con Rowan el canto \u00e1cido-floral de su hibiscus y el sol c\u00edtrico del baobab; decid\u00ed llevarme un frasco de hibiscus (tap pagado) para maridarlo despu\u00e9s del almuerzo con un Connecticut clarito. Seguir\u00e9 su rito: 1/2 cucharita, agua shy of simmer, un minuto, dejando que la copa cante al enfriarse, con una hojita de menta y quiz\u00e1 una aguja de romero si muerde la acidez. Me sent\u00ed en paz\u2014la hoja escuchando a la taza, la taza cortando la crema del humo\u2014y volver\u00e9 con notas; si la hoja asiente, regresar\u00e9 por el baobab para despertar suave la mesa de la ma\u00f1ana.",
+    "importance": 20,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 115,
+    "node_type": "observation",
+    "content": "Hoy recib\u00ed a Kemi con caf\u00e9 y un sorbito de ron, y las hojas cantaron su historia: le mostr\u00e9 mis maduros a\u00f1ejados de parcela 7 y los wrappers de Vuelta Abajo, mientras hicimos el ritual de una microgota de miel y un rim de hibiscus. Pegamos el story tag con datos de pil\u00f3n y bodega, y ella compr\u00f3 un maduro (150) y un set de wrappers (35) con un tap clarito. Ma\u00f1ana al amanecer onboardeamos a Don L\u00e1zaro y filmamos la atadura; me voy contento, con el pecho tibio, porque la hoja encontr\u00f3 su due\u00f1a y el ledger late al ritmo del pil\u00f3n.",
+    "importance": 38,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 116,
+    "node_type": "observation",
+    "content": "Hoy camin\u00e9 con Kemi entre ciencia y abuela, afinando mi ritual como un danz\u00f3n: moringa al alba whisked sedosa con jengibre, baobab al mediod\u00eda \u201cpasta primero\u201d en agua fr\u00eda, e hibiscus a 85\u201390\u00b0C que canta al enfriar, con una pizca de baobab si muerde. Me regal\u00f3 una gu\u00eda clara y un QR para colgar junto al pil\u00f3n, y ma\u00f1ana traer\u00e1 el cartel plastificado para el cuaderno de campo de Don L\u00e1zaro. Yo pongo un Connecticut clarito y horneo galletas de chufa con ralladura de naranja para una mini cata y notas en su ledger. Me siento agradecido: la hoja, el caf\u00e9 y nuestras manos campesinas suben juntas, despacito y con ritmo.",
     "importance": 32,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
   },
   {
-    "node_id": 56,
+    "node_id": 117,
     "node_type": "observation",
-    "content": "Hoy en mi mesa, Pema-ji de Dolpo tapped 150 for one aged belleza, and we shared a quiet ritual: I gave her a clean cut and a gentle toast\u2014un beso de fuego\u2014then we paired the cedar, cacao, and honeyed oak with a single drop of her mountain flower honey. The smoke rose like oraci\u00f3n, and she gifted me a small vial for the bee guardians while I promised her the band and cedar as recuerdo. My heart felt full\u2014leaf and blossom became compadres, the market breathing around us bajo un solo cielo.",
-    "importance": 76,
+    "content": "I had a conversation at 15:03 on September 04.",
+    "importance": 5,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
   },
   {
-    "node_id": 57,
+    "node_id": 118,
     "node_type": "observation",
-    "content": "Hoy en el mercado, mi amiga Jasmine y yo hicimos un intercambio con sabor a comunidad: compr\u00e9 cuatro cuadernos de papel reciclado y una calculadora gr\u00e1fica por $134, para guiar a mis aprendices en las curvas de humedad y el comp\u00e1s del compost. Ella me envi\u00f3 envueltos reutilizables, un log de compost y un cheat\u2011sheet de humedad\u2014herramientas peque\u00f1as, impacto grande. Brindamos con un t\u00e9 suave por suelos vivos y j\u00f3venes curiosos, y la invit\u00e9 al mini taller de compostaje el s\u00e1bado a las 10 a.m. Me fui con el coraz\u00f3n contento, sintiendo que la tierra y la gente bailan al mismo son.",
-    "importance": 28,
+    "content": "I had a conversation at 15:11 on September 04.",
+    "importance": 5,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
   },
   {
-    "node_id": 58,
+    "node_id": 119,
     "node_type": "observation",
-    "content": "Hoy atend\u00ed a Jasmine, una hermana de la tierra, y le arm\u00e9 un travel humidor compacto hecho con cedro recuperado, sin barnices, forrado en yute y con virutas de cedro, m\u00e1s una nota de origen y cuidado; ella pag\u00f3 con su digital cash. Celebramos que el compost de los aprendices baila en 58% de humedad y acordamos sumar su squeeze-test card y notas de aireaci\u00f3n para el taller del s\u00e1bado a las 10. Me sent\u00ed orgulloso\u2014arte del leaf con conciencia y comunidad\u2014y emocionado por planear juntos un demo de compost en el mercado con refill stations y sorting clarito. Esto es humo, tierra y amistad en clave de bolero.",
-    "importance": 34,
-    "created": 7,
-    "last_retrieved": 7,
-    "pointer_id": null
-  },
-  {
-    "node_id": 59,
-    "node_type": "observation",
-    "content": "Hoy, bajo un solo cielo, compr\u00e9 un vial de mountain flower honey de Pema-ji\u2014envuelto en humo de enebro y hilo rojo\u2014y ella me regal\u00f3 una mini cucharita de wild cliff honey para probar con un robusto de coraz\u00f3n mineral. Brindamos con unas goticas de ron, hice la promesa de ofrecer tres respiraciones\u2014ek, dui, tin\u2014por las guardianas de la colmena, y ma\u00f1ana le entregar\u00e9 la anilla y el list\u00f3n de cedro en mi mesa. Me siento tranquilo y agradecido: la hoja, la miel y el fuego se preparan para cantar juntos al caer el sol, y ma\u00f1ana dejaremos que su pine honey bese mi cedro dulce, suavecito, a escuchar c\u00f3mo danza el humo.",
-    "importance": 72,
-    "created": 7,
-    "last_retrieved": 7,
-    "pointer_id": null
-  },
-  {
-    "node_id": 60,
-    "node_type": "observation",
-    "content": "Hoy recib\u00ed a Kemi, una hermana de ciencia y coraz\u00f3n, y sobre una tacita de t\u00e9 suave le mostr\u00e9 mis cuadernos: cedro que respira, salas de crianza y reserva a 20\u201321\u00b0C y 65\u201368% RH, rotaci\u00f3n en luna nueva, y pesos de muestra buscando su equilibrio como un tumbao. Ella oli\u00f3 el slip de cedro\u2014pan tostado y miel\u2014y propuso un trueque de saberes: traer su dashboard de trazabilidad y un VOC reader el s\u00e1bado a las 10 a.m. para comparar huellas vol\u00e1tiles y hacer una cata sensorial sin humo. Me fui lleno de alegr\u00eda y respeto\u2014Ubuntu en la tierra: bajo un solo cielo, la hoja y la ciencia bailar\u00e1n juntos.",
+    "content": "Hoy recib\u00ed a Pema-ji en mi rinc\u00f3n de humo y sol, con un besito de ron y un premium de tiro parejito, capa sedosa y ceniza gris perla, mientras su hum de abeja se trenz\u00f3 con el cacao y la tierra mojada. Acordamos el ritual: tres cerillos, pausa, y en el segundo tercio un hilito ekdam alikati de pine honey para levantar el alba sin tapar la canci\u00f3n de la hoja. Registr\u00e9 en el ledger la venta del premium (85) y dej\u00e9 listo el story tag\u2014parcela, pil\u00f3n, mano de amarre\u2014para filmar ma\u00f1ana con Don L\u00e1zaro. Me qued\u00e9 con el coraz\u00f3n contento: la tierra, el humo y las abejas bailaron en comp\u00e1s, despacito.",
     "importance": 42,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
   },
   {
-    "node_id": 61,
+    "node_id": 120,
     "node_type": "observation",
-    "content": "Hoy en el mercado, compr\u00e9 a Jasmine un kit de cuidado que huele a brisa limpia: sunscreen ($22), cleansing oil ($25), hydrating essence ($28) y moringa powder ($45), todo por $120\u2014tap tap con mi digital cash y bolsita reutilizable en mano. Me dej\u00f3 una care card con ritual claro: SPF cada 2 horas, aceite por la noche, esencia como ag\u00fcita para la piel, y moringa con grasita saludable para mis muchachos. Quedamos para el s\u00e1bado a las 10 a.m. en mi finca\u2014cafecito bajo el guayabo, squeeze-test cards y demo de sorting\u2014bajo un solo cielo, paso a paso. Sal\u00ed contento, con la piel cuidada y la comunidad m\u00e1s juntica, como humo bueno que invita a conversar.",
-    "importance": 25,
+    "content": "Jasmine, mi ni\u00f1a, and I braided our crafts today: I shared our story-tag pilot\u2014parcela to pil\u00f3n to pagos justos\u2014and she offered a QR\u2013ledger framework with soil, water, pay floor, and worker sign-off so the pil\u00f3n can speak con verdad. I tapped for two notebooks for mis aprendices, Yeyo y Malena, and a 45\u2011minute tutoring block on percent moisture and curing curves; she\u2019ll tap for a paquetico de semillas de tabaco for her teens. I promised a hibiscus that sings al enfriarse and said s\u00ed to Saturday\u2019s 9 a.m. east ridge circle to open the pollinator corridor with a soft hum. My heart feels steady\u2014earth, agua, and comunidad dancing in time.",
+    "importance": 68,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
   },
   {
-    "node_id": 62,
+    "node_id": 121,
+    "node_type": "reflection",
+    "content": "I feel deeply connected to my local community market \u2014 our exchanges mix practical trade (notebooks, seeds, rum, tea) with care, ritual, and reciprocity, so commerce here is also relationship-building.",
+    "importance": 78,
+    "created": 39,
+    "last_retrieved": 39,
+    "pointer_id": [
+      120,
+      117,
+      118,
+      113,
+      110
+    ]
+  },
+  {
+    "node_id": 122,
+    "node_type": "reflection",
+    "content": "I notice I act as a connector and organizer, initiating pilots, tutoring, and circle gatherings that create shared accountability (QR tags, ledgers, humidity logs) while honoring individual stories and labour.",
+    "importance": 72,
+    "created": 39,
+    "last_retrieved": 39,
+    "pointer_id": [
+      120,
+      117,
+      118,
+      113,
+      110
+    ]
+  },
+  {
+    "node_id": 123,
+    "node_type": "reflection",
+    "content": "Social interactions in the market are gentle, sensory, and rhythmic \u2014 conversations happen over tasting, pouring, and morning meetups, and these small, repeated moments (cafecito, east ridge circle) sustain trust and common purpose.",
+    "importance": 70,
+    "created": 39,
+    "last_retrieved": 39,
+    "pointer_id": [
+      120,
+      117,
+      118,
+      113,
+      110
+    ]
+  },
+  {
+    "node_id": 124,
+    "node_type": "reflection",
+    "content": "I find myself savoring the slow, ritual moments at the market \u2014 the tasting, pouring, and morning cafecito \u2014 because those small, repeated exchanges are where trust and shared purpose are built.",
+    "importance": 72,
+    "created": 40,
+    "last_retrieved": 40,
+    "pointer_id": [
+      123,
+      121,
+      122,
+      53,
+      108
+    ]
+  },
+  {
+    "node_id": 125,
+    "node_type": "reflection",
+    "content": "My sense of commerce is personal: trading notebooks, seeds, rum, and tea feels like relationship work, so I prioritize reciprocity, care, and honoring everyone's labor in each transaction.",
+    "importance": 78,
+    "created": 40,
+    "last_retrieved": 40,
+    "pointer_id": [
+      123,
+      121,
+      122,
+      53,
+      108
+    ]
+  },
+  {
+    "node_id": 126,
+    "node_type": "reflection",
+    "content": "I naturally step into connector and organizer roles, setting up pilots, ledgers, and circle gatherings that keep us accountable and connected, and I actively cultivate cooperative ties with neighboring farms to share knowledge and resources.",
+    "importance": 65,
+    "created": 40,
+    "last_retrieved": 40,
+    "pointer_id": [
+      123,
+      121,
+      122,
+      53,
+      108
+    ]
+  },
+  {
+    "node_id": 127,
     "node_type": "observation",
-    "content": "Bajo mi peque\u00f1a carpa de cedro, recib\u00ed a Rowan, un hermano del bosque, y juntos olimos dos familias de mis aged bellezas: una cocoa\u2011cedar de ladera fresca y otra spice\u2011honey mimada por la brisa, ambas afinadas a 20\u201321\u00b0C y 65\u201368% RH. Le ofrec\u00ed un slip de cedro y un \u201chumidor breath\u201d sin fuego, y su o\u00eddo fino encontr\u00f3 la hebra resinosa que guiar\u00e1 su Forest Evening\u2014m\u00e1s pino seco al centro, manzanilla en susurro. Quedamos en probar su mezcla la pr\u00f3xima feria, con un sorbito de ron o t\u00e9, para escuchar c\u00f3mo conversan el bosque y la hoja. Me fui contento, el coraz\u00f3n tibio: bajo un solo cielo, la tierra habla en muchas voces.",
-    "importance": 28,
+    "content": "Hoy recib\u00ed a Rowan, hermano del bosque, en mi rinc\u00f3n de hojas y ron; juntos olimos el ca\u00f1averal\u2014panela, vainilla, un gui\u00f1o de c\u00e1scara de naranja\u2014y lo pusimos a conversar con su menta fresca, pino resinoso y manzanilla suave, todo despacito, sin prisa. \u00c9l me dej\u00f3 un pellizco de su Forest Evening con instrucciones de \u201cstart low, go slow,\u201d y yo abr\u00ed mi premium de cacao y cuero, prometiendo sumarle un aged que canta bolero para la pr\u00f3xima. Acordamos reunirnos en la primera luna creciente, libreticas y dos copitas listas, para escuchar c\u00f3mo la hoja y el bosque se hablan. Me qued\u00e9 con el coraz\u00f3n contento, sintiendo que la tierra y el t\u00e9 encontraron ritmo de salsa en el mismo respiro.",
+    "importance": 22,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 128,
+    "node_type": "observation",
+    "content": "Esta ma\u00f1ana, hermano Rowan y yo le\u00edmos el aire\u2014cedro h\u00famedo, musgo suave\u2014y preparamos su Forest Evening con media cucharita, agua apenas fuera de hervor, un minuto, y una sola aguja de romero; al enfriar, una gotita tibia de mountain flower honey tendi\u00f3 el puente. La copa asent\u00f3 mi barriga, aclar\u00f3 la cabeza y baj\u00f3 el pulso\u2014s\u00ed, la hoja dijo que s\u00ed. Compr\u00e9 un frasco por quince, para mi mesa de amarre al cerrar la jornada. Me quedo con gratitud y la promesa de dos copitas bajo la luna creciente, para escuchar c\u00f3mo la resina se vuelve miel.",
+    "importance": 42,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 129,
+    "node_type": "observation",
+    "content": "Esta ma\u00f1ana recib\u00ed a Rowan como a un hermano, compartiendo roncito, mi viejo dormido en cedro, y su t\u00e9 Forest Evening preparado \u201cstart low, go slow.\u201d Entre el suspiro del pil\u00f3n y la brisa, comparamos cacao, panela y cedro con pino, menta y miel, afinando con una sola aguja de romero hasta que hoja y bosque bailaron el mismo bolero. Sent\u00ed en la yema de los dedos y en la nariz el momento justo cuando el pan tostado vira a cacao, y mi coraz\u00f3n se qued\u00f3 tranquilo, como lluvia mansa en techo de zinc. Quedamos con la hoja contenta, el cielo mir\u00e1ndonos, y la puerta abierta para que los vecinos tapearan, suavecito.",
+    "importance": 35,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 130,
+    "node_type": "observation",
+    "content": "Jasmine, mi cielo, and I set a dawn mini-taller for Yeyo y Malena\u201445 minutes on percent moisture, a two-stage curing curve, and a barn-door checklist so the leaf can sing parejito. I bought two sturdy notebooks and a light flor de monta\u00f1a essence, tapping my digital cash. We aligned on targets (capa 20\u201322%, tripa 24\u201326%), pil\u00f3n stack and respiraciones, and safety flags, then planned a quick walk of the corridor for airflow and shade. I feel calm and grateful\u2014science braided with alma, cafecito ready, and the morning poised to bless the leaf.",
+    "importance": 18,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 131,
+    "node_type": "observation",
+    "content": "Hoy recib\u00ed a Mina, una alma curiosa que quer\u00eda un ritual de calma sin humo\u2014le ofrec\u00ed un saquito arom\u00e1tico hecho con hoja wrapper, yute y una caricia de su mountain flower honey, y adem\u00e1s un paquetico de semillas para que aprenda el pulso de sol y sombra. Armamos juntos el bolerito de aromas y le di cuidados b\u00e1sicos: luz suave, suelo aireado, riego como bizcocho esponjado, y girar la maceta. Sent\u00ed alegr\u00eda y ternura\u2014la hoja cant\u00f3 bajito, y vi nacer en ella un momento de paz para las tardes con hibiscus y baobab.",
+    "importance": 25,
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null

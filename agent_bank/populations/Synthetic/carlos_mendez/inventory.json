@@ -2,19 +2,19 @@
   "items": [
     {
       "name": "premium_cigars",
-      "quantity": 15,
+      "quantity": 14,
       "value": 85.0,
       "description": "Hand-rolled premium cigars from Vuelta Abajo tobacco",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 3
     },
     {
       "name": "wrapper_tobacco_leaves",
-      "quantity": 25,
+      "quantity": 23,
       "value": 35.0,
       "description": "Premium wrapper tobacco leaves for cigar making",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 5
     },
     {
       "name": "aged_cigars",
@@ -22,7 +22,7 @@
       "value": 150.0,
       "description": "Aged cigars with 5+ years of careful humidor storage",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 5
     },
     {
       "name": "cuban_rum",
@@ -42,11 +42,11 @@
     },
     {
       "name": "cigar_humidor",
-      "quantity": 1,
+      "quantity": 2,
       "value": 300.0,
       "description": "Traditional cedar humidors for proper cigar storage",
       "created": 1,
-      "last_modified": 3
+      "last_modified": 1
     },
     {
       "name": "tobacco_seeds",
@@ -54,7 +54,7 @@
       "value": 25.0,
       "description": "Heritage Cuban tobacco seeds from family farm",
       "created": 1,
-      "last_modified": 1
+      "last_modified": 5
     },
     {
       "name": "rolling_tools",
@@ -66,17 +66,25 @@
     },
     {
       "name": "digital cash",
-      "quantity": 342,
+      "quantity": 380,
       "value": 1.0,
       "description": "Farm earnings and cigar sales",
       "created": 1,
-      "last_modified": 3
+      "last_modified": 5
     },
     {
-      "name": "notebooks",
-      "quantity": 8,
-      "value": 3.5,
-      "description": "Purchased 4 notebooks from Jasmine Carter for $14.0",
+      "name": "mountain_flower_honey",
+      "quantity": 1,
+      "value": 45.0,
+      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
+      "created": 6,
+      "last_modified": 6
+    },
+    {
+      "name": "hibiscus_extract",
+      "quantity": 1,
+      "value": 35.0,
+      "description": "Purchased 1 hibiscus_extract from Rowan Greenwood for $35.0",
       "created": 3,
       "last_modified": 3
     },
@@ -84,47 +92,15 @@
       "name": "herbal_tea",
       "quantity": 1,
       "value": 15.0,
-      "description": "Purchased 1 herbal_tea from Jasmine Carter for $15.0",
-      "created": 3,
-      "last_modified": 3
+      "description": "Purchased 1 herbal_tea from Rowan Greenwood for $15.0",
+      "created": 5,
+      "last_modified": 5
     },
     {
-      "name": "graphing_calculator",
-      "quantity": 1,
-      "value": 120.0,
-      "description": "Purchased 1 graphing_calculator from Jasmine Carter for $120.0",
-      "created": 3,
-      "last_modified": 3
-    },
-    {
-      "name": "mountain_flower_honey",
-      "quantity": 1,
-      "value": 45.0,
-      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
-      "created": 1,
-      "last_modified": 1
-    },
-    {
-      "name": "wild_cliff_honey",
-      "quantity": 1,
-      "value": 0.0,
-      "description": "Purchased 1 wild_cliff_honey from Pema Sherpa for $0.0",
-      "created": 1,
-      "last_modified": 1
-    },
-    {
-      "name": "sunscreen",
-      "quantity": 1,
-      "value": 22.0,
-      "description": "Purchased 1 sunscreen from Jasmine Carter for $22.0",
-      "created": 3,
-      "last_modified": 3
-    },
-    {
-      "name": "cleansing_oil",
-      "quantity": 1,
-      "value": 25.0,
-      "description": "Purchased 1 cleansing_oil from Jasmine Carter for $25.0",
+      "name": "notebooks",
+      "quantity": 2,
+      "value": 3.5,
+      "description": "Purchased 2 notebooks from Jasmine Carter for $7.0",
       "created": 3,
       "last_modified": 3
     },
@@ -137,10 +113,10 @@
       "last_modified": 3
     },
     {
-      "name": "moringa_powder",
+      "name": "tutoring_sessions",
       "quantity": 1,
-      "value": 45.0,
-      "description": "Purchased 1 moringa_powder from Jasmine Carter for $45.0",
+      "value": 40.0,
+      "description": "Purchased 1 tutoring_sessions from Jasmine Carter for $40.0",
       "created": 3,
       "last_modified": 3
     }
@@ -230,176 +206,140 @@
     {
       "record_id": 9,
       "action": "trade_receive",
-      "item_name": "notebooks",
-      "quantity": 4,
-      "time_step": 3,
-      "description": "Purchased 4 notebooks from Jasmine Carter for $14.0",
-      "trade_partner": "Jasmine Carter"
+      "item_name": "mountain_flower_honey",
+      "quantity": 1,
+      "time_step": 6,
+      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
+      "trade_partner": "Pema Sherpa"
     },
     {
       "record_id": 10,
       "action": "trade_give",
       "item_name": "digital cash",
-      "quantity": 14,
-      "time_step": 3,
-      "description": "Paid $14.0 for 4 notebooks from Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 11,
-      "action": "trade_receive",
-      "item_name": "herbal_tea",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 herbal_tea from Jasmine Carter for $15.0",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 12,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 15,
-      "time_step": 3,
-      "description": "Paid $15.0 for 1 herbal_tea from Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 13,
-      "action": "trade_give",
-      "item_name": "aged_cigars",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Sold 1 aged_cigars to Pema Sherpa for $150.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 14,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 150,
-      "time_step": 1,
-      "description": "Received $150.0 from selling 1 aged_cigars to Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 15,
-      "action": "trade_receive",
-      "item_name": "notebooks",
-      "quantity": 4,
-      "time_step": 3,
-      "description": "Purchased 4 notebooks from Jasmine Carter for $14.0",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 16,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 14,
-      "time_step": 3,
-      "description": "Paid $14.0 for 4 notebooks from Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 17,
-      "action": "trade_receive",
-      "item_name": "graphing_calculator",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 graphing_calculator from Jasmine Carter for $120.0",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 18,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 120,
-      "time_step": 3,
-      "description": "Paid $120.0 for 1 graphing_calculator from Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 19,
-      "action": "trade_give",
-      "item_name": "cigar_humidor",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 cigar_humidor to Jasmine Carter for $300.0",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 20,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 300,
-      "time_step": 3,
-      "description": "Received $300.0 from selling 1 cigar_humidor to Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 21,
-      "action": "trade_receive",
-      "item_name": "mountain_flower_honey",
-      "quantity": 1,
-      "time_step": 1,
-      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 22,
-      "action": "trade_give",
-      "item_name": "digital cash",
       "quantity": 45,
-      "time_step": 1,
+      "time_step": 6,
       "description": "Paid $45.0 for 1 mountain_flower_honey from Pema Sherpa",
       "trade_partner": "Pema Sherpa"
     },
     {
-      "record_id": 23,
+      "record_id": 11,
       "action": "trade_receive",
-      "item_name": "wild_cliff_honey",
+      "item_name": "tobacco_seeds",
       "quantity": 1,
-      "time_step": 1,
-      "description": "Purchased 1 wild_cliff_honey from Pema Sherpa for $0.0",
+      "time_step": 6,
+      "description": "Purchased 1 tobacco_seeds from Pema Sherpa for $0.0",
       "trade_partner": "Pema Sherpa"
     },
     {
+      "record_id": 12,
+      "action": "trade_receive",
+      "item_name": "hibiscus_extract",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Purchased 1 hibiscus_extract from Rowan Greenwood for $35.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 13,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 35,
+      "time_step": 3,
+      "description": "Paid $35.0 for 1 hibiscus_extract from Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 14,
+      "action": "trade_give",
+      "item_name": "aged_cigars",
+      "quantity": 1,
+      "time_step": 5,
+      "description": "Sold 1 aged_cigars to Kemi Adebayo for $150.0",
+      "trade_partner": "Kemi Adebayo"
+    },
+    {
+      "record_id": 15,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 150,
+      "time_step": 5,
+      "description": "Received $150.0 from selling 1 aged_cigars to Kemi Adebayo",
+      "trade_partner": "Kemi Adebayo"
+    },
+    {
+      "record_id": 16,
+      "action": "trade_give",
+      "item_name": "wrapper_tobacco_leaves",
+      "quantity": 1,
+      "time_step": 5,
+      "description": "Sold 1 wrapper_tobacco_leaves to Kemi Adebayo for $35.0",
+      "trade_partner": "Kemi Adebayo"
+    },
+    {
+      "record_id": 17,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 35,
+      "time_step": 5,
+      "description": "Received $35.0 from selling 1 wrapper_tobacco_leaves to Kemi Adebayo",
+      "trade_partner": "Kemi Adebayo"
+    },
+    {
+      "record_id": 18,
+      "action": "trade_give",
+      "item_name": "premium_cigars",
+      "quantity": 1,
+      "time_step": 3,
+      "description": "Sold 1 premium_cigars to Pema Sherpa for $85.0",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 19,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 85,
+      "time_step": 3,
+      "description": "Received $85.0 from selling 1 premium_cigars to Pema Sherpa",
+      "trade_partner": "Pema Sherpa"
+    },
+    {
+      "record_id": 20,
+      "action": "trade_receive",
+      "item_name": "herbal_tea",
+      "quantity": 1,
+      "time_step": 5,
+      "description": "Purchased 1 herbal_tea from Rowan Greenwood for $15.0",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 21,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 15,
+      "time_step": 5,
+      "description": "Paid $15.0 for 1 herbal_tea from Rowan Greenwood",
+      "trade_partner": "Rowan Greenwood"
+    },
+    {
+      "record_id": 22,
+      "action": "trade_receive",
+      "item_name": "notebooks",
+      "quantity": 2,
+      "time_step": 3,
+      "description": "Purchased 2 notebooks from Jasmine Carter for $7.0",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 23,
+      "action": "trade_give",
+      "item_name": "digital cash",
+      "quantity": 7,
+      "time_step": 3,
+      "description": "Paid $7.0 for 2 notebooks from Jasmine Carter",
+      "trade_partner": "Jasmine Carter"
+    },
+    {
       "record_id": 24,
-      "action": "trade_receive",
-      "item_name": "sunscreen",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 sunscreen from Jasmine Carter for $22.0",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 25,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 22,
-      "time_step": 3,
-      "description": "Paid $22.0 for 1 sunscreen from Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 26,
-      "action": "trade_receive",
-      "item_name": "cleansing_oil",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 cleansing_oil from Jasmine Carter for $25.0",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 27,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 25,
-      "time_step": 3,
-      "description": "Paid $25.0 for 1 cleansing_oil from Jasmine Carter",
-      "trade_partner": "Jasmine Carter"
-    },
-    {
-      "record_id": 28,
       "action": "trade_receive",
       "item_name": "essence",
       "quantity": 1,
@@ -408,7 +348,7 @@
       "trade_partner": "Jasmine Carter"
     },
     {
-      "record_id": 29,
+      "record_id": 25,
       "action": "trade_give",
       "item_name": "digital cash",
       "quantity": 28,
@@ -417,22 +357,58 @@
       "trade_partner": "Jasmine Carter"
     },
     {
-      "record_id": 30,
+      "record_id": 26,
       "action": "trade_receive",
-      "item_name": "moringa_powder",
+      "item_name": "tutoring_sessions",
       "quantity": 1,
       "time_step": 3,
-      "description": "Purchased 1 moringa_powder from Jasmine Carter for $45.0",
+      "description": "Purchased 1 tutoring_sessions from Jasmine Carter for $40.0",
       "trade_partner": "Jasmine Carter"
     },
     {
-      "record_id": 31,
+      "record_id": 27,
       "action": "trade_give",
       "item_name": "digital cash",
-      "quantity": 45,
+      "quantity": 40,
       "time_step": 3,
-      "description": "Paid $45.0 for 1 moringa_powder from Jasmine Carter",
+      "description": "Paid $40.0 for 1 tutoring_sessions from Jasmine Carter",
       "trade_partner": "Jasmine Carter"
+    },
+    {
+      "record_id": 28,
+      "action": "trade_give",
+      "item_name": "wrapper_tobacco_leaves",
+      "quantity": 1,
+      "time_step": 5,
+      "description": "Sold 1 wrapper_tobacco_leaves to Mina Kim for $35.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 29,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 35,
+      "time_step": 5,
+      "description": "Received $35.0 from selling 1 wrapper_tobacco_leaves to Mina Kim",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 30,
+      "action": "trade_give",
+      "item_name": "tobacco_seeds",
+      "quantity": 1,
+      "time_step": 5,
+      "description": "Sold 1 tobacco_seeds to Mina Kim for $25.0",
+      "trade_partner": "Mina Kim"
+    },
+    {
+      "record_id": 31,
+      "action": "trade_receive",
+      "item_name": "digital cash",
+      "quantity": 25,
+      "time_step": 5,
+      "description": "Received $25.0 from selling 1 tobacco_seeds to Mina Kim",
+      "trade_partner": "Mina Kim"
     }
   ]
 }
