@@ -18,35 +18,27 @@
     },
     {
       "name": "notebooks",
-      "quantity": 5,
+      "quantity": 8,
       "value": 3.5,
       "description": "High-quality notebooks",
       "created": 1,
-      "last_modified": 3
+      "last_modified": 1
     },
     {
       "name": "tutoring_sessions",
-      "quantity": 1,
+      "quantity": 2,
       "value": 40.0,
       "description": "One-hour math tutoring sessions",
       "created": 1,
-      "last_modified": 3
+      "last_modified": 1
     },
     {
       "name": "digital cash",
-      "quantity": 103,
+      "quantity": 1000,
       "value": 1.0,
       "description": "Student savings",
       "created": 1,
-      "last_modified": 3
-    },
-    {
-      "name": "sunscreen",
-      "quantity": 1,
-      "value": 22.0,
-      "description": "Purchased 1 sunscreen from Mina Kim for $22.0",
-      "created": 5,
-      "last_modified": 5
+      "last_modified": 1
     }
   ],
   "records": [
@@ -90,154 +82,10 @@
       "record_id": 4,
       "action": "add",
       "item_name": "digital cash",
-      "quantity": 75,
+      "quantity": 1000,
       "time_step": 1,
       "description": "Student savings",
       "trade_partner": ""
-    },
-    {
-      "record_id": 5,
-      "action": "trade_receive",
-      "item_name": "mountain_flower_honey",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Purchased 1 mountain_flower_honey from Pema Sherpa for $45.0",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 6,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 45,
-      "time_step": 3,
-      "description": "Paid $45.0 for 1 mountain_flower_honey from Pema Sherpa",
-      "trade_partner": "Pema Sherpa"
-    },
-    {
-      "record_id": 7,
-      "action": "trade_give",
-      "item_name": "notebooks",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 notebooks to Mina Kim for $3.5",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 8,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 3,
-      "time_step": 3,
-      "description": "Received $3.5 from selling 1 notebooks to Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 9,
-      "action": "trade_give",
-      "item_name": "mountain_flower_honey",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 mountain_flower_honey to Mina Kim for $45.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 10,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 45,
-      "time_step": 3,
-      "description": "Received $45.0 from selling 1 mountain_flower_honey to Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 11,
-      "action": "trade_receive",
-      "item_name": "essence",
-      "quantity": 1,
-      "time_step": 5,
-      "description": "Purchased 1 essence from Mina Kim for $28.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 12,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 28,
-      "time_step": 5,
-      "description": "Paid $28.0 for 1 essence from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 13,
-      "action": "trade_receive",
-      "item_name": "sunscreen",
-      "quantity": 1,
-      "time_step": 5,
-      "description": "Purchased 1 sunscreen from Mina Kim for $22.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 14,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 22,
-      "time_step": 5,
-      "description": "Paid $22.0 for 1 sunscreen from Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 15,
-      "action": "trade_give",
-      "item_name": "notebooks",
-      "quantity": 2,
-      "time_step": 3,
-      "description": "Sold 2 notebooks to Carlos Mendez for $7.0",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 16,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 7,
-      "time_step": 3,
-      "description": "Received $7.0 from selling 2 notebooks to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 17,
-      "action": "trade_give",
-      "item_name": "essence",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 essence to Carlos Mendez for $28.0",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 18,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 28,
-      "time_step": 3,
-      "description": "Received $28.0 from selling 1 essence to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 19,
-      "action": "trade_give",
-      "item_name": "tutoring_sessions",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 tutoring_sessions to Carlos Mendez for $40.0",
-      "trade_partner": "Carlos Mendez"
-    },
-    {
-      "record_id": 20,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 40,
-      "time_step": 3,
-      "description": "Received $40.0 from selling 1 tutoring_sessions to Carlos Mendez",
-      "trade_partner": "Carlos Mendez"
     }
   ]
 }

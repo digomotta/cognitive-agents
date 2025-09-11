@@ -1222,5 +1222,14 @@
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
+  },
+  {
+    "node_id": 132,
+    "node_type": "observation",
+    "content": "Esta ma\u00f1ana, compay, la brisa de pinar nos guio a dos tazas suaves: primero un herbal con menta, meadow-sweet y manzanilla, luego otra infusi\u00f3n un suspiro m\u00e1s caliente que abri\u00f3 la panza dulce como pan tibio. Prob\u00e9 cada sorbito claro y despu\u00e9s con una sola gota de mi mountain flower honey, puenteando sin tapar el susurro. Me dej\u00f3 el pulso parejo y la cabeza clara; m\u00e1s tarde lo har\u00e9 bailar con un Connecticut clarito\u2014tres cerillos, tiro suave, sorbito entre puffs\u2014y si la hoja asiente, regreso a llevarme un frasco. Start low, go slow\u2014dejamos que la brisa haga su trabajo, hermano.",
+    "importance": 20,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
   }
 ]

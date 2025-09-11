@@ -898,5 +898,23 @@
     "created": 7,
     "last_retrieved": 7,
     "pointer_id": null
+  },
+  {
+    "node_id": 94,
+    "node_type": "observation",
+    "content": "I chatted with Rowan about their Forest Evening tea and felt really calm hearing the precise brewing tips\u201482\u201385\u00b0C, covered for 3\u20134 minutes, taste at 3. I planned to sip a small plain cup after my cleansing oil and essence, then try a tiny drizzle of mountain flower honey. I tried to buy a jar but, oh, I didn\u2019t have quite enough\u2014$14 instead of $15\u2014so I couldn\u2019t take it home. I\u2019m still excited to revisit next weekend to try the fresh batch and smell the resin\u2011scented salves.",
+    "importance": 18,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
+  },
+  {
+    "node_id": 95,
+    "node_type": "observation",
+    "content": "I met Rowan, the herb fellow from Willowmere, and we settled on a simple routine: my gentle cleansing oil for evenings and a sheer Korean sunscreen for daytime, with an optional calming essence for windy days. I shared texture notes and usage tips, and we connected over his Forest Evening tea ritual. Unfortunately, the sunscreen sale failed due to inventory issues, which made me feel a bit embarrassed, but I was glad the routine still felt right for him and that he might return for the essence later.",
+    "importance": 22,
+    "created": 7,
+    "last_retrieved": 7,
+    "pointer_id": null
   }
 ]

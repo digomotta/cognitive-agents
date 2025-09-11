@@ -34,7 +34,7 @@
     },
     {
       "name": "digital cash",
-      "quantity": 75,
+      "quantity": 1000,
       "value": 1.0,
       "description": "Student savings",
       "created": 1,
@@ -82,7 +82,7 @@
       "record_id": 4,
       "action": "add",
       "item_name": "digital cash",
-      "quantity": 75,
+      "quantity": 1000,
       "time_step": 1,
       "description": "Student savings",
       "trade_partner": ""
