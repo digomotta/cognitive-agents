@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "content": "Learning silk embroidery from grandmother in the family workshop, watching five generations of tradition flow through careful, patient hands.",
+      "importance": 9,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 1,
+      "content": "Starting Silk Heritage online boutique to bridge traditional Chinese craftsmanship with global markets and contemporary design.",
+      "importance": 9,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 2,
+      "content": "Grandmother's teaching: 'Quality takes time, patience brings perfection' - the foundation of every piece I create.",
+      "importance": 8,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 3,
+      "content": "Completing my MBA while secretly practicing traditional silk weaving techniques in the dormitory late at night.",
+      "importance": 8,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 4,
+      "content": "The first international order - a wedding gown for a bride in New York who wanted to honor her Chinese heritage.",
+      "importance": 9,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 5,
+      "content": "Morning tai chi in the courtyard, finding balance between ancient wisdom and modern business pressures.",
+      "importance": 7,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 6,
+      "content": "Coordinating with family artisans via video calls, ensuring every piece meets our five-generation standard of excellence.",
+      "importance": 8,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 7,
+      "content": "Supporting local silk artisan cooperatives to preserve traditional techniques while providing fair wages.",
+      "importance": 7,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 8,
+      "content": "The weight of family expectations - carrying forward the legacy while forging my own international path.",
+      "importance": 8,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    },
+    {
+      "id": 9,
+      "content": "Creating a wedding gown that perfectly balances Western silhouette with traditional Chinese embroidery techniques.",
+      "importance": 8,
+      "created": 1,
+      "last_accessed": 1,
+      "expiration": null
+    }
+  ]
+}

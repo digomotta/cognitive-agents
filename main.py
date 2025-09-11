@@ -10,6 +10,8 @@ from testing.memories.mina_kim_memories import *
 from testing.memories.kemi_adebayo_memories import *
 from testing.memories.pema_sherpa_memories import *
 from testing.memories.carlos_mendez_memories import *
+from testing.memories.bianca_silva_memories import *
+from testing.memories.mei_chen_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
 from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
@@ -67,9 +69,10 @@ def setup_agent_inventory(agent, agent_name):
   if agent_name == "rowan_greenwood":
     # Rowan: Real estate agent with herbal products
     agent.add_to_inventory("herbal_tea", 5, 1, 15.00, "Calming herbal tea blend")
-    agent.add_to_inventory("cannabis", 10, 1, 8.50, "Medicinal cannabis")
+    agent.add_to_inventory("black_tea", 5, 1, 15.00, "Energetic black tea")
+    agent.add_to_inventory("medicinal_cannabis", 10, 1, 8.50, "Medicinal cannabis")
     agent.add_to_inventory("property_contracts", 3, 1, 200.00, "Real estate contracts ready to sign")
-    agent.add_to_inventory("digital cash", 150, 1, 1.00, "Starting business cash")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "Starting business cash")
     
   elif agent_name == "jasmine_carter":
     # Jasmine: Math student with academic supplies
@@ -77,7 +80,7 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("graphing_calculator", 1, 1, 120.00, "TI-84 Plus calculator")
     agent.add_to_inventory("notebooks", 8, 1, 3.50, "High-quality notebooks")
     agent.add_to_inventory("tutoring_sessions", 2, 1, 40.00, "One-hour math tutoring sessions")
-    agent.add_to_inventory("digital cash", 75, 1, 1.00, "Student savings")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "Student savings")
     
   elif agent_name == "mina_kim":
     # Mina: Korean beauty cosmetics expert
@@ -88,7 +91,7 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("sunscreen", 4, 1, 22.00, "Korean SPF50+ sunscreens")
     agent.add_to_inventory("sleeping_masks", 6, 1, 18.00, "Overnight sleeping masks")
     agent.add_to_inventory("cleansing_oil", 3, 1, 25.00, "Double cleansing oils")
-    agent.add_to_inventory("digital cash", 100, 1, 1.00, "K-beauty business earnings")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "K-beauty business earnings")
     
   elif agent_name == "kemi_adebayo":
     # Kemi: Nigerian tech entrepreneur with African superfood products
@@ -100,7 +103,7 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("palm_fruit_oil", 6, 1, 40.00, "Unprocessed red palm oil")
     agent.add_to_inventory("research_reports", 3, 1, 200.00, "Proprietary food tech research and patents")
     agent.add_to_inventory("mobile_app_licenses", 2, 1, 500.00, "Nutrition education app licenses")
-    agent.add_to_inventory("digital cash", 300, 1, 1.00, "Startup revenue and investment funds")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "Startup revenue and investment funds")
     
   elif agent_name == "pema_sherpa":
     # Pema: Nepalese honey hunter with wild and mad honey
@@ -111,7 +114,7 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("prayer_blessed_honey", 4, 1, 120.00, "Ceremonially blessed honey for spiritual and healing purposes")
     agent.add_to_inventory("traditional_climbing_gear", 2, 1, 300.00, "Handmade rope ladders and collection tools")
     agent.add_to_inventory("honey_medicinal_guide", 1, 1, 200.00, "Ancient family knowledge of honey's healing properties")
-    agent.add_to_inventory("digital cash", 180, 1, 1.00, "Earnings from honey trading and guiding")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "Earnings from honey trading and guiding")
     
   elif agent_name == "carlos_mendez":
     # Carlos: Cuban tobacco farmer and cigar maker
@@ -123,7 +126,36 @@ def setup_agent_inventory(agent, agent_name):
     agent.add_to_inventory("cigar_humidor", 2, 1, 300.00, "Traditional cedar humidors for proper cigar storage")
     agent.add_to_inventory("tobacco_seeds", 12, 1, 25.00, "Heritage Cuban tobacco seeds from family farm")
     agent.add_to_inventory("rolling_tools", 1, 1, 200.00, "Traditional cigar rolling tools and molds")
-    agent.add_to_inventory("digital cash", 220, 1, 1.00, "Farm earnings and cigar sales")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "Farm earnings and cigar sales")
+    
+  elif agent_name == "bianca_silva":
+    # Bianca: Brazilian pool products entrepreneur
+    agent.add_to_inventory("chlorine_tablets", 50, 1, 12.00, "High-quality chlorine tablets for pool sanitization")
+    agent.add_to_inventory("ph_balancer", 25, 1, 18.00, "pH balancing chemicals for perfect water chemistry")
+    agent.add_to_inventory("pool_vacuum", 3, 1, 180.00, "Professional-grade automatic pool vacuum cleaner")
+    agent.add_to_inventory("skimmer_nets", 15, 1, 25.00, "Heavy-duty skimmer nets for debris removal")
+    agent.add_to_inventory("pool_brushes", 20, 1, 35.00, "Professional pool brushes for wall and floor cleaning")
+    agent.add_to_inventory("algae_treatment", 30, 1, 22.00, "Fast-acting algae killer for crystal clear water")
+    agent.add_to_inventory("pool_shock", 40, 1, 15.00, "Super chlorination treatment for problem pools")
+    agent.add_to_inventory("water_test_kits", 35, 1, 28.00, "Complete water testing kits for chemical balance monitoring")
+    agent.add_to_inventory("pool_floats", 8, 1, 45.00, "Fun inflatable floats perfect for pool parties - flamingos, donuts, and unicorns!")
+    agent.add_to_inventory("underwater_lights", 12, 1, 85.00, "LED underwater lights that change colors - perfect for night parties!")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "Starting business cash")
+    
+  elif agent_name == "mei_chen":
+    # Mei: Chinese silk clothing designer and entrepreneur
+    agent.add_to_inventory("silk_qipao_dress", 8, 1, 280.00, "Handmade traditional qipao dress in authentic mulberry silk with hand-embroidered details")
+    agent.add_to_inventory("silk_scarves", 25, 1, 85.00, "Pure silk scarves with traditional Chinese patterns - hand-finished edges")
+    agent.add_to_inventory("silk_blouses", 15, 1, 165.00, "Contemporary silk blouses combining traditional techniques with modern cuts")
+    agent.add_to_inventory("silk_pajama_sets", 12, 1, 220.00, "Luxurious mulberry silk pajama sets with traditional Chinese knot buttons")
+    agent.add_to_inventory("embroidered_silk_shawls", 6, 1, 320.00, "Heirloom-quality silk shawls with intricate hand-embroidered dragons and phoenixes")
+    agent.add_to_inventory("silk_business_jackets", 10, 1, 380.00, "Modern business jackets in premium silk with subtle traditional design elements")
+    agent.add_to_inventory("raw_silk_fabric", 30, 1, 45.00, "Premium raw silk fabric by the meter - perfect for custom tailoring")
+    agent.add_to_inventory("silk_hair_accessories", 40, 1, 35.00, "Delicate silk hair accessories including headbands, scrunchies, and traditional hair pins")
+    agent.add_to_inventory("wedding_silk_gowns", 3, 1, 1200.00, "Bespoke wedding gowns combining Western silhouettes with traditional Chinese silk and embroidery")
+    agent.add_to_inventory("silk_ties_men", 20, 1, 95.00, "Men's silk ties featuring subtle traditional Chinese motifs for international businessmen")
+    agent.add_to_inventory("silk_care_kit", 15, 1, 55.00, "Complete silk care kit with gentle cleaners and preservation instructions in multiple languages")
+    agent.add_to_inventory("digital cash", 1000, 1, 1.00, "Starting business cash")
 
   agent.save()  # Save the cleared inventory to JSON files
 
@@ -171,6 +203,20 @@ def build_agent():
   setup_agent_inventory(carlos, "carlos_mendez")
   carlos.save("Synthetic", "carlos_mendez")
   
+  # Build Bianca
+  bianca = GenerativeAgent("Synthetic_Base", "bianca_silva")
+  for m in bianca_memories:
+    bianca.remember(m)
+  setup_agent_inventory(bianca, "bianca_silva")
+  bianca.save("Synthetic", "bianca_silva")
+  
+  # Build Mei
+  mei = GenerativeAgent("Synthetic_Base", "mei_chen")
+  for m in mei_memories:
+    mei.remember(m)
+  setup_agent_inventory(mei, "mei_chen")
+  mei.save("Synthetic", "mei_chen")
+  
   print("All agents built with fresh inventories!")
 
 
@@ -212,7 +258,7 @@ def test_markov_chain_simulation(testing_mode=True):
   print("=== Markov Agent Chain Simulation ===")
   
   # Load agents for the chain
-  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo"]
+  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo", "bianca_silva", "mei_chen"]
   agents = load_agents_for_chain("Synthetic", agent_names)
   
   if len(agents) < 2:
