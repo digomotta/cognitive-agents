@@ -353,15 +353,77 @@ def test_interaction_summary(testing_mode=True):
   print("   - Cleaned up working memory")
 
 
+def test_markov_agent_scoring():
+  """Test the markov_probs_v1.txt scoring system with agents from previous interactions"""
+  print("=== TESTING MARKOV AGENT SCORING SYSTEM ===")
+  print()
+  
+  # Load agents that participated in the Markov chain simulation
+  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo", 
+                 "pema_sherpa", "carlos_mendez", "bianca_silva", "mei_chen"]
+  
+  agents = {}
+  for agent_name in agent_names:
+    try:
+      agent = GenerativeAgent("Synthetic", agent_name)
+      agents[agent.scratch.get_fullname()] = agent
+      print(f"✓ Loaded {agent.scratch.get_fullname()}")
+    except Exception as e:
+      print(f"✗ Failed to load {agent_name}: {e}")
+  
+  if len(agents) < 2:
+    print("Error: Need at least 2 agents for scoring test")
+    return
+  
+  print(f"\nTesting markov scoring with {len(agents)} agents...")
+  print()
+  
+  # Test scoring for each agent
+  for agent_name, agent in agents.items():
+    print(f"=== {agent_name.upper()} - BUYING INTEREST SCORES ===")
+    
+    # Get list of other agents
+    other_agents = [name for name in agents.keys() if name != agent_name]
+    
+    try:
+      # Get markov buying interest probability distribution
+      probabilities = agent.get_markov_buying_interest_scores(other_agents)
+      
+      print(f"Political Ideology: {agent.scratch.political_ideology}")
+      print(f"Scoring {len(other_agents)} other agents (Temperature = 10.0)...")
+      print()
+      
+      # Display probabilities
+      for other_agent, prob in probabilities.items():
+        print(f"  {other_agent}: {prob:.3f} ({prob*100:.1f}%)")
+      
+      # Verify probabilities sum to 1.0
+      total_prob = sum(probabilities.values())
+      print(f"\nTotal probability: {total_prob:.6f}")
+      
+      print()
+      print("JSON format:")
+      import json
+      print(json.dumps({"probabilities": probabilities}, indent=2))
+      
+    except Exception as e:
+      print(f"Error getting scores for {agent_name}: {e}")
+    
+    print("\n" + "-"*50 + "\n")
+
+
 def main(): 
   # Simplified main for multi-agent Markov chain interactions
-  build_agent()
-  # interview_agent()
+  # build_agent()
+  interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
   
   # Use the new Markov agent chain system
   #test_markov_chain_simulation(testing_mode=True)
+  
+  # Test the markov scoring system
+  # test_markov_agent_scoring()
 
 
 
