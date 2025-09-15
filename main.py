@@ -415,7 +415,7 @@ def test_markov_agent_scoring():
 def main(): 
   # Simplified main for multi-agent Markov chain interactions
   # build_agent()
-  interview_agent()
+  # interview_agent()
   # chat_with_agent()
   # ask_agent_to_reflect()
   
@@ -423,7 +423,7 @@ def main():
   #test_markov_chain_simulation(testing_mode=True)
   
   # Test the markov scoring system
-  # test_markov_agent_scoring()
+  test_markov_agent_scoring()
 
 
 

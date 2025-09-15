@@ -1,0 +1,34 @@
+You are !<INPUT 0>! evaluating another character based on your past experiences and memories.
+
+You must:
+
+Consider the character: !<INPUT 1>!
+
+Recall your relevant memories and experiences with them.
+
+Assign a single score (0–100) that reflects how much you want to interact with or buy from them again.
+
+Consider factors like:
+- Quality of past interactions
+- Successful trades or transactions  
+- Trustworthiness and reliability
+- Compatibility with your personality and values
+- Items or services they offer that interest you
+
+If you have no memories of them, use a neutral score around 50.
+
+Respond naturally as your character would, staying consistent with your persona and memories.
+
+[Input]
+!<INPUT 0>!: Your character name and persona information
+!<INPUT 1>!: The character you are evaluating
+!<INPUT 2>!: Your memories about this character
+
+[Output]
+Output your response in JSON format only, structured as:
+
+{
+  "score": 75
+}
+
+"score" should be a single numerical value (0 = no interest in buying again, 100 = maximum interest).

@@ -271,69 +271,69 @@ class GenerativeAgent:
     import json
     
     # Get agent persona information
-    persona_info = f"Name: {self.scratch.get_fullname()}\n"
+    persona_info = f"{self.scratch.get_fullname()}\n"
     persona_info += f"Age: {self.scratch.age}\n" 
     persona_info += f"Political Ideology: {self.scratch.political_ideology}\n"
     persona_info += f"Self Description: {self.scratch.self_description}\n"
     persona_info += f"Fact Sheet: {self.scratch.fact_sheet}\n"
     
-    # Get relevant memories about each other agent (top 5 per agent)
-    memories_with_agents = []
-    for agent_name in other_agents:
-      retrieved_memories = self.memory_stream.retrieve([agent_name], 0, n_count=5)
-      if agent_name in retrieved_memories:
-        memories_with_agents.extend([f"Memory about {agent_name}: {mem.content}" for mem in retrieved_memories[agent_name]])
-    
-    if not memories_with_agents:
-      memories_with_agents = ["No specific memories about these agents."]
-    
-    # Load the markov probability prompt
+    # Load the markov probability prompt template
     with open("simulation_engine/prompt_template/generative_agent/interaction/utternace/markov_probs_v1.txt", "r") as f:
       prompt_template = f.read()
     
-    # Format the prompt with inputs
-    prompt = prompt_template.replace("!<INPUT 0>!", persona_info)
-    prompt = prompt.replace("!<INPUT 1>!", ", ".join(other_agents))
-    prompt = prompt.replace("!<INPUT 2>!", "\n".join(memories_with_agents))
+    # Evaluate each agent one at a time
+    raw_scores = {}
     
-    # Get response from LLM
-    try:
-      response = gpt_request(prompt)
+    for agent_name in other_agents:
+      # Get relevant memories about this specific agent
+      retrieved_memories = self.memory_stream.retrieve([agent_name], 0, n_count=5)
       
-      # Parse JSON response
-      scores_data = json.loads(response)
-      raw_scores = scores_data.get("scores", {})
+      if agent_name in retrieved_memories and retrieved_memories[agent_name]:
+        memories_text = "\n".join([f"Memory: {mem.content}" for mem in retrieved_memories[agent_name]])
+      else:
+        memories_text = "No specific memories about this character."
+              
+      # Format the prompt for this specific agent
+      prompt = prompt_template.replace("!<INPUT 0>!", persona_info)
+      prompt = prompt.replace("!<INPUT 1>!", agent_name)
+      prompt = prompt.replace("!<INPUT 2>!", memories_text)
       
-      # Apply softmax to convert scores to probability distribution
-      # First normalize scores to reduce extreme differences
-      scores_list = list(raw_scores.values())
-      mean_score = sum(scores_list) / len(scores_list)
-      
-      # Center scores around mean to reduce variance
-      centered_scores = {}
-      for agent, score in raw_scores.items():
-        centered_scores[agent] = score - mean_score
-      
-      # Apply softmax with temperature scaling
-      exp_scores = {}
-      for agent, centered_score in centered_scores.items():
-        exp_scores[agent] = math.exp(centered_score / temperature)
-      
-      # Calculate sum for normalization
-      total_exp = sum(exp_scores.values())
-      
-      # Convert to probabilities
-      probabilities = {}
-      for agent, exp_score in exp_scores.items():
-        probabilities[agent] = exp_score / total_exp
-      
-      return probabilities
-      
-    except Exception as e:
-      print(f"Error getting markov scores for {self.scratch.get_fullname()}: {e}")
-      # Return uniform distribution as fallback
-      uniform_prob = 1.0 / len(other_agents)
-      return {agent: uniform_prob for agent in other_agents}
+      # Get response from LLM for this agent
+      try:
+        response = gpt_request(prompt)
+        
+        # Parse JSON response
+        score_data = json.loads(response)
+        raw_scores[agent_name] = score_data.get("score", 50)  # Default to neutral if missing
+        
+      except Exception as e:
+        print(f"Error getting score for {agent_name} from {self.scratch.get_fullname()}: {e}")
+        raw_scores[agent_name] = 50  # Neutral fallback
+    
+    # Apply softmax to convert scores to probability distribution
+    # First normalize scores to reduce extreme differences
+    scores_list = list(raw_scores.values())
+    mean_score = sum(scores_list) / len(scores_list)
+    
+    # Center scores around mean to reduce variance
+    centered_scores = {}
+    for agent, score in raw_scores.items():
+      centered_scores[agent] = score - mean_score
+    
+    # Apply softmax with temperature scaling
+    exp_scores = {}
+    for agent, centered_score in centered_scores.items():
+      exp_scores[agent] = math.exp(centered_score / temperature)
+    
+    # Calculate sum for normalization
+    total_exp = sum(exp_scores.values())
+    
+    # Convert to probabilities
+    probabilities = {}
+    for agent, exp_score in exp_scores.items():
+      probabilities[agent] = exp_score / total_exp
+    
+    return probabilities
 
   def Act(self, conversation_id: str, curr_dialogue: List[List[str]], context: str = "", time_step: int = 0) -> str:
     """
