@@ -56,6 +56,7 @@ Our agents don't exist in isolation - they form a dynamic **multi-agent network*
 - **Emergent Social Structures**: Natural alliance and rivalry formation through repeated interactions
 - **Memory-Influenced Transitions**: Past experiences affect the probability of future encounters
 - **Trade Route Evolution**: Commercial pathways that strengthen or weaken based on successful exchanges
+- **Dynamic Probability Networks**: Agents define the probabilities of the Markov network based on their interactions with other agents - these probabilities are dynamical and change over each time step
 
 #### Autonomous Agent Society
 ```python
