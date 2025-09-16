@@ -256,7 +256,7 @@ class GenerativeAgent:
     """Get the agent's trading history, optionally filtered by item."""
     return self.inventory.get_trade_history(item_name) 
 
-  def receive_payment(self, payment_amount: int, time_step: int = 0, payer: str = "", description: str = "") -> bool:
+  def receive_payment(self, payment_amount: float, time_step: int = 0, payer: str = "", description: str = "") -> bool:
     """Record receiving payment (typically digital cash)."""
     return self.inventory.receive_payment(payment_amount, time_step, payer, description)
 
@@ -264,7 +264,7 @@ class GenerativeAgent:
     """Record selling an item (removes from inventory and optionally records payment)."""
     return self.inventory.sell_item(item_name, quantity, time_step, buyer, price_per_unit, description)
 
-  def make_payment(self, payment_amount: int, time_step: int = 0, recipient: str = "", description: str = "") -> bool:
+  def make_payment(self, payment_amount: float, time_step: int = 0, recipient: str = "", description: str = "") -> bool:
     """Record making a payment (removes digital cash from inventory)."""
     return self.inventory.make_payment(payment_amount, time_step, recipient, description)
 

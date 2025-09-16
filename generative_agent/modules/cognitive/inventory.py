@@ -126,7 +126,7 @@ class Inventory:
         description = f"Failed to trade {quantity} {item_name}" + (f" with {trade_partner}" if trade_partner else "") + (f": {reason}" if reason else "")
         self._add_record("trade_failed", item_name, quantity, time_step, description, trade_partner)
 
-    def receive_payment(self, payment_amount: int, time_step: int, payer: str = "", description: str = ""):
+    def receive_payment(self, payment_amount: float, time_step: int, payer: str = "", description: str = ""):
         """Record receiving payment (typically digital cash)."""
         self.add_item("digital cash", payment_amount, time_step, 1.0, description)
         self.records[-1].action = "receive_payment"
@@ -142,10 +142,10 @@ class Inventory:
             # Also record receiving payment if price is specified
             if price_per_unit > 0:
                 total_payment = quantity * price_per_unit
-                self.receive_payment(int(total_payment), time_step, buyer, f"Payment for {quantity} {item_name}")
+                self.receive_payment(total_payment, time_step, buyer, f"Payment for {quantity} {item_name}")
         return success
 
-    def make_payment(self, payment_amount: int, time_step: int, recipient: str = "", description: str = "") -> bool:
+    def make_payment(self, payment_amount: float, time_step: int, recipient: str = "", description: str = "") -> bool:
         """Record making a payment (removes digital cash from inventory)."""
         success = self.remove_item("digital cash", payment_amount, time_step, description)
         if success:
@@ -161,7 +161,7 @@ class Inventory:
         # Also record making payment if price is specified
         if price_per_unit > 0:
             total_payment = quantity * price_per_unit
-            self.make_payment(int(total_payment), time_step, seller, f"Payment for {quantity} {item_name}")
+            self.make_payment(total_payment, time_step, seller, f"Payment for {quantity} {item_name}")
         return True
 
     def get_item_quantity(self, name: str) -> int:
