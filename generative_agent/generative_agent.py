@@ -1,4 +1,5 @@
 import json
+import os
 
 from typing import Dict, List, Optional, Union
 
@@ -255,6 +256,38 @@ class GenerativeAgent:
     """Get the agent's trading history, optionally filtered by item."""
     return self.inventory.get_trade_history(item_name) 
 
+  def receive_payment(self, payment_amount: int, time_step: int = 0, payer: str = "", description: str = "") -> bool:
+    """Record receiving payment (typically digital cash)."""
+    return self.inventory.receive_payment(payment_amount, time_step, payer, description)
+
+  def sell_item(self, item_name: str, quantity: int, time_step: int = 0, buyer: str = "", price_per_unit: float = 0.0, description: str = "") -> bool:
+    """Record selling an item (removes from inventory and optionally records payment)."""
+    return self.inventory.sell_item(item_name, quantity, time_step, buyer, price_per_unit, description)
+
+  def make_payment(self, payment_amount: int, time_step: int = 0, recipient: str = "", description: str = "") -> bool:
+    """Record making a payment (removes digital cash from inventory)."""
+    return self.inventory.make_payment(payment_amount, time_step, recipient, description)
+
+  def buy_item(self, item_name: str, quantity: int, time_step: int = 0, seller: str = "", price_per_unit: float = 0.0, description: str = "") -> bool:
+    """Record buying an item (adds to inventory and optionally makes payment)."""
+    return self.inventory.buy_item(item_name, quantity, time_step, seller, price_per_unit, description)
+
+  def get_payment_history(self, item_name: str = None) -> List[Dict]:
+    """Get the agent's payment history (both made and received)."""
+    return self.inventory.get_payment_history(item_name)
+
+  def get_sales_history(self, item_name: str = None) -> List[Dict]:
+    """Get the agent's sales transaction history."""
+    return self.inventory.get_sales_history(item_name)
+
+  def get_purchase_history(self, item_name: str = None) -> List[Dict]:
+    """Get the agent's purchase transaction history."""
+    return self.inventory.get_purchase_history(item_name)
+
+  def get_transaction_summary(self) -> Dict[str, int]:
+    """Get a summary count of all transaction types."""
+    return self.inventory.get_transaction_summary()
+
   def get_markov_buying_interest_scores(self, other_agents: List[str], temperature: float = 10.0) -> Dict[str, float]:
     """
     Apply markov_probs_v1.txt scoring system to evaluate buying interest in other agents.
@@ -278,7 +311,17 @@ class GenerativeAgent:
     persona_info += f"Fact Sheet: {self.scratch.fact_sheet}\n"
     
     # Load the markov probability prompt template
-    with open("simulation_engine/prompt_template/generative_agent/interaction/utternace/markov_probs_v1.txt", "r") as f:
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    template_path = os.path.join(
+      project_root,
+      "simulation_engine",
+      "prompt_template",
+      "generative_agent",
+      "interaction",
+      "utternace",
+      "markov_probs_v1.txt",
+    )
+    with open(template_path, "r") as f:
       prompt_template = f.read()
     
     # Evaluate each agent one at a time

@@ -27,7 +27,7 @@ class InventoryItem:
 class InventoryRecord:
     def __init__(self, record_dict: Dict[str, Any]):
         self.record_id = record_dict["record_id"]
-        self.action = record_dict["action"]  # "add", "remove", "trade_give", "trade_receive", "trade_failed"
+        self.action = record_dict["action"]  # "add", "remove", "trade_failed", "receive_payment", "sell_item", "make_payment", "buy_item"
         self.item_name = record_dict["item_name"]
         self.quantity = record_dict["quantity"]
         self.time_step = record_dict["time_step"]
@@ -109,29 +109,60 @@ class Inventory:
         self.items[name].quantity -= quantity
         self.items[name].last_modified = time_step
         
-        if self.items[name].quantity == 0:
-            del self.items[name]
         
         self._add_record("remove", name, quantity, time_step, description)
         return True
 
     def trade_item(self, item_name: str, quantity: int, is_giving: bool, time_step: int, trade_partner: str = "", value: float = 0.0, description: str = "") -> bool:
         if is_giving:
-            success = self.remove_item(item_name, quantity, time_step, description)
-            if success:
-                self.records[-1].action = "trade_give"
-                self.records[-1].trade_partner = trade_partner
-            return success
+            # Use sell_item for giving items (more specific than generic trade_give)
+            return self.sell_item(item_name, quantity, time_step, trade_partner, 0.0, description)
         else:
-            self.add_item(item_name, quantity, time_step, value, description)
-            self.records[-1].action = "trade_receive"
-            self.records[-1].trade_partner = trade_partner
-            return True
+            # Use buy_item for receiving items (more specific than generic trade_receive)  
+            return self.buy_item(item_name, quantity, time_step, trade_partner, value, description)
     
     def record_trade_failure(self, item_name: str, quantity: int, time_step: int, trade_partner: str = "", reason: str = ""):
         """Record a failed trade attempt."""
         description = f"Failed to trade {quantity} {item_name}" + (f" with {trade_partner}" if trade_partner else "") + (f": {reason}" if reason else "")
         self._add_record("trade_failed", item_name, quantity, time_step, description, trade_partner)
+
+    def receive_payment(self, payment_amount: int, time_step: int, payer: str = "", description: str = ""):
+        """Record receiving payment (typically digital cash)."""
+        self.add_item("digital cash", payment_amount, time_step, 1.0, description)
+        self.records[-1].action = "receive_payment"
+        self.records[-1].trade_partner = payer
+        return True
+
+    def sell_item(self, item_name: str, quantity: int, time_step: int, buyer: str = "", price_per_unit: float = 0.0, description: str = "") -> bool:
+        """Record selling an item (removes from inventory)."""
+        success = self.remove_item(item_name, quantity, time_step, description)
+        if success:
+            self.records[-1].action = "sell_item"
+            self.records[-1].trade_partner = buyer
+            # Also record receiving payment if price is specified
+            if price_per_unit > 0:
+                total_payment = quantity * price_per_unit
+                self.receive_payment(int(total_payment), time_step, buyer, f"Payment for {quantity} {item_name}")
+        return success
+
+    def make_payment(self, payment_amount: int, time_step: int, recipient: str = "", description: str = "") -> bool:
+        """Record making a payment (removes digital cash from inventory)."""
+        success = self.remove_item("digital cash", payment_amount, time_step, description)
+        if success:
+            self.records[-1].action = "make_payment"
+            self.records[-1].trade_partner = recipient
+        return success
+
+    def buy_item(self, item_name: str, quantity: int, time_step: int, seller: str = "", price_per_unit: float = 0.0, description: str = ""):
+        """Record buying an item (adds to inventory)."""
+        self.add_item(item_name, quantity, time_step, price_per_unit, description)
+        self.records[-1].action = "buy_item"
+        self.records[-1].trade_partner = seller
+        # Also record making payment if price is specified
+        if price_per_unit > 0:
+            total_payment = quantity * price_per_unit
+            self.make_payment(int(total_payment), time_step, seller, f"Payment for {quantity} {item_name}")
+        return True
 
     def get_item_quantity(self, name: str) -> int:
         return self.items[name].quantity if name in self.items else 0
@@ -169,9 +200,10 @@ class Inventory:
         return len(self.items)
 
     def get_trade_history(self, item_name: str = None) -> List[Dict[str, Any]]:
+        """Get history of trading transactions (now includes sell_item and buy_item)."""
         trades = []
         for record in self.records:
-            if record.action in ["trade_give", "trade_receive"]:
+            if record.action in ["sell_item", "buy_item"]:
                 if item_name is None or record.item_name == item_name:
                     trades.append(record.package())
         return trades
@@ -184,6 +216,51 @@ class Inventory:
                 if item_name is None or record.item_name == item_name:
                     failed_trades.append(record.package())
         return failed_trades
+    
+    def get_payment_history(self, item_name: str = None) -> List[Dict[str, Any]]:
+        """Get history of payments (both made and received)."""
+        payments = []
+        for record in self.records:
+            if record.action in ["receive_payment", "make_payment"]:
+                if item_name is None or record.item_name == item_name:
+                    payments.append(record.package())
+        return payments
+    
+    def get_sales_history(self, item_name: str = None) -> List[Dict[str, Any]]:
+        """Get history of sales transactions."""
+        sales = []
+        for record in self.records:
+            if record.action == "sell_item":
+                if item_name is None or record.item_name == item_name:
+                    sales.append(record.package())
+        return sales
+    
+    def get_purchase_history(self, item_name: str = None) -> List[Dict[str, Any]]:
+        """Get history of purchase transactions."""
+        purchases = []
+        for record in self.records:
+            if record.action == "buy_item":
+                if item_name is None or record.item_name == item_name:
+                    purchases.append(record.package())
+        return purchases
+    
+    def get_transaction_summary(self) -> Dict[str, int]:
+        """Get a summary count of all transaction types."""
+        summary = {
+            "sell_item": 0,
+            "buy_item": 0,
+            "receive_payment": 0,
+            "make_payment": 0,
+            "trade_failed": 0,
+            "add": 0,
+            "remove": 0
+        }
+        
+        for record in self.records:
+            if record.action in summary:
+                summary[record.action] += 1
+        
+        return summary
     
     def package(self) -> Dict[str, Any]:
         return {
