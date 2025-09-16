@@ -118,6 +118,56 @@ class ConversationTradeAnalyzer:
 
         return {"participants": {"seller": seller, "buyer": buyer}, "items": items, "time_step": time_step}
 
+    def generate_failure_warning(self, agents: List['GenerativeAgent'], trade_data: Dict[str, Any]) -> str:
+        """
+        Generate a user-friendly warning message explaining why a trade failed.
+        """
+        participants = trade_data.get("participants", {})
+        seller_name = participants.get("seller", "")
+        buyer_name = participants.get("buyer", "")
+        items = trade_data.get("items", [])
+        
+        if not seller_name or not buyer_name:
+            return "⚠️ Trade failed: Could not identify buyer and seller"
+        
+        # Find agents and check for specific failure reasons
+        seller_agent = None
+        buyer_agent = None
+        for agent in agents:
+            agent_name = agent.scratch.get_fullname() if hasattr(agent.scratch, "get_fullname") else getattr(agent, "name", agent.id)
+            if agent_name == seller_name:
+                seller_agent = agent
+            elif agent_name == buyer_name:
+                buyer_agent = agent
+        
+        warnings = []
+        
+        # Check seller inventory issues
+        if seller_agent:
+            for item in items:
+                item_name = item.get("name", "")
+                quantity = item.get("quantity", 0)
+                if item_name and quantity > 0:
+                    available = seller_agent.inventory.get_item_quantity(item_name)
+                    if available < quantity:
+                        if available == 0:
+                            warnings.append(f"{seller_name} is out of {item_name}")
+                        else:
+                            warnings.append(f"{seller_name} only has {available} {item_name} (needed {quantity})")
+        
+        # Check buyer cash issues
+        if buyer_agent and items:
+            total_cost = sum(item.get("value", 0.0) for item in items)
+            if total_cost > 0:
+                available_cash = buyer_agent.inventory.get_item_quantity("digital cash")
+                if available_cash < int(total_cost):
+                    warnings.append(f"{buyer_name} has insufficient funds (${available_cash} available, ${int(total_cost)} needed)")
+        
+        if warnings:
+            return "⚠️ Trade failed: " + "; ".join(warnings)
+        else:
+            return "⚠️ Trade failed: Unknown reason"
+
     def get_trade_summary(
         self,
         conversation_text: str,
@@ -196,12 +246,12 @@ class ConversationTradeAnalyzer:
                     continue
                 
                 # Remove the sold item from seller's inventory
-                success = seller_agent.inventory.trade_item(
+                success = seller_agent.inventory.sell_item(
                     item_name=item_name,
                     quantity=quantity,
-                    is_giving=True,
                     time_step=time_step,
-                    trade_partner=buyer_name,
+                    buyer=buyer_name,
+                    price_per_unit=price / quantity if quantity > 0 else 0.0,
                     description=f"Sold {quantity} {item_name} to {buyer_name} for ${price}"
                 )
                 
@@ -220,17 +270,7 @@ class ConversationTradeAnalyzer:
                     total_success = False
                     continue
                 
-                # Add cash to seller's inventory if price > 0
-                if price > 0:
-                    seller_agent.inventory.trade_item(
-                        item_name="digital cash",
-                        quantity=int(price),
-                        is_giving=False,
-                        time_step=time_step,
-                        trade_partner=buyer_name,
-                        value=1.0,
-                        description=f"Received ${price} from selling {quantity} {item_name} to {buyer_name}"
-                    )
+                # Payment is automatically handled by sell_item() method
             
             # Save the updated inventory (unless in testing mode)
             if total_success and not testing_mode:
@@ -305,40 +345,28 @@ class ConversationTradeAnalyzer:
                 if not item_name or quantity <= 0:
                     continue
                 
-                # Add the purchased item to buyer's inventory
-                # buyer_agent.inventory.trade_item(
-                #     item_name=item_name,
-                #     quantity=quantity,
-                #     is_giving=False,
-                #     time_step=time_step,
-                #     trade_partner=seller_name,
-                #     value=price / quantity if quantity > 0 else 0.0,
-                #     description=f"Purchased {quantity} {item_name} from {seller_name} for ${price}"
-                # )
+                # Purchase the item (adds to inventory and handles payment automatically)
+                success = buyer_agent.inventory.buy_item(
+                    item_name=item_name,
+                    quantity=quantity,
+                    time_step=time_step,
+                    seller=seller_name,
+                    price_per_unit=price / quantity if quantity > 0 else 0.0,
+                    description=f"Purchased {quantity} {item_name} from {seller_name} for ${price}"
+                )
                 
-                # Remove cash from buyer's inventory if price > 0
-                if price > 0:
-                    success = buyer_agent.inventory.trade_item(
-                        item_name="digital cash",
-                        quantity=int(price),
-                        is_giving=True,
-                        time_step=time_step,
-                        trade_partner=seller_name,
-                        description=f"Paid ${price} for {quantity} {item_name} from {seller_name}"
-                    )
-                    
-                    if not success:
-                        # Record the failed payment
-                        reason = "Failed to remove cash from inventory for payment"
-                        buyer_agent.working_memory.record_sales_failure({
-                            'item_attempted': item_name,
-                            'cost_attempted': price,
-                            'reason': reason,
-                            'trade_partner': seller_name
-                        })
-                        buyer_agent.scratch.total_sales_failures += 1
-                        buyer_agent.scratch.last_sales_failure_time = time_step
-                        total_success = False
+                if not success:
+                    # Record the failed purchase
+                    reason = "Failed to complete purchase transaction"
+                    buyer_agent.working_memory.record_sales_failure({
+                        'item_attempted': item_name,
+                        'cost_attempted': price,
+                        'reason': reason,
+                        'trade_partner': seller_name
+                    })
+                    buyer_agent.scratch.total_sales_failures += 1
+                    buyer_agent.scratch.last_sales_failure_time = time_step
+                    total_success = False
             
             # Save the updated inventory (unless in testing mode)
             if total_success and not testing_mode:
@@ -417,19 +445,27 @@ class ConversationTradeAnalyzer:
                     'executed': True,
                     'trade_details': json_response,
                     'conversation_id': conversation_id,
-                    'time_step': time_step
+                    'time_step': time_step,
+                    'warning': None
                 }
             else:
+                # Generate warning message for failed trade
+                warning = None
+                if json_response and json_response.get("items"):
+                    warning = self.generate_failure_warning(agents, json_response)
+                
                 return {
                     'executed': False,
-                    'trade_details': None,
+                    'trade_details': json_response,
                     'conversation_id': conversation_id,
-                    'time_step': time_step
+                    'time_step': time_step,
+                    'warning': warning
                 }
         except Exception:
             return {
                 'executed': False, 
                 'trade_details': None,
                 'conversation_id': conversation_id,
-                'time_step': time_step
+                'time_step': time_step,
+                'warning': "⚠️ Trade failed: System error during execution"
             }
