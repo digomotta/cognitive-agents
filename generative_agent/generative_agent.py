@@ -1,12 +1,13 @@
 import json
 import os
 
-from typing import Dict, List, Optional, Union
+from typing import Dict, List, Optional, Union, Any
 
 from generative_agent.modules.cognitive.memory_stream import MemoryStream
 from generative_agent.modules.cognitive.scratch import Scratch
 from generative_agent.modules.cognitive.inventory import Inventory
 from generative_agent.modules.cognitive.working_memory import WorkingMemory
+from generative_agent.modules.cognitive.plan import Plan
 from generative_agent.modules.conversation_interaction import utterance_conversation_based
 from simulation_engine.settings import *
 from simulation_engine.global_methods import *
@@ -25,6 +26,7 @@ class GenerativeAgent:
     self.memory_stream: MemoryStream
     self.inventory: Inventory
     self.working_memory: WorkingMemory
+    self.plan: Plan
 
     # The location of the population folder for the agent. 
     agent_folder = f"{POPULATIONS_DIR}/{population}/{agent_id}"
@@ -56,7 +58,8 @@ class GenerativeAgent:
     self.forked_id = meta["id"]
     self.scratch = Scratch(scratch)
     self.memory_stream = MemoryStream(nodes, embeddings)
-    self.inventory = Inventory(inventory_data.get("items", []), inventory_data.get("records", []))
+    self.inventory = Inventory(inventory_data.get("items", []), inventory_data.get("records", []), inventory_data.get("production_plans", []))
+    self.plan = Plan(inventory_data.get("production_plans", []))
     self.working_memory = WorkingMemory()
     
     print (f"Loaded {agent_id}:{population}")
@@ -111,7 +114,7 @@ class GenerativeAgent:
 
       # Initializing inventory
       with open(f"{agent_folder}/inventory.json", "w") as file:
-        json.dump({"items": [], "records": []}, file, indent=2)
+        json.dump({"items": [], "records": [], "production_plans": []}, file, indent=2)
 
     # Initialize with empty data
     self.population = population
@@ -120,7 +123,8 @@ class GenerativeAgent:
     self.forked_id = agent_id
     self.scratch = Scratch()
     self.memory_stream = MemoryStream([], {})
-    self.inventory = Inventory([], [])
+    self.inventory = Inventory([], [], [])
+    self.plan = Plan([])
     self.working_memory = WorkingMemory()
 
   def package(self): 
@@ -181,9 +185,11 @@ class GenerativeAgent:
       agent_scratch_summary = self.scratch.package()
       json.dump(agent_scratch_summary, json_file, indent=2)
 
-    # Saving the agent's inventory.
+    # Saving the agent's inventory (including production plans).
     with open(f"{storage}/inventory.json", "w") as json_file:
       inventory_summary = self.inventory.package()
+      # Sync production plans from Plan module to inventory
+      inventory_summary["production_plans"] = self.plan.package()
       json.dump(inventory_summary, json_file, indent=2)
 
     # Saving the agent's meta information. 
@@ -215,9 +221,9 @@ class GenerativeAgent:
     """
     self.memory_stream.reflect(anchor, time_step)
 
-  def add_to_inventory(self, item_name: str, quantity: int, time_step: int = 0, value: float = 0.0, description: str = "") -> None:
+  def add_to_inventory(self, item_name: str, quantity: int, time_step: int = 0, value: float = 0.0, production_cost: float = 0.0, description: str = "") -> None:
     """Add items to the agent's inventory."""
-    self.inventory.add_item(item_name, quantity, time_step, value, description)
+    self.inventory.add_item(item_name, quantity, time_step, value, production_cost, description)
 
   def remove_from_inventory(self, item_name: str, quantity: int, time_step: int = 0, description: str = "") -> bool:
     """Remove items from the agent's inventory. Returns True if successful."""
@@ -268,9 +274,9 @@ class GenerativeAgent:
     """Record making a payment (removes digital cash from inventory)."""
     return self.inventory.make_payment(payment_amount, time_step, recipient, description)
 
-  def buy_item(self, item_name: str, quantity: int, time_step: int = 0, seller: str = "", price_per_unit: float = 0.0, description: str = "") -> bool:
+  def buy_item(self, item_name: str, quantity: int, time_step: int = 0, seller: str = "", price_per_unit: float = 0.0, production_cost: float = 0.0, description: str = "") -> bool:
     """Record buying an item (adds to inventory and optionally makes payment)."""
-    return self.inventory.buy_item(item_name, quantity, time_step, seller, price_per_unit, description)
+    return self.inventory.buy_item(item_name, quantity, time_step, seller, price_per_unit, production_cost, description)
 
   def get_payment_history(self, item_name: str = None) -> List[Dict]:
     """Get the agent's payment history (both made and received)."""
@@ -287,6 +293,45 @@ class GenerativeAgent:
   def get_transaction_summary(self) -> Dict[str, int]:
     """Get a summary count of all transaction types."""
     return self.inventory.get_transaction_summary()
+
+  def create_production_plan(self, item_name: str, time_step: int = 0) -> Optional[Dict[str, Any]]:
+    """Create a production plan using LLM analysis of inventory history and memories."""
+    plan = self.plan.create_production_plan_with_llm(self, item_name, time_step)
+    # Also add to inventory for persistence
+    if plan:
+      self.inventory.add_production_plan(plan.item_name, plan.planned_quantity, plan.reasoning, plan.time_step)
+    return plan.package() if plan else None
+
+  def get_production_plans(self, item_name: str = None) -> List[Dict[str, Any]]:
+    """Get production plans, optionally filtered by item."""
+    return [plan.package() for plan in self.plan.get_all_plans(item_name)]
+
+  def get_latest_production_plan(self, item_name: str) -> Optional[Dict[str, Any]]:
+    """Get the most recent production plan for an item."""
+    plan = self.plan.get_latest_plan(item_name)
+    return plan.package() if plan else None
+
+  def get_plan_summary(self) -> Dict[str, Any]:
+    """Get a summary of all current production plans."""
+    return self.plan.get_plan_summary()
+
+  def clear_old_production_plans(self, time_step: int, max_age: int = 10):
+    """Remove production plans older than max_age time steps."""
+    self.plan.clear_old_plans(time_step, max_age)
+    self.inventory.clear_old_production_plans(time_step, max_age)
+
+  def execute_production_plan(self, plan, time_step: int = 0) -> bool:
+    """
+    Execute a specific production plan by producing it and paying costs.
+
+    Parameters:
+        plan: The ProductionPlan object to execute
+        time_step: Current time step
+
+    Returns:
+        bool: True if production was successful, False otherwise
+    """
+    return self.plan.execute_production_plan(self, plan, time_step)
 
   def get_markov_buying_interest_scores(self, other_agents: List[str], temperature: float = 10.0) -> Dict[str, float]:
     """

@@ -101,10 +101,11 @@ def gpt_request(prompt: str,
           reasoning_effort="minimal",
           max_completion_tokens=max_tokens
       )
-      return response.choices[0].message.content
+      content = response.choices[0].message.content
+      return content if content is not None else ""
 
     else:
-      return f"GENERATION ERROR: {str(e)}"
+      return f"GENERATION ERROR: Unsupported model: {model}"
   except Exception as e:
     return f"GENERATION ERROR: {str(e)}"
   

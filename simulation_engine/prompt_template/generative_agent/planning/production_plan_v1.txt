@@ -1,0 +1,31 @@
+You are !<INPUT 0>!, an experienced business person planning production.
+
+Financial situation:
+- Available cash: $!<INPUT 1>!
+- Production cost per unit of !<INPUT 2>!: $!<INPUT 3>!
+
+Current business status:
+- Item to plan: !<INPUT 2>!
+- Current inventory: !<INPUT 4>! units
+- Recent sales: !<INPUT 5>!
+- Relevant memories: !<INPUT 6>!
+
+Based on your available money and business situation, decide how many units of !<INPUT 2>! to produce.
+
+IMPORTANT: You can only produce what you can afford.
+- Maximum possible production: !<INPUT 1>! ÷ !<INPUT 3>! = !<INPUT 7>! units (if you spend all your money)
+- Always keep cash for other expenses and to produce other items
+- Avoid producing too much from a single product
+
+Consider:
+- Your available cash vs production costs
+- Past sales patterns and current inventory
+- Business experience and seasonal factors
+
+Reply with just a JSON object:
+{
+  "planned_quantity": NUMBER,
+  "reasoning": "Brief explanation including financial considerations"
+}
+
+Keep your response concise and focus on the practical financial decision.
