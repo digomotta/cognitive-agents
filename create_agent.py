@@ -1,8 +1,23 @@
+#!/usr/bin/env python3
+"""
+Agent Creation Tool
+
+This tool creates complete generative agents with memories, inventory, and all necessary files.
+
+Usage:
+    python create_agent.py --name agent_name --population population_name --text text_file_name
+
+Examples:
+    python create_agent.py --name bianca_silva --population Synthetic_Base --text memories.txt
+    python create_agent.py --name new_agent --population Synthetic_Base --text agent_background.txt
+"""
+
+import argparse
 import json
 import os
-from simulation_engine.gpt_structure import gpt_request
+import sys
+from simulation_engine.gpt_structure import chat_safe_generate
 from simulation_engine.settings import LLM_VERS
-from generative_agent.generative_agent import GenerativeAgent
 
 
 def generate_agent_memories_from_text(agent_name, population_name, text_file_name, output_file_path=None):
@@ -12,7 +27,7 @@ def generate_agent_memories_from_text(agent_name, population_name, text_file_nam
     Args:
         agent_name (str): The agent's identifier (e.g., "bianca_silva")
         population_name (str): The population name (e.g., "Synthetic_Base")
-        text_file_path (str): Path to .txt file containing memory content to be augmented
+        text_file_name (str): Name of .txt file containing memory content to be augmented
         output_file_path (str): Optional path for output file. If None, saves to testing/memories/{agent_name}_memories.py
 
     Returns:
@@ -35,80 +50,42 @@ def generate_agent_memories_from_text(agent_name, population_name, text_file_nam
     with open(text_file_path, 'r') as f:
         input_text = f.read().strip()
 
-    # Create comprehensive LLM prompt using all scratch data
-    prompt = f"""You are creating comprehensive memories for an AI agent. Using the complete agent profile below and the provided text, generate three categories of memories in Python list format.
+    # Prepare inputs for the template
+    prompt_inputs = [
+        f"{scratch_data['first_name']} {scratch_data['last_name']}",  # 0
+        str(scratch_data['age']),  # 1
+        scratch_data['sex'],  # 2
+        scratch_data['address'],  # 3
+        scratch_data['census_division'],  # 4
+        scratch_data['education'],  # 5
+        scratch_data['race'],  # 6
+        scratch_data['ethnicity'],  # 7
+        scratch_data['political_ideology'],  # 8
+        scratch_data['political_party'],  # 9
+        str(scratch_data['extraversion']),  # 10
+        str(scratch_data['agreeableness']),  # 11
+        str(scratch_data['conscientiousness']),  # 12
+        str(scratch_data['neuroticism']),  # 13
+        str(scratch_data['openness']),  # 14
+        scratch_data['fact_sheet'],  # 15
+        scratch_data['speech_pattern'],  # 16
+        scratch_data['self_description'],  # 17
+        scratch_data['private_self_description'],  # 18
+        str(scratch_data.get('total_sales_failures', 0)),  # 19
+        str(scratch_data.get('last_sales_failure_time', 0)),  # 20
+        input_text,  # 21
+        agent_name.lower().replace(' ', '_')  # 22
+    ]
 
-COMPLETE AGENT PROFILE:
-Name: {scratch_data['first_name']} {scratch_data['last_name']}
-Age: {scratch_data['age']}
-Sex: {scratch_data['sex']}
-Location: {scratch_data['address']}
-Census Division: {scratch_data['census_division']}
-Education: {scratch_data['education']}
-Race: {scratch_data['race']}
-Ethnicity: {scratch_data['ethnicity']}
-
-Political Views:
-- Ideology: {scratch_data['political_ideology']}
-- Party: {scratch_data['political_party']}
-
-Personality Traits (Big Five Scale 1-5):
-- Extraversion: {scratch_data['extraversion']}
-- Agreeableness: {scratch_data['agreeableness']}
-- Conscientiousness: {scratch_data['conscientiousness']}
-- Neuroticism: {scratch_data['neuroticism']}
-- Openness: {scratch_data['openness']}
-
-Background & Work: {scratch_data['fact_sheet']}
-
-Speech Pattern: {scratch_data['speech_pattern']}
-
-Public Self-Description: {scratch_data['self_description']}
-
-Private Self-Description: {scratch_data['private_self_description']}
-
-Sales Performance:
-- Total Sales Failures: {scratch_data.get('total_sales_failures', 0)}
-- Last Sales Failure Time: {scratch_data.get('last_sales_failure_time', 0)}
-
-INPUT TEXT TO AUGMENT:
-{input_text}
-
-Generate exactly 3 Python lists with 15 memories each (45 total):
-
-1. CORE MEMORIES (core = []): Foundational life experiences, major formative events, key relationships, defining moments that shaped who they are. Include childhood experiences, family background, cultural influences, major life decisions, and character-defining moments. Use their personality traits, cultural background, and formative experiences.
-
-2. MUNDANE MEMORIES (mundane = []): Daily routine activities, regular habits, typical interactions, everyday moments. Include morning routines, regular social interactions, shopping habits, leisure activities, and typical day-to-day experiences. Reflect their extraversion level, conscientiousness, and lifestyle.
-
-3. OCCUPATION MEMORIES (occupation = []): Work-related experiences, professional skills, career milestones, job-specific activities. Include client interactions, professional challenges, skill development, workplace relationships, and career growth. Consider their education, conscientiousness, and professional background.
-
-IMPORTANT REQUIREMENTS:
-- Each memory should be a complete sentence in past tense, written as a direct statement about what happened
-- Write memories as natural narrative statements (e.g., "Sarah discovered her love for baking when she accidentally created the perfect chocolate chip cookie at age twelve.")
-- DO NOT start memories with phrases like "He remembered", "She recalled", "The agent thought about", etc.
-- Memories should be specific and vivid, not generic
-- Include sensory details and emotional context
-- Maintain consistency with ALL aspects of the agent's profile
-- Incorporate elements from the input text but expand them creatively using the full profile
-- Reflect their personality traits in the memories (high extraversion = more social memories, etc.)
-- Include cultural and location-specific details from their background
-- Show their speech patterns and values through actions and thoughts in memories
-- Each list should have exactly 15 memories
-- Use their private self-description to add depth and internal conflicts
-
-MEMORY FORMAT EXAMPLES:
-Good: "Maria learned to make empanadas from her grandmother during long summer afternoons in Buenos Aires."
-Bad: "Maria remembered learning to make empanadas from her grandmother."
-
-Good: "The first time James performed on stage, his hands shook so badly he could barely hold his guitar."
-Bad: "James recalled the first time he performed on stage."
-
-Output format should be valid Python code with proper list syntax and the final line:
-{agent_name.lower().replace(' ', '_')}_memories = core + mundane + occupation"""
-
-    # Generate memories using LLM
+    # Generate memories using LLM with template
     try:
-        generated_content = gpt_request(prompt, model=LLM_VERS, temperature=0.8, max_tokens=4000)
+        generated_content, _, _, _ = chat_safe_generate(
+            prompt_inputs,
+            "simulation_engine/prompt_template/generative_agent/memory_generation.txt",
+            model=LLM_VERS,
+            temperature=0.8,
+            max_tokens=4000
+        )
     except Exception as e:
         raise Exception(f"LLM generation failed: {str(e)}")
 
@@ -233,20 +210,6 @@ def load_agent_memories(agent_name):
         raise AttributeError(f"No variable named '{memory_var_name}' found in memory file")
 
 
-# Example usage
-if __name__ == "__main__":
-    # Example: Generate memories for Bianca Silva
-    generate_agent_memories_from_text(agent_name="test_agent",
-    population_name="Synthetic_Base",
-    text_file_name="test_memories.txt"
-)
-
-    # Example: Load generated memories
-    # memories = load_agent_memories("bianca_silva")
-    # print(f"Loaded {len(memories)} memories for the agent")
-    pass
-
-
 def remember_memories_to_agent(agent_name, memories):
     """
     Add memories to an agent using the same pattern as build_agent in main.py
@@ -270,3 +233,75 @@ def remember_memories_to_agent(agent_name, memories):
 
     # Save to Synthetic population
     agent.save("Synthetic", agent_name)
+
+
+def create_agent(agent_name, population_name, text_file_name):
+    """
+    Complete agent creation workflow: generate memories, create structure, and build agent
+
+    Args:
+        agent_name (str): The agent's identifier (e.g., "bianca_silva")
+        population_name (str): The population name (e.g., "Synthetic_Base")
+        text_file_name (str): Name of .txt file with memory content
+
+    Returns:
+        str: Path to the generated memory file
+    """
+    print(f"Creating agent '{agent_name}' from population '{population_name}' using text file '{text_file_name}'")
+
+    # Generate memories and create agent structure
+    memory_file_path = generate_agent_memories_from_text(agent_name, population_name, text_file_name)
+
+    # Load the generated memories
+    memories = load_agent_memories(agent_name)
+
+    # Add memories to agent and save
+    remember_memories_to_agent(agent_name, memories)
+
+    print(f"Complete agent {agent_name} created successfully!")
+    return memory_file_path
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Create a complete generative agent with memories and inventory')
+
+    parser.add_argument('--name', required=True, help='Agent name/identifier (e.g., bianca_silva)')
+    parser.add_argument('--population', default='Synthetic_Base', help='Source population name (default: Synthetic_Base)')
+    parser.add_argument('--text', required=True, help='Text file name containing memory content (e.g., memories.txt)')
+    parser.add_argument('--output', help='Optional output path for memory file')
+
+    args = parser.parse_args()
+
+    try:
+        # Validate inputs
+        scratch_path = f"agent_bank/populations/{args.population}/{args.name}/scratch.json"
+        if not os.path.exists(scratch_path):
+            print(f"Error: Agent scratch file not found at {scratch_path}")
+            print("Make sure the agent exists in the specified population.")
+            sys.exit(1)
+
+        text_file_path = f"agent_bank/populations/{args.population}/{args.name}/{args.text}"
+        if not os.path.exists(text_file_path):
+            print(f"Error: Text file not found at {text_file_path}")
+            print("Make sure the text file exists in the agent's directory.")
+            sys.exit(1)
+
+        # Create the agent
+        memory_file_path = create_agent(args.name, args.population, args.text)
+
+        print("\n" + "="*50)
+        print("AGENT CREATION COMPLETE")
+        print("="*50)
+        print(f"Agent: {args.name}")
+        print(f"Population: {args.population}")
+        print(f"Text file: {args.text}")
+        print(f"Memory file: {memory_file_path}")
+        print(f"Agent saved to: agent_bank/populations/Synthetic/{args.name}/")
+
+    except Exception as e:
+        print(f"Error creating agent: {str(e)}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

@@ -264,7 +264,7 @@ def interview_agent():
 
 
 def chat_with_agent(): 
-  curr_agent = GenerativeAgent("Synthetic", "jasmine_carter")
+  curr_agent = GenerativeAgent("Synthetic", "test_agent")
   chat_session(curr_agent, False)
 
 
@@ -590,9 +590,9 @@ def main():
   # Simplified main for multi-agent Markov chain interactions
   # build_agent()
   # interview_agent()
-  # chat_with_agent()
+  chat_with_agent()
   #agent_production_planning()
-  smart_production_planning()
+  # smart_production_planning()
 
   # First create some sample sales data, then show the sales history
   #create_sample_sales_data()
