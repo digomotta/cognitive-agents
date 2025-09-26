@@ -192,7 +192,16 @@ class MarkovAgentChain:
                         if trade_result.get('executed'):
                             print(f"   → Trade executed: {trade_result['trade_details']}")
                         else:
-                            print(f"   → Trade detected but not executed")
+                            warning_msg = trade_result.get('warning')
+                            if warning_msg:
+                                print(f"   → {warning_msg}")
+                                # Add warning to conversation so agents are aware
+                                curr_dialogue.append(["[System]", warning_msg])
+                                # Update both agents' working memory with the warning
+                                agent1.working_memory.add_conversation_turn("[System]", warning_msg)
+                                agent2.working_memory.add_conversation_turn("[System]", warning_msg)
+                            else:
+                                print(f"   → Trade detected but not executed")
                 
                 # Switch speakers
                 current_speaker, other_agent = other_agent, current_speaker
@@ -258,8 +267,11 @@ class MarkovAgentChain:
         print(f"=== Markov Agent Chain Simulation ===")
         print(f"Agents (States): {[agent.scratch.get_fullname() for agent in agents]}")
         print(f"Steps: {num_steps}")
-        print(f"Self-reflection probability: {self_reflection_prob}")
-        print(f"Interaction probability: {interaction_prob}")
+        
+        if transition_matrix is None:
+            print(f"Self-reflection probability: {self_reflection_prob}")
+            print(f"Interaction probability: {interaction_prob}")
+
         print(f"Context: {context}")
         print()
         
@@ -334,7 +346,7 @@ class MarkovAgentChain:
         
         return {
             'agents': [agent.scratch.get_fullname() for agent in agents],
-            'transition_matrix': transition_matrix.tolist(),
+            'transition_matrix': transition_matrix.tolist() if hasattr(transition_matrix, 'tolist') else transition_matrix,
             'interaction_history': self.interaction_history,
             'conversation_count': conversation_count,
             'reflection_count': reflection_count,
