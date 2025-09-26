@@ -333,6 +333,31 @@ class GenerativeAgent:
     """
     return self.plan.execute_production_plan(self, plan, time_step)
 
+  def get_items_to_produce_from_sales(self, max_items: int = 5) -> List[str]:
+    """
+    Get items to produce based on recent sales activity.
+
+    Parameters:
+        max_items: Maximum number of items to return (default 5)
+
+    Returns:
+        List of item names from recent sales, up to max_items
+    """
+    return self.plan.get_items_to_produce(self, max_items)
+
+  def create_production_plans_for_recent_sales(self, time_step: int = 0, max_items: int = 5) -> List[Dict[str, Any]]:
+    """
+    Create production plans for items based on recent sales activity.
+
+    Parameters:
+        time_step: Current time step
+        max_items: Maximum number of items to plan for
+
+    Returns:
+        List of production plan dictionaries
+    """
+    return self.plan.create_production_plans_for_recent_sales(self, time_step, max_items)
+
   def get_markov_buying_interest_scores(self, other_agents: List[str], temperature: float = 10.0) -> Dict[str, float]:
     """
     Apply markov_probs_v1.txt scoring system to evaluate buying interest in other agents.

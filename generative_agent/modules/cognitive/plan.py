@@ -2,7 +2,7 @@ from typing import Dict, List, Any, Optional
 import json
 import os
 from simulation_engine.gpt_structure import gpt_request, generate_prompt
-from simulation_engine.settings import LLM_VERS
+from simulation_engine.settings import LLM_VERS, DEBUG
 
 class ProductionPlan:
     def __init__(self, plan_dict: Dict[str, Any]):
@@ -59,7 +59,8 @@ class Plan:
 
         # Get sales history for the item
         sales_history = agent.get_sales_history(item_name)
-        print('Sales history: ', sales_history)
+        if DEBUG:
+            print('Sales history: ', sales_history)
 
         # Get purchase history for the item
         purchase_history = agent.get_purchase_history(item_name)
@@ -116,24 +117,28 @@ class Plan:
         ]
 
         prompt = generate_prompt(prompt_inputs, template_path)
-        print('Prompt: ', prompt)
+        if DEBUG:
+            print('Prompt: ', prompt)
 
         # Get LLM response
         response = gpt_request(prompt, model=LLM_VERS)
-        print('LLM response: ', response)
+        if DEBUG:
+            print('LLM response: ', response)
 
         # Check if response contains an error
         if response.startswith("GENERATION ERROR"):
-            print(f"LLM generation failed: {response}")
+            if DEBUG:
+                print(f"LLM generation failed: {response}")
             plan_data = {"planned_quantity": 0, "reasoning": f"LLM generation failed: {response}"}
         else:
             # Parse the JSON response
             try:
                 plan_data = json.loads(response)
             except json.JSONDecodeError as e:
-                print(f"Error parsing JSON response: {e}")
+                if DEBUG:
+                    print(f"Error parsing JSON response: {e}")
+                    print(f"Raw response: {response}")
                 plan_data = {"planned_quantity": 0, "reasoning": f"Failed to parse LLM response: {str(e)}"}
-                print(f"Raw response: {response}")
 
         # Add metadata
         plan_data["item_name"] = item_name
@@ -225,7 +230,8 @@ class Plan:
         """
         # Validate the plan
         if not plan or plan.planned_quantity <= 0:
-            print(f"No valid production plan provided")
+            if DEBUG:
+                print(f"No valid production plan provided")
             return False
 
         # Get current inventory data for production cost
@@ -233,7 +239,8 @@ class Plan:
         production_cost_per_unit = current_inventory.get('production_cost_per_unit', 0.0)
 
         if production_cost_per_unit <= 0:
-            print(f"No production cost defined for {plan.item_name}")
+            if DEBUG:
+                print(f"No production cost defined for {plan.item_name}")
             return False
 
         # Calculate total production cost
@@ -242,7 +249,8 @@ class Plan:
         # Check if agent has enough cash
         available_cash = agent.get_inventory_quantity("digital cash")
         if available_cash < total_cost:
-            print(f"Insufficient funds: need ${total_cost:.2f}, have ${available_cash:.2f}")
+            if DEBUG:
+                print(f"Insufficient funds: need ${total_cost:.2f}, have ${available_cash:.2f}")
             return False
 
         # Execute production: pay cost and add items
@@ -272,6 +280,145 @@ class Plan:
             print(f"Error executing production plan: {e}")
             return False
 
+    def get_items_to_produce(self, agent, max_items: int = 5) -> List[str]:
+        """
+        Get items to produce based on recent sales activity.
+
+        Parameters:
+            agent: The GenerativeAgent instance
+            max_items: Maximum number of items to return (default 5)
+
+        Returns:
+            List of item names from recent sales, up to max_items
+        """
+        # Get all inventory records
+        all_records = agent.inventory.records
+
+        # Filter for sell_item records and get the last ones
+        sell_records = [record for record in all_records if record.action == "sell_item"]
+
+        # Get the last max_items sell records (or all if less than max_items)
+        recent_sales = sell_records[-max_items:] if len(sell_records) >= max_items else sell_records
+
+        # Extract unique item names from recent sales, preserving order of most recent
+        items_to_produce = []
+        for record in reversed(recent_sales):  # Start from most recent
+            if record.item_name not in items_to_produce:
+                items_to_produce.append(record.item_name)
+
+        return items_to_produce
+
+    def create_production_plans_for_recent_sales(self, agent, time_step: int = 0, max_items: int = 5) -> List[Dict[str, Any]]:
+        """
+        Create production plans for items based on recent sales activity.
+
+        Parameters:
+            agent: The GenerativeAgent instance
+            time_step: Current time step
+            max_items: Maximum number of items to plan for
+
+        Returns:
+            List of production plan dictionaries
+        """
+        # Get items to produce based on recent sales
+        items_to_produce = self.get_items_to_produce(agent, max_items)
+
+        if not items_to_produce:
+            print("No recent sales found. No production plans created.")
+            return []
+
+        print(f"Creating production plans for {len(items_to_produce)} items based on recent sales:")
+        for item in items_to_produce:
+            print(f"  - {item}")
+        print()
+
+        # Create plans for each item
+        plans = []
+        for item_name in items_to_produce:
+            try:
+                plan = self.create_production_plan_with_llm(agent, item_name, time_step)
+                if plan:
+                    plans.append(plan.package())
+                    print(f"✓ Created plan for {item_name}: {plan.planned_quantity} units")
+                else:
+                    print(f"✗ Failed to create plan for {item_name}")
+            except Exception as e:
+                print(f"✗ Error creating plan for {item_name}: {e}")
+
+        return plans
+
     def package(self) -> List[Dict[str, Any]]:
         """Package all plans for saving."""
         return [plan.package() for plan in self.production_plans]
+
+    def execute_production_for_all_agents(self, agents, time_step: int = 0) -> Dict[str, Any]:
+        """
+        Execute production planning for all agents based on their recent sales.
+
+        Parameters:
+            agents: List of GenerativeAgent objects
+            time_step: Current simulation time step
+
+        Returns:
+            Dict with production results for each agent
+        """
+        production_results = {}
+
+        for agent in agents:
+            agent_name = agent.scratch.get_fullname()
+
+            try:
+                # Get items to produce based on recent sales
+                items_to_produce = agent.get_items_to_produce_from_sales(max_items=5)
+
+                if items_to_produce:
+                    # Create production plans for recent sales items
+                    plans = agent.create_production_plans_for_recent_sales(time_step, max_items=5)
+
+                    executed_plans = []
+                    total_cost = 0.0
+
+                    # Execute each production plan
+                    for plan_data in plans:
+                        # Convert dict to ProductionPlan object for execution
+                        plan = ProductionPlan(plan_data)
+
+                        success = agent.execute_production_plan(plan, time_step)
+                        if success:
+                            executed_plans.append(plan_data)
+                            # Calculate cost
+                            current_inventory = agent.inventory.get_all_items_with_values().get(plan.item_name, {})
+                            production_cost = current_inventory.get("production_cost_per_unit", 0.0)
+                            total_cost += plan.planned_quantity * production_cost
+
+                    production_results[agent_name] = {
+                        'items_considered': items_to_produce,
+                        'plans_created': len(plans),
+                        'plans_executed': len(executed_plans),
+                        'total_cost': total_cost,
+                        'executed_plans': executed_plans
+                    }
+
+                    if DEBUG:
+                        print(f"  {agent_name}: {len(executed_plans)}/{len(plans)} plans executed, cost: ${total_cost:.2f}")
+
+                else:
+                    production_results[agent_name] = {
+                        'items_considered': [],
+                        'plans_created': 0,
+                        'plans_executed': 0,
+                        'total_cost': 0.0,
+                        'executed_plans': []
+                    }
+                    if DEBUG:
+                        print(f"  {agent_name}: No recent sales found for production planning")
+
+            except Exception as e:
+                print(f"Error in production planning for {agent_name}: {e}")
+                production_results[agent_name] = {
+                    'error': str(e),
+                    'plans_executed': 0,
+                    'total_cost': 0.0
+                }
+
+        return production_results

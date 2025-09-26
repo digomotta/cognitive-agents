@@ -452,25 +452,25 @@ def test_markov_agent_scoring():
 
 def agent_production_planning():
   """Demo of agent production planning functionality."""
-  curr_agent = GenerativeAgent("Synthetic", "rowan_greenwood")
+  curr_agent = GenerativeAgent("Synthetic", "mei_chen")
 
   print(f"=== Production Planning Demo for {curr_agent.scratch.get_fullname()} ===")
 
   # Show current financial status
   available_cash = curr_agent.get_inventory_quantity("digital cash")
-  current_inventory = curr_agent.inventory.get_all_items_with_values().get("herbal_tea", {})
+  current_inventory = curr_agent.inventory.get_all_items_with_values().get("silk_pajama_sets", {})
   current_quantity = current_inventory.get("quantity", 0)
   production_cost = current_inventory.get("production_cost_per_unit", 0.0)
 
   print(f"Current status:")
   print(f"  Available cash: ${available_cash:.2f}")
-  print(f"  Current herbal_tea inventory: {current_quantity} units")
+  print(f"  Current silk_scarves inventory: {current_quantity} units")
   print(f"  Production cost per unit: ${production_cost:.2f}")
   print()
 
   # Create a production plan
   print("Creating production plan...")
-  plan_dict = curr_agent.create_production_plan("herbal_tea", time_step=0)
+  plan_dict = curr_agent.create_production_plan("silk_pajama_sets", time_step=0)
   if plan_dict:
     print(f"Plan created: {plan_dict['planned_quantity']} units to produce")
     print(f"Reasoning: {plan_dict['reasoning'][:100]}...")
@@ -497,6 +497,58 @@ def agent_production_planning():
       print("Production failed!")
   else:
     print("Failed to create production plan")
+
+  curr_agent.save()
+
+def smart_production_planning():
+  """Demo of smart production planning based on recent sales."""
+  curr_agent = GenerativeAgent("Synthetic", "mei_chen")
+
+  print(f"=== Smart Production Planning Demo for {curr_agent.scratch.get_fullname()} ===")
+
+  # Show current financial status
+  available_cash = curr_agent.get_inventory_quantity("digital cash")
+  print(f"Available cash: ${available_cash:.2f}")
+  print()
+
+  # Get items to produce based on recent sales
+  print("Analyzing recent sales to determine what to produce...")
+  items_to_produce = curr_agent.get_items_to_produce_from_sales(max_items=5)
+
+  if not items_to_produce:
+    print("No recent sales found. Cannot determine what to produce.")
+    return
+
+  print(f"Found {len(items_to_produce)} items from recent sales:")
+  for i, item in enumerate(items_to_produce, 1):
+    current_inventory = curr_agent.inventory.get_all_items_with_values().get(item, {})
+    current_quantity = current_inventory.get("quantity", 0)
+    production_cost = current_inventory.get("production_cost_per_unit", 0.0)
+    print(f"  {i}. {item}: {current_quantity} units, ${production_cost:.2f}/unit production cost")
+  print()
+
+  # Create production plans for all items
+  print("Creating production plans for recent sales items...")
+  plans = curr_agent.create_production_plans_for_recent_sales(time_step=0, max_items=5)
+
+  if plans:
+    print(f"\n✓ Created {len(plans)} production plans")
+
+    # Show total planned production cost
+    total_cost = 0
+    for plan in plans:
+      item_name = plan['item_name']
+      quantity = plan['planned_quantity']
+      current_inventory = curr_agent.inventory.get_all_items_with_values().get(item_name, {})
+      production_cost = current_inventory.get("production_cost_per_unit", 0.0)
+      item_cost = quantity * production_cost
+      total_cost += item_cost
+      print(f"  {item_name}: {quantity} units (${item_cost:.2f})")
+
+    print(f"Total planned production cost: ${total_cost:.2f}")
+    print(f"Remaining cash after production: ${available_cash - total_cost:.2f}")
+  else:
+    print("No production plans were created.")
 
   curr_agent.save()
 
@@ -539,7 +591,8 @@ def main():
   # build_agent()
   # interview_agent()
   # chat_with_agent()
-  agent_production_planning()
+  #agent_production_planning()
+  smart_production_planning()
 
   # First create some sample sales data, then show the sales history
   #create_sample_sales_data()
