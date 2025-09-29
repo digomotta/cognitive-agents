@@ -20,14 +20,13 @@ from simulation_engine.gpt_structure import chat_safe_generate
 from simulation_engine.settings import LLM_VERS
 
 
-def generate_agent_memories_from_text(agent_name, population_name, text_file_name, output_file_path=None):
+def generate_agent_memories_from_scratch(agent_name, population_name, output_file_path=None):
     """
-    Generate comprehensive agent memories by combining scratch data with text input using LLM augmentation.
+    Generate comprehensive agent memories using only scratch data.
 
     Args:
         agent_name (str): The agent's identifier (e.g., "bianca_silva")
         population_name (str): The population name (e.g., "Synthetic_Base")
-        text_file_name (str): Name of .txt file containing memory content to be augmented
         output_file_path (str): Optional path for output file. If None, saves to testing/memories/{agent_name}_memories.py
 
     Returns:
@@ -36,21 +35,13 @@ def generate_agent_memories_from_text(agent_name, population_name, text_file_nam
 
     # Load agent's scratch data
     scratch_path = f"agent_bank/populations/{population_name}/{agent_name}/scratch.json"
-    text_file_path = f"agent_bank/populations/{population_name}/{agent_name}/{text_file_name}"
     if not os.path.exists(scratch_path):
         raise FileNotFoundError(f"Scratch file not found: {scratch_path}")
 
     with open(scratch_path, 'r') as f:
         scratch_data = json.load(f)
 
-    # Read the text input file
-    if not os.path.exists(text_file_path):
-        raise FileNotFoundError(f"Text file not found: {text_file_path}")
-
-    with open(text_file_path, 'r') as f:
-        input_text = f.read().strip()
-
-    # Prepare inputs for the template
+    # Prepare inputs for the template (without text input)
     prompt_inputs = [
         f"{scratch_data['first_name']} {scratch_data['last_name']}",  # 0
         str(scratch_data['age']),  # 1
@@ -73,8 +64,7 @@ def generate_agent_memories_from_text(agent_name, population_name, text_file_nam
         scratch_data['private_self_description'],  # 18
         str(scratch_data.get('total_sales_failures', 0)),  # 19
         str(scratch_data.get('last_sales_failure_time', 0)),  # 20
-        input_text,  # 21
-        agent_name.lower().replace(' ', '_')  # 22
+        agent_name.lower().replace(' ', '_')  # 21
     ]
 
     # Generate memories using LLM with template
@@ -210,55 +200,130 @@ def load_agent_memories(agent_name):
         raise AttributeError(f"No variable named '{memory_var_name}' found in memory file")
 
 
-def remember_memories_to_agent(agent_name, memories):
+def generate_agent_inventory_code(agent_name, population_name, text_file_name):
     """
-    Add memories to an agent using the same pattern as build_agent in main.py
+    Generate agent.add_to_inventory() calls from text file description.
+
+    Args:
+        agent_name (str): The agent's identifier
+        population_name (str): The population name
+        text_file_name (str): Name of .txt file containing inventory/business description
+
+    Returns:
+        str: Generated Python code with agent.add_to_inventory() calls
+    """
+    # Load agent's scratch data
+    scratch_path = f"agent_bank/populations/{population_name}/{agent_name}/scratch.json"
+    text_file_path = f"agent_bank/populations/{population_name}/{agent_name}/{text_file_name}"
+
+    if not os.path.exists(scratch_path):
+        raise FileNotFoundError(f"Scratch file not found: {scratch_path}")
+
+    if not os.path.exists(text_file_path):
+        raise FileNotFoundError(f"Text file not found: {text_file_path}")
+
+    with open(scratch_path, 'r') as f:
+        scratch_data = json.load(f)
+
+    with open(text_file_path, 'r') as f:
+        inventory_description = f.read().strip()
+
+    # Prepare inputs for the inventory template
+    prompt_inputs = [
+        f"{scratch_data['first_name']} {scratch_data['last_name']}",  # 0
+        str(scratch_data['age']),  # 1
+        scratch_data['sex'],  # 2
+        scratch_data['address'],  # 3
+        scratch_data['education'],  # 4
+        scratch_data['fact_sheet'],  # 5
+        scratch_data['self_description'],  # 6
+        inventory_description  # 7
+    ]
+
+    # Generate inventory code using LLM with template
+    try:
+        generated_inventory_code, _, _, _ = chat_safe_generate(
+            prompt_inputs,
+            "simulation_engine/prompt_template/generative_agent/inventory_generation.txt",
+            model=LLM_VERS,
+            temperature=0.7,
+            max_tokens=2000
+        )
+
+        return generated_inventory_code.strip()
+
+    except Exception as e:
+        raise Exception(f"Inventory generation failed: {str(e)}")
+
+
+def setup_agent_with_generated_inventory(agent_name, inventory_code):
+    """
+    Add memories and inventory to an agent using generated inventory code.
 
     Args:
         agent_name (str): The agent's identifier (e.g., "kemi_adebayo")
-        memories (list): List of memory strings to add
+        inventory_code (str): Generated Python code with agent.add_to_inventory() calls
     """
     from generative_agent.generative_agent import GenerativeAgent
-    from main import setup_agent_inventory
 
     # Load agent from Synthetic_Base
     agent = GenerativeAgent("Synthetic_Base", agent_name)
 
-    # Add each memory
+    # Load and add memories
+    memories = load_agent_memories(agent_name)
     for m in memories:
         agent.remember(m)
 
-    # Setup inventory
-    setup_agent_inventory(agent, agent_name)
+    # Execute the generated inventory code
+    # Create a safe namespace for execution
+    namespace = {'agent': agent}
+    try:
+        exec(inventory_code, namespace)
+        print(f"Successfully added inventory to {agent_name}")
+    except Exception as e:
+        raise Exception(f"Failed to execute inventory code: {str(e)}")
 
     # Save to Synthetic population
     agent.save("Synthetic", agent_name)
+    print(f"Agent {agent_name} saved to Synthetic population")
 
 
 def create_agent(agent_name, population_name, text_file_name):
     """
-    Complete agent creation workflow: generate memories, create structure, and build agent
+    Complete agent creation workflow: generate memories from scratch, create inventory from text, and build agent
 
     Args:
         agent_name (str): The agent's identifier (e.g., "bianca_silva")
         population_name (str): The population name (e.g., "Synthetic_Base")
-        text_file_name (str): Name of .txt file with memory content
+        text_file_name (str): Name of .txt file with inventory/business description
 
     Returns:
         str: Path to the generated memory file
     """
     print(f"Creating agent '{agent_name}' from population '{population_name}' using text file '{text_file_name}'")
 
-    # Generate memories and create agent structure
-    memory_file_path = generate_agent_memories_from_text(agent_name, population_name, text_file_name)
+    # Step 1: Generate memories from scratch data only
+    print("Generating memories from scratch data...")
+    memory_file_path = generate_agent_memories_from_scratch(agent_name, population_name)
 
-    # Load the generated memories
-    memories = load_agent_memories(agent_name)
+    # Step 2: Generate inventory code from text file
+    print("Generating inventory from text description...")
+    inventory_code = generate_agent_inventory_code(agent_name, population_name, text_file_name)
 
-    # Add memories to agent and save
-    remember_memories_to_agent(agent_name, memories)
+    # Step 3: Create basic agent structure
+    print("Creating agent directory structure...")
+    scratch_path = f"agent_bank/populations/{population_name}/{agent_name}/scratch.json"
+    with open(scratch_path, 'r') as f:
+        scratch_data = json.load(f)
+    create_agent_structure(agent_name, scratch_data)
+
+    # Step 4: Add memories and inventory to agent
+    print("Adding memories and inventory to agent...")
+    setup_agent_with_generated_inventory(agent_name, inventory_code)
 
     print(f"Complete agent {agent_name} created successfully!")
+    print(f"Generated inventory code:")
+    print(inventory_code)
     return memory_file_path
 
 
@@ -267,7 +332,7 @@ def main():
 
     parser.add_argument('--name', required=True, help='Agent name/identifier (e.g., bianca_silva)')
     parser.add_argument('--population', default='Synthetic_Base', help='Source population name (default: Synthetic_Base)')
-    parser.add_argument('--text', required=True, help='Text file name containing memory content (e.g., memories.txt)')
+    parser.add_argument('--text', required=True, help='Text file name containing inventory/business description (e.g., business.txt)')
     parser.add_argument('--output', help='Optional output path for memory file')
 
     args = parser.parse_args()
@@ -282,8 +347,8 @@ def main():
 
         text_file_path = f"agent_bank/populations/{args.population}/{args.name}/{args.text}"
         if not os.path.exists(text_file_path):
-            print(f"Error: Text file not found at {text_file_path}")
-            print("Make sure the text file exists in the agent's directory.")
+            print(f"Error: Inventory description file not found at {text_file_path}")
+            print("Make sure the text file with inventory/business description exists in the agent's directory.")
             sys.exit(1)
 
         # Create the agent

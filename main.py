@@ -586,6 +586,13 @@ def sales_history():
 
   return curr_agent
 
+
+  def run_simulation(agent_names, total_steps, weight_update_cycle, production_cycle, testing_mode):
+    """Run the simulation"""
+    simulation = Simulation(agent_names=agent_names)
+    sim_output = simulation.run_full_simulation(total_steps=10, weight_update_cycle=2, production_cycle=30, testing_mode=False)
+    return sim_output
+
 def main(): 
   # Simplified main for multi-agent Markov chain interactions
   # build_agent()
