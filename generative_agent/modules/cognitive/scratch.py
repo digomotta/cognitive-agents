@@ -11,7 +11,6 @@ class Scratch:
     self.education = ""
     self.race = ""
     self.ethnicity = ""
-    self.annual_income = 0.0
     self.address = ""
 
     self.extraversion = 0.0
@@ -41,7 +40,6 @@ class Scratch:
       self.education = scratch["education"]
       self.race = scratch["race"]
       self.ethnicity = scratch["ethnicity"]
-      self.annual_income = float(scratch["annual_income"])
       self.address = scratch["address"]
 
       self.extraversion = float(scratch["extraversion"])
@@ -81,7 +79,6 @@ class Scratch:
     curr_package["education"] = self.education
     curr_package["race"] = self.race
     curr_package["ethnicity"] = self.ethnicity
-    curr_package["annual_income"] = self.annual_income
     curr_package["address"] = self.address
 
     curr_package["extraversion"] = self.extraversion
