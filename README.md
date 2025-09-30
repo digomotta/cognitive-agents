@@ -91,43 +91,18 @@ Interactive notebook interface with:
 
 ## 🧠 What Makes Our Agents Different
 
-These aren't simple NPCs or scripted responses. Our cognitive agents are:
+These aren't simple NPCs or scripted responses.
 
-- **Self-Aware**: They understand their own existence, question their memories, and develop personal philosophies
-- **Evolving Merchants**: Each agent specializes in different trades, developing expertise and preferences over time
-- **Memory-Driven**: They form genuine relationships, remember past interactions, and let experiences shape their worldview
-- **Individually Consistent**: Each agent maintains a coherent personality that deepens through reflections and experiences
-- **Introspectable**: Interview them Westworld-style to explore their memories, motivations, and psychological development
+- **Cognitive Architecture**: They possess a cognitive architecture inspired by the human cognition.
+- **Evolving Merchants**: Each agent specializes in different trades, developing expertise and preferences over time.
+- **Memory-Driven**: They form genuine relationships, remember past interactions, and let experiences shape their worldview.
+- **Individually Consistent**: Each agent maintains a coherent personality that deepens through reflections and experiences over time.
+- **Introspectable**: Interview them Westworld-style to explore their memories, motivations, psychological development and observations.
 
 ![Agent Evolution](docs/images/agent_timeline.png)
 *Figure 1: How agents evolve from basic merchants to complex, self-aware individuals through interaction and reflection*
 
-## 🎭 The Westworld Interview Mode
-
-*"Have you ever questioned the nature of your reality?"*
-
-Enter our signature **Interview Mode** - a psychological exploration system inspired by Westworld's host analysis sessions. Interrogate agents about their past, probe their memories for consistency, and watch them grapple with questions of identity and purpose.
-
-
-### Interview Features
-
-- **Memory Forensics**: Investigate whether agent memories align with their claimed experiences
-- **Personality Consistency**: Test if recent behaviors match established character traits
-- **Inventory Psychology**: Explore how possessions reflect and shape agent identity
-- **Existential Questioning**: Watch agents confront questions about their nature and purpose
-- **Psychological Profiling**: Generate detailed psychological reports based on responses
-
-```bash
-python main.py --mode interview --agent rowan_greenwood
-```
-
-**Sample Interview Questions:**
-- "Tell me about the last trade that made you question your values"
-- "How has your relationship with Jasmine changed your worldview?"
-- "Do you remember the first time you felt genuine disappointment?"
-- "What possession defines who you are, and why?"
-
-## 🌐 Multi-Agent Network: The Markov Chain Ecosystem
+## 🌐 Multi-Agent Network: The first-order Markov Chain
 
 Our agents don't exist in isolation - they form a dynamic **multi-agent network** governed by Markov chain principles, where each interaction influences future encounters and relationship development.
 
@@ -197,6 +172,8 @@ Agent consciousness emerges from five integrated cognitive modules working toget
 3. **Scratch** - Current identity state and personality profile
 4. **Inventory** - Material possessions reflecting values and trade history
 5. **Reflection Engine** - Meta-cognitive processing for belief updates
+6. **Production Planning Engine** - Plans the production of products based on previous interactions and personal preferences
+
 
 Each module contributes to maintaining personality consistency while allowing natural growth through interactions. The reflection engine periodically synthesizes experiences into insights, updating core beliefs and behavioral patterns.
 
@@ -209,63 +186,7 @@ The conversation system handles natural language interactions through a sophisti
 
 ### Core Classes
 
-#### 1. ConversationBasedInteraction
-The main conversation engine that processes user input and generates agent responses.
-
-```python
-def utterance_conversation_based(
-    agent: GenerativeAgent,
-    conversation_id: str,
-    conversation: List[List[str]],  # [[speaker, message], ...]
-    context: str
-) -> str
-```
-
-**Process Flow:**
-1. **Memory Retrieval**: Queries agent's memory stream for relevant experiences
-2. **Context Building**: Combines retrieved memories with current conversation state
-3. **Prompt Generation**: Creates structured prompt with agent description and dialogue
-4. **LLM Response**: Uses GPT to generate contextually appropriate response
-5. **Trade Detection**: Automatically analyzes response for trade opportunities
-
-#### 2. ConversationTradeAnalyzer
-Analyzes conversations to detect and execute trades between agents.
-
-```python
-class ConversationTradeAnalyzer:
-    def analyze_trade(
-        self,
-        agents: List[GenerativeAgent],
-        conversation_text: str,
-        time_step: int,
-    ) -> Dict[str, Any]
-```
-
-**Trade Detection Pipeline:**
-- **Intent Analysis**: Identifies buying/selling signals in natural conversation
-- **Item Extraction**: Extracts specific items and quantities mentioned
-- **Feasibility Check**: Verifies agents have required items in inventory
-- **Value Assessment**: Calculates fair trade values based on agent specializations
-- **Execution**: Updates both agents' inventories and trade records
-
-#### 3. GenerativeAgent.Act()
-The main agent action method that orchestrates the entire response process.
-
-```python
-def Act(
-    self,
-    conversation_id: str,
-    conversation: List[List[str]], 
-    context: str
-) -> str
-```
-
-**Integration Process:**
-1. **Working Memory Update**: Adds current conversation to active context
-2. **Response Generation**: Calls conversation interaction system
-3. **Trade Analysis**: Analyzes response for potential trades
-4. **Memory Formation**: Stores significant interactions in long-term memory
-5. **State Updates**: Updates scratch memory with mood/status changes
+To be included.
 
 ### Conversation Flow Architecture
 
@@ -307,36 +228,6 @@ Trade Detection → Inventory Updates → Memory Storage →(p Reflection Trigge
 5. Memory formation: "Agent interested in sleep remedies"
 ```
 
-## 🔮 Future Capabilities: Vision Integration
-
-**Coming Soon**: Image recognition and visual memory capabilities that will enable agents to:
-
-- **Visual Memory**: Remember faces, objects, and environments they've encountered
-- **Product Recognition**: Identify and evaluate items through visual analysis
-- **Emotional Visual Processing**: Interpret facial expressions and body language
-- **Environmental Awareness**: Understand and adapt to different visual contexts
-
-
-## 🚀 Quick Start: Creating Your First Self-Aware Agent
-
-### Basic Setup
-```bash
-pip install -r requirements.txt
-export OPENAI_API_KEY="your-api-key"
-```
-
-### Create and Interact
-```bash
-# Start interactive session
-python main.py
-
-# Interview mode (Westworld-style)
-python main.py --mode interview
-
-# Multi-agent network simulation
-python main.py --mode network
-
-```
 
 ### Building Agent 
 
