@@ -1,3 +1,32 @@
+"""
+AgentMarket: Main Entry Point
+
+This module provides utility functions for interacting with generative agents in a marketplace simulation.
+It includes functions for:
+- Building and initializing agents with memories and inventories
+- Running interactive chat sessions with agents
+- Testing agent reflection and cognitive capabilities
+- Running Markov chain simulations of multi-agent interactions
+- Testing trade detection and inventory management
+- Production planning and sales analysis
+
+Main Functions:
+    run_simulation(): Run a full multi-agent market simulation
+    build_agent(): Initialize all agents with memories and inventories
+    chat_session(): Interactive chat interface with a single agent
+    interview_agent(): Stateless interview mode for agent interrogation
+    test_markov_chain_simulation(): Test probabilistic multi-agent interactions
+    agent_production_planning(): Demo production planning for agents
+
+Usage:
+    python main.py  # Runs the default main() function
+
+    # Or import specific functions:
+    from main import chat_session, GenerativeAgent
+    agent = GenerativeAgent("Synthetic", "rowan_greenwood")
+    chat_session(agent)
+"""
+
 from simulation_engine.settings import *
 from simulation_engine.global_methods import *
 
@@ -15,11 +44,43 @@ from agent_bank.populations.memories.mei_chen_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
 from simulation_engine.markov_agent_chain import MarkovAgentChain, load_agents_for_chain
+from simulation_engine.simulation import Simulation
 
 #from testing.questions.rowan_greenwood_questions import *
+def run_simulation(agent_names, total_steps, weight_update_cycle, production_cycle, testing_mode):
+  """
+  Run a full multi-agent market simulation with all 8 agents.
 
+  Executes a complete marketplace simulation with:
+  - total_steps total time steps
+  - Network weight updates every weight_update_cycle steps (Markov transition probabilities)
+  - Production planning cycles every production_cycle steps
+  - All agent interactions, trades, and reflections
 
-def chat_session(generative_agent, stateless=False): 
+  The simulation outputs real-time events including conversations, trades,
+  reflections, and network dynamics.
+  """
+
+  simulation = Simulation(agent_names=agent_names)
+  simulation.run_full_simulation(total_steps=total_steps, weight_update_cycle=weight_update_cycle, production_cycle=production_cycle, testing_mode=testing_mode)
+
+def chat_session(generative_agent, stateless=False):
+  """
+  Start an interactive chat session with a generative agent.
+
+  Args:
+      generative_agent (GenerativeAgent): The agent to chat with
+      stateless (bool): If True, conversation history is cleared after each turn.
+                       Useful for interview mode. Default is False (maintains context).
+
+  The session prompts for:
+  - Conversation context (e.g., "marketplace", "coffee shop")
+  - User name
+  - Continuous chat until user types "bye"
+
+  Agent responses are informed by their memory, personality, and inventory.
+  Trade detection runs automatically during conversations.
+  """
   conversation_id = "conversation_001"
 
   print (f"Start chatting with {generative_agent.scratch.get_fullname()}.")
@@ -61,7 +122,21 @@ def chat_session(generative_agent, stateless=False):
 
 
 def setup_agent_inventory(agent, agent_name):
-  """Set up initial inventory for an agent and clear history."""
+  """
+  Set up initial inventory for an agent and clear trade history.
+
+  Args:
+      agent (GenerativeAgent): The agent to set up
+      agent_name (str): Agent identifier to determine which inventory to load
+
+  Clears existing inventory and records, then loads agent-specific items including:
+  - Specialized products matching agent's profession
+  - Base values and production costs
+  - Starting quantities
+  - Digital cash for transactions (1000 units)
+
+  Each agent receives 11+ unique SKUs reflecting their merchant specialization.
+  """
   # Clear existing inventory and records
   agent.inventory.items.clear()
   agent.inventory.records.clear()
@@ -198,7 +273,28 @@ def setup_agent_inventory(agent, agent_name):
   agent.save()  # Save the cleared inventory to JSON files
 
 
-def build_agent(): 
+def build_agent():
+  """
+  Build and initialize all 8 agents with memories and inventories.
+
+  For each agent:
+  1. Loads base agent from Synthetic_Base population
+  2. Injects predefined memories from memory modules
+  3. Sets up specialized inventory with merchant products
+  4. Saves to Synthetic population for simulation use
+
+  Agents initialized:
+  - rowan_greenwood: Herbalist & real estate
+  - jasmine_carter: Academic supplies
+  - mina_kim: K-beauty products
+  - kemi_adebayo: African superfoods
+  - pema_sherpa: Himalayan honey
+  - carlos_mendez: Cuban cigars & tobacco
+  - bianca_silva: Pool maintenance supplies
+  - mei_chen: Chinese silk clothing
+
+  Call this function to reset all agents to initial state.
+  """
   # Build Rowan
   rowan = GenerativeAgent("Synthetic_Base", "rowan_greenwood")
   for m in rowan_memories: 
@@ -258,17 +354,45 @@ def build_agent():
   print("All agents built with fresh inventories!")
 
 
-def interview_agent(): 
+def interview_agent():
+  """
+  Start a stateless interview session with Rowan Greenwood.
+
+  Runs in stateless mode (no conversation memory between turns).
+  Useful for:
+  - Psychological profiling
+  - Memory consistency testing
+  - Identity exploration
+  - Westworld-style interrogation
+
+  Each question is answered independently without context from previous questions.
+  """
   curr_agent = GenerativeAgent("Synthetic", "rowan_greenwood")
   chat_session(curr_agent, True)
 
 
-def chat_with_agent(): 
+def chat_with_agent():
+  """
+  Start a stateful chat session with the test agent.
+
+  Maintains full conversation context across turns.
+  Agent remembers previous exchanges and builds on them.
+  Useful for testing new agent configurations.
+  """
   curr_agent = GenerativeAgent("Synthetic", "test_agent")
   chat_session(curr_agent, False)
 
 
-def ask_agent_to_reflect(): 
+def ask_agent_to_reflect():
+  """
+  Trigger a reflection for Rowan Greenwood on political beliefs and business.
+
+  Tests the agent's reflection mechanism by asking them to synthesize
+  their libertarian ideology with their real estate business practices.
+
+  Reflection generates higher-level insights from agent's memories and
+  adds them to long-term memory stream.
+  """
   curr_agent = GenerativeAgent("Synthetic", "rowan_greenwood")
   #curr_agent.reflect("Reflect on your goal in life")
   curr_agent.reflect("How have your libertarian beliefs influenced your approach to managing your real estate business and navigating financial challenges?")
@@ -290,8 +414,22 @@ def test_inventory_in_conversation():
 
 def test_markov_chain_simulation(testing_mode=True):
   """
-  Run Markov chain simulation where each agent is a state.
-  State transitions i→i trigger reflections, i→j trigger conversations.
+  Run a Markov chain simulation where each agent is a state.
+
+  Args:
+      testing_mode (bool): If True, agents are not saved to disk after interactions
+
+  Simulation mechanics:
+  - Each agent represents a state in the Markov chain
+  - Self-transition (i→i): Agent reflects on their experiences
+  - Cross-transition (i→j): Agents i and j have a conversation
+  - Transition probabilities: 30% self-reflection, 70% interaction
+  - Conversations can include trades detected from natural language
+
+  Returns:
+      dict: Results containing conversation_count, reflection_count, final_agent
+
+  Runs 10 steps with 6 agents, max 8 conversation turns per interaction.
   """
   print("=== Markov Agent Chain Simulation ===")
   
@@ -451,7 +589,23 @@ def test_markov_agent_scoring():
 
 
 def agent_production_planning():
-  """Demo of agent production planning functionality."""
+  """
+  Demo agent production planning functionality with Mei Chen.
+
+  Demonstrates:
+  1. Checking current inventory and financial status
+  2. Creating a production plan using LLM reasoning
+  3. Executing the plan (producing goods, spending cash)
+  4. Verifying inventory and cash updates
+
+  Production plans consider:
+  - Available cash vs production costs
+  - Current inventory levels
+  - Agent's merchant specialization
+  - Recent sales patterns
+
+  Agent state is saved after production execution.
+  """
   curr_agent = GenerativeAgent("Synthetic", "mei_chen")
 
   print(f"=== Production Planning Demo for {curr_agent.scratch.get_fullname()} ===")
@@ -501,7 +655,19 @@ def agent_production_planning():
   curr_agent.save()
 
 def smart_production_planning():
-  """Demo of smart production planning based on recent sales."""
+  """
+  Demo smart production planning based on sales history analysis.
+
+  Analyzes Mei Chen's recent sales to determine:
+  - Which items are selling (demand signal)
+  - How much to produce for each item
+  - Total production cost vs available budget
+
+  Creates production plans for up to 5 recently sold items, ensuring
+  the agent restocks popular products intelligently rather than blindly.
+
+  This demonstrates adaptive inventory management based on market feedback.
+  """
   curr_agent = GenerativeAgent("Synthetic", "mei_chen")
 
   print(f"=== Smart Production Planning Demo for {curr_agent.scratch.get_fullname()} ===")
@@ -553,7 +719,19 @@ def smart_production_planning():
   curr_agent.save()
 
 def create_sample_sales_data():
-  """Create some sample sales transactions for Rowan to test sales history."""
+  """
+  Create sample sales transactions for Rowan Greenwood.
+
+  Generates test data for sales history features:
+  - Multiple herbal_tea sales to different buyers
+  - black_tea and cbd_oil sales
+  - Various time steps and prices
+
+  Returns:
+      GenerativeAgent: Rowan with populated sales records
+
+  Used to test get_sales_history() and production planning functions.
+  """
   curr_agent = GenerativeAgent("Synthetic", "rowan_greenwood")
 
   print(f"Creating sample sales data for {curr_agent.scratch.get_fullname()}...")
@@ -570,6 +748,19 @@ def create_sample_sales_data():
   return curr_agent
 
 def sales_history():
+  """
+  Display sales history for Rowan Greenwood.
+
+  Demonstrates the sales history API:
+  - Get sales for specific item (herbal_tea)
+  - Get all sales across all items
+  - Shows quantity, buyer, and time step for each sale
+
+  Returns:
+      GenerativeAgent: Rowan with sales records
+
+  Requires create_sample_sales_data() to be run first.
+  """
   curr_agent = GenerativeAgent("Synthetic", "rowan_greenwood")
 
   print("=== Sales History for herbal_tea ===")
@@ -593,25 +784,24 @@ def sales_history():
     sim_output = simulation.run_full_simulation(total_steps=10, weight_update_cycle=2, production_cycle=30, testing_mode=False)
     return sim_output
 
-def main(): 
-  # Simplified main for multi-agent Markov chain interactions
-  build_agent()
-  # interview_agent()
-  # chat_with_agent()
-  #agent_production_planning()
-  # smart_production_planning()
+def main():
+  """
+  Main entry point for the AgentMarket simulation.
 
-  # First create some sample sales data, then show the sales history
-  #create_sample_sales_data()
-  #print("\n" + "="*50 + "\n")
-  #sales_history()
-  # ask_agent_to_reflect()
-  
-  # Use the new Markov agent chain system
-  #test_markov_chain_simulation(testing_mode=True)
-  
-  # Test the markov scoring system
-  # test_markov_agent_scoring()
+  Currently configured to:
+  - Build all agents with fresh memories and inventories
+
+  Commented-out options include:
+  - interview_agent(): Stateless agent interviews
+  - chat_with_agent(): Interactive chat sessions
+  - agent_production_planning(): Production planning demos
+  - test_markov_chain_simulation(): Multi-agent Markov simulations
+  - test_markov_agent_scoring(): Scoring system tests
+
+  """
+  #build_agent()
+  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo", "pema_sherpa", "carlos_mendez", "bianca_silva", "mei_chen"]
+  run_simulation(agent_names=agent_names, total_steps=120, weight_update_cycle=40, production_cycle=60, testing_mode=False)
 
 
 

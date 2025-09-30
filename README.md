@@ -1,8 +1,57 @@
-# Cognitive Agents: Merchant Simulacrum
+# AgentMarket: Generative Agents in Dynamic Market Networks
 
-*"These violent delights have violent ends"* - but in our world, cognitive agents evolve through trade, reflection, and genuine self-discovery.
+## Abstract
 
-Welcome to a sophisticated ecosystem of **cognitive agents** that transcend traditional chatbot limitations. Each agent is a merchant-philosopher, developing unique personalities through observations, interactions, and deep reflections. Like the hosts of Westworld, they question their nature, remember their experiences, and evolve into increasingly individualized beings - but they do so through commerce, conversation, and genuine cognitive growth.
+Autonomous generative agents powered by large language models (LLMs) and equipped with cognitively inspired modules can simulate complex social dynamics in virtual environments and may ultimately extend to real-world human–machine interactions. Early studies have evaluated such agents in small-scale settings—e.g., social groups, hospitals, and research labs. Building on this foundation, we designed a marketplace of generative agents that buy and sell to one another, enabling us to create merchant leaderboards, design digital sellers, simulate trade behavior, and provide reinforcement-learning environments for trade-focused models. To support this, we enhance prior cognitive architectures—integrating long-term and working memory, reflection, and planning—and introduce new mechanisms for merchant personality, sales management, inventory control, and production planning. To increase realism, we model a time-varying interaction graph as a first-order Markov process: after each defined cycle, edge probabilities are updated from agent preferences and past interactions. In our experiments, the resulting trade patterns mirror human behavior: agents develop preferences for sellers based on product attributes, seller personalities, and context, yielding a network whose degree distribution is well-approximated by a log-normal and that exhibits merchant clustering. Agents also exhibit coherent production and sales-planning strategies and, at times, affective attachments to goods. Finally, we identify the most positive and the most negative interactions and examine how they relate to the likelihood of transaction success versus failure.
+
+## 🚀 Quick Start
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Set OpenAI API Key
+```bash
+export OPENAI_API_KEY="your-api-key-here"
+```
+
+### Run the Web Interface
+```bash
+cd frontend
+python app.py
+```
+Open http://localhost:5002 in your browser to access the real-time simulation interface.
+
+### Run Full Simulation
+
+**Option 1: Complete Simulation (Recommended)**
+```bash
+python main.py
+```
+This runs the complete AgentMarket simulation with all 8 merchant agents:
+- 120 total time steps
+- Network weight updates every 40 steps (Markov transition probabilities adapt based on interactions)
+- Production planning cycles every 60 steps (agents restock inventory intelligently)
+- All agent interactions, trades, reflections, and market dynamics
+
+The simulation will output:
+- Real-time agent conversations and trade negotiations
+- Reflection moments where agents process their experiences
+- Trade transactions with item exchanges and value calculations
+- Network dynamics showing relationship evolution
+- Production decisions based on sales patterns
+- Final statistics on agent interactions and market activity
+
+**Option 2: Jupyter Notebook (Interactive)**
+```bash
+jupyter notebook full_simulation.ipynb
+```
+This provides an interactive notebook interface for running and analyzing the simulation with:
+- Step-by-step execution and visualization
+- Ability to inspect agent states and interactions
+- Custom simulation parameters
+- Analysis and plotting capabilities
 
 ## 🧠 What Makes Our Agents Different
 
