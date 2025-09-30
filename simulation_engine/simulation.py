@@ -122,7 +122,7 @@ class Simulation:
 
             if other_agents:
                 try:
-                    weights = agent.get_markov_buying_interest_scores(other_agents, temperature=10.0)
+                    weights = agent.get_markov_buying_interest_scores(other_agents, temperature=8.0)
                     self.network_weights[agent_name] = weights
                     if DEBUG:
                         print(f"  {agent_name}: calculated weights for {len(weights)} connections")
@@ -302,7 +302,7 @@ class Simulation:
                 self_reflection_prob=0.2,
                 interaction_prob=0.8,
                 transition_matrix=transition_matrix,
-                conversation_max_turns=1,
+                conversation_max_turns=8,
                 start_agent=current_agent,
                 testing_mode=testing_mode
             )
