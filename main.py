@@ -19,13 +19,24 @@ Main Functions:
     agent_production_planning(): Demo production planning for agents
 
 Usage:
-    python main.py  # Runs the default main() function
+    # Run full simulation (default)
+    python main.py
+
+    # Run with specific mode and parameters
+    python main.py --mode simulation --steps 120 --weight-update 40 --production-update 60
+    python main.py --mode interview --agent rowan_greenwood
+    python main.py --mode chat --agent jasmine_carter
+    python main.py --mode build-agents
+    python main.py --mode reflect --agent rowan_greenwood --query "What drives your business?"
+    python main.py --mode production --agent mei_chen
 
     # Or import specific functions:
     from main import chat_session, GenerativeAgent
     agent = GenerativeAgent("Synthetic", "rowan_greenwood")
     chat_session(agent)
 """
+
+import argparse
 
 from simulation_engine.settings import *
 from simulation_engine.global_methods import *
@@ -354,9 +365,12 @@ def build_agent():
   print("All agents built with fresh inventories!")
 
 
-def interview_agent():
+def interview_agent(agent_name="rowan_greenwood"):
   """
-  Start a stateless interview session with Rowan Greenwood.
+  Start a stateless interview session with specified agent.
+
+  Args:
+      agent_name (str): Name of the agent to interview
 
   Runs in stateless mode (no conversation memory between turns).
   Useful for:
@@ -367,35 +381,52 @@ def interview_agent():
 
   Each question is answered independently without context from previous questions.
   """
-  curr_agent = GenerativeAgent("Synthetic", "rowan_greenwood")
+  curr_agent = GenerativeAgent("Synthetic", agent_name)
+  print(f"\n=== Interview Mode: {curr_agent.scratch.get_fullname()} ===")
+  print("Stateless interview mode - each question is answered independently.\n")
   chat_session(curr_agent, True)
 
 
-def chat_with_agent():
+def chat_with_agent(agent_name="test_agent"):
   """
-  Start a stateful chat session with the test agent.
+  Start a stateful chat session with specified agent.
+
+  Args:
+      agent_name (str): Name of the agent to chat with
 
   Maintains full conversation context across turns.
   Agent remembers previous exchanges and builds on them.
   Useful for testing new agent configurations.
   """
-  curr_agent = GenerativeAgent("Synthetic", "test_agent")
+  curr_agent = GenerativeAgent("Synthetic", agent_name)
+  print(f"\n=== Chat Mode: {curr_agent.scratch.get_fullname()} ===")
+  print("Stateful chat mode - agent remembers conversation context.\n")
   chat_session(curr_agent, False)
 
 
-def ask_agent_to_reflect():
+def ask_agent_to_reflect(agent_name="rowan_greenwood", query=None):
   """
-  Trigger a reflection for Rowan Greenwood on political beliefs and business.
+  Trigger a reflection for specified agent.
+
+  Args:
+      agent_name (str): Name of the agent to reflect
+      query (str): Optional specific reflection query
 
   Tests the agent's reflection mechanism by asking them to synthesize
-  their libertarian ideology with their real estate business practices.
+  their experiences and beliefs.
 
   Reflection generates higher-level insights from agent's memories and
   adds them to long-term memory stream.
   """
-  curr_agent = GenerativeAgent("Synthetic", "rowan_greenwood")
-  #curr_agent.reflect("Reflect on your goal in life")
-  curr_agent.reflect("How have your libertarian beliefs influenced your approach to managing your real estate business and navigating financial challenges?")
+  curr_agent = GenerativeAgent("Synthetic", agent_name)
+
+  if query is None:
+    query = "Reflect on your recent experiences and what they mean to you."
+
+  print(f"\n=== Reflection Mode: {curr_agent.scratch.get_fullname()} ===")
+  print(f"Query: {query}\n")
+  curr_agent.reflect(query)
+  print("\n✓ Reflection completed and added to memory stream.")
 
 
 def test_inventory_in_conversation():
@@ -588,9 +619,12 @@ def test_markov_agent_scoring():
     print("\n" + "-"*50 + "\n")
 
 
-def agent_production_planning():
+def agent_production_planning(agent_name="mei_chen"):
   """
-  Demo agent production planning functionality with Mei Chen.
+  Demo agent production planning functionality.
+
+  Args:
+      agent_name (str): Name of the agent for production planning
 
   Demonstrates:
   1. Checking current inventory and financial status
@@ -606,7 +640,7 @@ def agent_production_planning():
 
   Agent state is saved after production execution.
   """
-  curr_agent = GenerativeAgent("Synthetic", "mei_chen")
+  curr_agent = GenerativeAgent("Synthetic", agent_name)
 
   print(f"=== Production Planning Demo for {curr_agent.scratch.get_fullname()} ===")
 
@@ -654,11 +688,14 @@ def agent_production_planning():
 
   curr_agent.save()
 
-def smart_production_planning():
+def smart_production_planning(agent_name="mei_chen"):
   """
   Demo smart production planning based on sales history analysis.
 
-  Analyzes Mei Chen's recent sales to determine:
+  Args:
+      agent_name (str): Name of the agent for production planning
+
+  Analyzes agent's recent sales to determine:
   - Which items are selling (demand signal)
   - How much to produce for each item
   - Total production cost vs available budget
@@ -668,7 +705,7 @@ def smart_production_planning():
 
   This demonstrates adaptive inventory management based on market feedback.
   """
-  curr_agent = GenerativeAgent("Synthetic", "mei_chen")
+  curr_agent = GenerativeAgent("Synthetic", agent_name)
 
   print(f"=== Smart Production Planning Demo for {curr_agent.scratch.get_fullname()} ===")
 
@@ -788,20 +825,81 @@ def main():
   """
   Main entry point for the AgentMarket simulation.
 
-  Currently configured to:
-  - Build all agents with fresh memories and inventories
-
-  Commented-out options include:
-  - interview_agent(): Stateless agent interviews
-  - chat_with_agent(): Interactive chat sessions
-  - agent_production_planning(): Production planning demos
-  - test_markov_chain_simulation(): Multi-agent Markov simulations
-  - test_markov_agent_scoring(): Scoring system tests
-
+  Parses command-line arguments to determine which mode to run.
+  Default mode is full simulation with all agents.
   """
-  #build_agent()
-  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo", "pema_sherpa", "carlos_mendez", "bianca_silva", "mei_chen"]
-  run_simulation(agent_names=agent_names, total_steps=120, weight_update_cycle=40, production_cycle=60, testing_mode=False)
+  parser = argparse.ArgumentParser(
+    description='AgentMarket: Generative Agents in Dynamic Market Networks',
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    epilog="""
+Examples:
+  python main.py                                                    # Run full simulation (default)
+  python main.py --mode simulation --steps 200                      # Custom simulation length
+  python main.py --mode interview --agent rowan_greenwood           # Interview specific agent
+  python main.py --mode chat --agent jasmine_carter                 # Chat with agent
+  python main.py --mode build-agents                                # Initialize all agents
+  python main.py --mode reflect --agent mei_chen                    # Trigger agent reflection
+  python main.py --mode production --agent carlos_mendez            # Smart production planning
+    """
+  )
+
+  parser.add_argument('--mode', type=str, default='simulation',
+                     choices=['simulation', 'interview', 'chat', 'build-agents', 'reflect', 'production'],
+                     help='Mode to run (default: simulation)')
+
+  parser.add_argument('--agent', type=str, default='rowan_greenwood',
+                     help='Agent name for interview/chat/reflect/production modes')
+
+  parser.add_argument('--steps', type=int, default=120,
+                     help='Number of simulation steps (default: 120)')
+
+  parser.add_argument('--weight-update', type=int, default=40,
+                     help='Markov weight update cycle in steps (default: 40)')
+
+  parser.add_argument('--production', type=int, default=60,
+                     help='Production planning cycle in steps (default: 60)')
+
+  parser.add_argument('--query', type=str, default=None,
+                     help='Reflection query for reflect mode')
+
+  parser.add_argument('--testing', action='store_true',
+                     help='Run in testing mode (don\'t save agents)')
+
+  args = parser.parse_args()
+
+  # Available agents
+  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo",
+                 "pema_sherpa", "carlos_mendez", "bianca_silva", "mei_chen"]
+
+  # Route to appropriate mode
+  if args.mode == 'simulation':
+    print("=== AgentMarket Full Simulation ===")
+    print(f"Steps: {args.steps} | Weight Update: {args.weight_update} | Production Cycle: {args.production}")
+    print(f"Agents: {', '.join(agent_names)}\n")
+    run_simulation(
+      agent_names=agent_names,
+      total_steps=args.steps,
+      weight_update_cycle=args.weight_update,
+      production_cycle=args.production,
+      testing_mode=args.testing
+    )
+
+  elif args.mode == 'interview':
+    interview_agent(args.agent)
+
+  elif args.mode == 'chat':
+    chat_with_agent(args.agent)
+
+  elif args.mode == 'build-agents':
+    print("=== Building All Agents ===")
+    print("Initializing agents with memories and inventories...\n")
+    build_agent()
+
+  elif args.mode == 'reflect':
+    ask_agent_to_reflect(args.agent, args.query)
+
+  elif args.mode == 'production':
+    smart_production_planning(args.agent)
 
 
 

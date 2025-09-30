@@ -23,19 +23,55 @@ python app.py
 ```
 Open http://localhost:5002 in your browser to access the real-time simulation interface.
 
-### Run Full Simulation
+### Run the Simulation
 
-**Option 1: Complete Simulation (Recommended)**
+**Option 1: Command-Line Interface (Recommended)**
+
+Run the full simulation with default settings:
 ```bash
 python main.py
 ```
-This runs the complete AgentMarket simulation with all 8 merchant agents:
-- 120 total time steps
-- Network weight updates every 40 steps (Markov transition probabilities adapt based on interactions)
-- Production planning cycles every 60 steps (agents restock inventory intelligently)
-- All agent interactions, trades, reflections, and market dynamics
 
-The simulation will output:
+Or customize simulation parameters:
+```bash
+# Custom simulation length and cycles
+python main.py --mode simulation --steps 200 --weight-update 50 --production-update 80
+```
+Other functions
+```bash
+# Interview mode (stateless Q&A)
+python main.py --mode interview --agent rowan_greenwood
+
+# Chat mode (stateful conversation)
+python main.py --mode chat --agent jasmine_carter
+
+# Initialize all agents
+python main.py --mode build-agents
+
+# Trigger agent reflection
+python main.py --mode reflect --agent mei_chen --query "What drives your business decisions?"
+
+# Smart production planning
+python main.py --mode production --agent carlos_mendez
+```
+
+**Available Modes:**
+- `simulation` (default) - Full market simulation with all 8 agents
+- `interview` - Stateless interview mode for psychological profiling
+- `chat` - Stateful conversation with memory retention
+- `build-agents` - Initialize all agents with memories and inventories
+- `reflect` - Trigger agent reflection and introspection
+- `production` - Smart production planning based on sales history
+
+**Simulation Parameters:**
+- `--steps` - Number of simulation steps (default: 120)
+- `--weight-update` - Markov weight update cycle (default: 40)
+- `--production-update` - Production planning cycle (default: 60)
+- `--agent` - Agent name for interview/chat/reflect/production modes
+- `--query` - Custom reflection query
+- `--testing` - Run in testing mode (don't save agents)
+
+The simulation outputs:
 - Real-time agent conversations and trade negotiations
 - Reflection moments where agents process their experiences
 - Trade transactions with item exchanges and value calculations
@@ -47,11 +83,11 @@ The simulation will output:
 ```bash
 jupyter notebook full_simulation.ipynb
 ```
-This provides an interactive notebook interface for running and analyzing the simulation with:
+Interactive notebook interface with:
 - Step-by-step execution and visualization
-- Ability to inspect agent states and interactions
+- Agent state inspection and analysis
 - Custom simulation parameters
-- Analysis and plotting capabilities
+- Plotting and statistical analysis
 
 ## 🧠 What Makes Our Agents Different
 
