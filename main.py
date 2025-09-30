@@ -856,7 +856,7 @@ Examples:
   parser.add_argument('--weight-update', type=int, default=40,
                      help='Markov weight update cycle in steps (default: 40)')
 
-  parser.add_argument('--production', type=int, default=60,
+  parser.add_argument('--production-update', type=int, default=60,
                      help='Production planning cycle in steps (default: 60)')
 
   parser.add_argument('--query', type=str, default=None,
@@ -874,13 +874,13 @@ Examples:
   # Route to appropriate mode
   if args.mode == 'simulation':
     print("=== AgentMarket Full Simulation ===")
-    print(f"Steps: {args.steps} | Weight Update: {args.weight_update} | Production Cycle: {args.production}")
+    print(f"Steps: {args.steps} | Weight Update: {args.weight_update} | Production Cycle: {args.production_update}")
     print(f"Agents: {', '.join(agent_names)}\n")
     run_simulation(
       agent_names=agent_names,
       total_steps=args.steps,
       weight_update_cycle=args.weight_update,
-      production_cycle=args.production,
+      production_cycle=args.production_update,
       testing_mode=args.testing
     )
 
