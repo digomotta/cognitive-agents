@@ -1,8 +1,8 @@
 from typing import Dict, List, Any, Tuple, Optional, TYPE_CHECKING
 import json
-from simulation_engine.gpt_structure import gpt_request
+from simulation_engine.gpt_structure import chat_safe_generate
 from simulation_engine.llm_json_parser import extract_first_json_dict
-from simulation_engine.settings import LLM_VERS, LLM_ANALYZE_VERS
+from simulation_engine.settings import LLM_VERS, LLM_ANALYZE_VERS, LLM_PROMPT_DIR
 
 if TYPE_CHECKING:
     from generative_agent.generative_agent import GenerativeAgent
@@ -73,23 +73,15 @@ class ConversationTradeAnalyzer:
                         })
             inventories[agent_name] = items_list
 
-        instruction = (
-            "You extract a single commerce transaction from a conversation. "
-            "Reply with JSON only. Schema: {\"participants\":{\"seller\":str,\"buyer\":str},\"items\":[{\"name\":str,\"quantity\":int,\"value\":float}]} . "
-            "You are also provided with each participant's inventory (with item quantity and unit price) below. "
-            "If the conversation does not specify a price, compute each item's total value as quantity * unit price from the seller's inventory. "
-            "Only use 0 for value if the conversation explicitly indicates the item was free (e.g., a sample). "
-            "Do not add any extra keys or text. "
-            "Inventories:\n"
-            f"{json.dumps(inventories, indent=2)}\n"
-            "Match or rename item names in your output as close as possible to the inventory item names."
-        )
+        # Prepare inputs for the template
+        inventories_json = json.dumps(inventories, indent=2)
 
-        prompt = (
-            f"{instruction}\n\nConversation:\n{conversation_text}\n\nJSON only:"
+        raw, _, _, _ = chat_safe_generate(
+            prompt_input=[inventories_json, conversation_text],
+            prompt_lib_file=f"{LLM_PROMPT_DIR}/generative_agent/interaction/trade_analysis_v1.txt",
+            model=self.model,
+            max_tokens=300
         )
-
-        raw = gpt_request(prompt, model=self.model, max_tokens=300)
         parsed = extract_first_json_dict(raw or "")
 
         if not isinstance(parsed, dict):
