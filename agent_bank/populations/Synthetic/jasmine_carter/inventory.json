@@ -4,6 +4,7 @@
       "name": "textbooks",
       "quantity": 4,
       "value": 85.0,
+      "production_cost": 21.25,
       "description": "Advanced mathematics textbooks",
       "created": 1,
       "last_modified": 1
@@ -12,6 +13,7 @@
       "name": "graphing_calculator",
       "quantity": 1,
       "value": 120.0,
+      "production_cost": 30.0,
       "description": "TI-84 Plus calculator",
       "created": 1,
       "last_modified": 1
@@ -20,6 +22,7 @@
       "name": "notebooks",
       "quantity": 8,
       "value": 3.5,
+      "production_cost": 0.88,
       "description": "High-quality notebooks",
       "created": 1,
       "last_modified": 1
@@ -28,7 +31,71 @@
       "name": "tutoring_sessions",
       "quantity": 2,
       "value": 40.0,
+      "production_cost": 10.0,
       "description": "One-hour math tutoring sessions",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "mechanical_pencils",
+      "quantity": 12,
+      "value": 2.5,
+      "production_cost": 0.63,
+      "description": "0.5mm mechanical pencils",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "gel_pens",
+      "quantity": 10,
+      "value": 3.0,
+      "production_cost": 0.75,
+      "description": "Smooth gel pens",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "whiteboard_markers",
+      "quantity": 5,
+      "value": 9.0,
+      "production_cost": 2.25,
+      "description": "Low-odor whiteboard markers",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "study_guides",
+      "quantity": 5,
+      "value": 25.0,
+      "production_cost": 6.25,
+      "description": "Curated exam study guides",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "online_course_vouchers",
+      "quantity": 2,
+      "value": 60.0,
+      "production_cost": 15.0,
+      "description": "Access to online math courses",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "math_software_license",
+      "quantity": 3,
+      "value": 45.0,
+      "production_cost": 11.25,
+      "description": "CAS/linear algebra software license",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "ruler_set",
+      "quantity": 5,
+      "value": 6.0,
+      "production_cost": 1.5,
+      "description": "Metric/imperial ruler & protractor set",
       "created": 1,
       "last_modified": 1
     },
@@ -36,6 +103,7 @@
       "name": "digital cash",
       "quantity": 1000,
       "value": 1.0,
+      "production_cost": 0.0,
       "description": "Student savings",
       "created": 1,
       "last_modified": 1
@@ -81,11 +149,75 @@
     {
       "record_id": 4,
       "action": "add",
+      "item_name": "mechanical_pencils",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "0.5mm mechanical pencils",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "gel_pens",
+      "quantity": 10,
+      "time_step": 1,
+      "description": "Smooth gel pens",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "whiteboard_markers",
+      "quantity": 5,
+      "time_step": 1,
+      "description": "Low-odor whiteboard markers",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "study_guides",
+      "quantity": 5,
+      "time_step": 1,
+      "description": "Curated exam study guides",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "online_course_vouchers",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "Access to online math courses",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "add",
+      "item_name": "math_software_license",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "CAS/linear algebra software license",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 10,
+      "action": "add",
+      "item_name": "ruler_set",
+      "quantity": 5,
+      "time_step": 1,
+      "description": "Metric/imperial ruler & protractor set",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 11,
+      "action": "add",
       "item_name": "digital cash",
       "quantity": 1000,
       "time_step": 1,
       "description": "Student savings",
       "trade_partner": ""
     }
-  ]
+  ],
+  "production_plans": []
 }

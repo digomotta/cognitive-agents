@@ -4,6 +4,7 @@
       "name": "mad_honey",
       "quantity": 3,
       "value": 150.0,
+      "production_cost": 37.5,
       "description": "Sacred psychoactive honey from high-altitude rhododendron nectar",
       "created": 1,
       "last_modified": 1
@@ -12,6 +13,7 @@
       "name": "wild_cliff_honey",
       "quantity": 8,
       "value": 80.0,
+      "production_cost": 20.0,
       "description": "Raw honey harvested from giant bee colonies on cliff faces",
       "created": 1,
       "last_modified": 1
@@ -20,6 +22,7 @@
       "name": "mountain_flower_honey",
       "quantity": 12,
       "value": 45.0,
+      "production_cost": 11.25,
       "description": "Wildflower honey from high Himalayan meadows",
       "created": 1,
       "last_modified": 1
@@ -28,6 +31,7 @@
       "name": "pine_honey",
       "quantity": 6,
       "value": 55.0,
+      "production_cost": 13.75,
       "description": "Dark honey with medicinal properties from pine tree secretions",
       "created": 1,
       "last_modified": 1
@@ -36,6 +40,7 @@
       "name": "prayer_blessed_honey",
       "quantity": 4,
       "value": 120.0,
+      "production_cost": 30.0,
       "description": "Ceremonially blessed honey for spiritual and healing purposes",
       "created": 1,
       "last_modified": 1
@@ -44,6 +49,7 @@
       "name": "traditional_climbing_gear",
       "quantity": 2,
       "value": 300.0,
+      "production_cost": 75.0,
       "description": "Handmade rope ladders and collection tools",
       "created": 1,
       "last_modified": 1
@@ -52,14 +58,52 @@
       "name": "honey_medicinal_guide",
       "quantity": 1,
       "value": 200.0,
+      "production_cost": 50.0,
       "description": "Ancient family knowledge of honey's healing properties",
       "created": 1,
       "last_modified": 1
     },
     {
+      "name": "beeswax_blocks",
+      "quantity": 10,
+      "value": 12.0,
+      "production_cost": 3.0,
+      "description": "Pure beeswax blocks for crafts",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "propolis_tincture",
+      "quantity": 6,
+      "value": 45.0,
+      "production_cost": 11.25,
+      "description": "Antimicrobial propolis tincture",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "honeycomb_wedges",
+      "quantity": 12,
+      "value": 25.0,
+      "production_cost": 6.25,
+      "description": "Raw honeycomb pieces",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "smoker_kit",
+      "quantity": 2,
+      "value": 85.0,
+      "production_cost": 21.25,
+      "description": "Traditional bee smoker & tools kit",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
       "name": "digital cash",
-      "quantity": 180,
+      "quantity": 1000,
       "value": 1.0,
+      "production_cost": 0.0,
       "description": "Earnings from honey trading and guiding",
       "created": 1,
       "last_modified": 1
@@ -132,11 +176,48 @@
     {
       "record_id": 7,
       "action": "add",
+      "item_name": "beeswax_blocks",
+      "quantity": 10,
+      "time_step": 1,
+      "description": "Pure beeswax blocks for crafts",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "propolis_tincture",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Antimicrobial propolis tincture",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "add",
+      "item_name": "honeycomb_wedges",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Raw honeycomb pieces",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 10,
+      "action": "add",
+      "item_name": "smoker_kit",
+      "quantity": 2,
+      "time_step": 1,
+      "description": "Traditional bee smoker & tools kit",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 11,
+      "action": "add",
       "item_name": "digital cash",
-      "quantity": 180,
+      "quantity": 1000,
       "time_step": 1,
       "description": "Earnings from honey trading and guiding",
       "trade_partner": ""
     }
-  ]
+  ],
+  "production_plans": []
 }

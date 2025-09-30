@@ -4,6 +4,7 @@
       "name": "moringa_powder",
       "quantity": 15,
       "value": 45.0,
+      "production_cost": 11.25,
       "description": "High-protein moringa superfood powder",
       "created": 1,
       "last_modified": 1
@@ -12,6 +13,7 @@
       "name": "baobab_fruit_powder",
       "quantity": 10,
       "value": 55.0,
+      "production_cost": 13.75,
       "description": "Vitamin C rich baobab powder",
       "created": 1,
       "last_modified": 1
@@ -20,6 +22,7 @@
       "name": "hibiscus_extract",
       "quantity": 8,
       "value": 35.0,
+      "production_cost": 8.75,
       "description": "Antioxidant hibiscus extract capsules",
       "created": 1,
       "last_modified": 1
@@ -28,6 +31,7 @@
       "name": "tiger_nut_flour",
       "quantity": 12,
       "value": 25.0,
+      "production_cost": 6.25,
       "description": "Gluten-free tiger nut flour",
       "created": 1,
       "last_modified": 1
@@ -36,6 +40,7 @@
       "name": "african_yam_chips",
       "quantity": 20,
       "value": 18.0,
+      "production_cost": 4.5,
       "description": "Dehydrated nutrient-dense yam chips",
       "created": 1,
       "last_modified": 1
@@ -44,6 +49,7 @@
       "name": "palm_fruit_oil",
       "quantity": 6,
       "value": 40.0,
+      "production_cost": 10.0,
       "description": "Unprocessed red palm oil",
       "created": 1,
       "last_modified": 1
@@ -52,6 +58,7 @@
       "name": "research_reports",
       "quantity": 3,
       "value": 200.0,
+      "production_cost": 50.0,
       "description": "Proprietary food tech research and patents",
       "created": 1,
       "last_modified": 1
@@ -60,7 +67,35 @@
       "name": "mobile_app_licenses",
       "quantity": 2,
       "value": 500.0,
+      "production_cost": 125.0,
       "description": "Nutrition education app licenses",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "shea_butter",
+      "quantity": 12,
+      "value": 20.0,
+      "production_cost": 5.0,
+      "description": "Unrefined West African shea butter",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "fonio_grain",
+      "quantity": 15,
+      "value": 35.0,
+      "production_cost": 8.75,
+      "description": "Ancient whole grain fonio",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "dried_hibiscus_petals",
+      "quantity": 10,
+      "value": 18.0,
+      "production_cost": 4.5,
+      "description": "Zobo/karkad\u00e9 hibiscus petals",
       "created": 1,
       "last_modified": 1
     },
@@ -68,6 +103,7 @@
       "name": "digital cash",
       "quantity": 1000,
       "value": 1.0,
+      "production_cost": 0.0,
       "description": "Startup revenue and investment funds",
       "created": 1,
       "last_modified": 1
@@ -149,11 +185,39 @@
     {
       "record_id": 8,
       "action": "add",
+      "item_name": "shea_butter",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Unrefined West African shea butter",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "add",
+      "item_name": "fonio_grain",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "Ancient whole grain fonio",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 10,
+      "action": "add",
+      "item_name": "dried_hibiscus_petals",
+      "quantity": 10,
+      "time_step": 1,
+      "description": "Zobo/karkad\u00e9 hibiscus petals",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 11,
+      "action": "add",
       "item_name": "digital cash",
       "quantity": 1000,
       "time_step": 1,
       "description": "Startup revenue and investment funds",
       "trade_partner": ""
     }
-  ]
+  ],
+  "production_plans": []
 }

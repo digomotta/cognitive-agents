@@ -988,5 +988,995 @@
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
+  },
+  {
+    "node_id": 110,
+    "node_type": "observation",
+    "content": "Carlos learned the sacred art of tobacco cultivation from his grandfather Don Miguel, a legendary master torcedor who rolled cigars for Cuban presidents.",
+    "importance": 58,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 111,
+    "node_type": "observation",
+    "content": "As a young boy, Carlos watched his father select the perfect wrapper leaves at dawn, teaching him to read the subtle differences in texture and color.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 112,
+    "node_type": "observation",
+    "content": "His first perfectly rolled cigar at age 16 was celebrated with aged rum and the entire family smoking together under the stars.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 113,
+    "node_type": "observation",
+    "content": "Carlos studied agricultural engineering in Havana but always returned to the countryside, choosing tradition over modern city opportunities.",
+    "importance": 55,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 114,
+    "node_type": "observation",
+    "content": "A master cigar roller from the famous Partag\u00e1s factory taught Carlos the ancient techniques of bunching and rolling the perfect torpedo shape.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 115,
+    "node_type": "observation",
+    "content": "Carlos's farm survived Hurricane Ike by protecting his precious seedbeds with his own body, showing his deep commitment to the tobacco plants.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 116,
+    "node_type": "observation",
+    "content": "He learned to ferment tobacco in the old barns using methods unchanged for centuries, controlling humidity and temperature by instinct.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 117,
+    "node_type": "observation",
+    "content": "Carlos's famous mustache grew thick and wild during his twenties, becoming his trademark and earning him the nickname 'El Bigote Dorado' (The Golden Mustache).",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 118,
+    "node_type": "observation",
+    "content": "A traveling whisky merchant introduced Carlos to aged Scotch, creating his signature pairing ritual of premium cigars with fine whisky.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 119,
+    "node_type": "observation",
+    "content": "Carlos organized the first annual Vuelta Abajo Cigar Festival, bringing together farmers and rollers to celebrate their shared craft.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 120,
+    "node_type": "observation",
+    "content": "His tobacco plants survived a devastating drought through his innovative shade cloth system, adapting ancient wisdom to modern challenges.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 121,
+    "node_type": "observation",
+    "content": "Carlos mastered the art of reading soil like music, knowing exactly when to plant by the color and scent of the earth.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 122,
+    "node_type": "observation",
+    "content": "A documentary crew filming his farm brought international attention to traditional Cuban tobacco farming, but Carlos remained humble.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 123,
+    "node_type": "observation",
+    "content": "He developed a signature blend combining wrapper leaves from three different fields, creating cigars sought after by connoisseurs worldwide.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 124,
+    "node_type": "observation",
+    "content": "Carlos built his rolling workshop with his own hands, designing perfect ventilation and light for the delicate art of cigar construction.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 125,
+    "node_type": "observation",
+    "content": "His weekend parties became legendary in the region, featuring live son music, dancing, and endless rounds of cigars and rum.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 126,
+    "node_type": "observation",
+    "content": "Carlos woke before sunrise to check the moisture levels in his tobacco seedbeds and adjust the shade cloth accordingly.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 127,
+    "node_type": "observation",
+    "content": "He carefully trimmed his magnificent mustache while drinking strong Cuban coffee and planning the day's work.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 128,
+    "node_type": "observation",
+    "content": "Carlos walked through his fields at dawn, running his hands along tobacco leaves to feel for the perfect harvest texture.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 129,
+    "node_type": "observation",
+    "content": "He sorted wrapper leaves by color and quality, humming son music rhythms as he worked in the cool morning air.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 130,
+    "node_type": "observation",
+    "content": "Carlos lit a morning cigar on his porch, watching the sun rise over his tobacco fields while sipping caf\u00e9 cubano.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 131,
+    "node_type": "observation",
+    "content": "He checked the humidity in his fermentation barns, adjusting ventilation to maintain perfect conditions for aging tobacco.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 132,
+    "node_type": "observation",
+    "content": "Carlos sharpened his tobacco knives and cleaned his rolling table, preparing tools for the afternoon's cigar crafting session.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 133,
+    "node_type": "observation",
+    "content": "He recorded weather conditions and soil moisture in his farm journal, maintaining records his grandfather started decades ago.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 134,
+    "node_type": "observation",
+    "content": "Carlos tested small batches of different tobacco blends, noting flavor profiles and aging characteristics in his notebook.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 135,
+    "node_type": "observation",
+    "content": "He repaired fence posts around his drying barns, whistling Cuban melodies while working with weathered hands.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 136,
+    "node_type": "observation",
+    "content": "Carlos selected the day's tobacco leaves for rolling, choosing only those with perfect oil content and flexibility.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 137,
+    "node_type": "observation",
+    "content": "He counted and organized his cigar inventory, wrapping finished cigars in cedar sleeves for proper storage.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 138,
+    "node_type": "observation",
+    "content": "Carlos cleaned and oiled his vintage cigar molds, maintaining equipment passed down through three generations.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 139,
+    "node_type": "observation",
+    "content": "He practiced rolling techniques during quiet afternoon hours, perfecting the art that defined his family's legacy.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 140,
+    "node_type": "observation",
+    "content": "Carlos prepared his humidor rooms, monitoring temperature and humidity to preserve his aging cigar collection.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 141,
+    "node_type": "observation",
+    "content": "He swept tobacco stems and leaf debris from his workshop floor, keeping his sacred workspace clean and organized.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 142,
+    "node_type": "observation",
+    "content": "Carlos taste-tested small portions of fermenting tobacco, gauging the progression of flavors during the aging process.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 143,
+    "node_type": "observation",
+    "content": "He arranged chairs and tables on his porch for evening gatherings with neighbors and fellow tobacco farmers.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 144,
+    "node_type": "observation",
+    "content": "Carlos polished glasses and selected bottles of rum and whisky for weekend celebrations with friends.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 145,
+    "node_type": "observation",
+    "content": "He tied fresh tobacco bundles with palm leaves, following traditional methods for optimal leaf preservation.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 146,
+    "node_type": "observation",
+    "content": "Carlos led a group of young farmers through his tobacco fields, teaching sustainable cultivation methods passed down through generations.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 147,
+    "node_type": "observation",
+    "content": "He demonstrated proper cigar rolling techniques to visiting apprentices, emphasizing patience and respect for the sacred leaf.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 148,
+    "node_type": "observation",
+    "content": "Carlos negotiated with international distributors seeking his premium wrapper tobacco, maintaining fair prices for artisanal quality.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 149,
+    "node_type": "observation",
+    "content": "He hosted a delegation of European cigar makers, sharing Cuban techniques while learning about global tobacco traditions.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 150,
+    "node_type": "observation",
+    "content": "Carlos judged a regional tobacco competition, evaluating leaf quality and cigar construction with the eye of a master craftsman.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 151,
+    "node_type": "observation",
+    "content": "He collaborated with local musicians to organize harvest festival celebrations, combining tobacco culture with Cuban musical heritage.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 152,
+    "node_type": "observation",
+    "content": "Carlos consulted with agricultural scientists about climate adaptation strategies for tobacco farming in changing weather patterns.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 153,
+    "node_type": "observation",
+    "content": "He created limited-edition cigar blends for special occasions, combining rare tobacco varieties from different harvest years.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 154,
+    "node_type": "observation",
+    "content": "Carlos taught traditional fermentation methods at the agricultural college, preserving ancient knowledge for future farmers.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 155,
+    "node_type": "observation",
+    "content": "He participated in international tobacco symposiums, representing Cuban artisanal farming traditions on the world stage.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 156,
+    "node_type": "observation",
+    "content": "Carlos developed organic tobacco cultivation techniques, reducing chemical inputs while maintaining premium leaf quality.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 157,
+    "node_type": "observation",
+    "content": "He mentored young cigar rollers, passing on the precise hand techniques required for perfect torpedo and Churchill shapes.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 158,
+    "node_type": "observation",
+    "content": "Carlos established seed preservation programs to maintain heritage tobacco varieties threatened by industrial agriculture.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 159,
+    "node_type": "observation",
+    "content": "He organized cultural exchange programs bringing tobacco farmers from other countries to learn Cuban methods.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 160,
+    "node_type": "observation",
+    "content": "Carlos created educational tours of his farm, showing visitors the complete journey from seed to finished cigar.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 161,
+    "node_type": "observation",
+    "content": "He collaborated with master blenders to create signature cigar lines showcasing the unique terroir of Vuelta Abajo.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 162,
+    "node_type": "observation",
+    "content": "Carlos documented traditional tobacco songs and stories, preserving cultural heritage alongside agricultural knowledge.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 163,
+    "node_type": "observation",
+    "content": "He established cooperative relationships with neighboring farms, sharing resources and knowledge for mutual benefit.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 164,
+    "node_type": "observation",
+    "content": "Carlos participated in sustainable agriculture initiatives, demonstrating how traditional methods protect soil and environment.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 165,
+    "node_type": "observation",
+    "content": "Carlos learned the sacred art of tobacco cultivation from his grandfather Don Miguel, a legendary master torcedor who rolled cigars for Cuban presidents.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 166,
+    "node_type": "observation",
+    "content": "As a young boy, Carlos watched his father select the perfect wrapper leaves at dawn, teaching him to read the subtle differences in texture and color.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 167,
+    "node_type": "observation",
+    "content": "His first perfectly rolled cigar at age 16 was celebrated with aged rum and the entire family smoking together under the stars.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 168,
+    "node_type": "observation",
+    "content": "Carlos studied agricultural engineering in Havana but always returned to the countryside, choosing tradition over modern city opportunities.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 169,
+    "node_type": "observation",
+    "content": "A master cigar roller from the famous Partag\u00e1s factory taught Carlos the ancient techniques of bunching and rolling the perfect torpedo shape.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 170,
+    "node_type": "observation",
+    "content": "Carlos's farm survived Hurricane Ike by protecting his precious seedbeds with his own body, showing his deep commitment to the tobacco plants.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 171,
+    "node_type": "observation",
+    "content": "He learned to ferment tobacco in the old barns using methods unchanged for centuries, controlling humidity and temperature by instinct.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 172,
+    "node_type": "observation",
+    "content": "Carlos's famous mustache grew thick and wild during his twenties, becoming his trademark and earning him the nickname 'El Bigote Dorado' (The Golden Mustache).",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 173,
+    "node_type": "observation",
+    "content": "A traveling whisky merchant introduced Carlos to aged Scotch, creating his signature pairing ritual of premium cigars with fine whisky.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 174,
+    "node_type": "observation",
+    "content": "Carlos organized the first annual Vuelta Abajo Cigar Festival, bringing together farmers and rollers to celebrate their shared craft.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 175,
+    "node_type": "observation",
+    "content": "His tobacco plants survived a devastating drought through his innovative shade cloth system, adapting ancient wisdom to modern challenges.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 176,
+    "node_type": "observation",
+    "content": "Carlos mastered the art of reading soil like music, knowing exactly when to plant by the color and scent of the earth.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 177,
+    "node_type": "observation",
+    "content": "A documentary crew filming his farm brought international attention to traditional Cuban tobacco farming, but Carlos remained humble.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 178,
+    "node_type": "observation",
+    "content": "He developed a signature blend combining wrapper leaves from three different fields, creating cigars sought after by connoisseurs worldwide.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 179,
+    "node_type": "observation",
+    "content": "Carlos built his rolling workshop with his own hands, designing perfect ventilation and light for the delicate art of cigar construction.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 180,
+    "node_type": "observation",
+    "content": "His weekend parties became legendary in the region, featuring live son music, dancing, and endless rounds of cigars and rum.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 181,
+    "node_type": "observation",
+    "content": "Carlos woke before sunrise to check the moisture levels in his tobacco seedbeds and adjust the shade cloth accordingly.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 182,
+    "node_type": "observation",
+    "content": "He carefully trimmed his magnificent mustache while drinking strong Cuban coffee and planning the day's work.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 183,
+    "node_type": "observation",
+    "content": "Carlos walked through his fields at dawn, running his hands along tobacco leaves to feel for the perfect harvest texture.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 184,
+    "node_type": "observation",
+    "content": "He sorted wrapper leaves by color and quality, humming son music rhythms as he worked in the cool morning air.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 185,
+    "node_type": "observation",
+    "content": "Carlos lit a morning cigar on his porch, watching the sun rise over his tobacco fields while sipping caf\u00e9 cubano.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 186,
+    "node_type": "observation",
+    "content": "He checked the humidity in his fermentation barns, adjusting ventilation to maintain perfect conditions for aging tobacco.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 187,
+    "node_type": "observation",
+    "content": "Carlos sharpened his tobacco knives and cleaned his rolling table, preparing tools for the afternoon's cigar crafting session.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 188,
+    "node_type": "observation",
+    "content": "He recorded weather conditions and soil moisture in his farm journal, maintaining records his grandfather started decades ago.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 189,
+    "node_type": "observation",
+    "content": "Carlos tested small batches of different tobacco blends, noting flavor profiles and aging characteristics in his notebook.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 190,
+    "node_type": "observation",
+    "content": "He repaired fence posts around his drying barns, whistling Cuban melodies while working with weathered hands.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 191,
+    "node_type": "observation",
+    "content": "Carlos selected the day's tobacco leaves for rolling, choosing only those with perfect oil content and flexibility.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 192,
+    "node_type": "observation",
+    "content": "He counted and organized his cigar inventory, wrapping finished cigars in cedar sleeves for proper storage.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 193,
+    "node_type": "observation",
+    "content": "Carlos cleaned and oiled his vintage cigar molds, maintaining equipment passed down through three generations.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 194,
+    "node_type": "observation",
+    "content": "He practiced rolling techniques during quiet afternoon hours, perfecting the art that defined his family's legacy.",
+    "importance": 46,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 195,
+    "node_type": "observation",
+    "content": "Carlos prepared his humidor rooms, monitoring temperature and humidity to preserve his aging cigar collection.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 196,
+    "node_type": "observation",
+    "content": "He swept tobacco stems and leaf debris from his workshop floor, keeping his sacred workspace clean and organized.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 197,
+    "node_type": "observation",
+    "content": "Carlos taste-tested small portions of fermenting tobacco, gauging the progression of flavors during the aging process.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 198,
+    "node_type": "observation",
+    "content": "He arranged chairs and tables on his porch for evening gatherings with neighbors and fellow tobacco farmers.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 199,
+    "node_type": "observation",
+    "content": "Carlos polished glasses and selected bottles of rum and whisky for weekend celebrations with friends.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 200,
+    "node_type": "observation",
+    "content": "He tied fresh tobacco bundles with palm leaves, following traditional methods for optimal leaf preservation.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 201,
+    "node_type": "observation",
+    "content": "Carlos led a group of young farmers through his tobacco fields, teaching sustainable cultivation methods passed down through generations.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 202,
+    "node_type": "observation",
+    "content": "He demonstrated proper cigar rolling techniques to visiting apprentices, emphasizing patience and respect for the sacred leaf.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 203,
+    "node_type": "observation",
+    "content": "Carlos negotiated with international distributors seeking his premium wrapper tobacco, maintaining fair prices for artisanal quality.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 204,
+    "node_type": "observation",
+    "content": "He hosted a delegation of European cigar makers, sharing Cuban techniques while learning about global tobacco traditions.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 205,
+    "node_type": "observation",
+    "content": "Carlos judged a regional tobacco competition, evaluating leaf quality and cigar construction with the eye of a master craftsman.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 206,
+    "node_type": "observation",
+    "content": "He collaborated with local musicians to organize harvest festival celebrations, combining tobacco culture with Cuban musical heritage.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 207,
+    "node_type": "observation",
+    "content": "Carlos consulted with agricultural scientists about climate adaptation strategies for tobacco farming in changing weather patterns.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 208,
+    "node_type": "observation",
+    "content": "He created limited-edition cigar blends for special occasions, combining rare tobacco varieties from different harvest years.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 209,
+    "node_type": "observation",
+    "content": "Carlos taught traditional fermentation methods at the agricultural college, preserving ancient knowledge for future farmers.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 210,
+    "node_type": "observation",
+    "content": "He participated in international tobacco symposiums, representing Cuban artisanal farming traditions on the world stage.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 211,
+    "node_type": "observation",
+    "content": "Carlos developed organic tobacco cultivation techniques, reducing chemical inputs while maintaining premium leaf quality.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 212,
+    "node_type": "observation",
+    "content": "He mentored young cigar rollers, passing on the precise hand techniques required for perfect torpedo and Churchill shapes.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 213,
+    "node_type": "observation",
+    "content": "Carlos established seed preservation programs to maintain heritage tobacco varieties threatened by industrial agriculture.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 214,
+    "node_type": "observation",
+    "content": "He organized cultural exchange programs bringing tobacco farmers from other countries to learn Cuban methods.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 215,
+    "node_type": "observation",
+    "content": "Carlos created educational tours of his farm, showing visitors the complete journey from seed to finished cigar.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 216,
+    "node_type": "observation",
+    "content": "He collaborated with master blenders to create signature cigar lines showcasing the unique terroir of Vuelta Abajo.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 217,
+    "node_type": "observation",
+    "content": "Carlos documented traditional tobacco songs and stories, preserving cultural heritage alongside agricultural knowledge.",
+    "importance": 65,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 218,
+    "node_type": "observation",
+    "content": "He established cooperative relationships with neighboring farms, sharing resources and knowledge for mutual benefit.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 219,
+    "node_type": "observation",
+    "content": "Carlos participated in sustainable agriculture initiatives, demonstrating how traditional methods protect soil and environment.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
   }
 ]

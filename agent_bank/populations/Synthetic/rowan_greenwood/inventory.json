@@ -2,16 +2,18 @@
   "items": [
     {
       "name": "herbal_tea",
-      "quantity": 3,
+      "quantity": 5,
       "value": 15.0,
+      "production_cost": 3.75,
       "description": "Calming herbal tea blend",
       "created": 1,
-      "last_modified": 3
+      "last_modified": 1
     },
     {
       "name": "black_tea",
       "quantity": 5,
       "value": 15.0,
+      "production_cost": 3.75,
       "description": "Energetic black tea",
       "created": 1,
       "last_modified": 1
@@ -20,6 +22,7 @@
       "name": "medicinal_cannabis",
       "quantity": 10,
       "value": 8.5,
+      "production_cost": 2.13,
       "description": "Medicinal cannabis",
       "created": 1,
       "last_modified": 1
@@ -28,17 +31,82 @@
       "name": "property_contracts",
       "quantity": 3,
       "value": 200.0,
+      "production_cost": 50.0,
       "description": "Real estate contracts ready to sign",
       "created": 1,
       "last_modified": 1
     },
     {
+      "name": "cbd_oil",
+      "quantity": 8,
+      "value": 25.0,
+      "production_cost": 6.25,
+      "description": "Full-spectrum CBD oil",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "herbal_salve",
+      "quantity": 10,
+      "value": 18.0,
+      "production_cost": 4.5,
+      "description": "Soothing herbal salve",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "essential_oil_blends",
+      "quantity": 6,
+      "value": 22.0,
+      "production_cost": 5.5,
+      "description": "Relaxing essential oil blends",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "home_staging_kits",
+      "quantity": 3,
+      "value": 180.0,
+      "production_cost": 45.0,
+      "description": "DIY home staging kit",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "virtual_tour_packages",
+      "quantity": 4,
+      "value": 120.0,
+      "production_cost": 30.0,
+      "description": "360\u00b0 virtual tour packages",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "open_house_signs",
+      "quantity": 6,
+      "value": 35.0,
+      "production_cost": 8.75,
+      "description": "Reusable open house sign set",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "reusable_tea_infusers",
+      "quantity": 12,
+      "value": 8.0,
+      "production_cost": 2.0,
+      "description": "Stainless steel tea infusers",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
       "name": "digital cash",
-      "quantity": 1005,
+      "quantity": 1000,
       "value": 1.0,
+      "production_cost": 0.0,
       "description": "Starting business cash",
       "created": 1,
-      "last_modified": 3
+      "last_modified": 1
     }
   ],
   "records": [
@@ -81,56 +149,75 @@
     {
       "record_id": 4,
       "action": "add",
+      "item_name": "cbd_oil",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Full-spectrum CBD oil",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "herbal_salve",
+      "quantity": 10,
+      "time_step": 1,
+      "description": "Soothing herbal salve",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "essential_oil_blends",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Relaxing essential oil blends",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "home_staging_kits",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "DIY home staging kit",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "virtual_tour_packages",
+      "quantity": 4,
+      "time_step": 1,
+      "description": "360\u00b0 virtual tour packages",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "add",
+      "item_name": "open_house_signs",
+      "quantity": 6,
+      "time_step": 1,
+      "description": "Reusable open house sign set",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 10,
+      "action": "add",
+      "item_name": "reusable_tea_infusers",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Stainless steel tea infusers",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 11,
+      "action": "add",
       "item_name": "digital cash",
       "quantity": 1000,
       "time_step": 1,
       "description": "Starting business cash",
       "trade_partner": ""
-    },
-    {
-      "record_id": 5,
-      "action": "trade_give",
-      "item_name": "herbal_tea",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 herbal_tea to Mina Kim for $15.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 6,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 15,
-      "time_step": 3,
-      "description": "Received $15.0 from selling 1 herbal_tea to Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 7,
-      "action": "trade_give",
-      "item_name": "herbal_tea",
-      "quantity": 1,
-      "time_step": 3,
-      "description": "Sold 1 herbal_tea to Mina Kim for $15.0",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 8,
-      "action": "trade_receive",
-      "item_name": "digital cash",
-      "quantity": 15,
-      "time_step": 3,
-      "description": "Received $15.0 from selling 1 herbal_tea to Mina Kim",
-      "trade_partner": "Mina Kim"
-    },
-    {
-      "record_id": 9,
-      "action": "trade_give",
-      "item_name": "digital cash",
-      "quantity": 25,
-      "time_step": 3,
-      "description": "Paid $25.0 for 1 cleansing_oil from Mina Kim",
-      "trade_partner": "Mina Kim"
     }
-  ]
+  ],
+  "production_plans": []
 }

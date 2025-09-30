@@ -1,0 +1,187 @@
+{
+  "items": [
+    {
+      "name": "digital cash",
+      "quantity": 1200.0,
+      "value": 1.0,
+      "production_cost": 0.0,
+      "description": "Starting business capital in Bazaar Orbital credits converted to USD-equivalent for trade and supplies",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "propeller hat (reinforced)",
+      "quantity": 30,
+      "value": 35.0,
+      "production_cost": 14.0,
+      "description": "Theatrical, armored propeller hats combining lightweight plating with vintage charm for simulation-prepper clientele",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "reinforced umbrella (armored frame)",
+      "quantity": 40,
+      "value": 55.0,
+      "production_cost": 22.0,
+      "description": "Heavy-duty umbrellas with shock-dampening ribs and concealment pockets marketed as anti-simulation shelter gear",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "weatherproof raincoat (ceramic-weave)",
+      "quantity": 25,
+      "value": 80.0,
+      "production_cost": 36.0,
+      "description": "Militaria-inspired raincoats using ceramic-weave panels for added protection and theatrical appeal at veterans' markets",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "Nuclear Energy Drink (ritual can)",
+      "quantity": 50,
+      "value": 6.0,
+      "production_cost": 2.5,
+      "description": "Exotic ritual beverage sold as a novelty energy tonic with retro-war branding popular among simulation theorists",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "armoring supplies (light plating panels)",
+      "quantity": 20,
+      "value": 18.0,
+      "production_cost": 8.0,
+      "description": "Raw lightweight plating used to reinforce hats and umbrellas for onsite customization",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "sewing & repair kit (industrial)",
+      "quantity": 15,
+      "value": 22.0,
+      "production_cost": 9.0,
+      "description": "Heavy-duty sewing and rivet kits for in-market repairs and bespoke modifications to protective garments",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "theatrical sales session",
+      "quantity": 20,
+      "value": 45.0,
+      "production_cost": 0.0,
+      "description": "One-hour sales demonstration / storytelling performance combining military anecdotes and product demonstration at fairs",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "veterans' provenance certificates (replica)",
+      "quantity": 35,
+      "value": 12.0,
+      "production_cost": 4.5,
+      "description": "Decorative provenance cards and faux medals that accompany merchandise to appeal to collectors and nostalgia",
+      "created": 0,
+      "last_modified": 0
+    },
+    {
+      "name": "portable market stall (modular display)",
+      "quantity": 8,
+      "value": 150.0,
+      "production_cost": 60.0,
+      "description": "Foldable, branded stall units for Bazaar Orbital markets, optimized for theatrical presentation and quick assembly",
+      "created": 0,
+      "last_modified": 0
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 1200.0,
+      "time_step": 0,
+      "description": "Starting business capital in Bazaar Orbital credits converted to USD-equivalent for trade and supplies",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "propeller hat (reinforced)",
+      "quantity": 30,
+      "time_step": 0,
+      "description": "Theatrical, armored propeller hats combining lightweight plating with vintage charm for simulation-prepper clientele",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "reinforced umbrella (armored frame)",
+      "quantity": 40,
+      "time_step": 0,
+      "description": "Heavy-duty umbrellas with shock-dampening ribs and concealment pockets marketed as anti-simulation shelter gear",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "weatherproof raincoat (ceramic-weave)",
+      "quantity": 25,
+      "time_step": 0,
+      "description": "Militaria-inspired raincoats using ceramic-weave panels for added protection and theatrical appeal at veterans' markets",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "Nuclear Energy Drink (ritual can)",
+      "quantity": 50,
+      "time_step": 0,
+      "description": "Exotic ritual beverage sold as a novelty energy tonic with retro-war branding popular among simulation theorists",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "armoring supplies (light plating panels)",
+      "quantity": 20,
+      "time_step": 0,
+      "description": "Raw lightweight plating used to reinforce hats and umbrellas for onsite customization",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "sewing & repair kit (industrial)",
+      "quantity": 15,
+      "time_step": 0,
+      "description": "Heavy-duty sewing and rivet kits for in-market repairs and bespoke modifications to protective garments",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "theatrical sales session",
+      "quantity": 20,
+      "time_step": 0,
+      "description": "One-hour sales demonstration / storytelling performance combining military anecdotes and product demonstration at fairs",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "veterans' provenance certificates (replica)",
+      "quantity": 35,
+      "time_step": 0,
+      "description": "Decorative provenance cards and faux medals that accompany merchandise to appeal to collectors and nostalgia",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "add",
+      "item_name": "portable market stall (modular display)",
+      "quantity": 8,
+      "time_step": 0,
+      "description": "Foldable, branded stall units for Bazaar Orbital markets, optimized for theatrical presentation and quick assembly",
+      "trade_partner": ""
+    }
+  ],
+  "production_plans": []
+}

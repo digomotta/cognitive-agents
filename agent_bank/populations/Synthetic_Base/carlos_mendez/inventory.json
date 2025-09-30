@@ -4,6 +4,7 @@
       "name": "premium_cigars",
       "quantity": 15,
       "value": 85.0,
+      "production_cost": 21.25,
       "description": "Hand-rolled premium cigars from Vuelta Abajo tobacco",
       "created": 1,
       "last_modified": 1
@@ -12,6 +13,7 @@
       "name": "wrapper_tobacco_leaves",
       "quantity": 25,
       "value": 35.0,
+      "production_cost": 8.75,
       "description": "Premium wrapper tobacco leaves for cigar making",
       "created": 1,
       "last_modified": 1
@@ -20,6 +22,7 @@
       "name": "aged_cigars",
       "quantity": 8,
       "value": 150.0,
+      "production_cost": 37.5,
       "description": "Aged cigars with 5+ years of careful humidor storage",
       "created": 1,
       "last_modified": 1
@@ -28,6 +31,7 @@
       "name": "cuban_rum",
       "quantity": 6,
       "value": 75.0,
+      "production_cost": 18.75,
       "description": "Authentic Cuban rum for cigar pairing",
       "created": 1,
       "last_modified": 1
@@ -36,6 +40,7 @@
       "name": "aged_whisky",
       "quantity": 4,
       "value": 120.0,
+      "production_cost": 30.0,
       "description": "Premium aged whisky for sophisticated cigar sessions",
       "created": 1,
       "last_modified": 1
@@ -44,6 +49,7 @@
       "name": "cigar_humidor",
       "quantity": 2,
       "value": 300.0,
+      "production_cost": 75.0,
       "description": "Traditional cedar humidors for proper cigar storage",
       "created": 1,
       "last_modified": 1
@@ -52,6 +58,7 @@
       "name": "tobacco_seeds",
       "quantity": 12,
       "value": 25.0,
+      "production_cost": 6.25,
       "description": "Heritage Cuban tobacco seeds from family farm",
       "created": 1,
       "last_modified": 1
@@ -60,14 +67,43 @@
       "name": "rolling_tools",
       "quantity": 1,
       "value": 200.0,
+      "production_cost": 50.0,
       "description": "Traditional cigar rolling tools and molds",
       "created": 1,
       "last_modified": 1
     },
     {
+      "name": "cigar_cutters",
+      "quantity": 10,
+      "value": 30.0,
+      "production_cost": 7.5,
+      "description": "Guillotine and V-cut cigar cutters",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "butane_torch_lighters",
+      "quantity": 8,
+      "value": 40.0,
+      "production_cost": 10.0,
+      "description": "Refillable torch lighters",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "humidor_solution",
+      "quantity": 12,
+      "value": 15.0,
+      "production_cost": 3.75,
+      "description": "Propylene glycol humidification solution",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
       "name": "digital cash",
-      "quantity": 220,
+      "quantity": 1000,
       "value": 1.0,
+      "production_cost": 0.0,
       "description": "Farm earnings and cigar sales",
       "created": 1,
       "last_modified": 1
@@ -149,11 +185,39 @@
     {
       "record_id": 8,
       "action": "add",
+      "item_name": "cigar_cutters",
+      "quantity": 10,
+      "time_step": 1,
+      "description": "Guillotine and V-cut cigar cutters",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "add",
+      "item_name": "butane_torch_lighters",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Refillable torch lighters",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 10,
+      "action": "add",
+      "item_name": "humidor_solution",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "Propylene glycol humidification solution",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 11,
+      "action": "add",
       "item_name": "digital cash",
-      "quantity": 220,
+      "quantity": 1000,
       "time_step": 1,
       "description": "Farm earnings and cigar sales",
       "trade_partner": ""
     }
-  ]
+  ],
+  "production_plans": []
 }

@@ -4,6 +4,7 @@
       "name": "chlorine_tablets",
       "quantity": 50,
       "value": 12.0,
+      "production_cost": 3.0,
       "description": "High-quality chlorine tablets for pool sanitization",
       "created": 1,
       "last_modified": 1
@@ -12,6 +13,7 @@
       "name": "ph_balancer",
       "quantity": 25,
       "value": 18.0,
+      "production_cost": 4.5,
       "description": "pH balancing chemicals for perfect water chemistry",
       "created": 1,
       "last_modified": 1
@@ -20,6 +22,7 @@
       "name": "pool_vacuum",
       "quantity": 3,
       "value": 180.0,
+      "production_cost": 45.0,
       "description": "Professional-grade automatic pool vacuum cleaner",
       "created": 1,
       "last_modified": 1
@@ -28,6 +31,7 @@
       "name": "skimmer_nets",
       "quantity": 15,
       "value": 25.0,
+      "production_cost": 6.25,
       "description": "Heavy-duty skimmer nets for debris removal",
       "created": 1,
       "last_modified": 1
@@ -36,6 +40,7 @@
       "name": "pool_brushes",
       "quantity": 20,
       "value": 35.0,
+      "production_cost": 8.75,
       "description": "Professional pool brushes for wall and floor cleaning",
       "created": 1,
       "last_modified": 1
@@ -44,6 +49,7 @@
       "name": "algae_treatment",
       "quantity": 30,
       "value": 22.0,
+      "production_cost": 5.5,
       "description": "Fast-acting algae killer for crystal clear water",
       "created": 1,
       "last_modified": 1
@@ -52,6 +58,7 @@
       "name": "pool_shock",
       "quantity": 40,
       "value": 15.0,
+      "production_cost": 3.75,
       "description": "Super chlorination treatment for problem pools",
       "created": 1,
       "last_modified": 1
@@ -60,6 +67,7 @@
       "name": "water_test_kits",
       "quantity": 35,
       "value": 28.0,
+      "production_cost": 7.0,
       "description": "Complete water testing kits for chemical balance monitoring",
       "created": 1,
       "last_modified": 1
@@ -68,6 +76,7 @@
       "name": "pool_floats",
       "quantity": 8,
       "value": 45.0,
+      "production_cost": 11.25,
       "description": "Fun inflatable floats perfect for pool parties - flamingos, donuts, and unicorns!",
       "created": 1,
       "last_modified": 1
@@ -76,14 +85,25 @@
       "name": "underwater_lights",
       "quantity": 12,
       "value": 85.0,
+      "production_cost": 21.25,
       "description": "LED underwater lights that change colors - perfect for night parties!",
       "created": 1,
       "last_modified": 1
     },
     {
+      "name": "filter_cartridges",
+      "quantity": 20,
+      "value": 32.0,
+      "production_cost": 8.0,
+      "description": "Replacement filter cartridges for common systems",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
       "name": "digital cash",
-      "quantity": 200,
+      "quantity": 1000,
       "value": 1.0,
+      "production_cost": 0.0,
       "description": "Starting business cash",
       "created": 1,
       "last_modified": 1
@@ -183,11 +203,21 @@
     {
       "record_id": 10,
       "action": "add",
+      "item_name": "filter_cartridges",
+      "quantity": 20,
+      "time_step": 1,
+      "description": "Replacement filter cartridges for common systems",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 11,
+      "action": "add",
       "item_name": "digital cash",
-      "quantity": 200,
+      "quantity": 1000,
       "time_step": 1,
       "description": "Starting business cash",
       "trade_partner": ""
     }
-  ]
+  ],
+  "production_plans": []
 }

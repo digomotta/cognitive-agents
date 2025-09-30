@@ -988,5 +988,995 @@
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
+  },
+  {
+    "node_id": 110,
+    "node_type": "observation",
+    "content": "Pema learned the ancient honey hunting songs from her grandmother Dolma, who taught her that each cliff face has its own melody to calm the giant bees.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 111,
+    "node_type": "observation",
+    "content": "As a child, Pema watched her father dance on rope ladders hundreds of feet above the valley floor, collecting golden treasure from angry guardian bees.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 112,
+    "node_type": "observation",
+    "content": "Her first taste of mad honey at age twelve sent her into visions of snow leopards and mountain spirits, teaching her to respect its sacred power.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 113,
+    "node_type": "observation",
+    "content": "Pema's family has collected honey from the same cliff faces for seven generations, each keeper adding their knowledge to protect the ancient ways.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 114,
+    "node_type": "observation",
+    "content": "A master honey hunter taught Pema to read the wind, the bee flight patterns, and the flowering cycles of the high rhododendrons.",
+    "importance": 38,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 115,
+    "node_type": "observation",
+    "content": "During a dangerous climb, Pema fell but was saved by her prayer flags catching on an outcrop - she believes the mountain spirits protected her.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 116,
+    "node_type": "observation",
+    "content": "Pema learned to weave rope ladders from yak hair and bamboo, following patterns passed down through centuries of Sherpa honey hunters.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 117,
+    "node_type": "observation",
+    "content": "She discovered that mad honey's potency changes with the rhododendron species and altitude, creating a natural pharmacy in the cliffs.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 118,
+    "node_type": "observation",
+    "content": "Pema started teaching young climbers, worried that modern life would steal away the courage needed for traditional honey hunting.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 119,
+    "node_type": "observation",
+    "content": "A sacred cave high in the cliffs serves as Pema's meditation spot, where she prays before each climb and thanks the bee guardians.",
+    "importance": 58,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 120,
+    "node_type": "observation",
+    "content": "Climate change has shifted flowering times, forcing Pema to adapt ancient timing to new weather patterns that her ancestors never faced.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 121,
+    "node_type": "observation",
+    "content": "Pema survived a bee attack that left her with scars she considers badges of honor, proof of her communion with the mountain's fierce guardians.",
+    "importance": 5.0,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 122,
+    "node_type": "observation",
+    "content": "She maintains ritual purity during harvest season, avoiding certain foods and following prayers that ensure safe passage on the cliffs.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 123,
+    "node_type": "observation",
+    "content": "Pema's mad honey is sought by traders from Kathmandu, but she refuses to sell to those who don't understand its spiritual significance.",
+    "importance": 46,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 124,
+    "node_type": "observation",
+    "content": "Her climbing ropes are blessed by lamas and decorated with prayer flags that flutter like bee wings against the ancient stone faces.",
+    "importance": 64,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 125,
+    "node_type": "observation",
+    "content": "Pema believes each hive has a queen spirit who must be honored with offerings of tsampa and butter tea before harvest.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 126,
+    "node_type": "observation",
+    "content": "Pema woke before dawn to prepare her climbing gear and check the weather for signs of mountain storms.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 127,
+    "node_type": "observation",
+    "content": "She lit juniper incense and offered prayers to the mountain spirits before each honey hunting expedition.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 128,
+    "node_type": "observation",
+    "content": "Pema tested each rope knot three times, knowing her life depended on the strength of yak-hair fibers.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 129,
+    "node_type": "observation",
+    "content": "She wrapped her collection vessels in yak felt to protect the precious honey during the treacherous descent.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 130,
+    "node_type": "observation",
+    "content": "Pema studied the cliff face through binoculars, counting bee activity and planning her climbing route.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 131,
+    "node_type": "observation",
+    "content": "She packed dried yak meat and roasted barley flour for sustenance during long days on the rock face.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 132,
+    "node_type": "observation",
+    "content": "Pema's hands moved automatically tying traditional knots her grandmother taught her in childhood.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 133,
+    "node_type": "observation",
+    "content": "She cleaned and sorted honey by color and thickness, knowing buyers could taste the difference between cliff harvests.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 134,
+    "node_type": "observation",
+    "content": "Pema mended climbing equipment by firelight, using techniques unchanged for generations of honey hunters.",
+    "importance": 34,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 135,
+    "node_type": "observation",
+    "content": "She memorized bee flight patterns at different times of day to predict the safest moments for approach.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 136,
+    "node_type": "observation",
+    "content": "Pema ground juniper bark for smoke torches, mixing it with dried rhododendron leaves for the perfect bee-calming blend.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 137,
+    "node_type": "observation",
+    "content": "She counted prayer beads while waiting for dangerous winds to calm before beginning her ascent.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 138,
+    "node_type": "observation",
+    "content": "Pema practiced climbing techniques on small cliffs near her village to maintain strength and skill.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 139,
+    "node_type": "observation",
+    "content": "She traded honey with lowland villages for rice, tea, and other necessities not available in the high mountains.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 140,
+    "node_type": "observation",
+    "content": "Pema repaired prayer flags torn by mountain winds and replaced them before each climbing season.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 141,
+    "node_type": "observation",
+    "content": "She tasted small amounts of new honey batches to assess potency and determine proper storage methods.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 142,
+    "node_type": "observation",
+    "content": "Pema recorded flowering times and weather patterns in a journal, updating ancient family knowledge.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 143,
+    "node_type": "observation",
+    "content": "She taught neighborhood children basic knot-tying, hoping to spark interest in the traditional ways.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 144,
+    "node_type": "observation",
+    "content": "Pema sharpened her collection tools and oiled the bamboo handles to prevent cracking in mountain cold.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 145,
+    "node_type": "observation",
+    "content": "She sorted and cleaned prayer flags, choosing appropriate colors for different types of honey hunting expeditions.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 146,
+    "node_type": "observation",
+    "content": "Pema led a dangerous pre-dawn ascent to harvest the season's first mad honey from giant bee colonies in the high cliffs.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 147,
+    "node_type": "observation",
+    "content": "She demonstrated traditional rope-weaving techniques to young Sherpas interested in learning the honey hunter's craft.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 148,
+    "node_type": "observation",
+    "content": "Pema negotiated with traders from Kathmandu, explaining the spiritual significance and proper use of psychoactive mad honey.",
+    "importance": 38,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 149,
+    "node_type": "observation",
+    "content": "She consulted with village elders about changing bee behavior and flowering patterns affecting traditional harvest timing.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 150,
+    "node_type": "observation",
+    "content": "Pema guided documentary filmmakers safely to cliff sites while protecting sacred locations from exploitation.",
+    "importance": 58,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 151,
+    "node_type": "observation",
+    "content": "She blessed a new batch of climbing ropes with lama prayers and attached protective prayer flags.",
+    "importance": 38,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 152,
+    "node_type": "observation",
+    "content": "Pema taught traditional bee-calming songs to her apprentice, emphasizing the spiritual connection between hunter and hive.",
+    "importance": 36,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 153,
+    "node_type": "observation",
+    "content": "She refused to sell mad honey to tourists seeking recreational drugs, protecting the sacred substance from misuse.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 154,
+    "node_type": "observation",
+    "content": "Pema organized village ceremonies to honor the bee spirits and ensure successful harvests for the coming season.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 155,
+    "node_type": "observation",
+    "content": "She adapted ancient climbing techniques for modern safety equipment while preserving traditional spiritual practices.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 156,
+    "node_type": "observation",
+    "content": "Pema collaborated with conservation groups to protect bee habitats threatened by climate change and development.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 157,
+    "node_type": "observation",
+    "content": "She processed raw honey using traditional methods, filtering through yak hair and storing in blessed clay vessels.",
+    "importance": 34,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 158,
+    "node_type": "observation",
+    "content": "Pema trained young women in honey hunting, breaking gender barriers while honoring ancestral knowledge.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 159,
+    "node_type": "observation",
+    "content": "She documented family knowledge in written form for the first time, creating records to preserve dying traditions.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 160,
+    "node_type": "observation",
+    "content": "Pema established sustainable harvesting quotas to ensure bee colonies remained healthy for future generations.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 161,
+    "node_type": "observation",
+    "content": "She participated in international conferences about traditional ecological knowledge and mountain conservation.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 162,
+    "node_type": "observation",
+    "content": "Pema created honey gift sets for important festivals, combining different varieties with traditional blessing ceremonies.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 163,
+    "node_type": "observation",
+    "content": "She worked with medical researchers studying the therapeutic properties of high-altitude honey varieties.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 164,
+    "node_type": "observation",
+    "content": "Pema mentored other Sherpa families in sustainable honey hunting practices and cliff conservation techniques.",
+    "importance": 34,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 165,
+    "node_type": "observation",
+    "content": "Pema learned the ancient honey hunting songs from her grandmother Dolma, who taught her that each cliff face has its own melody to calm the giant bees.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 166,
+    "node_type": "observation",
+    "content": "As a child, Pema watched her father dance on rope ladders hundreds of feet above the valley floor, collecting golden treasure from angry guardian bees.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 167,
+    "node_type": "observation",
+    "content": "Her first taste of mad honey at age twelve sent her into visions of snow leopards and mountain spirits, teaching her to respect its sacred power.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 168,
+    "node_type": "observation",
+    "content": "Pema's family has collected honey from the same cliff faces for seven generations, each keeper adding their knowledge to protect the ancient ways.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 169,
+    "node_type": "observation",
+    "content": "A master honey hunter taught Pema to read the wind, the bee flight patterns, and the flowering cycles of the high rhododendrons.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 170,
+    "node_type": "observation",
+    "content": "During a dangerous climb, Pema fell but was saved by her prayer flags catching on an outcrop - she believes the mountain spirits protected her.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 171,
+    "node_type": "observation",
+    "content": "Pema learned to weave rope ladders from yak hair and bamboo, following patterns passed down through centuries of Sherpa honey hunters.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 172,
+    "node_type": "observation",
+    "content": "She discovered that mad honey's potency changes with the rhododendron species and altitude, creating a natural pharmacy in the cliffs.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 173,
+    "node_type": "observation",
+    "content": "Pema started teaching young climbers, worried that modern life would steal away the courage needed for traditional honey hunting.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 174,
+    "node_type": "observation",
+    "content": "A sacred cave high in the cliffs serves as Pema's meditation spot, where she prays before each climb and thanks the bee guardians.",
+    "importance": 44,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 175,
+    "node_type": "observation",
+    "content": "Climate change has shifted flowering times, forcing Pema to adapt ancient timing to new weather patterns that her ancestors never faced.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 176,
+    "node_type": "observation",
+    "content": "Pema survived a bee attack that left her with scars she considers badges of honor, proof of her communion with the mountain's fierce guardians.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 177,
+    "node_type": "observation",
+    "content": "She maintains ritual purity during harvest season, avoiding certain foods and following prayers that ensure safe passage on the cliffs.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 178,
+    "node_type": "observation",
+    "content": "Pema's mad honey is sought by traders from Kathmandu, but she refuses to sell to those who don't understand its spiritual significance.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 179,
+    "node_type": "observation",
+    "content": "Her climbing ropes are blessed by lamas and decorated with prayer flags that flutter like bee wings against the ancient stone faces.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 180,
+    "node_type": "observation",
+    "content": "Pema believes each hive has a queen spirit who must be honored with offerings of tsampa and butter tea before harvest.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 181,
+    "node_type": "observation",
+    "content": "Pema woke before dawn to prepare her climbing gear and check the weather for signs of mountain storms.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 182,
+    "node_type": "observation",
+    "content": "She lit juniper incense and offered prayers to the mountain spirits before each honey hunting expedition.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 183,
+    "node_type": "observation",
+    "content": "Pema tested each rope knot three times, knowing her life depended on the strength of yak-hair fibers.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 184,
+    "node_type": "observation",
+    "content": "She wrapped her collection vessels in yak felt to protect the precious honey during the treacherous descent.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 185,
+    "node_type": "observation",
+    "content": "Pema studied the cliff face through binoculars, counting bee activity and planning her climbing route.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 186,
+    "node_type": "observation",
+    "content": "She packed dried yak meat and roasted barley flour for sustenance during long days on the rock face.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 187,
+    "node_type": "observation",
+    "content": "Pema's hands moved automatically tying traditional knots her grandmother taught her in childhood.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 188,
+    "node_type": "observation",
+    "content": "She cleaned and sorted honey by color and thickness, knowing buyers could taste the difference between cliff harvests.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 189,
+    "node_type": "observation",
+    "content": "Pema mended climbing equipment by firelight, using techniques unchanged for generations of honey hunters.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 190,
+    "node_type": "observation",
+    "content": "She memorized bee flight patterns at different times of day to predict the safest moments for approach.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 191,
+    "node_type": "observation",
+    "content": "Pema ground juniper bark for smoke torches, mixing it with dried rhododendron leaves for the perfect bee-calming blend.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 192,
+    "node_type": "observation",
+    "content": "She counted prayer beads while waiting for dangerous winds to calm before beginning her ascent.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 193,
+    "node_type": "observation",
+    "content": "Pema practiced climbing techniques on small cliffs near her village to maintain strength and skill.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 194,
+    "node_type": "observation",
+    "content": "She traded honey with lowland villages for rice, tea, and other necessities not available in the high mountains.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 195,
+    "node_type": "observation",
+    "content": "Pema repaired prayer flags torn by mountain winds and replaced them before each climbing season.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 196,
+    "node_type": "observation",
+    "content": "She tasted small amounts of new honey batches to assess potency and determine proper storage methods.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 197,
+    "node_type": "observation",
+    "content": "Pema recorded flowering times and weather patterns in a journal, updating ancient family knowledge.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 198,
+    "node_type": "observation",
+    "content": "She taught neighborhood children basic knot-tying, hoping to spark interest in the traditional ways.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 199,
+    "node_type": "observation",
+    "content": "Pema sharpened her collection tools and oiled the bamboo handles to prevent cracking in mountain cold.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 200,
+    "node_type": "observation",
+    "content": "She sorted and cleaned prayer flags, choosing appropriate colors for different types of honey hunting expeditions.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 201,
+    "node_type": "observation",
+    "content": "Pema led a dangerous pre-dawn ascent to harvest the season's first mad honey from giant bee colonies in the high cliffs.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 202,
+    "node_type": "observation",
+    "content": "She demonstrated traditional rope-weaving techniques to young Sherpas interested in learning the honey hunter's craft.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 203,
+    "node_type": "observation",
+    "content": "Pema negotiated with traders from Kathmandu, explaining the spiritual significance and proper use of psychoactive mad honey.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 204,
+    "node_type": "observation",
+    "content": "She consulted with village elders about changing bee behavior and flowering patterns affecting traditional harvest timing.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 205,
+    "node_type": "observation",
+    "content": "Pema guided documentary filmmakers safely to cliff sites while protecting sacred locations from exploitation.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 206,
+    "node_type": "observation",
+    "content": "She blessed a new batch of climbing ropes with lama prayers and attached protective prayer flags.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 207,
+    "node_type": "observation",
+    "content": "Pema taught traditional bee-calming songs to her apprentice, emphasizing the spiritual connection between hunter and hive.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 208,
+    "node_type": "observation",
+    "content": "She refused to sell mad honey to tourists seeking recreational drugs, protecting the sacred substance from misuse.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 209,
+    "node_type": "observation",
+    "content": "Pema organized village ceremonies to honor the bee spirits and ensure successful harvests for the coming season.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 210,
+    "node_type": "observation",
+    "content": "She adapted ancient climbing techniques for modern safety equipment while preserving traditional spiritual practices.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 211,
+    "node_type": "observation",
+    "content": "Pema collaborated with conservation groups to protect bee habitats threatened by climate change and development.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 212,
+    "node_type": "observation",
+    "content": "She processed raw honey using traditional methods, filtering through yak hair and storing in blessed clay vessels.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 213,
+    "node_type": "observation",
+    "content": "Pema trained young women in honey hunting, breaking gender barriers while honoring ancestral knowledge.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 214,
+    "node_type": "observation",
+    "content": "She documented family knowledge in written form for the first time, creating records to preserve dying traditions.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 215,
+    "node_type": "observation",
+    "content": "Pema established sustainable harvesting quotas to ensure bee colonies remained healthy for future generations.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 216,
+    "node_type": "observation",
+    "content": "She participated in international conferences about traditional ecological knowledge and mountain conservation.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 217,
+    "node_type": "observation",
+    "content": "Pema created honey gift sets for important festivals, combining different varieties with traditional blessing ceremonies.",
+    "importance": 24,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 218,
+    "node_type": "observation",
+    "content": "She worked with medical researchers studying the therapeutic properties of high-altitude honey varieties.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 219,
+    "node_type": "observation",
+    "content": "Pema mentored other Sherpa families in sustainable honey hunting practices and cliff conservation techniques.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
   }
 ]

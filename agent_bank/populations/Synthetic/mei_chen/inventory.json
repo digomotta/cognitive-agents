@@ -4,6 +4,7 @@
       "name": "silk_qipao_dress",
       "quantity": 8,
       "value": 280.0,
+      "production_cost": 70.0,
       "description": "Handmade traditional qipao dress in authentic mulberry silk with hand-embroidered details",
       "created": 1,
       "last_modified": 1
@@ -12,6 +13,7 @@
       "name": "silk_scarves",
       "quantity": 25,
       "value": 85.0,
+      "production_cost": 21.25,
       "description": "Pure silk scarves with traditional Chinese patterns - hand-finished edges",
       "created": 1,
       "last_modified": 1
@@ -20,6 +22,7 @@
       "name": "silk_blouses",
       "quantity": 15,
       "value": 165.0,
+      "production_cost": 41.25,
       "description": "Contemporary silk blouses combining traditional techniques with modern cuts",
       "created": 1,
       "last_modified": 1
@@ -28,6 +31,7 @@
       "name": "silk_pajama_sets",
       "quantity": 12,
       "value": 220.0,
+      "production_cost": 55.0,
       "description": "Luxurious mulberry silk pajama sets with traditional Chinese knot buttons",
       "created": 1,
       "last_modified": 1
@@ -36,6 +40,7 @@
       "name": "embroidered_silk_shawls",
       "quantity": 6,
       "value": 320.0,
+      "production_cost": 80.0,
       "description": "Heirloom-quality silk shawls with intricate hand-embroidered dragons and phoenixes",
       "created": 1,
       "last_modified": 1
@@ -44,6 +49,7 @@
       "name": "silk_business_jackets",
       "quantity": 10,
       "value": 380.0,
+      "production_cost": 95.0,
       "description": "Modern business jackets in premium silk with subtle traditional design elements",
       "created": 1,
       "last_modified": 1
@@ -52,6 +58,7 @@
       "name": "raw_silk_fabric",
       "quantity": 30,
       "value": 45.0,
+      "production_cost": 11.25,
       "description": "Premium raw silk fabric by the meter - perfect for custom tailoring",
       "created": 1,
       "last_modified": 1
@@ -60,6 +67,7 @@
       "name": "silk_hair_accessories",
       "quantity": 40,
       "value": 35.0,
+      "production_cost": 8.75,
       "description": "Delicate silk hair accessories including headbands, scrunchies, and traditional hair pins",
       "created": 1,
       "last_modified": 1
@@ -68,6 +76,7 @@
       "name": "wedding_silk_gowns",
       "quantity": 3,
       "value": 1200.0,
+      "production_cost": 300.0,
       "description": "Bespoke wedding gowns combining Western silhouettes with traditional Chinese silk and embroidery",
       "created": 1,
       "last_modified": 1
@@ -76,6 +85,7 @@
       "name": "silk_ties_men",
       "quantity": 20,
       "value": 95.0,
+      "production_cost": 23.75,
       "description": "Men's silk ties featuring subtle traditional Chinese motifs for international businessmen",
       "created": 1,
       "last_modified": 1
@@ -84,6 +94,7 @@
       "name": "silk_care_kit",
       "quantity": 15,
       "value": 55.0,
+      "production_cost": 13.75,
       "description": "Complete silk care kit with gentle cleaners and preservation instructions in multiple languages",
       "created": 1,
       "last_modified": 1
@@ -92,6 +103,7 @@
       "name": "digital cash",
       "quantity": 1000,
       "value": 1.0,
+      "production_cost": 0.0,
       "description": "Starting business cash",
       "created": 1,
       "last_modified": 1
@@ -206,5 +218,6 @@
       "description": "Starting business cash",
       "trade_partner": ""
     }
-  ]
+  ],
+  "production_plans": []
 }

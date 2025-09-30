@@ -1,0 +1,193 @@
+{
+  "items": [
+    {
+      "name": "chlorine_tablets",
+      "quantity": 50,
+      "value": 12.0,
+      "description": "High-quality chlorine tablets for pool sanitization",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "ph_balancer",
+      "quantity": 25,
+      "value": 18.0,
+      "description": "pH balancing chemicals for perfect water chemistry",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "pool_vacuum",
+      "quantity": 3,
+      "value": 180.0,
+      "description": "Professional-grade automatic pool vacuum cleaner",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "skimmer_nets",
+      "quantity": 15,
+      "value": 25.0,
+      "description": "Heavy-duty skimmer nets for debris removal",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "pool_brushes",
+      "quantity": 20,
+      "value": 35.0,
+      "description": "Professional pool brushes for wall and floor cleaning",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "algae_treatment",
+      "quantity": 30,
+      "value": 22.0,
+      "description": "Fast-acting algae killer for crystal clear water",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "pool_shock",
+      "quantity": 40,
+      "value": 15.0,
+      "description": "Super chlorination treatment for problem pools",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "water_test_kits",
+      "quantity": 35,
+      "value": 28.0,
+      "description": "Complete water testing kits for chemical balance monitoring",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "pool_floats",
+      "quantity": 8,
+      "value": 45.0,
+      "description": "Fun inflatable floats perfect for pool parties - flamingos, donuts, and unicorns!",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "underwater_lights",
+      "quantity": 12,
+      "value": 85.0,
+      "description": "LED underwater lights that change colors - perfect for night parties!",
+      "created": 1,
+      "last_modified": 1
+    },
+    {
+      "name": "digital cash",
+      "quantity": 200,
+      "value": 1.0,
+      "description": "Starting business cash",
+      "created": 1,
+      "last_modified": 1
+    }
+  ],
+  "records": [
+    {
+      "record_id": 0,
+      "action": "add",
+      "item_name": "chlorine_tablets",
+      "quantity": 50,
+      "time_step": 1,
+      "description": "High-quality chlorine tablets for pool sanitization",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 1,
+      "action": "add",
+      "item_name": "ph_balancer",
+      "quantity": 25,
+      "time_step": 1,
+      "description": "pH balancing chemicals for perfect water chemistry",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 2,
+      "action": "add",
+      "item_name": "pool_vacuum",
+      "quantity": 3,
+      "time_step": 1,
+      "description": "Professional-grade automatic pool vacuum cleaner",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 3,
+      "action": "add",
+      "item_name": "skimmer_nets",
+      "quantity": 15,
+      "time_step": 1,
+      "description": "Heavy-duty skimmer nets for debris removal",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 4,
+      "action": "add",
+      "item_name": "pool_brushes",
+      "quantity": 20,
+      "time_step": 1,
+      "description": "Professional pool brushes for wall and floor cleaning",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 5,
+      "action": "add",
+      "item_name": "algae_treatment",
+      "quantity": 30,
+      "time_step": 1,
+      "description": "Fast-acting algae killer for crystal clear water",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 6,
+      "action": "add",
+      "item_name": "pool_shock",
+      "quantity": 40,
+      "time_step": 1,
+      "description": "Super chlorination treatment for problem pools",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 7,
+      "action": "add",
+      "item_name": "water_test_kits",
+      "quantity": 35,
+      "time_step": 1,
+      "description": "Complete water testing kits for chemical balance monitoring",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 8,
+      "action": "add",
+      "item_name": "pool_floats",
+      "quantity": 8,
+      "time_step": 1,
+      "description": "Fun inflatable floats perfect for pool parties - flamingos, donuts, and unicorns!",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 9,
+      "action": "add",
+      "item_name": "underwater_lights",
+      "quantity": 12,
+      "time_step": 1,
+      "description": "LED underwater lights that change colors - perfect for night parties!",
+      "trade_partner": ""
+    },
+    {
+      "record_id": 10,
+      "action": "add",
+      "item_name": "digital cash",
+      "quantity": 200,
+      "time_step": 1,
+      "description": "Starting business cash",
+      "trade_partner": ""
+    }
+  ]
+}

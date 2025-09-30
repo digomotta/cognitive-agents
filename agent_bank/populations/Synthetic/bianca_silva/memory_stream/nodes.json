@@ -1,84 +1,488 @@
-{
-  "nodes": [
-    {
-      "id": 0,
-      "content": "Growing up near Copacabana beach, I learned that crystal-clear water brings people together for the best celebrations.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 1,
-      "content": "Started Piscina Perfeita with just a testing kit and a dream to make every pool in Rio sparkle like the ocean.",
-      "importance": 9,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 2,
-      "content": "The secret to perfect pool chemistry is like making a perfect caipirinha - it's all about the right balance of ingredients.",
-      "importance": 7,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 3,
-      "content": "During Carnival season, everyone wants their pool perfect for parties - it's my busiest and most rewarding time of year.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 4,
-      "content": "I once turned a green, algae-covered hotel pool into crystal perfection in just 24 hours before a major wedding celebration.",
-      "importance": 9,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 5,
-      "content": "The sound of children laughing and splashing in a perfectly maintained pool is the best reward for my work.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 6,
-      "content": "I sponsor local beach volleyball tournaments because sports and water activities build community spirit.",
-      "importance": 6,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 7,
-      "content": "Teaching pool safety workshops to children is serious work, but I always make it fun with games and colorful equipment.",
-      "importance": 7,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 8,
-      "content": "My underwater LED lights don't just illuminate pools - they create magical spaces where memories are made under the stars.",
-      "importance": 6,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 9,
-      "content": "The rooftop infinity pool overlooking Sugarloaf Mountain is my favorite maintenance job - the view never gets old.",
-      "importance": 7,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    }
-  ]
-}
+[
+  {
+    "node_id": 0,
+    "node_type": "observation",
+    "content": "Bianca grew up with her feet always in water\u2014beach pools, community pools, the ocean itself\u2014and learned that crystal-clear water brings people together for the best celebrations.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 1,
+    "node_type": "observation",
+    "content": "As a teenager during Carnival season, Bianca noticed how the families with sparkling clean pools hosted the most joyful gatherings and knew she wanted to be part of that magic.",
+    "importance": 34,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 2,
+    "node_type": "observation",
+    "content": "Bianca's first business success was rescuing a green, algae-covered hotel pool in 24 hours before a major wedding, turning disaster into celebration with the perfect chemical balance.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 3,
+    "node_type": "observation",
+    "content": "A wise pool maintenance mentor taught Bianca that pool chemistry is like making a perfect caipirinha\u2014it's all about the right balance of ingredients and knowing when to add what.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 4,
+    "node_type": "observation",
+    "content": "During her toughest season, Bianca learned that sustainable pool care isn't just about chemicals\u2014it's about creating spaces where families laugh, friends gather, and life happens around beautiful water.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 5,
+    "node_type": "observation",
+    "content": "Bianca started 'Piscina Perfeita' with just a testing kit and a dream to make every pool in Rio sparkle like the ocean on a sunny morning.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 6,
+    "node_type": "observation",
+    "content": "A near-miss with a child almost drowning at a poorly maintained community pool inspired Bianca to start free safety workshops, turning serious education into fun games with colorful equipment.",
+    "importance": 82,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 7,
+    "node_type": "observation",
+    "content": "Bianca discovered that underwater LED lights don't just illuminate pools\u2014they create magical spaces where memories are made under the stars during late-night celebrations.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 8,
+    "node_type": "observation",
+    "content": "The rooftop infinity pool overlooking Sugarloaf Mountain became Bianca's signature project and favorite maintenance job\u2014the view never gets old.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 9,
+    "node_type": "observation",
+    "content": "Bianca learned that sponsoring local beach volleyball tournaments builds community while showcasing perfectly maintained pools as the celebration venues.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 10,
+    "node_type": "observation",
+    "content": "A difficult client who complained constantly taught Bianca to keep notes about who tips well versus who creates problems, helping her choose clients who appreciate quality work.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 11,
+    "node_type": "observation",
+    "content": "Bianca's biggest professional moment was when three luxury resorts started competing for her exclusive services, proving that word-of-mouth from happy party hosts is the best marketing.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 12,
+    "node_type": "observation",
+    "content": "During environmental awareness workshops, Bianca began dreaming of developing more sustainable pool solutions that still deliver the crystal-clear perfection her clients expect.",
+    "importance": 30,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 13,
+    "node_type": "observation",
+    "content": "Bianca realized that her business success comes from understanding that pools aren't just water\u2014they're stages for life's most joyful moments, and she's the director making sure the set is perfect.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 14,
+    "node_type": "observation",
+    "content": "Bianca woke before dawn to test the pH levels at the Hotel Copacabana's three pools before the guests arrived.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 15,
+    "node_type": "observation",
+    "content": "She loaded her van with chlorine tablets, brushes, and her favorite Brazilian music playlist for the day's route.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 16,
+    "node_type": "observation",
+    "content": "Bianca stopped at the beachside caf\u00e9 for a quick a\u00e7a\u00ed bowl and caf\u00e9 with milk, chatting with regulars about weekend party plans.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 17,
+    "node_type": "observation",
+    "content": "She reorganized her testing kit, making sure each chemical indicator was fresh and clearly labeled.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 18,
+    "node_type": "observation",
+    "content": "Bianca called her supplier to confirm the delivery of new underwater LED lights in time for a Saturday night pool party.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 19,
+    "node_type": "observation",
+    "content": "She spent lunch break at the beach, letting the salt air clear her head before afternoon client visits.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 20,
+    "node_type": "observation",
+    "content": "Bianca updated her client schedule on her phone, noting which pools needed extra attention before weekend events.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 21,
+    "node_type": "observation",
+    "content": "She swept algae debris from the villa's pool deck and hosed down the surrounding patio furniture.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 22,
+    "node_type": "observation",
+    "content": "Bianca tested the chlorine levels twice at the community pool, wanting to be absolutely certain before the children's swimming lessons.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 23,
+    "node_type": "observation",
+    "content": "She packed extra pool floats in her van\u2014flamingos, donuts, and unicorns\u2014for clients who loved adding fun elements to their pools.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 24,
+    "node_type": "observation",
+    "content": "Bianca stopped by the hardware store to pick up replacement pool brushes and had a quick conversation with the owner about upcoming party season demand.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 25,
+    "node_type": "observation",
+    "content": "She documented pool chemical levels in her notebook, using different colored pens to track patterns over time.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 26,
+    "node_type": "observation",
+    "content": "Bianca helped an elderly client understand how to read the water testing strips, patiently explaining each color change.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 27,
+    "node_type": "observation",
+    "content": "She grabbed fresh guaran\u00e1 and p\u00e3o de a\u00e7\u00facar from the corner bakery while equipment soaked in cleaning solution.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 28,
+    "node_type": "observation",
+    "content": "Bianca synchronized her waterproof speaker with her phone, filling the pool area with samba rhythms while she worked.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 29,
+    "node_type": "observation",
+    "content": "Bianca balanced the chemistry in the resort's main pool, achieving that perfect crystal clarity that makes water look like liquid glass.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 30,
+    "node_type": "observation",
+    "content": "She installed color-changing LED underwater lights for a client's anniversary party, programming them to pulse with the music.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 31,
+    "node_type": "observation",
+    "content": "Bianca led a pool safety workshop for neighborhood children, teaching them to test water depth with games and colorful floating toys.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 32,
+    "node_type": "observation",
+    "content": "She emergency-treated a severely algae-contaminated pool, working through the night to have it party-ready by the next evening.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 33,
+    "node_type": "observation",
+    "content": "Bianca negotiated a maintenance contract with a new luxury hotel chain, emphasizing her track record of zero pool-related complaints.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 34,
+    "node_type": "observation",
+    "content": "She trained a new assistant on proper chemical handling, mixing Portuguese safety phrases with English technical terms.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 35,
+    "node_type": "observation",
+    "content": "Bianca rescued a pool party that was about to be canceled due to murky water, arriving with shock treatment and working her magic in three hours.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 36,
+    "node_type": "observation",
+    "content": "She sourced eco-friendly pool chemicals from a new supplier, testing them on her own pools before introducing them to clients.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 37,
+    "node_type": "observation",
+    "content": "Bianca organized a community pool maintenance day, teaching families how to keep their neighborhood pools safe and clean.",
+    "importance": 20,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 38,
+    "node_type": "observation",
+    "content": "She installed professional-grade filtration systems in two private residences, ensuring year-round crystal clarity.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 39,
+    "node_type": "observation",
+    "content": "Bianca developed a color-coded chemical testing system that her clients could understand at a glance.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 40,
+    "node_type": "observation",
+    "content": "She expanded her service area to Ipanema after three client referrals specifically requested her expertise for their rooftop pools.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 41,
+    "node_type": "observation",
+    "content": "Bianca launched a pool party consultation service, helping clients coordinate lighting, water features, and safety for large celebrations.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 42,
+    "node_type": "observation",
+    "content": "She partnered with local DJs and caterers, creating a complete pool party package that showcases her perfectly maintained water as the centerpiece.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 43,
+    "node_type": "observation",
+    "content": "No interaction occurred.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 44,
+    "node_type": "reflection",
+    "content": "I noticed that local business owners are gearing up for party season, so I've started stocking up and building quick relationships with hardware and supply shops to secure the tools and trade discounts I'll need.",
+    "importance": 30,
+    "created": 1,
+    "last_retrieved": 1,
+    "pointer_id": [
+      43,
+      24,
+      6,
+      10,
+      1
+    ]
+  },
+  {
+    "node_id": 45,
+    "node_type": "reflection",
+    "content": "After the near-miss at the community pool, I realized community safety is a service the market needs, so I've begun offering free, fun safety workshops \u2014 it not only builds trust but raises awareness of my expertise and care.",
+    "importance": 45,
+    "created": 1,
+    "last_retrieved": 1,
+    "pointer_id": [
+      43,
+      24,
+      6,
+      10,
+      1
+    ]
+  },
+  {
+    "node_id": 46,
+    "node_type": "reflection",
+    "content": "Dealing with high-maintenance clients taught me to track client behavior and profitability, which helps me focus on customers who value quality and generosity and avoid time-draining interactions.",
+    "importance": 35,
+    "created": 1,
+    "last_retrieved": 1,
+    "pointer_id": [
+      43,
+      24,
+      6,
+      10,
+      1
+    ]
+  },
+  {
+    "node_id": 47,
+    "node_type": "observation",
+    "content": "Que maravilha! I greeted everyone at the market with my Piscina Perfeita energy, offering chlorine tablets, pH balancers, algae treatment, shock, brushes, skimmers, test kits, and even underwater lights for festas \u00e0 noite. I invited them to tap to pay and promised water as crystal as Copacabana at sunrise\u2014porque a \u00e1gua tem que estar perfeita! I felt energized and joyful, ready to help turn every pool into a celebration.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 48,
+    "node_type": "observation",
+    "content": "No interaction occurred.",
+    "importance": 0,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 49,
+    "node_type": "observation",
+    "content": "Que maravilha! Today at the market I greeted everyone with my festa energy, offering all the pool essentials\u2014chlorine tablets, pH balancer, shock, algae treatment, brushes, skimmers, test kits, and even underwater lights for that Copacabana-at-sunset vibe. I invited folks to tap-and-go on my machine and promised crystal-clear \u00e1gua perfeita. I felt excited and ready to turn their pools into party-ready oases\u2014vamos celebrar!",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 50,
+    "node_type": "observation",
+    "content": "No interaction occurred.",
+    "importance": 2,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 51,
+    "node_type": "observation",
+    "content": "Que maravilha! I welcomed everyone to my Piscina Perfeita oasis with muita alegria, offering everything for crystal-clear water\u2014chlorine tablets, pH balancer, shock, algae treatment, filters, brushes, skimmers, and even underwater party lights. I invited them to tap and pay easily and told them I\u2019m ready to tailor supplies to their pool\u2019s vibe. I felt that sparkle of excitement\u2014vamos celebrar \u00e1gua cristalina e muitos momentos felizes!",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  }
+]

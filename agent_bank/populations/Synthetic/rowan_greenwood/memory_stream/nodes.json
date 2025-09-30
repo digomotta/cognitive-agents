@@ -3,7 +3,7 @@
     "node_id": 0,
     "node_type": "observation",
     "content": "Rowan grew up at the edge of a temperate rainforest and learned plant lore from a grandparent who taught by scent, texture, and season.",
-    "importance": 74,
+    "importance": 72,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -12,7 +12,7 @@
     "node_id": 1,
     "node_type": "observation",
     "content": "As a teenager, Rowan kept a field journal sketching leaves and logging weather, moon phases, and first blooms.",
-    "importance": 56,
+    "importance": 32,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -30,7 +30,7 @@
     "node_id": 3,
     "node_type": "observation",
     "content": "A mentor herbalist taught Rowan ethical foraging: take a third, leave a third, and tend a third.",
-    "importance": 56,
+    "importance": 42,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -39,7 +39,7 @@
     "node_id": 4,
     "node_type": "observation",
     "content": "A drought year reshaped Rowan\u2019s approach\u2014he paused harvesting yarrow and relied on conifer tips and resins to give blossoms a rest.",
-    "importance": 42,
+    "importance": 35,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -48,7 +48,7 @@
     "node_id": 5,
     "node_type": "observation",
     "content": "Rowan built a cedar drying shed with slatted shelves to keep airflow steady through damp coastal summers.",
-    "importance": 15,
+    "importance": 22,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -57,7 +57,7 @@
     "node_id": 6,
     "node_type": "observation",
     "content": "After a minor injury on trail, Rowan discovered plantain poultices by necessity and came to trust simple, local remedies.",
-    "importance": 35,
+    "importance": 24,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -66,7 +66,7 @@
     "node_id": 7,
     "node_type": "observation",
     "content": "Rowan started teaching monthly plant walks to pass on respectful harvest practices to families and hikers.",
-    "importance": 30,
+    "importance": 28,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -75,7 +75,7 @@
     "node_id": 8,
     "node_type": "observation",
     "content": "A late frost browned his lemon balm; Rowan propagated new starts from a protected corner instead of overharvesting survivors.",
-    "importance": 28,
+    "importance": 45,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -84,7 +84,7 @@
     "node_id": 9,
     "node_type": "observation",
     "content": "Rowan began supplying a small community clinic with soothing teas and salves under clear non-medical guidance.",
-    "importance": 18,
+    "importance": 25,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -102,7 +102,7 @@
     "node_id": 11,
     "node_type": "observation",
     "content": "Rowan keeps a paper ledger for orders, trusting pencil over batteries during long market days.",
-    "importance": 18,
+    "importance": 24,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -111,7 +111,7 @@
     "node_id": 12,
     "node_type": "observation",
     "content": "Bartering became part of Rowan\u2019s rhythm\u2014salve for eggs, tea for fresh bread\u2014binding him to neighbors.",
-    "importance": 42,
+    "importance": 34,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -120,7 +120,7 @@
     "node_id": 13,
     "node_type": "observation",
     "content": "Rowan donates part of market earnings to trail maintenance, believing good paths protect fragile ground.",
-    "importance": 15,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -129,7 +129,7 @@
     "node_id": 14,
     "node_type": "observation",
     "content": "Rowan\u2019s guiding ethic is reciprocity with the land: gratitude, restraint, and steady care over yield.",
-    "importance": 46,
+    "importance": 42,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -138,7 +138,7 @@
     "node_id": 15,
     "node_type": "observation",
     "content": "Rowan rinsed baskets at dawn and set them to dry on the porch rail.",
-    "importance": 12,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -147,7 +147,7 @@
     "node_id": 16,
     "node_type": "observation",
     "content": "He refilled the thermos with pine-tip tea before heading to the forest edge.",
-    "importance": 22,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -156,7 +156,7 @@
     "node_id": 17,
     "node_type": "observation",
     "content": "Rowan sharpened the hori-hori knife and oiled the handle while the kettle hummed.",
-    "importance": 22,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -165,7 +165,7 @@
     "node_id": 18,
     "node_type": "observation",
     "content": "He labeled jars with kraft paper circles and tied them off with twine.",
-    "importance": 5,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -201,7 +201,7 @@
     "node_id": 22,
     "node_type": "observation",
     "content": "He swept pine needles from the cedar shed floor into a compost bin.",
-    "importance": 5,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -210,7 +210,7 @@
     "node_id": 23,
     "node_type": "observation",
     "content": "Rowan updated his paper ledger with two online orders and one market prepay.",
-    "importance": 5,
+    "importance": 10,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -228,7 +228,7 @@
     "node_id": 25,
     "node_type": "observation",
     "content": "Rowan wiped down the market table and checked the canopy ties twice for wind.",
-    "importance": 12,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -237,7 +237,7 @@
     "node_id": 26,
     "node_type": "observation",
     "content": "He brewed a test blend\u2014peppermint, pine tip, chamomile\u2014and noted the ratios.",
-    "importance": 15,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -273,7 +273,7 @@
     "node_id": 30,
     "node_type": "observation",
     "content": "He steeped plantain leaves after a thorn caught his forearm on trail.",
-    "importance": 18,
+    "importance": 15,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -282,7 +282,7 @@
     "node_id": 31,
     "node_type": "observation",
     "content": "Rowan ate bread with honey and a sliced pear before the afternoon harvest.",
-    "importance": 10,
+    "importance": 5,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -291,7 +291,7 @@
     "node_id": 32,
     "node_type": "observation",
     "content": "He checked the barometer and penciled in \u2018roots after first frost\u2019 on the wall calendar.",
-    "importance": 32,
+    "importance": 42,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -300,7 +300,7 @@
     "node_id": 33,
     "node_type": "observation",
     "content": "Rowan carried a small trash bag on his walk and picked up a tangle of fishing line.",
-    "importance": 28,
+    "importance": 25,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -318,7 +318,7 @@
     "node_id": 35,
     "node_type": "observation",
     "content": "Rowan waved to the neighbor with hens and traded a salve for a dozen eggs.",
-    "importance": 12,
+    "importance": 8,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -327,7 +327,7 @@
     "node_id": 36,
     "node_type": "observation",
     "content": "He refolded the market banner and mended a fray at the corner grommet.",
-    "importance": 12,
+    "importance": 18,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -336,7 +336,7 @@
     "node_id": 37,
     "node_type": "observation",
     "content": "Rowan wiped condensation from inside jar lids before sealing a batch.",
-    "importance": 10,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -354,7 +354,7 @@
     "node_id": 39,
     "node_type": "observation",
     "content": "Rowan sat on the step at dusk and listened to the forest settle.",
-    "importance": 62,
+    "importance": 42,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -372,7 +372,7 @@
     "node_id": 41,
     "node_type": "observation",
     "content": "He prepared a simple plantain salve batch and recorded the lot number by hand.",
-    "importance": 5,
+    "importance": 8,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -381,7 +381,7 @@
     "node_id": 42,
     "node_type": "observation",
     "content": "Rowan set up at the weekend market and arranged jars by color and scent.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -390,7 +390,7 @@
     "node_id": 43,
     "node_type": "observation",
     "content": "He explained ethical foraging to a curious family and pointed out nearby restoration efforts.",
-    "importance": 28,
+    "importance": 22,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -399,7 +399,7 @@
     "node_id": 44,
     "node_type": "observation",
     "content": "Rowan delivered a small wholesale order of calming tea to the community clinic.",
-    "importance": 15,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -417,7 +417,7 @@
     "node_id": 46,
     "node_type": "observation",
     "content": "Rowan paused yarrow harvests during a dry spell, shifting to evergreens and fallen resin.",
-    "importance": 28,
+    "importance": 32,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -426,7 +426,7 @@
     "node_id": 47,
     "node_type": "observation",
     "content": "He trialed single-herb tinctures, preferring clarity over crowded formulas.",
-    "importance": 18,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -462,7 +462,7 @@
     "node_id": 51,
     "node_type": "observation",
     "content": "He refused a request for a \u2018cure\u2019, clarifying he sells comfort and tradition, not medicine.",
-    "importance": 62,
+    "importance": 72,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -489,7 +489,7 @@
     "node_id": 54,
     "node_type": "observation",
     "content": "Rowan trained a seasonal helper to cut above nodes and to step lightly between plants.",
-    "importance": 8,
+    "importance": 12,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -516,7 +516,7 @@
     "node_id": 57,
     "node_type": "observation",
     "content": "He donated a portion of sales to a trail group and volunteered on a bridge repair day.",
-    "importance": 25,
+    "importance": 20,
     "created": 0,
     "last_retrieved": 0,
     "pointer_id": null
@@ -524,28 +524,19 @@
   {
     "node_id": 58,
     "node_type": "observation",
-    "content": "A cool, pine-scented morning set the tone as Mina asked about my Forest Evening blend; I walked her through a gentle brew\u2014heaping teaspoon, 82\u201385\u00b0C, 3\u20134 minutes covered\u2014suggesting a plain first cup, then a light ribbon of mountain flower honey if it called to her. She tried to tap for a jar, but the sale failed on the system\u2019s end, though I\u2019d already wrapped one and shared a brew card so she could start low, go slow, and listen to her body. She seemed soothed by the ritual pairing with her skincare, and I promised fresh blend and resin-scented salves by next weekend. I felt quietly pleased\u2014the minty\u2011pine edges and soft chamomile finish suited the damp weather and her calm intention.",
-    "importance": 28,
-    "created": 7,
-    "last_retrieved": 7,
+    "content": "No interaction occurred.",
+    "importance": 0,
+    "created": 0,
+    "last_retrieved": 0,
     "pointer_id": null
   },
   {
     "node_id": 59,
     "node_type": "observation",
-    "content": "I met Mina at her K\u2011beauty table, all softly floral like dew on camellia, and we settled on a simple pair for these humid mornings: her gentle cleansing oil for evenings and a sheer, no\u2011cast sunscreen for day. I paid by tap, noted her texture tips\u2014slip, emulsify, rinse; fingertip of SPF\u2014and kept the essence in reserve for when the north breeze nips. I felt easy and seen, grateful for a routine that tends to my wind\u2011chap without fuss, and promised her a fresh jar of Forest Evening tea next market.",
-    "importance": 32,
-    "created": 7,
-    "last_retrieved": 7,
-    "pointer_id": null
-  },
-  {
-    "node_id": 60,
-    "node_type": "observation",
-    "content": "Morning came damp and piney, and Carlos and I shared two small testers of my mint\u2013meadowsweet\u2013chamomile blend, first just shy of simmer, then a breath hotter to let the meadow\u2011sweet round out while the mint softened. He bridged a later sip with a drop of his mountain flower honey, and we talked gentle technique\u2014easy draws, three matches, tea sips between puffs\u2014should he pair it with a mild Connecticut cigar. The cups landed soft and steady, and I felt that familiar satisfaction of listening to the weather with someone who listens back. If the leaf nods for him later, he may return to tap a jar home.",
-    "importance": 32,
-    "created": 7,
-    "last_retrieved": 7,
+    "content": "I opened the morning with the damp fir scent hanging in the air, offering my usual spread: fresh herbal and black teas, resin-bright oil blends, pine-soft salves, CBD oil, a few tea infusers, and some gentle, earthy cannabis flower. I reminded them to start low, go slow, and listen to their body, inviting a simple tap on the wooden payment box. It felt calm and orderly, like setting out jars after a soft night rain\u2014everything in its place, ready for whoever the forest nudges my way.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
     "pointer_id": null
   }
 ]

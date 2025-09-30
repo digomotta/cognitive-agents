@@ -1,84 +1,443 @@
-{
-  "nodes": [
-    {
-      "id": 0,
-      "content": "Learning silk embroidery from grandmother in the family workshop, watching five generations of tradition flow through careful, patient hands.",
-      "importance": 9,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 1,
-      "content": "Starting Silk Heritage online boutique to bridge traditional Chinese craftsmanship with global markets and contemporary design.",
-      "importance": 9,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 2,
-      "content": "Grandmother's teaching: 'Quality takes time, patience brings perfection' - the foundation of every piece I create.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 3,
-      "content": "Completing my MBA while secretly practicing traditional silk weaving techniques in the dormitory late at night.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 4,
-      "content": "The first international order - a wedding gown for a bride in New York who wanted to honor her Chinese heritage.",
-      "importance": 9,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 5,
-      "content": "Morning tai chi in the courtyard, finding balance between ancient wisdom and modern business pressures.",
-      "importance": 7,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 6,
-      "content": "Coordinating with family artisans via video calls, ensuring every piece meets our five-generation standard of excellence.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 7,
-      "content": "Supporting local silk artisan cooperatives to preserve traditional techniques while providing fair wages.",
-      "importance": 7,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 8,
-      "content": "The weight of family expectations - carrying forward the legacy while forging my own international path.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    },
-    {
-      "id": 9,
-      "content": "Creating a wedding gown that perfectly balances Western silhouette with traditional Chinese embroidery techniques.",
-      "importance": 8,
-      "created": 1,
-      "last_accessed": 1,
-      "expiration": null
-    }
-  ]
-}
+[
+  {
+    "node_id": 0,
+    "node_type": "observation",
+    "content": "Mei grew up in a multigenerational household in Suzhou, learning traditional silk embroidery from her grandmother while watching the family textile business evolve through five generations.",
+    "importance": 62,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 1,
+    "node_type": "observation",
+    "content": "As a child, Mei spent countless hours in the family workshop, mesmerized by the rhythm of silk looms and the patient hands of her grandmother creating intricate patterns.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 2,
+    "node_type": "observation",
+    "content": "Mei's great-great-grandmother started the family silk business in a small Suzhou workshop, establishing techniques and quality standards that continue today.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 3,
+    "node_type": "observation",
+    "content": "During her MBA studies, Mei secretly practiced traditional silk weaving techniques in her dormitory, afraid of losing the ancestral skills while learning modern business.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 4,
+    "node_type": "observation",
+    "content": "Mei's grandmother taught her that 'quality takes time, patience brings perfection' - a philosophy that governs every piece she creates at Silk Heritage.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 5,
+    "node_type": "observation",
+    "content": "The first international order changed everything - a wedding gown for a bride in New York who wanted to honor her Chinese heritage while embracing Western style.",
+    "importance": 68,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 6,
+    "node_type": "observation",
+    "content": "Mei launched Silk Heritage to bridge traditional Chinese craftsmanship with global markets, honoring ancestors while reaching contemporary women worldwide.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 7,
+    "node_type": "observation",
+    "content": "A moment of crisis came when several older artisans in the family cooperative retired, threatening to take irreplaceable traditional techniques with them.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 8,
+    "node_type": "observation",
+    "content": "Mei discovered that true luxury lies not in brand names but in the whisper of authentic mulberry silk and the precision of hand-finished seams.",
+    "importance": 34,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 9,
+    "node_type": "observation",
+    "content": "The pressure to marry and continue the family line often conflicts with Mei's focus on growing the international business and preserving traditional crafts.",
+    "importance": 78,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 10,
+    "node_type": "observation",
+    "content": "Mei began documenting family techniques and stories in detail, fearing this five-generation knowledge might be lost if not properly preserved.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 11,
+    "node_type": "observation",
+    "content": "A successful fashion week presentation in Milan proved that traditional Chinese silk craftsmanship could compete in the highest levels of international fashion.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 12,
+    "node_type": "observation",
+    "content": "Mei learned that her introverted nature is actually a strength in business - clients appreciate her thoughtful, measured approach to custom work.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 13,
+    "node_type": "observation",
+    "content": "Supporting local silk artisan cooperatives became not just good business but a way to ensure traditional techniques survive in the modern economy.",
+    "importance": 52,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 14,
+    "node_type": "observation",
+    "content": "Mei practiced tai chi in the courtyard at dawn, finding balance between ancient wisdom and the modern business pressures ahead.",
+    "importance": 36,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 15,
+    "node_type": "observation",
+    "content": "She checked international orders on her laptop while sipping tea from her grandmother's porcelain cup.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 16,
+    "node_type": "observation",
+    "content": "Mei organized silk fabric samples by color and texture, running her fingers along each piece to check for quality.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 17,
+    "node_type": "observation",
+    "content": "She updated the Silk Heritage website with new product photos, carefully writing descriptions that honored each piece's story.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 18,
+    "node_type": "observation",
+    "content": "Mei video-called family artisans to coordinate production schedules and ensure quality standards were maintained.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 19,
+    "node_type": "observation",
+    "content": "She spent the afternoon reviewing fabric shipment invoices and tracking international delivery schedules.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 20,
+    "node_type": "observation",
+    "content": "Mei tested new packaging materials, ensuring each silk garment would arrive to customers in perfect condition.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 21,
+    "node_type": "observation",
+    "content": "She practiced English pronunciation for an upcoming international client call, wanting to sound professional and confident.",
+    "importance": 15,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 22,
+    "node_type": "observation",
+    "content": "Mei carefully folded finished silk scarves, inserting care instruction cards written in multiple languages.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 23,
+    "node_type": "observation",
+    "content": "She researched competitor pricing while maintaining her commitment to fair wages for traditional artisans.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 24,
+    "node_type": "observation",
+    "content": "Mei responded to customer emails, thoughtfully answering questions about silk care and traditional techniques.",
+    "importance": 12,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 25,
+    "node_type": "observation",
+    "content": "She organized fabric swatches for a custom wedding gown order, considering how traditional patterns would adapt to modern silhouettes.",
+    "importance": 42,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 26,
+    "node_type": "observation",
+    "content": "Mei reviewed financial reports while worrying about maintaining quality standards during business growth.",
+    "importance": 32,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 27,
+    "node_type": "observation",
+    "content": "She cleaned and maintained the traditional silk loom in her workshop, keeping family tools in perfect working condition.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 28,
+    "node_type": "observation",
+    "content": "Mei sorted through grandmother's pattern books, digitizing designs to preserve them for future generations.",
+    "importance": 72,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 29,
+    "node_type": "observation",
+    "content": "Mei created a contemporary silk blouse that subtly incorporated traditional Chinese knot buttons and hand-finished seams.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 30,
+    "node_type": "observation",
+    "content": "She designed a wedding gown that perfectly balanced Western silhouette with traditional Chinese embroidery techniques for a cultural fusion bride.",
+    "importance": 25,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 31,
+    "node_type": "observation",
+    "content": "Mei coordinated with the family artisan cooperative to produce a limited collection of hand-embroidered silk shawls featuring dragons and phoenixes.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 32,
+    "node_type": "observation",
+    "content": "She negotiated international shipping rates while ensuring silk garments would travel safely to customers worldwide.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 33,
+    "node_type": "observation",
+    "content": "Mei mentored a young designer interested in traditional Chinese textile techniques, passing forward ancestral knowledge.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 34,
+    "node_type": "observation",
+    "content": "She participated in the International Fashion Entrepreneurs Association meeting, representing traditional craftsmanship in modern markets.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 35,
+    "node_type": "observation",
+    "content": "Mei developed a silk care kit with instructions in multiple languages, helping international customers preserve their purchases properly.",
+    "importance": 10,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 36,
+    "node_type": "observation",
+    "content": "She collaborated with a luxury hotel chain to create custom silk amenities that honored Chinese hospitality traditions.",
+    "importance": 28,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 37,
+    "node_type": "observation",
+    "content": "Mei researched sustainable silk production methods, seeking to align traditional practices with contemporary environmental consciousness.",
+    "importance": 18,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 38,
+    "node_type": "observation",
+    "content": "She established quality control protocols that maintained five-generation family standards while scaling for international production.",
+    "importance": 34,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 39,
+    "node_type": "observation",
+    "content": "Mei created a men's silk tie collection featuring subtle traditional Chinese motifs for international businessmen seeking cultural connection.",
+    "importance": 22,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 40,
+    "node_type": "observation",
+    "content": "She documented traditional silk weaving techniques in video format, creating an archive for future artisans and cultural preservation.",
+    "importance": 35,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 41,
+    "node_type": "observation",
+    "content": "Mei launched a custom tailoring service for clients wanting bespoke pieces that honored their heritage while fitting contemporary lifestyles.",
+    "importance": 38,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 42,
+    "node_type": "observation",
+    "content": "She partnered with cultural museums to create historically accurate silk reproductions, bridging commercial work with cultural preservation.",
+    "importance": 48,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 43,
+    "node_type": "observation",
+    "content": "No interaction occurred.",
+    "importance": 0,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 44,
+    "node_type": "observation",
+    "content": "I welcomed a guest to Silk Heritage with my grandmother\u2019s wisdom\u2014quality takes time, patience brings perfection\u2014and offered them our mulberry silk scarves, hand-finished blouses, and qipao to feel the drape and craftsmanship. I gently highlighted our blend of tradition and modern ease by inviting them to tap their digital cash for any piece that spoke to them. I felt a quiet pride in sharing our five-generation legacy, trusting that the fabric\u2019s whisper would convey what words sometimes cannot.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 45,
+    "node_type": "observation",
+    "content": "No interaction occurred.",
+    "importance": 5,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 46,
+    "node_type": "observation",
+    "content": "I welcomed a guest to Silk Heritage with the gentle invitation my grandmother taught me, introducing our hand-finished silk pieces from scarves to qipao and care kits. I emphasized that quality takes time\u2014quality takes patience\u2014and invited them to let their heart choose what speaks. I felt calm and hopeful, honoring my family\u2019s tradition while opening a doorway for a thoughtful connection to our craft.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 47,
+    "node_type": "observation",
+    "content": "No interaction occurred.",
+    "importance": 0,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  },
+  {
+    "node_id": 48,
+    "node_type": "observation",
+    "content": "I welcomed a guest to Silk Heritage with a gentle, no-pressure invitation\u2014mei ganjue\u2014then introduced our hand-finished silk offerings, from everyday blouses at 165 to heirloom-embroidered shawls at 320, along with qipao, pajamas, jackets, scarves, ties, hair accessories, raw silk, wedding gowns, and a silk care kit. I emphasized our family philosophy\u2014quality takes time, patience brings perfection\u2014and offered easy digital payment. I felt calm and proud, honoring my grandmother\u2019s teachings while guiding the guest toward pieces that carry our five-generation legacy.",
+    "importance": 45,
+    "created": 0,
+    "last_retrieved": 0,
+    "pointer_id": null
+  }
+]
