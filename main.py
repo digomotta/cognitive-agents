@@ -4,17 +4,17 @@ from simulation_engine.global_methods import *
 from agent_bank.navigator import *
 from generative_agent.generative_agent import *
 
-from testing.memories.rowan_greenwood_memories import *
-from testing.memories.jasmine_carter_memories import *
-from testing.memories.mina_kim_memories import *
-from testing.memories.kemi_adebayo_memories import *
-from testing.memories.pema_sherpa_memories import *
-from testing.memories.carlos_mendez_memories import *
-from testing.memories.bianca_silva_memories import *
-from testing.memories.mei_chen_memories import *
+from agent_bank.populations.memories.rowan_greenwood_memories import *
+from agent_bank.populations.memories.jasmine_carter_memories import *
+from agent_bank.populations.memories.mina_kim_memories import *
+from agent_bank.populations.memories.kemi_adebayo_memories import *
+from agent_bank.populations.memories.pema_sherpa_memories import *
+from agent_bank.populations.memories.carlos_mendez_memories import *
+from agent_bank.populations.memories.bianca_silva_memories import *
+from agent_bank.populations.memories.mei_chen_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
-from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
+from simulation_engine.markov_agent_chain import MarkovAgentChain, load_agents_for_chain
 
 #from testing.questions.rowan_greenwood_questions import *
 

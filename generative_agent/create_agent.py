@@ -5,19 +5,26 @@ Agent Creation Tool
 This tool creates complete generative agents with memories, inventory, and all necessary files.
 
 Usage:
-    python create_agent.py --name agent_name --population population_name --text text_file_name
+    python -m generative_agent.create_agent --name agent_name --population population_name --text text_file_name
 
 Examples:
-    python create_agent.py --name bianca_silva --population Synthetic_Base --text memories.txt
-    python create_agent.py --name new_agent --population Synthetic_Base --text agent_background.txt
+    python -m generative_agent.create_agent --name bianca_silva --population Synthetic_Base --text memories.txt
+    python -m generative_agent.create_agent --name new_agent --population Synthetic_Base --text agent_background.txt
 """
 
 import argparse
 import json
 import os
 import sys
+
+# Add parent directory to path for imports
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
 from simulation_engine.gpt_structure import chat_safe_generate
 from simulation_engine.settings import LLM_VERS
+from generative_agent.generative_agent import GenerativeAgent
 
 
 def generate_agent_memories_from_scratch(agent_name, population_name, output_file_path=None):
@@ -81,8 +88,8 @@ def generate_agent_memories_from_scratch(agent_name, population_name, output_fil
 
     # Set default output path if not provided
     if output_file_path is None:
-        os.makedirs("testing/memories", exist_ok=True)
-        output_file_path = f"testing/memories/{agent_name}_memories.py"
+        os.makedirs("agent_bank/populations/memories", exist_ok=True)
+        output_file_path = f"agent_bank/populations/memories/{agent_name}_memories.py"
 
     # Save the generated memories
     with open(output_file_path, 'w') as f:
@@ -182,7 +189,7 @@ def load_agent_memories(agent_name):
     Returns:
         list: Combined list of all memories
     """
-    memory_file = f"testing/memories/{agent_name}_memories.py"
+    memory_file = f"agent_bank/populations/memories/{agent_name}_memories.py"
     if not os.path.exists(memory_file):
         raise FileNotFoundError(f"Memory file not found: {memory_file}")
 
@@ -264,8 +271,6 @@ def setup_agent_with_generated_inventory(agent_name, inventory_code):
         agent_name (str): The agent's identifier (e.g., "kemi_adebayo")
         inventory_code (str): Generated Python code with agent.add_to_inventory() calls
     """
-    from generative_agent.generative_agent import GenerativeAgent
-
     # Load agent from Synthetic_Base
     agent = GenerativeAgent("Synthetic_Base", agent_name)
 

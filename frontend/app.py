@@ -16,7 +16,7 @@ from typing import Optional
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
 
-from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
+from simulation_engine.markov_agent_chain import MarkovAgentChain, load_agents_for_chain
 from generative_agent.generative_agent import GenerativeAgent
 
 app = Flask(__name__)

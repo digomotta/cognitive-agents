@@ -3,7 +3,7 @@ import json
 import os
 import numpy as np
 from datetime import datetime
-from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
+from simulation_engine.markov_agent_chain import MarkovAgentChain, load_agents_for_chain
 from .settings import DEBUG
 import random
 
