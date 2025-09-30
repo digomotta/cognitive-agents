@@ -6,6 +6,7 @@ let pollingInterval = null;
 let eventCounts = { messages: 0, trades: 0, reflections: 0, total: 0 };
 let networkSvg = null;
 let networkSimulation = null;
+let agentsData = [];
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', async () => {
@@ -18,13 +19,29 @@ async function loadAgents() {
     try {
         const response = await fetch(`${API_BASE}/api/agents`);
         const data = await response.json();
+        agentsData = data.agents;
 
-        const grid = document.getElementById('agents-grid');
-        grid.innerHTML = '';
+        // Debug: Log first agent's personality data
+        if (data.agents.length > 0) {
+            console.log('Sample agent personality data:', data.agents[0].personality);
+        }
+
+        // Populate selector grid (left panel)
+        const selectorGrid = document.getElementById('agent-selector-grid');
+        selectorGrid.innerHTML = '';
 
         data.agents.forEach(agent => {
-            const card = createAgentCard(agent);
-            grid.appendChild(card);
+            const selectorItem = createSelectorItem(agent);
+            selectorGrid.appendChild(selectorItem);
+        });
+
+        // Populate RPG cards grid (main content)
+        const rpgGrid = document.getElementById('agents-grid');
+        rpgGrid.innerHTML = '';
+
+        data.agents.forEach(agent => {
+            const rpgCard = createRPGCard(agent);
+            rpgGrid.appendChild(rpgCard);
         });
     } catch (error) {
         console.error('Error loading agents:', error);
@@ -32,37 +49,205 @@ async function loadAgents() {
     }
 }
 
-// Create agent card
-function createAgentCard(agent) {
-    const card = document.createElement('div');
-    card.className = 'agent-card';
-    card.dataset.agentId = agent.id;
+// Create compact selector item for left panel
+function createSelectorItem(agent) {
+    const item = document.createElement('div');
+    item.className = 'agent-selector-item';
+    item.dataset.agentId = agent.id;
 
-    card.innerHTML = `
-        <h3>${agent.name}</h3>
-        <p><strong>Age:</strong> ${agent.age}</p>
-        <p><strong>Occupation:</strong> ${agent.occupation}</p>
-        <p><strong>Location:</strong> ${agent.address}</p>
-        <p><strong>Items:</strong> ${agent.inventory_count}</p>
-        <p style="margin-top: 10px; font-size: 0.85em; font-style: italic;">${agent.self_description.substring(0, 100)}...</p>
+    item.innerHTML = `
+        <div class="name">${agent.name.split(' ')[0]}</div>
+        <div class="occupation">${agent.occupation}</div>
     `;
 
-    card.addEventListener('click', () => toggleAgentSelection(card, agent.id));
+    item.addEventListener('click', () => toggleAgentSelection(agent.id));
+    return item;
+}
+
+// Create RPG-style character sheet card
+function createRPGCard(agent) {
+    const card = document.createElement('div');
+    card.className = 'agent-rpg-card';
+    card.dataset.agentId = agent.id;
+
+    // Build personality bars
+    const personalities = agent.personality || {};
+    const personalityHTML = Object.entries(personalities).map(([trait, value]) => {
+        // Convert to percentage (values are 0-10 scale)
+        const percentage = Math.min(100, Math.max(0, (value / 10) * 100));
+        return `
+        <div class="personality-bar">
+            <div class="label">${trait.charAt(0).toUpperCase() + trait.slice(1)}</div>
+            <div class="bar-container">
+                <div class="bar" style="width: ${percentage}%"></div>
+            </div>
+        </div>
+        `;
+    }).join('');
+
+    // Build inventory list (show first 10 items)
+    const inventoryHTML = (agent.inventory || []).slice(0, 10).map(item => `
+        <span class="inventory-item">
+            <span class="qty">${item.quantity}x</span> ${item.name}
+        </span>
+    `).join('');
+
+    // Get top personality trait
+    let topTrait = 'N/A';
+    let topValue = 0;
+    Object.entries(personalities).forEach(([trait, value]) => {
+        if (value > topValue) {
+            topValue = value;
+            topTrait = trait.charAt(0).toUpperCase() + trait.slice(1);
+        }
+    });
+
+    card.innerHTML = `
+        <div class="rpg-header" onclick="toggleCardExpansion(event, '${agent.id}')">
+            <span class="expand-icon">▼</span>
+            <h3>${agent.name}</h3>
+            <div class="subtitle">${agent.age} years old • ${agent.occupation}</div>
+            <div class="rpg-thumbnail-stats">
+                <div class="stat">📍 ${agent.address.split(',')[0]}</div>
+                <div class="stat">🎒 ${agent.inventory_count} items</div>
+                <div class="stat">🧠 ${topTrait}</div>
+                <div class="stat">👤 ${agent.gender}</div>
+            </div>
+        </div>
+        <div class="rpg-body">
+            <div class="rpg-section">
+                <h4>📍 Demographics</h4>
+                <div class="rpg-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Age</div>
+                        <div class="stat-value">${agent.age}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Sex</div>
+                        <div class="stat-value">${agent.sex || 'N/A'}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Race</div>
+                        <div class="stat-value">${agent.race || 'N/A'}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Ethnicity</div>
+                        <div class="stat-value">${agent.ethnicity || 'N/A'}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Location</div>
+                        <div class="stat-value">${agent.address}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Census Division</div>
+                        <div class="stat-value">${agent.census_division || 'N/A'}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rpg-section">
+                <h4>🎓 Background</h4>
+                <div class="rpg-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Education</div>
+                        <div class="stat-value">${agent.education || 'N/A'}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Occupation</div>
+                        <div class="stat-value">${agent.occupation || 'N/A'}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Political Ideology</div>
+                        <div class="stat-value">${agent.political_ideology || 'N/A'}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Political Party</div>
+                        <div class="stat-value">${agent.political_party || 'N/A'}</div>
+                    </div>
+                </div>
+            </div>
+
+            ${personalities && Object.keys(personalities).length > 0 ? `
+            <div class="rpg-section">
+                <h4>🧠 Personality Traits (Big Five)</h4>
+                <div class="personality-grid">
+                    ${personalityHTML}
+                </div>
+            </div>
+            ` : ''}
+
+            ${agent.inventory && agent.inventory.length > 0 ? `
+            <div class="rpg-section">
+                <h4>🎒 Inventory (${agent.inventory_count} items)</h4>
+                <div class="inventory-list">
+                    ${inventoryHTML}
+                    ${agent.inventory.length > 10 ? '<span style="color: #666; font-style: italic;">...</span>' : ''}
+                </div>
+            </div>
+            ` : ''}
+
+            ${agent.self_description ? `
+            <div class="rpg-section">
+                <h4>✨ Self Description</h4>
+                <div class="rpg-description">
+                    ${agent.self_description}
+                </div>
+            </div>
+            ` : ''}
+
+            ${agent.fact_sheet ? `
+            <div class="rpg-section">
+                <h4>📄 Fact Sheet</h4>
+                <div class="rpg-description" style="border-left-color: #667eea; background: #f0f4ff;">
+                    ${agent.fact_sheet}
+                </div>
+            </div>
+            ` : ''}
+
+            ${agent.speech_pattern ? `
+            <div class="rpg-section">
+                <h4>💬 Speech Pattern</h4>
+                <div class="rpg-description" style="border-left-color: #28a745; background: #f0fff4;">
+                    ${agent.speech_pattern}
+                </div>
+            </div>
+            ` : ''}
+        </div>
+    `;
+
     return card;
 }
 
 // Toggle agent selection
-function toggleAgentSelection(card, agentId) {
+function toggleAgentSelection(agentId) {
+    const selectorItem = document.querySelector(`.agent-selector-item[data-agent-id="${agentId}"]`);
+
     if (selectedAgents.has(agentId)) {
         selectedAgents.delete(agentId);
-        card.classList.remove('selected');
+        if (selectorItem) selectorItem.classList.remove('selected');
     } else {
         selectedAgents.add(agentId);
-        card.classList.add('selected');
+        if (selectorItem) selectorItem.classList.add('selected');
     }
 
     // Enable start button if at least 2 agents selected
     document.getElementById('start-btn').disabled = selectedAgents.size < 2;
+}
+
+// Toggle card expansion
+function toggleCardExpansion(event, agentId) {
+    event.stopPropagation();
+    const card = document.querySelector(`.agent-rpg-card[data-agent-id="${agentId}"]`);
+
+    // Collapse all other cards
+    document.querySelectorAll('.agent-rpg-card.expanded').forEach(otherCard => {
+        if (otherCard !== card) {
+            otherCard.classList.remove('expanded');
+        }
+    });
+
+    // Toggle this card
+    card.classList.toggle('expanded');
 }
 
 // Setup event listeners

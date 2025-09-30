@@ -107,33 +107,45 @@ def get_agents():
                     # Try to extract from self_description or use default
                     occupation = 'Merchant'
 
-                # Safely get personality
-                personality = getattr(agent.scratch, 'personality', {})
-                if isinstance(personality, dict):
-                    personality_data = {
-                        'extraversion': personality.get('extraversion', 0),
-                        'agreeableness': personality.get('agreeableness', 0),
-                        'conscientiousness': personality.get('conscientiousness', 0),
-                        'neuroticism': personality.get('neuroticism', 0),
-                        'openness': personality.get('openness', 0)
-                    }
-                else:
-                    personality_data = {
-                        'extraversion': 0,
-                        'agreeableness': 0,
-                        'conscientiousness': 0,
-                        'neuroticism': 0,
-                        'openness': 0
-                    }
+                # Get personality traits directly from scratch attributes
+                personality_data = {
+                    'extraversion': getattr(agent.scratch, 'extraversion', 0),
+                    'agreeableness': getattr(agent.scratch, 'agreeableness', 0),
+                    'conscientiousness': getattr(agent.scratch, 'conscientiousness', 0),
+                    'neuroticism': getattr(agent.scratch, 'neuroticism', 0),
+                    'openness': getattr(agent.scratch, 'openness', 0)
+                }
+
+                # Get inventory details
+                inventory = []
+                if hasattr(agent, 'inventory'):
+                    for item_name, item_data in agent.inventory.items.items():
+                        # item_data is an InventoryItem object, not a dict
+                        inventory.append({
+                            'name': item_name,
+                            'quantity': getattr(item_data, 'quantity', 0),
+                            'base_value': getattr(item_data, 'value', 0),
+                        })
 
                 agents_data.append({
                     'id': agent_id,
                     'name': agent.scratch.get_fullname(),
                     'age': getattr(agent.scratch, 'age', 0),
+                    'sex': getattr(agent.scratch, 'sex', 'N/A'),
+                    'gender': getattr(agent.scratch, 'sex', 'N/A'),
+                    'education': getattr(agent.scratch, 'education', 'N/A'),
+                    'race': getattr(agent.scratch, 'race', 'N/A'),
+                    'ethnicity': getattr(agent.scratch, 'ethnicity', 'N/A'),
+                    'political_ideology': getattr(agent.scratch, 'political_ideology', 'N/A'),
+                    'political_party': getattr(agent.scratch, 'political_party', 'N/A'),
+                    'census_division': getattr(agent.scratch, 'census_division', 'N/A'),
                     'occupation': occupation,
-                    'address': getattr(agent.scratch, 'living_area', 'Unknown'),
+                    'address': getattr(agent.scratch, 'address', 'Unknown'),
                     'personality': personality_data,
                     'self_description': getattr(agent.scratch, 'self_description', ''),
+                    'fact_sheet': getattr(agent.scratch, 'fact_sheet', ''),
+                    'speech_pattern': getattr(agent.scratch, 'speech_pattern', ''),
+                    'inventory': inventory,
                     'inventory_count': len(agent.inventory.items) if hasattr(agent, 'inventory') else 0
                 })
             except Exception as e:
