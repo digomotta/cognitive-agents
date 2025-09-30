@@ -490,12 +490,11 @@ function createConversationHeaderElement(data) {
     const [agent1, agent2] = data.participants;
 
     div.innerHTML = `
-        <div style="text-align: center; padding: 15px 20px; margin: 15px 0 10px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white; font-weight: 600; font-size: 1.1em; box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);">
-            <span style="margin-right: 10px;">💬</span>
+        <div style="padding: 12px 16px; margin: 20px 0 12px 0; background: #1a1a1a; border-radius: 6px; color: white; font-weight: 500; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; gap: 12px;">
             <span>${agent1}</span>
-            <span style="margin: 0 15px; font-size: 1.2em;">→</span>
+            <span style="opacity: 0.5;">→</span>
             <span>${agent2}</span>
-            <span style="margin-left: 10px; font-size: 0.85em; opacity: 0.9;">(Step ${data.markov_step})</span>
+            <span style="margin-left: 8px; font-size: 0.75rem; opacity: 0.6;">Step ${data.markov_step}</span>
         </div>
     `;
 
