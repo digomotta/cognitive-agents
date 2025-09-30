@@ -5,11 +5,20 @@ Agent Creation Tool
 This tool creates complete generative agents with memories, inventory, and all necessary files.
 
 Usage:
+    # Create a single agent
     python -m generative_agent.create_agent --name agent_name --population population_name --text text_file_name
 
+    # Create all agents in a population directory
+    python -m generative_agent.create_agent --all --population Synthetic_Base --text inventory.txt
+
 Examples:
-    python -m generative_agent.create_agent --name bianca_silva --population Synthetic_Base --text memories.txt
+    # Single agent creation
+    python -m generative_agent.create_agent --name bianca_silva --population Synthetic_Base --text inventory.txt
     python -m generative_agent.create_agent --name new_agent --population Synthetic_Base --text agent_background.txt
+
+    # Batch creation of all agents
+    python -m generative_agent.create_agent --all
+    python -m generative_agent.create_agent --all --population Synthetic_Base --text inventory.txt
 """
 
 import argparse
@@ -332,41 +341,132 @@ def create_agent(agent_name, population_name, text_file_name):
     return memory_file_path
 
 
+def create_all_agents(population_name='Synthetic_Base', text_file_name='inventory.txt'):
+    """
+    Create all agents found in the specified population directory.
+
+    Args:
+        population_name (str): The population directory to scan (default: Synthetic_Base)
+        text_file_name (str): Name of inventory text file (default: inventory.txt)
+
+    Returns:
+        dict: Dictionary with agent names as keys and status (success/error) as values
+    """
+    population_path = f"agent_bank/populations/{population_name}"
+
+    if not os.path.exists(population_path):
+        raise FileNotFoundError(f"Population directory not found: {population_path}")
+
+    # Get all agent directories
+    agent_dirs = [d for d in os.listdir(population_path)
+                  if os.path.isdir(os.path.join(population_path, d))
+                  and not d.startswith('.')]
+
+    if not agent_dirs:
+        print(f"No agent directories found in {population_path}")
+        return {}
+
+    print(f"Found {len(agent_dirs)} agents in {population_name}: {', '.join(agent_dirs)}")
+    print("="*50)
+
+    results = {}
+
+    for agent_name in agent_dirs:
+        print(f"\nProcessing agent: {agent_name}")
+        print("-"*50)
+
+        try:
+            # Validate agent has required files
+            scratch_path = f"{population_path}/{agent_name}/scratch.json"
+            text_file_path = f"{population_path}/{agent_name}/{text_file_name}"
+
+            if not os.path.exists(scratch_path):
+                raise FileNotFoundError(f"Missing scratch.json for {agent_name}")
+
+            if not os.path.exists(text_file_path):
+                raise FileNotFoundError(f"Missing {text_file_name} for {agent_name}")
+
+            # Create the agent
+            memory_file_path = create_agent(agent_name, population_name, text_file_name)
+            results[agent_name] = "SUCCESS"
+            print(f"✓ {agent_name} created successfully")
+
+        except Exception as e:
+            results[agent_name] = f"ERROR: {str(e)}"
+            print(f"✗ Failed to create {agent_name}: {str(e)}")
+            continue
+
+    # Print summary
+    print("\n" + "="*50)
+    print("BATCH CREATION SUMMARY")
+    print("="*50)
+    successful = [k for k, v in results.items() if v == "SUCCESS"]
+    failed = [k for k, v in results.items() if v != "SUCCESS"]
+
+    print(f"Total agents processed: {len(results)}")
+    print(f"Successful: {len(successful)}")
+    print(f"Failed: {len(failed)}")
+
+    if successful:
+        print(f"\n✓ Successfully created: {', '.join(successful)}")
+
+    if failed:
+        print(f"\n✗ Failed to create: {', '.join(failed)}")
+        for agent_name in failed:
+            print(f"  - {agent_name}: {results[agent_name]}")
+
+    return results
+
+
 def main():
     parser = argparse.ArgumentParser(description='Create a complete generative agent with memories and inventory')
 
-    parser.add_argument('--name', required=True, help='Agent name/identifier (e.g., bianca_silva)')
+    parser.add_argument('--name', help='Agent name/identifier (e.g., bianca_silva)')
     parser.add_argument('--population', default='Synthetic_Base', help='Source population name (default: Synthetic_Base)')
-    parser.add_argument('--text', required=True, help='Text file name containing inventory/business description (e.g., business.txt)')
+    parser.add_argument('--text', default='inventory.txt', help='Text file name containing inventory/business description (default: inventory.txt)')
     parser.add_argument('--output', help='Optional output path for memory file')
+    parser.add_argument('--all', action='store_true', help='Create all agents found in the population directory')
 
     args = parser.parse_args()
 
     try:
-        # Validate inputs
-        scratch_path = f"agent_bank/populations/{args.population}/{args.name}/scratch.json"
-        if not os.path.exists(scratch_path):
-            print(f"Error: Agent scratch file not found at {scratch_path}")
-            print("Make sure the agent exists in the specified population.")
-            sys.exit(1)
+        if args.all:
+            # Create all agents in the population
+            print(f"Creating all agents from {args.population} population...")
+            results = create_all_agents(args.population, args.text)
+            sys.exit(0 if all(v == "SUCCESS" for v in results.values()) else 1)
 
-        text_file_path = f"agent_bank/populations/{args.population}/{args.name}/{args.text}"
-        if not os.path.exists(text_file_path):
-            print(f"Error: Inventory description file not found at {text_file_path}")
-            print("Make sure the text file with inventory/business description exists in the agent's directory.")
-            sys.exit(1)
+        else:
+            # Single agent creation (original behavior)
+            if not args.name:
+                print("Error: --name is required when --all is not specified")
+                parser.print_help()
+                sys.exit(1)
 
-        # Create the agent
-        memory_file_path = create_agent(args.name, args.population, args.text)
+            # Validate inputs
+            scratch_path = f"agent_bank/populations/{args.population}/{args.name}/scratch.json"
+            if not os.path.exists(scratch_path):
+                print(f"Error: Agent scratch file not found at {scratch_path}")
+                print("Make sure the agent exists in the specified population.")
+                sys.exit(1)
 
-        print("\n" + "="*50)
-        print("AGENT CREATION COMPLETE")
-        print("="*50)
-        print(f"Agent: {args.name}")
-        print(f"Population: {args.population}")
-        print(f"Text file: {args.text}")
-        print(f"Memory file: {memory_file_path}")
-        print(f"Agent saved to: agent_bank/populations/Synthetic/{args.name}/")
+            text_file_path = f"agent_bank/populations/{args.population}/{args.name}/{args.text}"
+            if not os.path.exists(text_file_path):
+                print(f"Error: Inventory description file not found at {text_file_path}")
+                print("Make sure the text file with inventory/business description exists in the agent's directory.")
+                sys.exit(1)
+
+            # Create the agent
+            memory_file_path = create_agent(args.name, args.population, args.text)
+
+            print("\n" + "="*50)
+            print("AGENT CREATION COMPLETE")
+            print("="*50)
+            print(f"Agent: {args.name}")
+            print(f"Population: {args.population}")
+            print(f"Text file: {args.text}")
+            print(f"Memory file: {memory_file_path}")
+            print(f"Agent saved to: agent_bank/populations/Synthetic/{args.name}/")
 
     except Exception as e:
         print(f"Error creating agent: {str(e)}")

@@ -229,6 +229,98 @@ Trade Detection → Inventory Updates → Memory Storage →(p Reflection Trigge
 ```
 
 
-### Building Agent 
+## 🔨 Creating New Agents
 
-Future feature.
+You can create new agents using the `create_agent.py` script. This automatically generates memories from a base template and sets up the full agent structure.
+
+### Requirements
+
+To create a new agent, you need:
+1. **scratch.json** - Agent's identity (demographics, personality, speech patterns)
+2. **inventory.txt** - List of items the agent sells (one per line)
+3. **OPENAI_API_KEY** - Make sure you exported the OPENAI_API_KEY
+
+### Example: Carlos Agent Template
+
+The `carlos_agent` in `Synthetic_Base` population serves as a reference example:
+
+**scratch.json** (agent_bank/populations/Synthetic_Base/carlos_agent/scratch.json):
+```json
+{
+  "first_name": "Reginald",
+  "last_name": "Flintstone",
+  "age": 43,
+  "sex": "Male",
+  "education": "High school; self-taught in military history",
+  "race": "Caucasian",
+  "extraversion": 3.0,
+  "agreeableness": 2.0,
+  "conscientiousness": 8.5,
+  "neuroticism": 6.0,
+  "openness": 7.5,
+  "fact_sheet": {
+    "childhood": "...",
+    "formation": "...",
+    "work": "..."
+  },
+  "speech_pattern": "Short, assertive tone...",
+  "self_description": "...",
+  "private_self_description": "..."
+}
+```
+
+**inventory.txt** (agent_bank/populations/Synthetic_Base/carlos_agent/inventory.txt):
+```
+propeller hat
+reinforced umbrellas
+raincoats
+nuclear energy drink
+```
+
+### Creating a Single Agent
+
+```bash
+python -m generative_agent.create_agent --name agent_name --population Synthetic_Base --text inventory.txt
+```
+
+This command will:
+1. Generate memories from the scratch.json template using LLM
+2. Create full agent structure in both `Synthetic_Base` and `Synthetic` populations
+3. Save generated memories to `agent_bank/populations/memories/{agent_name}_memories.py`
+4. Initialize inventory with items from inventory.txt
+
+### Creating All Agents at Once
+
+You can batch-create all agents found in a population directory:
+
+```bash
+# Create all agents in Synthetic_Base with default inventory.txt
+python -m generative_agent.create_agent --all
+
+# Create all agents with custom text file
+python -m generative_agent.create_agent --all --population Synthetic_Base --text custom_inventory.txt
+```
+
+This will automatically:
+- Scan the population directory for all agent folders
+- Process each agent that has both `scratch.json` and `inventory.txt` (or specified text file)
+- Generate memories and inventory for each agent
+- Provide a summary report showing which agents succeeded/failed
+
+### Steps to Create Your Own Agent
+
+1. Create agent directory structure:
+```bash
+mkdir -p agent_bank/populations/Synthetic_Base/your_agent_name
+```
+
+2. Create `scratch.json` with agent identity (use carlos_agent as template)
+
+3. Create `inventory.txt` with items (one per line)
+
+4. Run the create_agent script:
+```bash
+python -m generative_agent.create_agent --name your_agent_name --population Synthetic_Base --text inventory.txt
+```
+
+The agent will be ready to participate in simulations with a fully generated memory stream, personality, and inventory.
