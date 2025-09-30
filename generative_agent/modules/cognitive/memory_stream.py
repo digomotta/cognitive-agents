@@ -328,6 +328,7 @@ class MemoryStream:
     for count, reflection in enumerate(reflections): 
       self._add_node(time_step, "reflection", reflections[count], 
                      scores[count], record_ids)
+    return reflections
 
 
 # ##############################################################################

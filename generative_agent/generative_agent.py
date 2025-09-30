@@ -209,7 +209,11 @@ class GenerativeAgent:
     """
     self.memory_stream.remember(content, time_step)
 
-  def reflect(self, anchor: str, time_step: int = 0) -> None: 
+  def reflect(self, 
+              anchor: str, 
+              reflection_count: int = 5, 
+              retrieval_count: int = 10, 
+              time_step: int = 0) -> None: 
     """
     Add a new reflection to the memory stream. 
 
@@ -219,7 +223,7 @@ class GenerativeAgent:
     Returns: 
       None
     """
-    self.memory_stream.reflect(anchor, time_step)
+    self.memory_stream.reflect(anchor, reflection_count, retrieval_count, time_step)
 
   def add_to_inventory(self, item_name: str, quantity: int, time_step: int = 0, value: float = 0.0, production_cost: float = 0.0, description: str = "") -> None:
     """Add items to the agent's inventory."""

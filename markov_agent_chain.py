@@ -15,6 +15,7 @@ import numpy as np
 import random
 import time
 from typing import List, Dict, Optional
+from collections import deque
 
 from simulation_engine.settings import *
 from simulation_engine.global_methods import *
@@ -25,11 +26,144 @@ from generative_agent.modules.conversation_interaction import ConversationBasedI
 
 class MarkovAgentChain:
     """Markov chain where each state is an agent, transitions trigger interactions."""
-    
-    def __init__(self):
+
+    def __init__(self, event_queue_maxlen: int = 1000):
         self.trade_analyzer = ConversationTradeAnalyzer()
         self.conversation_manager = ConversationBasedInteraction()
         self.interaction_history = []
+
+        # Event queue for frontend consumption
+        self.event_queue = deque(maxlen=event_queue_maxlen)
+
+        # Cumulative trade stats for leaderboard
+        self.agent_stats = {}  # {agent_name: {sales: 0, purchases: 0, net_value: 0, trade_count: 0}}
+
+    def _emit_event(self, event_type: str, data: Dict):
+        """
+        Emit an event to the queue for frontend consumption.
+
+        Args:
+            event_type: Type of event ('utterance', 'trade', 'reflection', 'network_update')
+            data: Event data dictionary
+        """
+        event = {
+            'timestamp': time.time(),
+            'type': event_type,
+            'data': data
+        }
+        self.event_queue.append(event)
+
+    def _update_agent_stats(self, trade_result: Dict):
+        """
+        Update cumulative agent statistics from a trade.
+
+        Args:
+            trade_result: Trade result dictionary
+        """
+        if not trade_result.get('executed'):
+            return
+
+        details = trade_result.get('trade_details', {})
+        participants = details.get('participants', {})
+        items = details.get('items', [])
+
+        seller = participants.get('seller')
+        buyer = participants.get('buyer')
+
+        if not seller or not buyer or not items:
+            return
+
+        # Calculate total trade value
+        total_value = sum(item.get('value', 0) * item.get('quantity', 1) for item in items)
+
+        # Initialize stats if needed
+        if seller not in self.agent_stats:
+            self.agent_stats[seller] = {'sales': 0, 'purchases': 0, 'net_value': 0, 'trade_count': 0}
+        if buyer not in self.agent_stats:
+            self.agent_stats[buyer] = {'sales': 0, 'purchases': 0, 'net_value': 0, 'trade_count': 0}
+
+        # Update stats
+        self.agent_stats[seller]['sales'] += total_value
+        self.agent_stats[seller]['net_value'] += total_value
+        self.agent_stats[seller]['trade_count'] += 1
+
+        self.agent_stats[buyer]['purchases'] += total_value
+        self.agent_stats[buyer]['net_value'] -= total_value
+        self.agent_stats[buyer]['trade_count'] += 1
+
+    def get_events(self, count: Optional[int] = None) -> List[Dict]:
+        """
+        Get events from the queue.
+
+        Args:
+            count: Number of events to retrieve (None = all)
+
+        Returns:
+            List of events
+        """
+        if count is None:
+            events = list(self.event_queue)
+            self.event_queue.clear()
+            return events
+        else:
+            events = []
+            for _ in range(min(count, len(self.event_queue))):
+                events.append(self.event_queue.popleft())
+            return events
+
+    def get_leaderboard(self) -> List[Dict]:
+        """
+        Get agent leaderboard sorted by sales.
+
+        Returns:
+            List of agent stats sorted by sales (descending)
+        """
+        leaderboard = []
+        for agent_name, stats in self.agent_stats.items():
+            leaderboard.append({
+                'agent': agent_name,
+                **stats
+            })
+        return sorted(leaderboard, key=lambda x: x['sales'], reverse=True)
+
+    def get_network_data(self, agents: List[GenerativeAgent], transition_matrix: np.ndarray) -> Dict:
+        """
+        Get network graph data with agents as nodes and transition probabilities as edges.
+
+        Args:
+            agents: List of agents
+            transition_matrix: Transition probability matrix
+
+        Returns:
+            Dict with nodes and edges for network visualization
+        """
+        nodes = []
+        for i, agent in enumerate(agents):
+            agent_name = agent.scratch.get_fullname()
+            stats = self.agent_stats.get(agent_name, {'sales': 0, 'purchases': 0, 'net_value': 0, 'trade_count': 0})
+            nodes.append({
+                'id': agent_name,
+                'index': i,
+                'sales': stats['sales'],
+                'purchases': stats['purchases'],
+                'net_value': stats['net_value'],
+                'trade_count': stats['trade_count']
+            })
+
+        edges = []
+        for i in range(len(agents)):
+            for j in range(len(agents)):
+                if i != j and transition_matrix[i][j] > 0:
+                    edges.append({
+                        'source': agents[i].scratch.get_fullname(),
+                        'target': agents[j].scratch.get_fullname(),
+                        'weight': float(transition_matrix[i][j])
+                    })
+
+        return {
+            'nodes': nodes,
+            'edges': edges
+        }
     
     def create_agent_transition_matrix(self, num_agents: int, 
                                      self_reflection_probability: float = 0.3,
@@ -83,34 +217,43 @@ class MarkovAgentChain:
     def agent_self_reflection(self, agent: GenerativeAgent, context: str, step: int, testing_mode: bool = True):
         """
         Handle agent self-reflection when staying in same state.
-        
+
         Args:
             agent: Agent to reflect
             context: Overall simulation context
             step: Current step in the chain
         """
         print(f"Step {step}: {agent.scratch.get_fullname()} stays in current state → REFLECTS")
-        
+
         # Create reflection anchor based on recent interactions
         reflection_anchor = f"recent interactions and experiences in {context}"
         if self.interaction_history:
             last_interaction = self.interaction_history[-1]
             if last_interaction['type'] == 'conversation' and agent.scratch.get_fullname() in last_interaction['participants']:
                 reflection_anchor = f"recent conversation about {last_interaction['context']}"
-        
+
         # Trigger reflection
+        reflections = []
         try:
-            agent.memory_stream.reflect(reflection_anchor, reflection_count=3, retrieval_count=5, time_step=step)
+            reflections = agent.memory_stream.reflect(reflection_anchor, reflection_count=3, retrieval_count=5, time_step=step)
             if not testing_mode:
                 agent.save()  # Only save to persist reflections if not in testing mode
                 print(f"   → Reflected on: {reflection_anchor} (saved to JSON)")
             else:
                 print(f"   → Reflected on: {reflection_anchor} (testing mode - not saved)")
+
+            # Print reflections
+            if reflections:
+                print(f"   → Reflections:")
+                for i, r in enumerate(reflections, 1):
+                    print(f"      {i}. {r}")
         except Exception as e:
             print(f"   → Reflection failed: {e}")
             # Try simpler reflection
             try:
-                agent.remember(f"I reflected on {reflection_anchor} at step {step}")
+                simple_thought = f"I reflected on {reflection_anchor} at step {step}"
+                agent.remember(simple_thought)
+                reflections = [simple_thought]
                 if not testing_mode:
                     agent.save()  # Only save the simple memory if not in testing mode
                     print(f"   → Added simple reflection memory instead (saved to JSON)")
@@ -118,7 +261,17 @@ class MarkovAgentChain:
                     print(f"   → Added simple reflection memory instead (testing mode - not saved)")
             except Exception as e2:
                 print(f"   → Both reflection methods failed: {e2}")
-        
+                reflections = []
+
+        # Emit reflection event with thoughts
+        self._emit_event('reflection', {
+            'markov_step': step,
+            'agent': agent.scratch.get_fullname(),
+            'anchor': reflection_anchor,
+            'context': context,
+            'thoughts': reflections if reflections else ['Reflection in progress...']
+        })
+
         # Record reflection in history
         self.interaction_history.append({
             'type': 'reflection',
@@ -169,13 +322,25 @@ class MarkovAgentChain:
                 )
                 curr_dialogue.append([current_speaker.scratch.get_fullname(), response])
                 print(f"   {current_speaker.scratch.get_fullname()}: {response}")
-                
+
+                # Emit utterance event
+                self._emit_event('utterance', {
+                    'markov_step': step,
+                    'conversation_turn': turn,
+                    'conversation_id': conversation_id,
+                    'agent': current_speaker.scratch.get_fullname(),
+                    'text': response,
+                    'participants': [agent1.scratch.get_fullname(), agent2.scratch.get_fullname()],
+                    'context': context,
+                    'ended': ended
+                })
+
                 # Check for conversation end
                 if ended:
                     print(f"   → Conversation ended by {current_speaker.scratch.get_fullname()}")
                     conversation_ended = True
                     break
-                
+
                 # Handle trade detection
                 if sales_detected:
                     print(f"   → Sales detected at turn {turn}")
@@ -191,6 +356,17 @@ class MarkovAgentChain:
                         trades_executed.append(trade_result)
                         if trade_result.get('executed'):
                             print(f"   → Trade executed: {trade_result['trade_details']}")
+
+                            # Update agent stats and emit trade event
+                            self._update_agent_stats(trade_result)
+                            self._emit_event('trade', {
+                                'markov_step': step,
+                                'conversation_turn': turn,
+                                'conversation_id': conversation_id,
+                                'trade_details': trade_result['trade_details'],
+                                'participants': [agent1.scratch.get_fullname(), agent2.scratch.get_fullname()],
+                                'context': context
+                            })
                         else:
                             warning_msg = trade_result.get('warning')
                             if warning_msg:
@@ -202,10 +378,10 @@ class MarkovAgentChain:
                                 agent2.working_memory.add_conversation_turn("[System]", warning_msg)
                             else:
                                 print(f"   → Trade detected but not executed")
-                
+
                 # Switch speakers
                 current_speaker, other_agent = other_agent, current_speaker
-                
+
             except Exception as e:
                 print(f"   → Error in conversation: {e}")
                 break
@@ -238,7 +414,7 @@ class MarkovAgentChain:
         return interaction_result
     
     def run_markov_chain(self, agents: List[GenerativeAgent], 
-                        context: str = "Multi-agent simulation",
+                        context: str = "Marketplace",
                         num_steps: int = 20,
                         self_reflection_prob: float = 0.3,
                         interaction_prob: float = 0.7,
@@ -300,10 +476,10 @@ class MarkovAgentChain:
         # Run Markov chain steps
         for step in range(num_steps):
             current_agent = agents[current_state]
-            
+
             # Select next state
             next_state = self.select_next_agent_state(current_state, transition_matrix)
-            
+
             if next_state == current_state:
                 # Stay in same state → Reflection
                 self.agent_self_reflection(current_agent, context, step + 1, testing_mode)
@@ -311,10 +487,19 @@ class MarkovAgentChain:
                 # Transition to different state → Conversation
                 next_agent = agents[next_state]
                 self.two_agent_conversation(
-                    current_agent, next_agent, context, step + 1, 
+                    current_agent, next_agent, context, step + 1,
                     conversation_max_turns, testing_mode
                 )
-            
+
+            # Emit network update event periodically (every 5 steps)
+            if (step + 1) % 5 == 0:
+                network_data = self.get_network_data(agents, transition_matrix)
+                self._emit_event('network_update', {
+                    'markov_step': step + 1,
+                    'network': network_data,
+                    'leaderboard': self.get_leaderboard()
+                })
+
             # Move to next state
             current_state = next_state
             print()  # Add spacing between steps
