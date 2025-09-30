@@ -5,6 +5,7 @@ import numpy as np
 from datetime import datetime
 from markov_agent_chain import MarkovAgentChain, load_agents_for_chain
 from .settings import DEBUG
+import random
 
 
 class Simulation:
@@ -282,6 +283,7 @@ class Simulation:
         all_production_results = []
         last_weight_update = 0
         last_production_update = 0
+        current_agent = None
 
 
         for step in range(1, total_steps + 1):
@@ -300,9 +302,12 @@ class Simulation:
                 self_reflection_prob=0.2,
                 interaction_prob=0.8,
                 transition_matrix=transition_matrix,
-                conversation_max_turns=6,
+                conversation_max_turns=1,
+                start_agent=current_agent,
                 testing_mode=testing_mode
             )
+
+            current_agent = step_results['final_state']
 
             # Check for weight update cycle
             should_update_weights = (step - last_weight_update) >= weight_update_cycle

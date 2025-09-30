@@ -244,6 +244,7 @@ class MarkovAgentChain:
                         interaction_prob: float = 0.7,
                         transition_matrix: Optional[np.ndarray] = None,
                         conversation_max_turns: int = 8,
+                        start_agent: Optional[int] = None,
                         testing_mode: bool = True) -> Dict:
         """
         Run the Markov chain simulation with agents as states.
@@ -287,9 +288,13 @@ class MarkovAgentChain:
         for i, row in enumerate(transition_matrix):
             print(f"{agent_names[i][:8]:<8}", "  ".join([f"{prob:.3f}" for prob in row]))
         print()
-        
+
         # Initialize chain state
-        current_state = 0  # Start with first agent
+        if start_agent is None:
+            current_state = random.randint(0, len(agents) - 1)
+        else:
+            current_state = start_agent
+
         self.interaction_history = []
         
         # Run Markov chain steps

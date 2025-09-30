@@ -595,9 +595,9 @@ def sales_history():
 
 def main(): 
   # Simplified main for multi-agent Markov chain interactions
-  # build_agent()
+  build_agent()
   # interview_agent()
-  chat_with_agent()
+  # chat_with_agent()
   #agent_production_planning()
   # smart_production_planning()
 
