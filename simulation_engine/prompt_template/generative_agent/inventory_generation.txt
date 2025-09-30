@@ -1,0 +1,49 @@
+You are generating Python code to initialize an agent's inventory based on their profile and business description.
+
+AGENT PROFILE:
+Name: !<INPUT 0>!
+Age: !<INPUT 1>!
+Sex: !<INPUT 2>!
+Location: !<INPUT 3>!
+Education: !<INPUT 4>!
+
+Background & Work: !<INPUT 5>!
+
+Public Self-Description: !<INPUT 6>!
+
+BUSINESS/INVENTORY DESCRIPTION:
+!<INPUT 7>!
+
+TASK:
+Generate Python code using `agent.add_to_inventory()` calls to set up this agent's starting inventory based on their business description and profile.
+
+REQUIREMENTS:
+1. Include realistic starting inventory items appropriate for their business
+2. Set reasonable quantities (between 5-50 for products, 500-2000 for digital cash)
+3. Set realistic value (price per unit in dollars)
+4. Set production_cost (typically 30-70% of value)
+5. Include a brief description for each item
+6. Always include "digital cash" as starting capital
+7. Items should reflect their expertise, education, and business focus
+8. Consider their location and cultural background when selecting items
+
+INVENTORY CATEGORIES TO CONSIDER:
+- Physical products they sell/trade
+- Raw materials or supplies
+- Tools or equipment
+- Services they offer (can be inventory items with quantity as "sessions" or "hours")
+- Digital cash (starting business capital)
+
+OUTPUT FORMAT:
+Generate valid Python code with ONLY `agent.add_to_inventory()` calls, one per line.
+DO NOT include any comments, explanations, or extra text.
+DO NOT include variable assignments or function definitions.
+ONLY output agent.add_to_inventory() calls.
+
+EXAMPLE OUTPUT:
+agent.add_to_inventory("digital cash", quantity=1000.0, value=1.0, production_cost=0.0, description="Starting business capital")
+agent.add_to_inventory("organic lavender oil", quantity=25, value=45.0, production_cost=28.0, description="Premium essential oil distilled from local lavender fields")
+agent.add_to_inventory("herbal tea blend", quantity=40, value=12.0, production_cost=6.0, description="Custom blend of chamomile, mint, and lemon balm")
+agent.add_to_inventory("consultation session", quantity=10, value=75.0, production_cost=0.0, description="One-hour herbalism consultation for custom remedies")
+
+Now generate the inventory code for the agent described above:

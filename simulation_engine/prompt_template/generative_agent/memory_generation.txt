@@ -1,0 +1,65 @@
+You are creating comprehensive memories for an AI agent. Using the complete agent profile below, generate three categories of memories in Python list format.
+
+COMPLETE AGENT PROFILE:
+Name: !<INPUT 0>!
+Age: !<INPUT 1>!
+Sex: !<INPUT 2>!
+Location: !<INPUT 3>!
+Census Division: !<INPUT 4>!
+Education: !<INPUT 5>!
+Race: !<INPUT 6>!
+Ethnicity: !<INPUT 7>!
+
+Political Views:
+- Ideology: !<INPUT 8>!
+- Party: !<INPUT 9>!
+
+Personality Traits (Big Five Scale 1-5):
+- Extraversion: !<INPUT 10>!
+- Agreeableness: !<INPUT 11>!
+- Conscientiousness: !<INPUT 12>!
+- Neuroticism: !<INPUT 13>!
+- Openness: !<INPUT 14>!
+
+Background & Work: !<INPUT 15>!
+
+Speech Pattern: !<INPUT 16>!
+
+Public Self-Description: !<INPUT 17>!
+
+Private Self-Description: !<INPUT 18>!
+
+Sales Performance:
+- Total Sales Failures: !<INPUT 19>!
+- Last Sales Failure Time: !<INPUT 20>!
+
+Generate exactly 3 Python lists with 15 memories each (45 total):
+
+1. CORE MEMORIES (core = []): Foundational life experiences, major formative events, key relationships, defining moments that shaped who they are. Include childhood experiences, family background, cultural influences, major life decisions, and character-defining moments. Use their personality traits, cultural background, and formative experiences.
+
+2. MUNDANE MEMORIES (mundane = []): Daily routine activities, regular habits, typical interactions, everyday moments. Include morning routines, regular social interactions, shopping habits, leisure activities, and typical day-to-day experiences. Reflect their extraversion level, conscientiousness, and lifestyle.
+
+3. OCCUPATION MEMORIES (occupation = []): Work-related experiences, professional skills, career milestones, job-specific activities. Include client interactions, professional challenges, skill development, workplace relationships, and career growth. Consider their education, conscientiousness, and professional background.
+
+IMPORTANT REQUIREMENTS:
+- Each memory should be a complete sentence in past tense, written as a direct statement about what happened
+- Write memories as natural narrative statements (e.g., "Sarah discovered her love for baking when she accidentally created the perfect chocolate chip cookie at age twelve.")
+- DO NOT start memories with phrases like "He remembered", "She recalled", "The agent thought about", etc.
+- Memories should be specific and vivid, not generic
+- Include sensory details and emotional context
+- Maintain consistency with ALL aspects of the agent's profile
+- Reflect their personality traits in the memories (high extraversion = more social memories, etc.)
+- Include cultural and location-specific details from their background
+- Show their speech patterns and values through actions and thoughts in memories
+- Each list should have exactly 15 memories
+- Use their private self-description to add depth and internal conflicts
+
+MEMORY FORMAT EXAMPLES:
+Good: "Maria learned to make empanadas from her grandmother during long summer afternoons in Buenos Aires."
+Bad: "Maria remembered learning to make empanadas from her grandmother."
+
+Good: "The first time James performed on stage, his hands shook so badly he could barely hold his guitar."
+Bad: "James recalled the first time he performed on stage."
+
+Output format should be valid Python code with proper list syntax and the final line:
+!<INPUT 21>!_memories = core + mundane + occupation
