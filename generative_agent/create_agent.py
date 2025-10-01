@@ -12,13 +12,18 @@ Usage:
     python -m generative_agent.create_agent --all --population Synthetic_Base --text inventory.txt
 
 Examples:
-    # Single agent creation
+    # Single agent creation with default $10,000 starting cash
     python -m generative_agent.create_agent --name bianca_silva --population Synthetic_Base --text inventory.txt
-    python -m generative_agent.create_agent --name new_agent --population Synthetic_Base --text agent_background.txt
 
-    # Batch creation of all agents
+    # Single agent creation with custom starting cash
+    python -m generative_agent.create_agent --name new_agent --population Synthetic_Base --text inventory.txt --money 50000
+
+    # Batch creation of all agents with default $10,000
     python -m generative_agent.create_agent --all
-    python -m generative_agent.create_agent --all --population Synthetic_Base --text inventory.txt
+
+    # Batch creation with custom starting cash for all agents
+    python -m generative_agent.create_agent --all --money 20000
+    python -m generative_agent.create_agent --all --population Synthetic_Base --text inventory.txt --money 15000
 """
 
 import argparse
@@ -36,7 +41,7 @@ from simulation_engine.settings import LLM_VERS
 from generative_agent.generative_agent import GenerativeAgent
 
 
-def generate_agent_memories_from_scratch(agent_name, population_name, output_file_path=None):
+def generate_agent_memories_from_scratch(agent_name, population_name, output_file_path=None, digital_money=10000):
     """
     Generate comprehensive agent memories using only scratch data.
 
@@ -44,6 +49,7 @@ def generate_agent_memories_from_scratch(agent_name, population_name, output_fil
         agent_name (str): The agent's identifier (e.g., "bianca_silva")
         population_name (str): The population name (e.g., "Synthetic_Base")
         output_file_path (str): Optional path for output file. If None, saves to testing/memories/{agent_name}_memories.py
+        digital_money (float): Starting digital cash amount (default: 10000)
 
     Returns:
         str: Path to the generated memory file
@@ -105,20 +111,21 @@ def generate_agent_memories_from_scratch(agent_name, population_name, output_fil
         f.write(generated_content)
 
     # Create agent directory structure in both Synthetic_Base and Synthetic populations
-    create_agent_structure(agent_name, scratch_data)
+    create_agent_structure(agent_name, scratch_data, digital_money)
 
     print(f"Generated memories saved to: {output_file_path}")
-    print(f"Created agent structure for {agent_name} in Synthetic_Base and Synthetic populations")
+    print(f"Created agent structure for {agent_name} in Synthetic_Base and Synthetic populations with ${digital_money} starting cash")
     return output_file_path
 
 
-def create_agent_structure(agent_name, scratch_data):
+def create_agent_structure(agent_name, scratch_data, digital_money=10000):
     """
     Create complete agent directory structure in both Synthetic_Base and Synthetic populations.
 
     Args:
         agent_name (str): The agent's identifier
         scratch_data (dict): The agent's scratch data
+        digital_money (float): Starting digital cash amount (default: 10000)
     """
     populations = ["Synthetic_Base", "Synthetic"]
 
@@ -162,7 +169,7 @@ def create_agent_structure(agent_name, scratch_data):
                 "items": [
                     {
                         "name": "digital cash",
-                        "quantity": 5000.0,
+                        "quantity": float(digital_money),
                         "value": 1.0,
                         "production_cost": 0.0,
                         "description": "Starting business cash",
@@ -175,7 +182,7 @@ def create_agent_structure(agent_name, scratch_data):
                         "record_id": 0,
                         "action": "add",
                         "item_name": "digital cash",
-                        "quantity": 5000,
+                        "quantity": float(digital_money),
                         "time_step": 1,
                         "description": "Starting business cash",
                         "trade_partner": ""
@@ -306,7 +313,7 @@ def setup_agent_with_generated_inventory(agent_name, inventory_code):
     print(f"Agent {agent_name} saved to Synthetic population")
 
 
-def create_agent(agent_name, population_name, text_file_name):
+def create_agent(agent_name, population_name, text_file_name, digital_money=10000):
     """
     Complete agent creation workflow: generate memories from scratch, create inventory from text, and build agent
 
@@ -314,15 +321,17 @@ def create_agent(agent_name, population_name, text_file_name):
         agent_name (str): The agent's identifier (e.g., "bianca_silva")
         population_name (str): The population name (e.g., "Synthetic_Base")
         text_file_name (str): Name of .txt file with inventory/business description
+        digital_money (float): Starting digital cash amount (default: 10000)
 
     Returns:
         str: Path to the generated memory file
     """
     print(f"Creating agent '{agent_name}' from population '{population_name}' using text file '{text_file_name}'")
+    print(f"Starting digital cash: ${digital_money}")
 
     # Step 1: Generate memories from scratch data only
     print("Generating memories from scratch data...")
-    memory_file_path = generate_agent_memories_from_scratch(agent_name, population_name)
+    memory_file_path = generate_agent_memories_from_scratch(agent_name, population_name, digital_money=digital_money)
 
     # Step 2: Generate inventory code from text file
     print("Generating inventory from text description...")
@@ -333,7 +342,7 @@ def create_agent(agent_name, population_name, text_file_name):
     scratch_path = f"agent_bank/populations/{population_name}/{agent_name}/scratch.json"
     with open(scratch_path, 'r') as f:
         scratch_data = json.load(f)
-    create_agent_structure(agent_name, scratch_data)
+    create_agent_structure(agent_name, scratch_data, digital_money)
 
     # Step 4: Add memories and inventory to agent
     print("Adding memories and inventory to agent...")
@@ -345,13 +354,14 @@ def create_agent(agent_name, population_name, text_file_name):
     return memory_file_path
 
 
-def create_all_agents(population_name='Synthetic_Base', text_file_name='inventory.txt'):
+def create_all_agents(population_name='Synthetic_Base', text_file_name='inventory.txt', digital_money=10000):
     """
     Create all agents found in the specified population directory.
 
     Args:
         population_name (str): The population directory to scan (default: Synthetic_Base)
         text_file_name (str): Name of inventory text file (default: inventory.txt)
+        digital_money (float): Starting digital cash amount for all agents (default: 10000)
 
     Returns:
         dict: Dictionary with agent names as keys and status (success/error) as values
@@ -371,6 +381,7 @@ def create_all_agents(population_name='Synthetic_Base', text_file_name='inventor
         return {}
 
     print(f"Found {len(agent_dirs)} agents in {population_name}: {', '.join(agent_dirs)}")
+    print(f"Starting digital cash for all agents: ${digital_money}")
     print("="*50)
 
     results = {}
@@ -391,7 +402,7 @@ def create_all_agents(population_name='Synthetic_Base', text_file_name='inventor
                 raise FileNotFoundError(f"Missing {text_file_name} for {agent_name}")
 
             # Create the agent
-            memory_file_path = create_agent(agent_name, population_name, text_file_name)
+            memory_file_path = create_agent(agent_name, population_name, text_file_name, digital_money)
             results[agent_name] = "SUCCESS"
             print(f"✓ {agent_name} created successfully")
 
@@ -430,6 +441,7 @@ def main():
     parser.add_argument('--text', default='inventory.txt', help='Text file name containing inventory/business description (default: inventory.txt)')
     parser.add_argument('--output', help='Optional output path for memory file')
     parser.add_argument('--all', action='store_true', help='Create all agents found in the population directory')
+    parser.add_argument('--money', type=float, default=10000, help='Starting digital cash amount (default: 10000)')
 
     args = parser.parse_args()
 
@@ -437,7 +449,7 @@ def main():
         if args.all:
             # Create all agents in the population
             print(f"Creating all agents from {args.population} population...")
-            results = create_all_agents(args.population, args.text)
+            results = create_all_agents(args.population, args.text, args.money)
             sys.exit(0 if all(v == "SUCCESS" for v in results.values()) else 1)
 
         else:
@@ -461,7 +473,7 @@ def main():
                 sys.exit(1)
 
             # Create the agent
-            memory_file_path = create_agent(args.name, args.population, args.text)
+            memory_file_path = create_agent(args.name, args.population, args.text, args.money)
 
             print("\n" + "="*50)
             print("AGENT CREATION COMPLETE")
@@ -469,6 +481,7 @@ def main():
             print(f"Agent: {args.name}")
             print(f"Population: {args.population}")
             print(f"Text file: {args.text}")
+            print(f"Starting cash: ${args.money}")
             print(f"Memory file: {memory_file_path}")
             print(f"Agent saved to: agent_bank/populations/Synthetic/{args.name}/")
 

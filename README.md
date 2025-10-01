@@ -56,7 +56,7 @@ python main.py --mode production --agent carlos_mendez
 ```
 
 **Available Modes:**
-- `simulation` (default) - Full market simulation with all 8 agents
+- `simulation` (default) - Full market simulation with all agents in Synthetic population
 - `interview` - Stateless interview mode for psychological profiling
 - `chat` - Stateful conversation with memory retention
 - `build-agents` - Initialize all agents with memories and inventories
@@ -71,13 +71,16 @@ python main.py --mode production --agent carlos_mendez
 - `--query` - Custom reflection query
 - `--testing` - Run in testing mode (don't save agents)
 
-The simulation outputs:
-- Real-time agent conversations and trade negotiations
-- Reflection moments where agents process their experiences
-- Trade transactions with item exchanges and value calculations
-- Network dynamics showing relationship evolution
-- Production decisions based on sales patterns
-- Final statistics on agent interactions and market activity
+**Dynamic Agent Discovery:**
+The simulation now automatically discovers and loads all agents from the `agent_bank/populations/Synthetic/` directory. No need to hardcode agent lists - just add new agents to the folder and they'll be included in the simulation!
+
+The simulation outputs are saved to the `output/` directory as JSON files containing:
+- **Accumulated conversation history** across each cycle period
+- **All reflections** with agent thoughts and insights
+- **Complete trade records** with participants, items, and values
+- **Network transition matrices** showing relationship probabilities
+- **Production planning results** for each agent
+- **Cycle metadata** including start/end steps and timestamps
 
 **Option 2: Jupyter Notebook (Interactive)**
 ```bash
@@ -280,29 +283,52 @@ nuclear energy drink
 ### Creating a Single Agent
 
 ```bash
+# Create agent with default $10,000 starting cash
 python -m generative_agent.create_agent --name agent_name --population Synthetic_Base --text inventory.txt
+
+# Create agent with custom starting cash amount
+python -m generative_agent.create_agent --name agent_name --population Synthetic_Base --text inventory.txt --money 50000
 ```
 
 This command will:
 1. Generate memories from the scratch.json template using LLM
 2. Create full agent structure in both `Synthetic_Base` and `Synthetic` populations
 3. Save generated memories to `agent_bank/populations/memories/{agent_name}_memories.py`
-4. Initialize inventory with items from inventory.txt
+4. Initialize inventory with items from inventory.txt and specified digital cash amount (default: $10,000)
 
 ### Creating All Agents at Once
 
 You can batch-create all agents found in a population directory:
 
 ```bash
-# Create all agents in Synthetic_Base with default inventory.txt
+# Create all agents with default $10,000 starting cash
 python -m generative_agent.create_agent --all
+
+# Create all agents with custom starting cash for everyone
+python -m generative_agent.create_agent --all --money 20000
 ```
 
 This will automatically:
 - Scan the population directory for all agent folders
 - Process each agent that has both `scratch.json` and `inventory.txt` (or specified text file)
 - Generate memories and inventory for each agent
+- Initialize each agent with the specified starting capital
 - Provide a summary report showing which agents succeeded/failed
+
+### Dynamic Agent Loading
+
+The system now includes **automatic agent discovery**:
+
+**In main.py:**
+- `get_agent_names_from_population()` - Automatically scans and loads all agents from any population directory
+- `load_all_agent_memories()` - Dynamically imports all memory modules without manual imports
+- `build_agent()` - Creates agents for everyone in the memories directory automatically
+
+**Benefits:**
+- No need to hardcode agent names - just add to the folder!
+- No need to manually import memory modules - automatic discovery!
+- Scales to any number of agents seamlessly
+- Provides error handling and progress reporting
 
 ### Steps to Create Your Own Agent
 
@@ -317,7 +343,109 @@ mkdir -p agent_bank/populations/Synthetic_Base/your_agent_name
 
 4. Run the create_agent script:
 ```bash
+# With default $10,000 starting cash
 python -m generative_agent.create_agent --name your_agent_name --population Synthetic_Base --text inventory.txt
+
+# With custom starting cash (e.g., $25,000)
+python -m generative_agent.create_agent --name your_agent_name --population Synthetic_Base --text inventory.txt --money 25000
 ```
 
-The agent will be ready to participate in simulations with a fully generated memory stream, personality, and inventory.
+5. The agent is automatically included in simulations! Run `python main.py` and your new agent will be discovered and loaded automatically.
+
+The agent will be ready to participate in simulations with a fully generated memory stream, personality, inventory, and starting capital.
+
+## 📊 Simulation Output Files
+
+The simulation saves comprehensive data to the `output/` directory in JSON format. Files are organized by cycle with timestamps.
+
+### Output File Structure
+
+Each simulation cycle generates three types of files:
+
+**1. Simulation Results** (`cycle_XXX_TIMESTAMP_simulation.json`)
+Contains accumulated interaction data for the cycle period:
+```json
+{
+  "cycle": 0,
+  "time_step": 60,
+  "timestamp": "20250930_194739",
+  "results": {
+    "agents": [...],
+    "interaction_history": [
+      {
+        "type": "conversation",
+        "participants": ["Agent1", "Agent2"],
+        "dialogue": [...],
+        "trades": [...],
+        "turns": 8
+      },
+      {
+        "type": "reflection",
+        "agent": "Agent1",
+        "anchor": "recent conversation about...",
+        "thoughts": [...]
+      }
+    ],
+    "conversation_count": 15,
+    "reflection_count": 5,
+    "total_trades_executed": 8,
+    "cycle_start_step": 1,
+    "cycle_end_step": 60
+  }
+}
+```
+
+**2. Production Results** (`cycle_XXX_TIMESTAMP_production.json`)
+Production planning and execution data for all agents.
+
+**3. Network Weights** (`cycle_XXX_TIMESTAMP_weights.json`)
+Network weights and transition matrices showing relationship probabilities:
+```json
+{
+  "cycle": 0,
+  "network_weights": {
+    "Agent1": {"Agent2": 0.35, "Agent3": 0.65}
+  },
+  "transition_matrix": [[...], [...], ...],
+  "agent_names": [...]
+}
+```
+
+### Key Features
+
+**Cycle-Based Accumulation:**
+- Files save data accumulated over the entire cycle period (e.g., 20-40 steps)
+- `cycle_start_step` and `cycle_end_step` mark the range included
+- Prevents data loss - all conversations and reflections are preserved
+
+**Complete Interaction Records:**
+- Full conversation dialogue with turn-by-turn exchanges
+- Trade details including participants, items, quantities, and values
+- Reflection thoughts with anchor contexts
+- Timestamps and step numbers for temporal analysis
+
+**Network Evolution Tracking:**
+- Markov transition matrices at each weight update cycle
+- Agent-to-agent relationship probabilities
+- Historical weight snapshots for analyzing network dynamics
+
+### Usage Example
+
+```python
+import json
+
+# Load simulation results
+with open('output/cycle_001_20250930_194739_simulation.json', 'r') as f:
+    data = json.load(f)
+
+# Analyze conversations
+conversations = [i for i in data['results']['interaction_history']
+                 if i['type'] == 'conversation']
+print(f"Total conversations: {len(conversations)}")
+
+# Find successful trades
+for conv in conversations:
+    for trade in conv.get('trades', []):
+        if trade.get('executed'):
+            print(f"Trade: {trade['trade_details']}")
+```

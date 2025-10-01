@@ -208,7 +208,7 @@ def setup_agent_inventory(agent, agent_name):
   - Specialized products matching agent's profession
   - Base values and production costs
   - Starting quantities
-  - Digital cash for transactions (1000 units)
+  - Digital cash for transactions (10000 units)
 
   Each agent receives 11+ unique SKUs reflecting their merchant specialization.
   """
@@ -232,7 +232,7 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("virtual_tour_packages", 4, 1, 120.00, 30.00, "360° virtual tour packages")
       agent.add_to_inventory("open_house_signs", 6, 1, 35.00, 8.75, "Reusable open house sign set")
       agent.add_to_inventory("reusable_tea_infusers", 12, 1, 8.00, 2.00, "Stainless steel tea infusers")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "Starting business cash")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Starting business cash")
 
   elif agent_name == "jasmine_carter":
       # Jasmine: Math student with academic supplies
@@ -248,7 +248,7 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("online_course_vouchers", 2, 1, 60.00, 15.00, "Access to online math courses")
       agent.add_to_inventory("math_software_license", 3, 1, 45.00, 11.25, "CAS/linear algebra software license")
       agent.add_to_inventory("ruler_set", 5, 1, 6.00, 1.50, "Metric/imperial ruler & protractor set")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "Student savings")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Student savings")
 
   elif agent_name == "mina_kim":
       # Mina: Korean beauty cosmetics expert
@@ -264,7 +264,7 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("ampoule_serums", 4, 1, 32.00, 8.00, "Concentrated ampoule serums")
       agent.add_to_inventory("eye_cream", 4, 1, 26.00, 6.50, "Brightening eye cream")
       agent.add_to_inventory("gel_moisturizer", 5, 1, 24.00, 6.00, "Lightweight gel moisturizer")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "K-beauty business earnings")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "K-beauty business earnings")
 
   elif agent_name == "kemi_adebayo":
       # Kemi: Nigerian tech entrepreneur with African superfood products
@@ -280,7 +280,7 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("shea_butter", 12, 1, 20.00, 5.00, "Unrefined West African shea butter")
       agent.add_to_inventory("fonio_grain", 15, 1, 35.00, 8.75, "Ancient whole grain fonio")
       agent.add_to_inventory("dried_hibiscus_petals", 10, 1, 18.00, 4.50, "Zobo/karkadé hibiscus petals")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "Startup revenue and investment funds")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Startup revenue and investment funds")
 
   elif agent_name == "pema_sherpa":
       # Pema: Nepalese honey hunter with wild and mad honey
@@ -296,7 +296,7 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("propolis_tincture", 6, 1, 45.00, 11.25, "Antimicrobial propolis tincture")
       agent.add_to_inventory("honeycomb_wedges", 12, 1, 25.00, 6.25, "Raw honeycomb pieces")
       agent.add_to_inventory("smoker_kit", 2, 1, 85.00, 21.25, "Traditional bee smoker & tools kit")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "Earnings from honey trading and guiding")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Earnings from honey trading and guiding")
 
   elif agent_name == "carlos_mendez":
       # Carlos: Cuban tobacco farmer and cigar maker
@@ -312,7 +312,7 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("cigar_cutters", 10, 1, 30.00, 7.50, "Guillotine and V-cut cigar cutters")
       agent.add_to_inventory("butane_torch_lighters", 8, 1, 40.00, 10.00, "Refillable torch lighters")
       agent.add_to_inventory("humidor_solution", 12, 1, 15.00, 3.75, "Propylene glycol humidification solution")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "Farm earnings and cigar sales")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Farm earnings and cigar sales")
 
   elif agent_name == "bianca_silva":
       # Bianca: Brazilian pool products entrepreneur
@@ -328,7 +328,7 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("underwater_lights", 12, 1, 85.00, 21.25, "LED underwater lights that change colors - perfect for night parties!")
       # Addition to reach 11 SKUs
       agent.add_to_inventory("filter_cartridges", 20, 1, 32.00, 8.00, "Replacement filter cartridges for common systems")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "Starting business cash")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Starting business cash")
 
   elif agent_name == "mei_chen":
       # Mei: Chinese silk clothing designer and entrepreneur (already at 11 SKUs)
@@ -343,7 +343,12 @@ def setup_agent_inventory(agent, agent_name):
       agent.add_to_inventory("wedding_silk_gowns", 3, 1, 1200.00, 300.00, "Bespoke wedding gowns combining Western silhouettes with traditional Chinese silk and embroidery")
       agent.add_to_inventory("silk_ties_men", 20, 1, 95.00, 23.75, "Men's silk ties featuring subtle traditional Chinese motifs for international businessmen")
       agent.add_to_inventory("silk_care_kit", 15, 1, 55.00, 13.75, "Complete silk care kit with gentle cleaners and preservation instructions in multiple languages")
-      agent.add_to_inventory("digital cash", 1000, 1, 1.00, 0.00, "Starting business cash")
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Starting business cash")
+
+  else:
+      # Default inventory for any agent not explicitly configured above
+      agent.add_to_inventory("digital cash", 10000, 1, 1.00, 0.00, "Starting business cash")
+      print(f"  Note: No specific inventory configured for {agent_name}, added default digital cash only")
 
   agent.save()  # Save the cleared inventory to JSON files
 
