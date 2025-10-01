@@ -285,6 +285,10 @@ class Simulation:
         last_production_update = 0
         current_agent = None
 
+        # Accumulate interactions for the current cycle
+        cycle_accumulated_interactions = []
+        cycle_accumulated_trades = []
+        cycle_start_step = 1
 
         for step in range(1, total_steps + 1):
             self.current_time_step = step
@@ -308,6 +312,10 @@ class Simulation:
             )
 
             current_agent = step_results['final_state']
+
+            # Accumulate interaction history from this step
+            cycle_accumulated_interactions.extend(step_results.get('interaction_history', []))
+            cycle_accumulated_trades.extend(step_results.get('all_trades', []))
 
             # Check for weight update cycle
             should_update_weights = (step - last_weight_update) >= weight_update_cycle
@@ -335,17 +343,40 @@ class Simulation:
                     all_production_results.append(production_results)
                     last_production_update = step
 
-                # Phase 3: Save results to JSON files (only when updates happen)
+                # Phase 3: Save results to JSON files with accumulated interactions
+                # Create cycle results with accumulated data
+                cycle_results = {
+                    'agents': step_results['agents'],
+                    'transition_matrix': step_results['transition_matrix'],
+                    'interaction_history': cycle_accumulated_interactions,
+                    'conversation_count': len([i for i in cycle_accumulated_interactions if i['type'] == 'conversation']),
+                    'reflection_count': len([i for i in cycle_accumulated_interactions if i['type'] == 'reflection']),
+                    'total_trades_attempted': len(cycle_accumulated_trades),
+                    'total_trades_executed': len([t for t in cycle_accumulated_trades if t.get('executed')]),
+                    'all_trades': cycle_accumulated_trades,
+                    'executed_trades': [t for t in cycle_accumulated_trades if t.get('executed')],
+                    'cycle_start_step': cycle_start_step,
+                    'cycle_end_step': step,
+                    'final_state': step_results['final_state'],
+                    'final_agent': step_results['final_agent']
+                }
+
                 # Get the latest transition matrix if weights were updated
                 latest_matrix = None
                 if should_update_weights and self.transition_matrices_history:
                     latest_matrix_data = self.transition_matrices_history[-1]['transition_matrix']
                     latest_matrix = np.array(latest_matrix_data)
 
-                self.save_cycle_results(step_results, production_results, updated_weights, latest_matrix)
+                self.save_cycle_results(cycle_results, production_results, updated_weights, latest_matrix)
 
                 # Phase 4: Save agent states
                 self.save_all_agents()
+
+                # Reset accumulated data for next cycle
+                cycle_accumulated_interactions = []
+                cycle_accumulated_trades = []
+                cycle_start_step = step + 1
+
                 print()
 
         print("=== Simulation Complete ===")

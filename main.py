@@ -44,18 +44,82 @@ from simulation_engine.global_methods import *
 from agent_bank.navigator import *
 from generative_agent.generative_agent import *
 
-from agent_bank.populations.memories.rowan_greenwood_memories import *
-from agent_bank.populations.memories.jasmine_carter_memories import *
-from agent_bank.populations.memories.mina_kim_memories import *
-from agent_bank.populations.memories.kemi_adebayo_memories import *
-from agent_bank.populations.memories.pema_sherpa_memories import *
-from agent_bank.populations.memories.carlos_mendez_memories import *
-from agent_bank.populations.memories.bianca_silva_memories import *
-from agent_bank.populations.memories.mei_chen_memories import *
 from generative_agent.modules.conversation_trade_analyzer import ConversationTradeAnalyzer
 from generative_agent.modules.conversation_interaction import ConversationBasedInteraction
 from simulation_engine.markov_agent_chain import MarkovAgentChain, load_agents_for_chain
 from simulation_engine.simulation import Simulation
+
+def get_agent_names_from_population(population="Synthetic"):
+  """
+  Dynamically get all agent names from a population directory.
+
+  Args:
+      population (str): Population name (default: "Synthetic")
+
+  Returns:
+      List[str]: List of agent directory names in the population
+  """
+  import os
+  population_path = f"agent_bank/populations/{population}"
+
+  if not os.path.exists(population_path):
+    print(f"Warning: Population directory '{population_path}' does not exist")
+    return []
+
+  agent_names = []
+  for item in os.listdir(population_path):
+    item_path = os.path.join(population_path, item)
+    # Only include directories, exclude hidden files
+    if os.path.isdir(item_path) and not item.startswith('.'):
+      agent_names.append(item)
+
+  return sorted(agent_names)
+
+def load_all_agent_memories():
+  """
+  Dynamically import all agent memory modules from agent_bank/populations/memories/.
+
+  Returns:
+      dict: Dictionary mapping agent_name to their memories list
+              e.g., {"andre_agent": [...], "carlos_agent": [...]}
+  """
+  import os
+  import importlib
+
+  memories_path = "agent_bank/populations/memories"
+  agent_memories = {}
+
+  if not os.path.exists(memories_path):
+    print(f"Warning: Memories directory '{memories_path}' does not exist")
+    return {}
+
+  # Get all Python files in the memories directory
+  for filename in os.listdir(memories_path):
+    if filename.endswith("_memories.py") and not filename.startswith("__"):
+      # Extract agent name from filename (e.g., "andre_agent_memories.py" -> "andre_agent")
+      agent_name = filename.replace("_memories.py", "")
+
+      try:
+        # Import the module dynamically
+        module_name = f"agent_bank.populations.memories.{filename[:-3]}"
+        module = importlib.import_module(module_name)
+
+        # Try to get the memories variable (usually named like "andre_memories", "carlos_memories", etc.)
+        # Try common naming patterns
+        possible_var_names = [
+          f"{agent_name}_memories",  # andre_agent_memories
+          agent_name.replace("_agent", "") + "_memories",  # andre_memories
+        ]
+
+        for var_name in possible_var_names:
+          if hasattr(module, var_name):
+            agent_memories[agent_name] = getattr(module, var_name)
+            break
+
+      except Exception as e:
+        print(f"Warning: Could not load memories for {agent_name}: {e}")
+
+  return agent_memories
 
 #from testing.questions.rowan_greenwood_questions import *
 def run_simulation(agent_names, total_steps, weight_update_cycle, production_cycle, testing_mode):
@@ -286,83 +350,65 @@ def setup_agent_inventory(agent, agent_name):
 
 def build_agent():
   """
-  Build and initialize all 8 agents with memories and inventories.
+  Build and initialize all agents with memories and inventories.
 
   For each agent:
   1. Loads base agent from Synthetic_Base population
-  2. Injects predefined memories from memory modules
+  2. Injects predefined memories from memory modules (dynamically loaded)
   3. Sets up specialized inventory with merchant products
   4. Saves to Synthetic population for simulation use
 
-  Agents initialized:
-  - rowan_greenwood: Herbalist & real estate
-  - jasmine_carter: Academic supplies
-  - mina_kim: K-beauty products
-  - kemi_adebayo: African superfoods
-  - pema_sherpa: Himalayan honey
-  - carlos_mendez: Cuban cigars & tobacco
-  - bianca_silva: Pool maintenance supplies
-  - mei_chen: Chinese silk clothing
+  Automatically discovers all agents that have:
+  - Directory in Synthetic_Base population
+  - Memory file in agent_bank/populations/memories/
+  - Inventory setup in setup_agent_inventory()
 
   Call this function to reset all agents to initial state.
   """
-  # Build Rowan
-  rowan = GenerativeAgent("Synthetic_Base", "rowan_greenwood")
-  for m in rowan_memories: 
-    rowan.remember(m)
-  setup_agent_inventory(rowan, "rowan_greenwood")
-  rowan.save("Synthetic", "rowan_greenwood")
-  
-  # Build Jasmine  
-  jasmine = GenerativeAgent("Synthetic_Base", "jasmine_carter")
-  for m in jasmine_memories:
-    jasmine.remember(m)
-  setup_agent_inventory(jasmine, "jasmine_carter")
-  jasmine.save("Synthetic", "jasmine_carter")
-  
-  # Build Mina
-  mina = GenerativeAgent("Synthetic_Base", "mina_kim")
-  for m in mina_memories:
-    mina.remember(m)
-  setup_agent_inventory(mina, "mina_kim")
-  mina.save("Synthetic", "mina_kim")
-  
-  # Build Kemi
-  kemi = GenerativeAgent("Synthetic_Base", "kemi_adebayo")
-  for m in kemi_memories:
-    kemi.remember(m)
-  setup_agent_inventory(kemi, "kemi_adebayo")
-  kemi.save("Synthetic", "kemi_adebayo")
-  
-  # Build Pema
-  pema = GenerativeAgent("Synthetic_Base", "pema_sherpa")
-  for m in pema_memories:
-    pema.remember(m)
-  setup_agent_inventory(pema, "pema_sherpa")
-  pema.save("Synthetic", "pema_sherpa")
-  
-  # Build Carlos
-  carlos = GenerativeAgent("Synthetic_Base", "carlos_mendez")
-  for m in carlos_memories:
-    carlos.remember(m)
-  setup_agent_inventory(carlos, "carlos_mendez")
-  carlos.save("Synthetic", "carlos_mendez")
-  
-  # Build Bianca
-  bianca = GenerativeAgent("Synthetic_Base", "bianca_silva")
-  for m in bianca_memories:
-    bianca.remember(m)
-  setup_agent_inventory(bianca, "bianca_silva")
-  bianca.save("Synthetic", "bianca_silva")
-  
-  # Build Mei
-  mei = GenerativeAgent("Synthetic_Base", "mei_chen")
-  for m in mei_memories:
-    mei.remember(m)
-  setup_agent_inventory(mei, "mei_chen")
-  mei.save("Synthetic", "mei_chen")
-  
-  print("All agents built with fresh inventories!")
+  # Load all agent memories dynamically
+  all_memories = load_all_agent_memories()
+
+  if not all_memories:
+    print("Warning: No agent memories found. Cannot build agents.")
+    return
+
+  print(f"Found memories for {len(all_memories)} agents")
+  print(f"Building agents: {', '.join(all_memories.keys())}\n")
+
+  built_count = 0
+  failed_count = 0
+
+  for agent_name, memories in all_memories.items():
+    try:
+      print(f"Building {agent_name}...")
+
+      # Load base agent from Synthetic_Base
+      agent = GenerativeAgent("Synthetic_Base", agent_name)
+
+      # Add memories
+      for memory in memories:
+        agent.remember(memory)
+
+      # Setup inventory (only if this agent has inventory configured)
+      try:
+        setup_agent_inventory(agent, agent_name)
+      except Exception as e:
+        print(f"  Warning: Could not setup inventory for {agent_name}: {e}")
+        print(f"  Continuing without inventory setup...")
+
+      # Save to Synthetic population
+      agent.save("Synthetic", agent_name)
+
+      print(f"  ✓ {agent_name} built successfully")
+      built_count += 1
+
+    except Exception as e:
+      print(f"  ✗ Failed to build {agent_name}: {e}")
+      failed_count += 1
+
+  print(f"\n{'='*50}")
+  print(f"Build complete: {built_count} successful, {failed_count} failed")
+  print(f"{'='*50}")
 
 
 def interview_agent(agent_name="rowan_greenwood"):
@@ -867,9 +913,14 @@ Examples:
 
   args = parser.parse_args()
 
-  # Available agents
-  agent_names = ["rowan_greenwood", "jasmine_carter", "mina_kim", "kemi_adebayo",
-                 "pema_sherpa", "carlos_mendez", "bianca_silva", "mei_chen"]
+  # Get available agents dynamically from Synthetic population
+  agent_names = get_agent_names_from_population("Synthetic")
+
+  if not agent_names:
+    print("Error: No agents found in Synthetic population")
+    return
+
+  print(f"Found {len(agent_names)} agents: {', '.join(agent_names)}\n")
 
   # Route to appropriate mode
   if args.mode == 'simulation':

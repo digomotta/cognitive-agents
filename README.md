@@ -296,9 +296,6 @@ You can batch-create all agents found in a population directory:
 ```bash
 # Create all agents in Synthetic_Base with default inventory.txt
 python -m generative_agent.create_agent --all
-
-# Create all agents with custom text file
-python -m generative_agent.create_agent --all --population Synthetic_Base --text custom_inventory.txt
 ```
 
 This will automatically:

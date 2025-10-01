@@ -162,7 +162,7 @@ def create_agent_structure(agent_name, scratch_data):
                 "items": [
                     {
                         "name": "digital cash",
-                        "quantity": 1000.0,
+                        "quantity": 5000.0,
                         "value": 1.0,
                         "production_cost": 0.0,
                         "description": "Starting business cash",
@@ -175,7 +175,7 @@ def create_agent_structure(agent_name, scratch_data):
                         "record_id": 0,
                         "action": "add",
                         "item_name": "digital cash",
-                        "quantity": 1000,
+                        "quantity": 5000,
                         "time_step": 1,
                         "description": "Starting business cash",
                         "trade_partner": ""
@@ -295,6 +295,10 @@ def setup_agent_with_generated_inventory(agent_name, inventory_code):
         exec(inventory_code, namespace)
         print(f"Successfully added inventory to {agent_name}")
     except Exception as e:
+        print(f"\nGenerated inventory code that failed:")
+        print("=" * 50)
+        print(inventory_code)
+        print("=" * 50)
         raise Exception(f"Failed to execute inventory code: {str(e)}")
 
     # Save to Synthetic population

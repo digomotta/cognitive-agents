@@ -58,7 +58,7 @@ def run_simulation_background(agent_names, num_steps, context, self_reflection_p
             self_reflection_prob=self_reflection_prob,
             interaction_prob=interaction_prob,
             conversation_max_turns=max_turns,
-            testing_mode=True
+            testing_mode=False
         )
 
         # Store transition matrix
