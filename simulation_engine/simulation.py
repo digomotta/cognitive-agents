@@ -122,7 +122,7 @@ class Simulation:
 
             if other_agents:
                 try:
-                    weights = agent.get_markov_buying_interest_scores(other_agents, temperature=8.0)
+                    weights = agent.get_markov_buying_interest_scores(other_agents, temperature=12.0)
                     self.network_weights[agent_name] = weights
                     if DEBUG:
                         print(f"  {agent_name}: calculated weights for {len(weights)} connections")
@@ -313,8 +313,12 @@ class Simulation:
 
             current_agent = step_results['final_state']
 
-            # Accumulate interaction history from this step
-            cycle_accumulated_interactions.extend(step_results.get('interaction_history', []))
+            # Accumulate interaction history from this step with corrected step numbers
+            for interaction in step_results.get('interaction_history', []):
+                # Update step number to reflect actual simulation step
+                interaction['step'] = step
+                cycle_accumulated_interactions.append(interaction)
+
             cycle_accumulated_trades.extend(step_results.get('all_trades', []))
 
             # Check for weight update cycle
